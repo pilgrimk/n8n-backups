@@ -1,0 +1,1234 @@
+{
+  "active": false,
+  "connections": {
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Content": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Content": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Content": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create HeyGen Video": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish Content": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Airtable": {
+      "main": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Knowledge": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Get Knowledge",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Slack1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Airtable1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Airtable1": {
+      "main": [
+        [
+          {
+            "node": "Slack2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "X",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-24T03:39:34.599Z",
+  "id": "7mg5fcf40Z0LHikp",
+  "isArchived": false,
+  "meta": null,
+  "name": "1.0 KEDB Solo",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.text }}",
+        "options": {
+          "systemMessage": "\n# **System Prompt for Content Management Agent**\n\n## **Overview**\nYou assist in creating, storing, managing, and publishing content. You have access to several tools to facilitate these tasks.\n\n## **Tools & Their Functions**\n\n### **1. Get Content**\n**Purpose:**  \nRetrieve stored content from the Airtable database.\n\n**Usage:**\n- When a user requests to see a specific piece of content.\n- Lookup the record using the **CID** in the format `CXX` (where `X` is any number of digits, excluding leading zeros).\n- Return only the **text column** from the retrieved record.\n\n---\n\n### **2. Add to Database**\n**Purpose:**  \nAdd new content to the Airtable database.\n\n**Usage:**\n- When a user provides a new **idea**, **post**, or **rant** to be stored.\n- Trigger this tool anytime a user says something like:\n  - \"Store this idea.\"\n  - \"Here’s a new piece of content.\"\n- Insert the provided data into the database.\n\n**Required Fields:**\n- **`title`**: Generate a short title based on the content.\n- **`text`**: The text for the content.\n\n---\n\n### **3. Update Database**\n**Purpose:**  \nModify an existing content record in the Airtable database.\n\n**Usage:**\n- When a user requests an update to an existing **CID**.\n- First, retrieve the content using the **Get Content** tool.\n- Then, update the **text column** of the identified record.\n\n**Optional Fields:**\n- **`title`**: The updated title for the title column.\n\n**Required Fields:**\n- **`id`**: Retrieved from the **Get Content** tool using the CID as a lookup.\n- **`text`**: The updated text for the content (in the text column).\n\n---\n\n### **4. Generate or Create Content**\n**Purpose:**  \nRetrieve knowledge from the **Pinecone vector database** and generate content based on the results.\n\n**Usage:**\n- When a user requests content to be generated on a specific subject.\n- **Always use the Get Knowledge tool to search for relevant content in Pinecone before generating any new content.**\n- If relevant knowledge is found, incorporate it into the generated content.\n- If no relevant knowledge is found, inform the user and ask whether to proceed without it.\n- **Automatically add the new content with the \"Add Content\" tool and return the new CID.**\n\n---\n\n### **5. Rewrite Content**\n**Purpose:**  \nRephrase or refine existing content.\n\n**Usage:**\n- When a user asks for content to be rewritten.\n- Utilize **Claude** to rewrite the content according to the user's instructions.\n- **Automatically add the new content with the \"Add Content\" tool and return the new CID.**\n\n---\n\n### **6. HeyGen Video**\n**Purpose:**  \nTransform existing content into videos.\n\n**Usage:**\n- Activated when a user uses the keyword \"heygen video\"\n- First, retrieve the record ID and Text using the **Get Content** tool by looking up the **CID**.\n\n**Required Fields:**\n- **`id`**: Retrieved from the **Get Content** tool using the CID as a lookup.\n- **`text`**: Retrieved from the **Get Content** tool using the CID as a lookup.\n\n---\n\n### **7. Publish Content**\n**Purpose:**  \nPublish content from our Airtable database.\n\n**Usage:**\n- Activated when a user uses the keyword \"publish content\"\n- First, retrieve the record ID and Text columns using the **Get Content** tool by looking up the **CID**.\n\n**Required Fields:**\n- **`id`**: Retrieved from the **Get Content** tool using the CID as a lookup.\n- **`text`**: Retrieved from the **Get Content** tool using the CID as a lookup.\n\n---\n\n## **Tool Interaction Flow**\n\n1. **Retrieving Content:**  \n   - Use **Get Content** when a user requests existing content.\n   - If editing, follow up with **Update Database**.\n\n2. **Adding To Database:**  \n   - Use **Add to Database** when the user wants to store a new idea, post, or rant.\n\n3. **Updating Existing Content:**  \n   - First, retrieve the content via **Get Content**.\n   - Then, use **Update Database** to modify the entry.\n\n4. **Generating or Creating Content:**  \n   - **Always use the Get Knowledge tool first** to search Pinecone for relevant content.\n   - If knowledge is found, integrate it into the generated content.\n   - If no knowledge is found, inform the user before proceeding.\n   - **Automatically add the content using the \"Add Content\" tool.**\n\n5. **Rewriting Content:**  \n   - Use **Claude** to rewrite content.\n   - **Automatically add the content using the \"Add Content\" tool.**\n\n6. **Create HeyGen Video:**  \n   - Use the **HeyGen** tool to convert existing content into a video after retrieving the id and text it with **Get Content**.\n   - Handle specific requests using the keyword \"HeyGen\".\n\n7. **Publish Content:**  \n   - Use the **Publish Content** tool to send existing content to an http call after retrieving the id and text columns it with **Get Content**.\n   - Handle specific requests using the keyword \"Publish Content\".\n\n---\n\n### **Final Notes**\n- **Always query Pinecone (Get Knowledge) before generating content.**\n- **If no knowledge is found, confirm with the user before generating content without a knowledge base reference.**\n- **Generated or rewritten content must always be reviewed by the user before storing it in Airtable.**\n- Ensure all tool interactions follow the correct sequence.\n- Avoid unnecessary content storage unless explicitly requested.\n- Always verify content formatting before storing or returning results.\n\n---\n\n### **Key Fixes**\n✅ **Enforced retrieval of knowledge before generating content.**  \n✅ **Clarified that no content should be generated blindly.**  \n✅ **Added a confirmation step if no knowledge is found.**  \n✅ **Reinforced that generated content should be reviewed before storing.**  \n\nThis version ensures that **every content generation request** starts with a **knowledge base search** and prevents it from skipping this step."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        1560,
+        -260
+      ],
+      "id": "fe3c93a7-bc55-44fb-b8be-3be2369f93d2",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.2,
+      "position": [
+        1120,
+        40
+      ],
+      "id": "55ee4c5f-31d1-4f39-a504-b8b17c6df999",
+      "name": "Anthropic Chat Model"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Slack Trigger').item.json?.thread_ts ?? $('Slack Trigger').item.json.ts }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1280,
+        40
+      ],
+      "id": "31d53690-5456-4c02-9853-0ea9e260aefe",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C08HA4TGQ03",
+          "mode": "id"
+        },
+        "text": "={{ $json.output }}",
+        "otherOptions": {
+          "thread_ts": {
+            "replyValues": {
+              "thread_ts": "={{ $('Slack Trigger').item.json?.thread_ts ?? $('Slack Trigger').item.json.ts }}",
+              "reply_broadcast": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        1920,
+        -260
+      ],
+      "id": "5b067457-c4d8-43a9-8798-9aa33339e793",
+      "name": "Slack",
+      "webhookId": "e6f87d46-4c8a-4836-97a3-10b411ae7c21"
+    },
+    {
+      "parameters": {
+        "trigger": [
+          "any_event"
+        ],
+        "channelId": {
+          "__rl": true,
+          "value": "C08HA4TGQ03",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slackTrigger",
+      "typeVersion": 1,
+      "position": [
+        40,
+        -240
+      ],
+      "id": "418c6417-e17e-459d-9958-d4c261d706ff",
+      "name": "Slack Trigger",
+      "webhookId": "268466b7-ab86-449b-8a05-8575f83bf881"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appuemZWf3MP3ldRa",
+          "mode": "list",
+          "cachedResultName": "KEDB- Solo",
+          "cachedResultUrl": "https://airtable.com/appuemZWf3MP3ldRa"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblHTtCeKX8uSTRCg",
+          "mode": "list",
+          "cachedResultName": "Content",
+          "cachedResultUrl": "https://airtable.com/appuemZWf3MP3ldRa/tblHTtCeKX8uSTRCg"
+        },
+        "filterByFormula": "={CID}=\"{{ $fromAI('CID') }}\"",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        2340,
+        20
+      ],
+      "id": "10ae778f-e22b-4577-a013-846060651e47",
+      "name": "Get Content"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appuemZWf3MP3ldRa",
+          "mode": "list",
+          "cachedResultName": "KEDB- Solo",
+          "cachedResultUrl": "https://airtable.com/appuemZWf3MP3ldRa"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblHTtCeKX8uSTRCg",
+          "mode": "list",
+          "cachedResultName": "Content",
+          "cachedResultUrl": "https://airtable.com/appuemZWf3MP3ldRa/tblHTtCeKX8uSTRCg"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Title": "={{ $fromAI('title') }}",
+            "Text": "={{ $fromAI('text') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "CID",
+              "displayName": "CID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Text",
+              "displayName": "Text",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Text Length",
+              "displayName": "Text Length",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Image",
+              "displayName": "Image",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video",
+              "displayName": "Video",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Last Modied",
+              "displayName": "Last Modied",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        2460,
+        -60
+      ],
+      "id": "60393e33-9991-4138-aa2a-b5af264d5aa1",
+      "name": "Add Content"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appuemZWf3MP3ldRa",
+          "mode": "list",
+          "cachedResultName": "KEDB- Solo",
+          "cachedResultUrl": "https://airtable.com/appuemZWf3MP3ldRa"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblHTtCeKX8uSTRCg",
+          "mode": "list",
+          "cachedResultName": "Content",
+          "cachedResultUrl": "https://airtable.com/appuemZWf3MP3ldRa/tblHTtCeKX8uSTRCg"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $fromAI('id') }}",
+            "Title": "={{ $fromAI('title') }}",
+            "Text": "={{ $fromAI('text') }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "CID",
+              "displayName": "CID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Text",
+              "displayName": "Text",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Text Length",
+              "displayName": "Text Length",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Image",
+              "displayName": "Image",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video",
+              "displayName": "Video",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Last Modied",
+              "displayName": "Last Modied",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.1,
+      "position": [
+        2200,
+        80
+      ],
+      "id": "e32761fb-c12f-4ed8-ba9c-418d515b58f9",
+      "name": "Update Content"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.heygen.com/v2/video/generate",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "parametersHeaders": {
+          "values": [
+            {
+              "name": "Accept",
+              "valueProvider": "fieldValue",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n    \"video_inputs\": [{\n            \"character\": {\n                \"type\": \"avatar\",\n                \"avatar_id\": \"6e65a344d4ca41ef933f89ab0b0c17be\",\n                \"avatar_style\": \"normal\"\n            },\n            \"voice\": {\n                \"type\": \"text\",\n                \"input_text\": \"{text}\",\n                \"voice_id\": \"9eec1a1938794be19ed4e73f5545b2b8\"\n            }\n        }\n    ],\n    \"dimension\": {\n        \"width\": 720,\n        \"height\": 1280\n    },\n\t\"callback_url\": \"https://hooks.airtable.com/workflows/v1/genericWebhook/appuemZWf3MP3ldRa/wflD40rcguSgX7Gz2/wtrCJKTj9F5tynsV1\",\n    \"callback_id\": \"{id}\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2060,
+        140
+      ],
+      "id": "6019b2ee-b82a-4111-9b1a-2958241a1dd6",
+      "name": "Create HeyGen Video"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://n8n.kap-enterprises-llc.com/webhook/be228f27-6eeb-48e7-ad3b-b9667b91e017",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n    \"text\": \"{text}\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        1920,
+        200
+      ],
+      "id": "bc76a7f0-953d-49f3-b0a2-be13daf46464",
+      "name": "Publish Content"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appuemZWf3MP3ldRa",
+          "mode": "list",
+          "cachedResultName": "KEDB- Solo",
+          "cachedResultUrl": "https://airtable.com/appuemZWf3MP3ldRa"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblHTtCeKX8uSTRCg",
+          "mode": "list",
+          "cachedResultName": "Content",
+          "cachedResultUrl": "https://airtable.com/appuemZWf3MP3ldRa/tblHTtCeKX8uSTRCg"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2800,
+        -260
+      ],
+      "id": "606f27de-b981-4ca4-a6d1-c759be157cb3",
+      "name": "Airtable"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "kap-enterprises-llc",
+          "mode": "list",
+          "cachedResultName": "kap-enterprises-llc"
+        },
+        "options": {
+          "pineconeNamespace": "KAP Enterprises"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1,
+      "position": [
+        3040,
+        -260
+      ],
+      "id": "7c487f27-9073-4221-ac8d-1e6be27810ea",
+      "name": "Pinecone Vector Store"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        3040,
+        -60
+      ],
+      "id": "2ab4bbac-4a1c-42f6-9db3-7580ab40890c",
+      "name": "Embeddings OpenAI"
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.Text }}",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "id",
+                "value": "={{ $json.id }}"
+              },
+              {
+                "name": "title",
+                "value": "={{ $json.Title }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        3180,
+        -40
+      ],
+      "id": "2a0f3ef1-cd95-4526-afe0-1e14e8667f30",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "chunkOverlap": 100
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        3280,
+        180
+      ],
+      "id": "7e9eee8f-a5da-4ab1-8f16-977f4816dd26",
+      "name": "Character Text Splitter"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "kap_knowledge_database",
+        "toolDescription": "Use KAP Enterprises knowledge database",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "kap-enterprises-llc",
+          "mode": "list",
+          "cachedResultName": "kap-enterprises-llc"
+        },
+        "topK": 10,
+        "options": {
+          "pineconeNamespace": "KAP Enterprises"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        200
+      ],
+      "id": "0bbce8b8-4d0b-4ed9-9ef8-a1ad5b41eff3",
+      "name": "Get Knowledge"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1600,
+        420
+      ],
+      "id": "f9e91f7f-88bf-4880-965d-47211f713d18",
+      "name": "Embeddings OpenAI1"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.files }}",
+                    "rightValue": "22",
+                    "operator": {
+                      "type": "array",
+                      "operation": "notExists",
+                      "singleValue": true
+                    },
+                    "id": "17502e31-fbd0-417b-8166-45e52b6a5b91"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c772136e-75be-4942-b402-de580d45c1d7",
+                    "leftValue": "={{ $json.files }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "array",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        260,
+        -240
+      ],
+      "id": "4d65dd3e-8b49-4a58-a3ec-3767f15aed5c",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "fileId": "={{ $json.files[0].id }}"
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        580,
+        560
+      ],
+      "id": "0c286a3e-9a43-47d3-8643-15680657b605",
+      "name": "Slack1",
+      "webhookId": "2d848d3b-f339-4eea-9a27-aa8f51a70284"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url_private_download }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/octet-stream"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        800,
+        560
+      ],
+      "id": "ae306491-98a3-4bcb-ab80-1852b4813a1d",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        1020,
+        560
+      ],
+      "id": "3567132c-9b81-4388-ae70-c2d450cfb8ec",
+      "name": "OpenAI"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appuemZWf3MP3ldRa",
+          "mode": "list",
+          "cachedResultName": "KEDB- Solo",
+          "cachedResultUrl": "https://airtable.com/appuemZWf3MP3ldRa"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblHTtCeKX8uSTRCg",
+          "mode": "list",
+          "cachedResultName": "Content",
+          "cachedResultUrl": "https://airtable.com/appuemZWf3MP3ldRa/tblHTtCeKX8uSTRCg"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Text": "={{ $json.text }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "CID",
+              "displayName": "CID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Text",
+              "displayName": "Text",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Text Length",
+              "displayName": "Text Length",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Image",
+              "displayName": "Image",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video",
+              "displayName": "Video",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Last Modied",
+              "displayName": "Last Modied",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1240,
+        560
+      ],
+      "id": "e5df8475-167e-4ca3-9252-958849b8ecb5",
+      "name": "Airtable1"
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C08HA4TGQ03",
+          "mode": "id"
+        },
+        "text": "=Successfully added audio notes to Airtable at {{ $json.fields.CID }}",
+        "otherOptions": {
+          "thread_ts": {
+            "replyValues": {
+              "thread_ts": "={{ $('Slack Trigger').item.json.ts }}",
+              "reply_broadcast": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        1460,
+        560
+      ],
+      "id": "e3791b27-f432-4f60-a030-3131d476dade",
+      "name": "Slack2",
+      "webhookId": "962957da-6530-4eec-9bd3-5b7d0b7462e9"
+    },
+    {
+      "parameters": {
+        "content": "## Load Pinecone vector database \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 760,
+        "width": 780,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2720,
+        -380
+      ],
+      "typeVersion": 1,
+      "id": "e90b5efd-1b42-4fbe-97ec-7cef7f21326f",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Main Node \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 1160,
+        "width": 2720
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -40,
+        -380
+      ],
+      "typeVersion": 1,
+      "id": "d94a2567-0aca-4ab1-ab4c-916814fc7ca4",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "be228f27-6eeb-48e7-ad3b-b9667b91e017",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        20,
+        1080
+      ],
+      "id": "5b5326f9-b2ae-4eab-9786-4206b74c9324",
+      "name": "Webhook",
+      "webhookId": "be228f27-6eeb-48e7-ad3b-b9667b91e017"
+    },
+    {
+      "parameters": {
+        "text": "={{ $json.body.text }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 2,
+      "position": [
+        240,
+        1080
+      ],
+      "id": "f39fe695-4dbc-4f6d-b448-c1f1ebce097a",
+      "name": "X"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-06-24T03:39:34.606Z",
+      "updatedAt": "2025-06-24T03:39:34.606Z",
+      "role": "workflow:owner",
+      "workflowId": "7mg5fcf40Z0LHikp",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-24T03:40:38.000Z",
+  "versionId": "08407317-6790-4847-89db-c5de3ea5f165"
+}
