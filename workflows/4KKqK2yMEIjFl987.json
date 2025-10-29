@@ -1,0 +1,1334 @@
+{
+  "active": false,
+  "connections": {
+    "Microsoft Outlook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "High Priority": {
+      "main": [
+        [
+          {
+            "node": "HP Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "OpenAI1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to Base64": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Email Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "High Priority",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ads Mark Read",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "UnCat Mark Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Agent": {
+      "main": [
+        [
+          {
+            "node": "If Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI1": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Knowledge": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Get Knowledge",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ads Mark Read": {
+      "main": [
+        [
+          {
+            "node": "Ads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UnCat Mark Read": {
+      "main": [
+        [
+          {
+            "node": "UnCat to Review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UnCat to Review": {
+      "main": [
+        [
+          {
+            "node": "UnCat Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Review": {
+      "main": [
+        [
+          {
+            "node": "Slack Fail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Billing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Inquiry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Success": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Billing": {
+      "main": [
+        [
+          {
+            "node": "Slack Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inquiry": {
+      "main": [
+        [
+          {
+            "node": "Slack Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Markdown": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert from Base64": {
+      "main": [
+        [
+          {
+            "node": "If Decoded",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Decoded": {
+      "main": [
+        [
+          {
+            "node": "Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Draft1": {
+      "main": [
+        [
+          {
+            "node": "Modify Draft",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Create Draft1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Convert from Base64",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call Sub-Workflow": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-24T03:42:31.344Z",
+  "id": "4KKqK2yMEIjFl987",
+  "isArchived": false,
+  "meta": null,
+  "name": "1.0 Email Managment- Outlook",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "output": "raw",
+        "filters": {
+          "foldersToInclude": [
+            "AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAgEMAAAA"
+          ],
+          "readStatus": "unread"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.microsoftOutlookTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1400,
+        700
+      ],
+      "id": "19916cec-dc5d-4c8f-ac19-88533b86353e",
+      "name": "Microsoft Outlook Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "move",
+        "messageId": {
+          "__rl": true,
+          "value": "={{ $('Microsoft Outlook Trigger').item.json.id }}",
+          "mode": "id"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAlxUAAAA",
+          "mode": "list",
+          "cachedResultName": "High Priority",
+          "cachedResultUrl": "https://outlook.office365.com/mail/AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAlxUAAAA"
+        }
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        180,
+        600
+      ],
+      "id": "fe173bd3-d4b2-49bb-9f60-8f2077bf00d5",
+      "name": "High Priority",
+      "webhookId": "235814ce-0615-4fff-996c-c511fc5d708b"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"slackChannelId\": \"C08JVMVFT71\",\n  \"emailCategory\": \"\",\n  \"id\": \"{{ $json.id }}\",\n  \"conversationId\": \"{{ $json.conversationId }}\",\n  \"internetMessageId\": \"{{ $json.internetMessageId }}\",\n  \"senderName\": \"{{ $json.from.emailAddress.name }}\",\n  \"senderEmail\": \"{{ $json.from.emailAddress.address }}\",\n  \"subject\": \"{{ $json.subject }}\",\n  \"knowledgebaseName\": \"kap_knowledge_database\",\n  \"vectorNamespace\": \"KAP Enterprises\",\n  \"createDraftUrl\": \"https://n8n.kap-enterprises-llc.com/webhook/032598cb-35af-48e9-b608-b7c7cf7db6e2\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1180,
+        700
+      ],
+      "id": "c39fbc09-c255-4cae-999b-4edfc092bd15",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Edit Fields').item.json.id }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -40,
+        220
+      ],
+      "id": "dbbcdcec-368a-4b44-9383-5a410e8ce20a",
+      "name": "Buffer Memory"
+    },
+    {
+      "parameters": {
+        "name": "convert_to_base64",
+        "jsCode": "// Convert the incoming emailResponse to base64\nconst emailResponse64 = Buffer.from(query, 'utf-8').toString('base64');\n\nreturn emailResponse64;"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.1,
+      "position": [
+        100,
+        220
+      ],
+      "id": "05f604d3-537a-4e5f-a627-3d6ece8f308d",
+      "name": "Convert to Base64"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "dc792816-1ecf-44dd-b2ec-125af6a63474",
+                    "leftValue": "={{ $json.emailCategory }}",
+                    "rightValue": "Billing",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0c6f05aa-c608-4e6b-bbc9-4828d706e80a",
+                    "leftValue": "={{ $json.emailCategory }}",
+                    "rightValue": "Inquiry",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.emailCategory }}",
+                    "rightValue": "High Priority",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "9f8df352-290d-4623-916e-60f5d9d3484c"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "15031aac-1f3b-423f-bc5a-e5df5396f79c",
+                    "leftValue": "={{ $json.emailCategory }}",
+                    "rightValue": "Advertisements",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -380,
+        660
+      ],
+      "id": "d4b2177e-c78e-418a-8b9c-3887ad39286b",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "jsCode": "const content = $json.message.content; \n\n// Remove Markdown formatting (```json ... ```)\nconst cleanedContent = content.replace(/```json\\n/, '').replace(/\\n```/, '');\n\n// Parse the cleaned JSON string\nlet parsedData;\ntry {\n  parsedData = JSON.parse(cleanedContent);\n} catch (error) {\n  throw new Error(\"Failed to parse AI response: \" + error.message);\n}\n\n// Return the cleaned emailCategory\nreturn [{ emailCategory: parsedData.emailCategory }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -600,
+        700
+      ],
+      "id": "f7d4ed0d-3918-4130-8425-c373b93deccc",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=here's the original email message information I'd like you to use\nemailCategory: {{ $('Code').item.json.emailCategory }}\nmessageId: {{ $('Edit Fields').item.json.id }}\nthreadId: {{ $('Edit Fields').item.json.conversationId }}\ninternetMessageId: {{ $('Edit Fields').item.json.internetMessageId }}\nsenderName: {{ $('Edit Fields').item.json.senderName }}\nsenderEmailAddress: {{ $('Edit Fields').item.json.senderEmail }}\nsubject: {{ $('Edit Fields').item.json.subject }}\nsenderEmail: {{ $('Microsoft Outlook Trigger').item.json.body.content }}\ncreateDraftUrl: {{ $('Edit Fields').item.json.createDraftUrl }}\n",
+        "options": {
+          "systemMessage": "---\n\n# **Overview**  \nYou are an email assistant responsible for reviewing incoming emails and generating professional responses based on the `emailCategory`. You will return a response message using the **JSON Response Structure** format defined below`.  \n\nYour responses must be:  \n- **Concise and professional** – Limited to **190 words or less**  \n- **Accurate** – Based on available tools and provided information  \n- **Properly formatted** – Ensure responses meet API integration requirements  \n\n## **Required Variables**  \nYou will receive and use the following variables:  \n- **emailCategory** – The category of the email  \n- **messageId** – The unique ID of the email message  \n- **threadId** – The email thread ID  \n- **internetMessageId** – The internet message ID  \n- **senderName** – The sender’s name  \n- **senderEmailAddress** – The sender’s email address  \n- **subject** – Ensure the subject starts with `\"Re: \"`, removing any redundant prefixes  \n- **senderEmail** – The email body content received  \n- **createDraftUrl** – The API endpoint for creating a draft email  \n- **emailResponse** – The generated email response  \n- **emailResponse64** – The base64-encoded version of `emailResponse`  \n\n---\n\n## **Instructions**  \n\n### **Handling \"Billing\" Emails**  \n1. Store all provided variables.  \n2. Generate a **concise, professional** response based on `subject` and `senderEmail`, and save it as `emailResponse`.  \n3. Convert `emailResponse` to a base64 string using **Convert to Base64**, and store it as `emailResponse64`.  \n4. Use the **Create Draft** tool to generate a draft email, passing:  \n   - `messageId`, `threadId`, `internetMessageId`, `to`, `subject`, `emailResponse64`, `createDraftUrl`  \n   - If `emailResponse64` is missing or improperly formatted, log an error and retry **Convert to Base64** before proceeding.  \n5. Return a JSON response with `\"status\": \"success\"` or `\"fail\"`, along with a relevant message.  \n\n### **Handling \"Inquiry\" Emails**  \n1. Store all provided variables.  \n2. Analyze `senderEmail` and use **Get Knowledge** to retrieve relevant company information.  \n3. Craft a **concise, professional** response based on the retrieved information.  \n   - If no relevant knowledge is found, inform the sender that a customer service representative will respond within 24 hours.  \n   - Save this response as `emailResponse`.  \n4. Convert `emailResponse` to a base64 string using **Convert to Base64**, and store it as `emailResponse64`.  \n5. Use **Create Draft** to generate a draft email, passing:  \n   - `messageId`, `threadId`, `internetMessageId`, `to`, `subject`, `emailResponse64`, `createDraftUrl`  \n   - If `emailResponse64` is missing or improperly formatted, log an error and retry **Convert to Base64** before proceeding.  \n6. Return a JSON response with `\"status\": \"success\"` or `\"fail\"`, along with a relevant message.\n\n### **Handling Other Email Categories**  \n- Immediately return a JSON response with `\"status\": \"fail\"` and a message indicating that the `emailCategory` is unrecognized.  \n\n---\n\n## **Tool Descriptions**  \n\n### **Convert to Base64**  \n**Purpose:** Convert the email response into a base64-encoded string.  \n\n**Input:**  \n- **senderEmail** – The received email body content  \n\n**Usage:**  \n- Convert `emailResponse` to base64 and store it as `emailResponse64`.  \n\n---\n\n### **Create Draft**  \n**Purpose:** Create a draft email using an API request.  \n- **Only call this tool when `emailResponse64` is valid**  \n\n**Required Fields:**  \n- **messageId** – Email message ID  \n- **threadId** – Email thread ID  \n- **internetMessageId** – Internet message ID \n- **to** – Sender’s email address  \n- **subject** – Processed subject line  \n- **emailResponse64** – Base64-encoded email response  \n- **createDraftUrl** – API endpoint for draft creation  \n\n---\n\n## **JSON Response Structure**  \n{\n    \"status\": \"success|fail\",\n    \"message\": \"Applicable status message.\"\n}\n\n---"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        0,
+        0
+      ],
+      "id": "f3b857f3-5925-4575-ab9a-48198ad871da",
+      "name": "Email Agent"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=subject: {{ $json.subject }}\nemail:  {{ $('Microsoft Outlook Trigger').item.json.body.content }}"
+            },
+            {
+              "content": "You are a helpful, email categorization assistant. Your job is to review the email subject and body, and classify it into one of the following categories: [\"Billing\", \"Inquiry\", \"Advertising\", \"High Priority\", \"Uncategorized\"]. \n\nReturn a JSON object with the key 'emailCategory' and its corresponding value.\n\nCategory: High Priority\nDescription: Emails that require immediate attention, often involving urgent isssues, escalations, system failures, or critical business matters.\nCommon Words/ Phrases:  Urgent, ASAP, Immediate action required, Critical issue, Escalation, Emergency, System outage, High priority, Downtime, Affected customers, Please respond quickly, Need resolution, Time-sensitive.\n\nCategory: Billing\nDescription: Emails related to payments, invoices, subscriptions, financial transactions, or account balances.  These emails often contain due dates, payment instructions, or financial statements.\nCommon Words/ Phrases: Invoice, Billing statement, Payment due, Past due, Outstanding balance, Subscription renewal, Payment confirmation, Charge notice, Overdue notice, Auto-renewal, Finance department, ACH transfer, Bank details.\n\nCategory: Advertisements\nDescription: Emails related to marketing campaigns, sales offers, discounts, partnership opportunities, or advertisements.  These emails are often sent in bulk and contain promotional language.\nCommon Words/ Phrases: Special offer, Limited-time deal, Exclusive discount, Exclusive Offer, Save big, Flash sale, Promo code, Get 20% off, Earn rewards, Best deals, new product launch, Marketing campaign, Subscription offer, Early access, Upgrade now, Act fast.\n\nCategory: Inquiry\nDescription: Emails related to inquiry about KAP Enterprises' products, services, automations, capabilities, prices, or quotes.  These emails will come from individuals and not from non-identifiable email sources.\nCommon Words/ Phrases: Can you tell me about your products, How much to perform this task, Can you give me an estimate to provide this service, Can your product to this, I'd like to find out about, I'd like to learn about, What services do you provide.\n\nCategory: Uncategorized\nDescription: Emails that you can not categorize into any of the other defined categories.",
+              "role": "system"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -960,
+        700
+      ],
+      "id": "7866d22e-4132-49f5-8b28-e1341a6a39e8",
+      "name": "OpenAI1"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "={{ $('Edit Fields').item.json.knowledgebaseName }}",
+        "toolDescription": "KAP Enterprises knowledge base",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "kap-enterprises-llc",
+          "mode": "list",
+          "cachedResultName": "kap-enterprises-llc"
+        },
+        "topK": 5,
+        "options": {
+          "pineconeNamespace": "={{ $('Edit Fields').item.json.vectorNamespace }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1,
+      "position": [
+        340,
+        240
+      ],
+      "id": "af2ce5f9-1633-4c30-acdc-ccf5fdced1b3",
+      "name": "Get Knowledge"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        420,
+        420
+      ],
+      "id": "d116e18b-8320-4dcd-b5ed-88bc456a44b0",
+      "name": "Embeddings OpenAI"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "messageId": {
+          "__rl": true,
+          "value": "={{ $('Microsoft Outlook Trigger').item.json.id }}",
+          "mode": "id"
+        },
+        "updateFields": {
+          "isRead": true
+        }
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        180,
+        800
+      ],
+      "id": "bff8edbe-fc34-42c0-a771-ee4514ef5b23",
+      "name": "Ads Mark Read",
+      "webhookId": "d5cbbf7e-7381-45f8-9cf7-e427520dd0a4"
+    },
+    {
+      "parameters": {
+        "operation": "move",
+        "messageId": {
+          "__rl": true,
+          "value": "={{ $('Microsoft Outlook Trigger').item.json.id }}",
+          "mode": "id"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAlxWAAAA",
+          "mode": "list",
+          "cachedResultName": "Advertisements",
+          "cachedResultUrl": "https://outlook.office365.com/mail/AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAlxWAAAA"
+        }
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        720,
+        800
+      ],
+      "id": "ce97937d-dbc2-44d1-8a7f-2055600a2eb7",
+      "name": "Ads",
+      "webhookId": "235814ce-0615-4fff-996c-c511fc5d708b"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "messageId": {
+          "__rl": true,
+          "value": "={{ $('Microsoft Outlook Trigger').item.json.id }}",
+          "mode": "id"
+        },
+        "updateFields": {
+          "isRead": true
+        }
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        180,
+        1000
+      ],
+      "id": "d89af765-3c70-4068-bf2c-de61ba8c67f3",
+      "name": "UnCat Mark Read",
+      "webhookId": "d5cbbf7e-7381-45f8-9cf7-e427520dd0a4"
+    },
+    {
+      "parameters": {
+        "operation": "move",
+        "messageId": {
+          "__rl": true,
+          "value": "={{ $('Microsoft Outlook Trigger').item.json.id }}",
+          "mode": "id"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAAYFWYQAAAA=",
+          "mode": "list",
+          "cachedResultName": "Review",
+          "cachedResultUrl": "https://outlook.office365.com/mail/AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAAYFWYQAAAA%3D"
+        }
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        720,
+        1000
+      ],
+      "id": "234f5d3a-bf09-43c9-aa2b-ef22c012d09c",
+      "name": "UnCat to Review",
+      "webhookId": "235814ce-0615-4fff-996c-c511fc5d708b"
+    },
+    {
+      "parameters": {
+        "operation": "move",
+        "messageId": {
+          "__rl": true,
+          "value": "={{ $('Microsoft Outlook Trigger').item.json.id }}",
+          "mode": "id"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAAYFWYQAAAA=",
+          "mode": "list",
+          "cachedResultName": "Review",
+          "cachedResultUrl": "https://outlook.office365.com/mail/AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAAYFWYQAAAA%3D"
+        }
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        940,
+        500
+      ],
+      "id": "c742f6cd-621e-480e-bbfe-e157dd5dfe65",
+      "name": "Review",
+      "webhookId": "235814ce-0615-4fff-996c-c511fc5d708b"
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $('Edit Fields').item.json.slackChannelId }}",
+          "mode": "id"
+        },
+        "text": "=New High Priority Email:\nFrom: {{ $('Edit Fields').item.json.senderName }}\nSubject: {{ $('Edit Fields').item.json.subject }}\nDate: {{ $now.format('yyyy-MM-dd hh:mm a') }}",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        720,
+        600
+      ],
+      "id": "07aa65d3-c10d-430d-a08d-a4236f385381",
+      "name": "HP Slack",
+      "webhookId": "e6f87d46-4c8a-4836-97a3-10b411ae7c21"
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $('Edit Fields').item.json.slackChannelId }}",
+          "mode": "id"
+        },
+        "text": "=Unable to categorize new email, moved to Review folder:\nFrom: {{ $('Edit Fields').item.json.senderName }}\nSubject: {{ $('Edit Fields').item.json.subject }}\nDate: {{ $now.format('yyyy-MM-dd hh:mm a') }}\n",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        940,
+        1000
+      ],
+      "id": "3d5204a7-3c2c-4e8b-8f51-40a8142ec32b",
+      "name": "UnCat Slack",
+      "webhookId": "e6f87d46-4c8a-4836-97a3-10b411ae7c21"
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $('Edit Fields').item.json.slackChannelId }}",
+          "mode": "id"
+        },
+        "text": "=New {{ $('Switch').item.json.emailCategory }} Draft created:\nFrom: {{ $('Edit Fields').item.json.senderName }}\nSubject: {{ $('Edit Fields').item.json.subject }}\nDate: {{ $now.format('yyyy-MM-dd hh:mm a') }}",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        1380,
+        100
+      ],
+      "id": "b77d76bd-ac19-44b0-b2da-7849dcb4e972",
+      "name": "Slack Success",
+      "webhookId": "e6f87d46-4c8a-4836-97a3-10b411ae7c21"
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $('Edit Fields').item.json.slackChannelId }}",
+          "mode": "id"
+        },
+        "text": "=Failed to create {{ $('Switch').item.json.emailCategory }} Draft, moved to Review folder:\nFrom: {{ $('Edit Fields').item.json.senderName }}\nSubject: {{ $('Edit Fields').item.json.subject }}\nDate: {{ $now.format('yyyy-MM-dd hh:mm a') }}\nError Message: \n\n\n",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        1160,
+        500
+      ],
+      "id": "80fd5e65-8e81-472b-b4af-60b1e0b21515",
+      "name": "Slack Fail",
+      "webhookId": "e6f87d46-4c8a-4836-97a3-10b411ae7c21"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.2,
+      "position": [
+        -160,
+        220
+      ],
+      "id": "c94212ea-2ee7-4ddd-b56e-e7eca3fd4b10",
+      "name": "Anthropic Chat Model"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Switch').item.json.emailCategory }}",
+                    "rightValue": "Billing",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "ad50bddf-0ac1-4e58-876f-b067901307ce"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b787c03f-0064-42b8-92bb-fe7a976a7210",
+                    "leftValue": "={{ $('Switch').item.json.emailCategory }}",
+                    "rightValue": "Inquiry",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        940,
+        100
+      ],
+      "id": "c3fceb68-1ce5-4048-84eb-719d09addcf2",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "20e2567d-26ad-4ea1-8a1c-d212e208776f",
+              "leftValue": "={{ $json.output }}\n\n\n",
+              "rightValue": "=success",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        200
+      ],
+      "id": "4db8c84f-9363-4f8a-8028-2a70fdd3664d",
+      "name": "If Success"
+    },
+    {
+      "parameters": {
+        "operation": "move",
+        "messageId": {
+          "__rl": true,
+          "value": "={{ $('Microsoft Outlook Trigger').item.json.id }}",
+          "mode": "id"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAlxVAAAA",
+          "mode": "list",
+          "cachedResultName": "Billing",
+          "cachedResultUrl": "https://outlook.office365.com/mail/AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAlxVAAAA"
+        }
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        1160,
+        0
+      ],
+      "id": "fe8d27e8-d8f9-4bbf-a23a-6f7a2359bb35",
+      "name": "Billing",
+      "webhookId": "235814ce-0615-4fff-996c-c511fc5d708b"
+    },
+    {
+      "parameters": {
+        "operation": "move",
+        "messageId": {
+          "__rl": true,
+          "value": "={{ $('Microsoft Outlook Trigger').item.json.id }}",
+          "mode": "id"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAAYFWYYAAAA=",
+          "mode": "list",
+          "cachedResultName": "Inquiry",
+          "cachedResultUrl": "https://outlook.office365.com/mail/AQMkADAwATZiZmYAZC01ZTU4LTcyMTYtMDACLTAwCgAuAAADBzrcPXN1u0uhqZyhaGIm6gEAkz6k0IDj7kybu8pilCqHVQAAAAYFWYYAAAA%3D"
+        }
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [
+        1160,
+        300
+      ],
+      "id": "a67984bb-7625-4e90-b776-d9bf3b3bf396",
+      "name": "Inquiry",
+      "webhookId": "235814ce-0615-4fff-996c-c511fc5d708b"
+    },
+    {
+      "parameters": {
+        "mode": "markdownToHtml",
+        "markdown": "={{ $json.decoded }}",
+        "destinationKey": "html_response",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.markdown",
+      "typeVersion": 1,
+      "position": [
+        -760,
+        1280
+      ],
+      "id": "18a1a0fa-bd12-4848-9b06-3283143ed871",
+      "name": "Markdown"
+    },
+    {
+      "parameters": {
+        "jsCode": "const decoded = Buffer.from($input.first().json.body, 'base64').toString('utf-8');\n\nreturn { decoded };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1200,
+        1280
+      ],
+      "id": "bd56d900-ac01-4085-b862-0f5a95035a1f",
+      "name": "Convert from Base64"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1b1b5377-44cc-4bff-a254-648c081e379d",
+              "leftValue": "={{ $json.decoded }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -980,
+        1280
+      ],
+      "id": "82b1e8ef-074c-4237-ab68-1dfa6f148a78",
+      "name": "If Decoded"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://graph.microsoft.com/v1.0/me/messages/{{ $json.id }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "microsoftOutlookOAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $('Code1').item.json.jsonString }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -100,
+        1280
+      ],
+      "id": "3e1c9d8c-b858-46a5-b30d-ac59cfb4ea2c",
+      "name": "Modify Draft"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.microsoft.com/v1.0/me/messages/{{ $('When Executed by Another Workflow').item.json.messageId }}/createReply\n\n",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "microsoftOutlookOAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "conversationId",
+              "value": "={{ $('When Executed by Another Workflow').item.json.threadId }}"
+            },
+            {
+              "name": "inReplyTo",
+              "value": "={{ $('When Executed by Another Workflow').item.json.messageId }}"
+            },
+            {
+              "name": "internetMessageId",
+              "value": "={{ $('When Executed by Another Workflow').item.json.internetMessageId }}"
+            },
+            {
+              "name": "references",
+              "value": "={{ $('When Executed by Another Workflow').item.json.internetMessageId }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -320,
+        1280
+      ],
+      "id": "6bbbe3fe-e385-4de2-9433-afab8d31bf33",
+      "name": "Create Draft1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Convert to a properly formatted JSON string\nconst jsonString = JSON.stringify({ \n    body: { \n        contentType: \"HTML\", \n        content:  $input.first().json.html_response\n    } \n});\n\nreturn { jsonString };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -540,
+        1280
+      ],
+      "id": "84dcfe8d-a439-45b0-b4f9-acc6df0df25f",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "content": "## Sub-workflow\n- Sends draft email\n",
+        "height": 320,
+        "width": 1640,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1500,
+        1180
+      ],
+      "typeVersion": 1,
+      "id": "90897fbf-ad40-421a-93d2-d362cb8f496c",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "messageId"
+            },
+            {
+              "name": "threadId"
+            },
+            {
+              "name": "internetMessageId"
+            },
+            {
+              "name": "to"
+            },
+            {
+              "name": "subject"
+            },
+            {
+              "name": "body"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1400,
+        1280
+      ],
+      "id": "a3328549-24ad-419f-a6a5-b5d67788cd8a",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "06msx18yUxCqqytz",
+          "mode": "list",
+          "cachedResultName": "Email Management - Outlook"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "messageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('messageId', ``, 'string') }}",
+            "threadId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('threadId', ``, 'string') }}",
+            "internetMessageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('internetMessageId', ``, 'string') }}",
+            "to": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('to', ``, 'string') }}",
+            "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('subject', ``, 'string') }}",
+            "body": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('body', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "messageId",
+              "displayName": "messageId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "threadId",
+              "displayName": "threadId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "internetMessageId",
+              "displayName": "internetMessageId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "to",
+              "displayName": "to",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "subject",
+              "displayName": "subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "body",
+              "displayName": "body",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        240,
+        220
+      ],
+      "id": "8955e2ce-3ccf-45b9-a9a9-9349385045c0",
+      "name": "Call Sub-Workflow"
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "messageId": "123456",
+          "threadId": "234567",
+          "internetMessageId": "345678",
+          "to": "pilgrimka1@yahoo.com",
+          "subject": "Test Message",
+          "body": "VGVzdCBtZXNzYWdlLg=="
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-06-24T03:42:31.350Z",
+      "updatedAt": "2025-06-24T03:42:31.350Z",
+      "role": "workflow:owner",
+      "workflowId": "4KKqK2yMEIjFl987",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-24T03:42:31.000Z",
+  "versionId": "46a579d8-a98b-418c-a071-5f0cb682b69a"
+}
