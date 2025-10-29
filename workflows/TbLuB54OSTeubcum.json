@@ -1,0 +1,4482 @@
+{
+  "active": true,
+  "connections": {
+    "analyze_product": {
+      "main": [
+        [
+          {
+            "node": "set_model_details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set_model_details": {
+      "main": [
+        [
+          {
+            "node": "set_build_video_prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set_build_video_prompts": {
+      "main": [
+        [
+          {
+            "node": "set_gemini_prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "convert_product_to_base64": {
+      "main": [
+        [
+          {
+            "node": "convert_product_to_image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "convert_product_to_image": {
+      "main": [
+        [
+          {
+            "node": "set_white_image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "prompts-parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "extract_prompts",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "extract_prompts": {
+      "main": [
+        [
+          {
+            "node": "split_prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "split_prompts": {
+      "main": [
+        [
+          {
+            "node": "iterate_prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "iterate_prompts": {
+      "main": [
+        [
+          {
+            "node": "Update Notes2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get Resized Image File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "generate_video": {
+      "main": [
+        [
+          {
+            "node": "Wait (Long)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_video_status": {
+      "main": [
+        [
+          {
+            "node": "Check Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "generate_frame": {
+      "main": [
+        [
+          {
+            "node": "set_frame_result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set_frame_result": {
+      "main": [
+        [
+          {
+            "node": "get_frame_image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_frame_image": {
+      "main": [
+        [
+          {
+            "node": "resize_image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_video": {
+      "main": [
+        [
+          {
+            "node": "upload_video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "resize_image": {
+      "main": [
+        [
+          {
+            "node": "analyze_product",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "gemini-2.5-pro": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "extract_prompts",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "prompts-parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "upload_video": {
+      "main": [
+        [
+          {
+            "node": "Create a record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "generate_ad_prompts": {
+      "main": [
+        [
+          {
+            "node": "extract_prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Update Record Stage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Campaign Record": {
+      "main": [
+        [
+          {
+            "node": "Get Video Type Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file": {
+      "main": [
+        [
+          {
+            "node": "convert_product_to_base64",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Video Type Record": {
+      "main": [
+        [
+          {
+            "node": "Verify Main Folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set_gemini_prompt": {
+      "main": [
+        [
+          {
+            "node": "generate_ad_prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set_white_image": {
+      "main": [
+        [
+          {
+            "node": "generate_fields_prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Resized Image File": {
+      "main": [
+        [
+          {
+            "node": "generate_video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Variables": {
+      "main": [
+        [
+          {
+            "node": "Download file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "generate_fields_prompt": {
+      "main": [
+        [
+          {
+            "node": "generate_frame",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait (Long)": {
+      "main": [
+        [
+          {
+            "node": "get_video_status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait (Short)": {
+      "main": [
+        [
+          {
+            "node": "Set Video File Name",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a record": {
+      "main": [
+        [
+          {
+            "node": "iterate_prompts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Video File Name": {
+      "main": [
+        [
+          {
+            "node": "get_video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Status": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Update Notes3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait (Short)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait (Long)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Get a record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Updated Notes10": {
+      "main": [
+        [
+          {
+            "node": "Update Airtable- Webpage not found1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a record": {
+      "main": [
+        [
+          {
+            "node": "Updated Notes10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Record Stage": {
+      "main": [
+        [
+          {
+            "node": "Get Campaign Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Campaign Folder": {
+      "main": [
+        [
+          {
+            "node": "Get Folder ID",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Notes": {
+      "main": [
+        [
+          {
+            "node": "Update record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Main Folder": {
+      "main": [
+        [
+          {
+            "node": "Update Notes1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get Campaign Folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Notes1": {
+      "main": [
+        [
+          {
+            "node": "Update record1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Campaign Folder": {
+      "main": [
+        [
+          {
+            "node": "Check Campaign Folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create folder": {
+      "main": [
+        [
+          {
+            "node": "Verify New Folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verify New Folder": {
+      "main": [
+        [
+          {
+            "node": "Update Record- Folder ID",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update Notes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Folder ID1": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Folder ID": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Record- Folder ID": {
+      "main": [
+        [
+          {
+            "node": "Get Folder ID1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Notes2": {
+      "main": [
+        [
+          {
+            "node": "Update Record- Completed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Notes3": {
+      "main": [
+        [
+          {
+            "node": "Update Record- Loop Failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verify Main Folder": {
+      "main": [
+        [
+          {
+            "node": "Check Main Folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-20T20:18:28.299Z",
+  "id": "TbLuB54OSTeubcum",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "6.1 Product Marketing- AIM UGC Content Creator",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "text": "=Prompt:\n{{ $('Get Video Type Record').item.json['Model Prompt'] }}\n\nProduct Name:\n{{ $('Get Campaign Record').item.json['Product Name'][0] }}\n",
+        "inputType": "base64",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        1056,
+        16
+      ],
+      "id": "6a140d6d-ef0d-4809-a25f-59cb25989950",
+      "name": "analyze_product",
+      "credentials": {
+        "openAiApi": {
+          "id": "q3gPWSga9sOawaqA",
+          "name": "OpenAi API Key- KAP Enterprises"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "796c02ea-66be-484c-a333-be4fffbe17db",
+              "name": "prompt",
+              "value": "={{ $json.content }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1264,
+        16
+      ],
+      "id": "5c68bf62-d73d-4693-ac62-3c58d28a7c02",
+      "name": "set_model_details"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2c2bbb98-c6e4-4339-971a-2d6487f6bd29",
+              "name": "prompt",
+              "value": "=Master Prompt: \n{{ $('Get Video Type Record').item.json['Script Prompt'] }}\n\nYour Inputs:\nProduct Image- First image in this conversation\nCreator Profile-\n{{ $json.prompt }}\n\nProduct Name-\n{{ $('Get Campaign Record').item.json['Product Name'][0] }}\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1456,
+        16
+      ],
+      "id": "d7540f9a-6ad9-42e8-aacd-19e94d7267d0",
+      "name": "set_build_video_prompts"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1264,
+        -272
+      ],
+      "id": "6984313a-22c3-4989-a11b-55b09a2e1154",
+      "name": "convert_product_to_base64"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1456,
+        -272
+      ],
+      "id": "d4eb7b56-6a82-4e40-8ab0-4529fafeb29f",
+      "name": "convert_product_to_image"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You will be given text that contains many separate prompts / scripts for a UGC short form video. I want you to extract these into an array of strings where each item extracted is the FULL prompt/script. The prompts should remain exactly as they were provided.\n\n---\n{{ $json.candidates[0].content.parts[0].text }}",
+        "hasOutputParser": true,
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        2048,
+        16
+      ],
+      "id": "f3a4878c-5599-4c58-9b64-520183d1123b",
+      "name": "extract_prompts"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"title\": \"Extracted Prompts\",\n  \"description\": \"A schema designed to hold a list of individual prompts that have been extracted from a larger body of text. Use this to format the extracted prompts.\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"prompts\": {\n      \"type\": \"array\",\n      \"description\": \"An array where each element is a single, distinct prompt string that was extracted from the user's input.\",\n      \"items\": {\n        \"type\": \"string\",\n        \"description\": \"A single prompt statement.\"\n      }\n    }\n  },\n  \"required\": [\n    \"prompts\"\n  ]\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        2224,
+        176
+      ],
+      "id": "ec6ddf80-7af5-46c6-bd99-18f076599acd",
+      "name": "prompts-parser"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output.prompts",
+        "options": {
+          "destinationFieldName": "prompt"
+        }
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2528,
+        128
+      ],
+      "id": "55f31b40-3751-4d15-b017-f4eaa9ebfcfd",
+      "name": "split_prompts"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1056,
+        560
+      ],
+      "id": "402d4855-9644-4607-abde-175046b70746",
+      "name": "iterate_prompts"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/videos",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "prompt",
+              "value": "={{ $node['iterate_prompts'].json.prompt }}"
+            },
+            {
+              "name": "model",
+              "value": "sora-2"
+            },
+            {
+              "name": "seconds",
+              "value": "={{ $('Get Video Type Record').item.json['Duration (seconds)'] }}"
+            },
+            {
+              "name": "size",
+              "value": "={{ $('Get Video Type Record').item.json.Width }}x{{ $('Get Video Type Record').item.json.Height }}"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "input_reference",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1456,
+        672
+      ],
+      "id": "59e4bd74-b538-4e02-86ae-b9ae0922da25",
+      "name": "generate_video",
+      "credentials": {
+        "openAiApi": {
+          "id": "q3gPWSga9sOawaqA",
+          "name": "OpenAi API Key- KAP Enterprises"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.openai.com/v1/videos/{{ $('generate_video').item.json.id }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1856,
+        672
+      ],
+      "id": "dea914a9-63b5-47ae-a9e4-70b55b0d12c3",
+      "name": "get_video_status",
+      "credentials": {
+        "openAiApi": {
+          "id": "q3gPWSga9sOawaqA",
+          "name": "OpenAi API Key- KAP Enterprises"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.openai.com/v1/videos/{{ $('get_video_status').item.json.id }}/content",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1456,
+        928
+      ],
+      "id": "96ffa9fb-c6b7-40b1-bd87-9a912c30649d",
+      "name": "get_video",
+      "credentials": {
+        "openAiApi": {
+          "id": "q3gPWSga9sOawaqA",
+          "name": "OpenAi API Key- KAP Enterprises"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.prompt }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2048,
+        -272
+      ],
+      "id": "21479a2a-e2fa-41e9-b754-464dc7826c2e",
+      "name": "generate_frame",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "wlEGH0ZMFO7VLsN0",
+          "name": "Google Gemini Header Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "524da01b-f8b9-4c2c-9e28-319455903e4d",
+              "name": "=result",
+              "value": "={{ $json.candidates[0].content.parts.filter(item => item.inlineData).first().inlineData.data }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2240,
+        -272
+      ],
+      "id": "a303a41b-8730-4783-839f-df493cbc5aba",
+      "name": "set_frame_result"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "result",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        2448,
+        -272
+      ],
+      "id": "caec6807-7261-43c7-a814-d6b36789592d",
+      "name": "get_frame_image"
+    },
+    {
+      "parameters": {
+        "operation": "resize",
+        "width": "={{ $('Get Video Type Record').item.json.Width }}",
+        "height": "={{ $('Get Video Type Record').item.json.Height }}",
+        "resizeOption": "ignoreAspectRatio",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.editImage",
+      "typeVersion": 1,
+      "position": [
+        2640,
+        -272
+      ],
+      "id": "1a61d4b2-96ea-4b5d-adda-a8295edab375",
+      "name": "resize_image"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2048,
+        192
+      ],
+      "id": "644b404e-dd9e-4cb5-8707-048e605ba70c",
+      "name": "gemini-2.5-pro",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "bq8ncPZLi1sTGrGQ",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "={{ $('Set Video File Name').item.json.fileName }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "={{ $('Set Variables').item.json.campaignFolderId }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1648,
+        928
+      ],
+      "id": "667b9215-b7d1-4cfc-bbf1-b7a76d57739b",
+      "name": "upload_video",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "PBtBKOv2ofju7FVt",
+          "name": "Google Drive- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.prompt }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1856,
+        16
+      ],
+      "id": "e05851d2-0515-469d-a55e-c2e44295de9b",
+      "name": "generate_ad_prompts",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "wlEGH0ZMFO7VLsN0",
+          "name": "Google Gemini Header Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Generate Image\n\n1. Uses OpenAI's vision API to analyze the image and create a profile for the ideal influencer to promote this e-commerce product.\n2. Then the system uses Gemini 2.5 Pro to take that product photo and the profile of the influencer to write multiple different UGC ad scripts.\n3. Once each script is written, it's then going to split them out and iterate over the scripts one by one to start generating the UGC ad videos with Sora 2's API. ",
+        "height": 832,
+        "width": 2208,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        608,
+        -464
+      ],
+      "typeVersion": 1,
+      "id": "0f8886e8-35b8-40a3-82c4-6bb0f0123cf7",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Overview & Setup\n\nThis n8n template demonstrates how to automatically generate authentic User-Generated Content (UGC) style marketing videos for eCommerce products using AI. The workflow creates multiple realistic influencer-style video ads complete with scripts, personas, and video generation.\n\n## Use cases\n* Generate multiple UGC video variations for A/B testing\n* Create authentic-looking product demonstrations for social media\n* Produce influencer-style content without hiring creators\n* Quickly test different marketing angles for new products\n* Scale video content creation for eCommerce catalogs\n\n## Good to know\n* Sora 2 video generation takes approximately 2-3 minutes per 12-second video\n* Each video generation costs approximately $0.50-1.00 USD (check OpenAI pricing for current rates)\n* The workflow generates multiple video variations from a single product image\n* Videos are automatically uploaded to Google Drive upon completion\n* Generated videos are in 720x1280 (9:16) format optimized for social media\n\n## How it works\n1. **Product Analysis**: OpenAI's vision API analyzes the uploaded product image to understand its features, benefits, and target audience\n2. **Persona Creation**: The system generates a detailed profile of the ideal influencer/creator who would authentically promote this product\n3. **Script Generation**: Gemini 2.5 Pro creates multiple authentic UGC video scripts (12 seconds each) with frame-by-frame breakdowns, natural dialogue, and camera movements\n4. **Frame Generation**: For each script, Gemini generates a custom first frame that adapts the product image to match UGC aesthetic and aspect ratio\n5. **Video Production**: Sora 2 API generates the actual video using the script and custom first frame as reference\n6. **Status Monitoring**: The workflow polls the video generation status every 15 seconds until completion\n7. **Upload & Storage**: Completed videos are automatically uploaded to Google Drive with organized naming\n\n## Requirements\n* **OpenAI API** account with Sora 2 access for video generation and GPT-4 Vision\n* **Google Gemini API** account for script generation and image adaptation\n* **Google Drive** account for video storage\n* Sufficient API credits for video generation (budget accordingly)",
+        "height": 1280,
+        "width": 1152
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -576,
+        -1344
+      ],
+      "typeVersion": 1,
+      "id": "3ed03880-1fd4-4de6-8510-9180bff236fe",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Generate Video ",
+        "height": 736,
+        "width": 2208,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        608,
+        400
+      ],
+      "typeVersion": 1,
+      "id": "63f4a525-784c-4060-8c81-19283064bf8d",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "eb38f5af-ffae-4e72-bdfd-a62c274638eb",
+        "authentication": "headerAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        704,
+        -1232
+      ],
+      "id": "72043b5f-2a73-4f07-b018-e036aec411bb",
+      "name": "Webhook",
+      "webhookId": "eb38f5af-ffae-4e72-bdfd-a62c274638eb",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "al5te3NB5NMzlxb5",
+          "name": "KAP Post Header Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "id": "={{ $('Webhook').item.json.body.recordId }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1264,
+        -1232
+      ],
+      "id": "6cf14c57-1271-4c35-9e38-133e70867a07",
+      "name": "Get Campaign Record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Get Campaign Record').item.json['Product Image URL'][0] }}",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1056,
+        -272
+      ],
+      "id": "a622106f-a917-4418-b5d8-07638a5a24b2",
+      "name": "Download file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "PBtBKOv2ofju7FVt",
+          "name": "Google Drive- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblX8z9ziFRWDnIRo",
+          "mode": "list",
+          "cachedResultName": "Video Types",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblX8z9ziFRWDnIRo"
+        },
+        "filterByFormula": "={Name} = '{{ $('Get Campaign Record').first().json['Video Type Name'][0] }}'",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1456,
+        -1232
+      ],
+      "id": "c1721d60-7f4a-4d83-b69b-e9dfad020f98",
+      "name": "Get Video Type Record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "01981432-140f-484d-8e6c-67e3d5a116ad",
+              "name": "prompt",
+              "value": "={\n  \"contents\": [{\n    \"parts\": [\n      { \"text\": {{ JSON.stringify($json.prompt) }} },\n      {\n        \"inline_data\": {\n          \"mime_type\": \"image/png\",\n          \"data\": \"{{ $node['convert_product_to_base64'].json.data }}\"\n        }\n      }\n    ]\n  }]\n}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1648,
+        16
+      ],
+      "id": "0a78d556-7750-45f8-94ba-a063d64e15d5",
+      "name": "set_gemini_prompt"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3c8d2cb8-df48-443c-9e81-20e477b278ee",
+              "name": "white_image_base64",
+              "value": "iVBORw0KGgoAAAANSUhEUgAAAkAAAAQACAIAAACGcHE3AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAExGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSfvu78nIGlkPSdXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQnPz4KPHg6eG1wbWV0YSB4bWxuczp4PSdhZG9iZTpuczptZXRhLyc+CjxyZGY6UkRGIHhtbG5zOnJkZj0naHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyc+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9JycKICB4bWxuczpBdHRyaWI9J2h0dHA6Ly9ucy5hdHRyaWJ1dGlvbi5jb20vYWRzLzEuMC8nPgogIDxBdHRyaWI6QWRzPgogICA8cmRmOlNlcT4KICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0nUmVzb3VyY2UnPgogICAgIDxBdHRyaWI6Q3JlYXRlZD4yMDI1LTEwLTA3PC9BdHRyaWI6Q3JlYXRlZD4KICAgICA8QXR0cmliOkV4dElkPjBmODViMDkwLTNmYjgtNGEzYi1iMjlmLTdjN2Y4MzJjNzY0MDwvQXR0cmliOkV4dElkPgogICAgIDxBdHRyaWI6RmJJZD41MjUyNjU5MTQxNzk1ODA8L0F0dHJpYjpGYklkPgogICAgIDxBdHRyaWI6VG91Y2hUeXBlPjI8L0F0dHJpYjpUb3VjaFR5cGU+CiAgICA8L3JkZjpsaT4KICAgPC9yZGY6U2VxPgogIDwvQXR0cmliOkFkcz4KIDwvcmRmOkRlc2NyaXB0aW9uPgoKIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PScnCiAgeG1sbnM6ZGM9J2h0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvJz4KICA8ZGM6dGl0bGU+CiAgIDxyZGY6QWx0PgogICAgPHJkZjpsaSB4bWw6bGFuZz0neC1kZWZhdWx0Jz5VbnRpdGxlZCAoNTc2IHggMTAyNCBweCkgLSAxPC9yZGY6bGk+CiAgIDwvcmRmOkFsdD4KICA8L2RjOnRpdGxlPgogPC9yZGY6RGVzY3JpcHRpb24+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9JycKICB4bWxuczpwZGY9J2h0dHA6Ly9ucy5hZG9iZS5jb20vcGRmLzEuMy8nPgogIDxwZGY6QXV0aG9yPkx1Y2FzIFd5bGFuZDwvcGRmOkF1dGhvcj4KIDwvcmRmOkRlc2NyaXB0aW9uPgoKIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PScnCiAgeG1sbnM6eG1wPSdodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvJz4KICA8eG1wOkNyZWF0b3JUb29sPkNhbnZhIChSZW5kZXJlcikgZG9jPURBRzFIaVRBMFJRIHVzZXI9VUFGdmota0ZsRTQgYnJhbmQ9QkFGdmp5M2RONVEgdGVtcGxhdGU9PC94bXA6Q3JlYXRvclRvb2w+CiA8L3JkZjpEZXNjcmlwdGlvbj4KPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KPD94cGFja2V0IGVuZD0ncic/PvToRdYAAA8ZSURBVHic7NUxDQAgEMBAwL/in/DAQprcKejWPTMLAGrO7wAAeGFgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkGRgACQZGABJBgZAkoEBkHQBAAD//+zVAQkAAACAoP+v2xHoCQUGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAQAA///s1QEJAAAAgKD/r9sR6AkFBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwEAAP//7NUBCQAAAICg/6/bEegJBQbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWAoAAP//7NUBCQAAAICg/6/bEegJBQbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsBAAD//+3VAQkAAACAoP+v2xHoCQUGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAgNgSWAALAkMgCWBAbAkMACWBAbAksAAWBIYAEsCA2BJYAAsCQyAJYEBsCQwAJYEBsCSwABYEhgASwIDYElgACwJDIAlgQGwJDAAlgQGwJLAAFgSGABLAbB5Cu46XMHWAAAAAElFTkSuQmCC",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1648,
+        -272
+      ],
+      "id": "083be779-e8d5-4ab5-8f48-794de7f5c4a4",
+      "name": "set_white_image"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Retrieve the Resize Image output\nconst item = $('resize_image').item;\nreturn [\n  {\n    json: {\n      hasJson: !!item.json,\n      hasBinary: !!item.binary,\n      json: item.json || null\n    },\n    binary: item.binary || null\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1264,
+        672
+      ],
+      "id": "e5fc202a-bc01-489c-a21f-9505ea6abc26",
+      "name": "Get Resized Image File"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"campaignFolderId\": \"{{ $json.campaignFolderId }}\",\n  \"campaignFolderName\": \"{{ $json.campaignFolderName }}\",\n  \"timeout_short\": \"15\",\n  \"timeout_long\": \"120\",\n  \"maxRetryCount\": \"15\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1056,
+        -656
+      ],
+      "id": "1c34ad00-11c0-448a-a8ce-f13f0212bc58",
+      "name": "Set Variables"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c5bb855b-a279-4f3c-b2cf-2be817e6c070",
+              "name": "prompt",
+              "value": "={\n  \"contents\": [{\n    \"parts\": [\n      { \"text\": \"Take the design, layout, and style of [Image A] exactly as it is, and seamlessly adapt it into the aspect ratio of [Image B]. Maintain all the visual elements, proportions, and composition of [Image A], but expand, crop, or extend the background naturally so that the final image perfectly matches the aspect ratio and dimensions of [Image B]. Do not distort or stretch any elements—use intelligent background extension, framing, or subtle composition adjustments to preserve the original design integrity while filling the new canvas size.\" },  \n      {\n        \"inline_data\": {\n          \"mime_type\": \"image/png\",\n          \"data\": \"{{ $node['convert_product_to_base64'].json.data }}\"\n        }\n      },\n{\n        \"inline_data\": {\n          \"mime_type\": \"image/png\",\n          \"data\": \"{{ $json.white_image_base64 }}\"\n        }\n      }\n    ]\n  }]\n}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1856,
+        -272
+      ],
+      "id": "14d7a20d-97aa-4839-b294-bd5faca9b5fc",
+      "name": "generate_fields_prompt"
+    },
+    {
+      "parameters": {
+        "amount": "={{ $('Set Variables').item.json.timeout_long }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        672
+      ],
+      "id": "e05c22a9-6875-4e7f-a0d4-f21b0cef1816",
+      "name": "Wait (Long)",
+      "webhookId": "a7d5dd97-e776-4865-b40a-6bea05545927"
+    },
+    {
+      "parameters": {
+        "amount": "={{ $('Set Variables').item.json.timeout_short }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2448,
+        672
+      ],
+      "id": "2c5df12e-7245-4fee-9ffe-7a95221ecb46",
+      "name": "Wait (Short)",
+      "webhookId": "ec9d28c0-9f35-452c-897b-be385a7f4000"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblgepYYxX0z1LE2x",
+          "mode": "list",
+          "cachedResultName": "Videos",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblgepYYxX0z1LE2x"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Campaign": "=[\"{{ $('Webhook').first().json.body.recordId }}\"]",
+            "Video URL": "={{ $json.webViewLink }}",
+            "Prompt": "={{ $node['iterate_prompts'].json.prompt }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Video ID",
+              "displayName": "Video ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Campaign",
+              "displayName": "Campaign",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Prompt",
+              "displayName": "Prompt",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Auto Number",
+              "displayName": "Auto Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1856,
+        928
+      ],
+      "id": "47a6752e-514f-4c42-a99b-e1f11e18ad8f",
+      "name": "Create a record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Retrieve product name (adjust field reference as needed)\nconst productName = $('Get Campaign Record').first().json['Product Name'][0] || 'UnknownProduct';\n\n// 2. Clean the product name: remove non-alphanumeric characters\n// - Remove spaces, dashes, punctuation, special symbols\n// - Capitalize the first letter of each word (optional for readability)\nconst cleanedName = productName\n  .replace(/[^a-zA-Z0-9]/g, ' ') // Replace any non-alphanumeric with space\n  .split(' ')\n  .filter(Boolean) // Remove empty entries\n  .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize\n  .join(''); // Join without spaces\n\n// 3. Generate timestamp (format: YYYYMMDD_HHmmss)\nconst timestamp = new Date().toISOString().replace(/[-:T]/g, '').split('.')[0];\n\n// 4. Build the file name\nconst fileName = `${cleanedName}_${timestamp}.mp4`;\n\n// 5. Return the filename as output\nreturn [\n  {\n    json: {\n      originalProductName: productName,\n      cleanedProductName: cleanedName,\n      timestamp,\n      fileName\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1264,
+        928
+      ],
+      "id": "a557bb68-14de-4605-b2ea-f3a796955aad",
+      "name": "Set Video File Name"
+    },
+    {
+      "parameters": {
+        "jsCode": "const runStatus = ($input.first().json.status || '').toLowerCase();\nconst runStatusMessage = ($input.first().json.status || '').toLowerCase();\nconst maxRetries = $('Set Variables').first().json.maxRetryCount || 3;\n\n// Use local retryCount or default to 0\nconst retryCount = $runIndex || 0;\n\n// SUCCESS condition\nif (runStatus === 'completed') {\n  return [{\n    status: \"SUCCESS\",\n    retryCount\n  }];\n}\n\n// FAILED condition\nif (runStatus === 'failed' || retryCount >= maxRetries) {\n  return [{\n    status: \"FAILED\",\n    retryCount\n  }];\n}\n\n// Otherwise, WAITING\nreturn [{\n  status: \"WAITING\",\n  retryCount\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2048,
+        672
+      ],
+      "id": "d0223358-c521-4ffe-a4db-f2be754630cb",
+      "name": "Check Status"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "FAILED",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "f58b9509-f6fd-4dd7-b762-acd0280cb913"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Failed"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a7c09544-097b-444b-8ba2-d2a8b00b47a5",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "SUCCESS",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Success"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c7298315-9721-4eba-80ab-b9cd0a43dfd1",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "WAITING",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Waiting"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        2240,
+        656
+      ],
+      "id": "07f83542-9ec4-4f5b-ab9a-99ca49861ef5",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "recordId"
+            },
+            {
+              "name": "note"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -400,
+        96
+      ],
+      "id": "59626b19-2605-4151-bc32-5b83c3804e07",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('When Executed by Another Workflow').item.json.recordId }}",
+            "Notes": "={{ $json.Notes }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Campaign ID",
+              "displayName": "Campaign ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product",
+              "displayName": "Product",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type",
+              "displayName": "Video Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Stage",
+              "displayName": "Stage",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Ready",
+                  "value": "Ready"
+                },
+                {
+                  "name": "Generating",
+                  "value": "Generating"
+                },
+                {
+                  "name": "Complete",
+                  "value": "Complete"
+                },
+                {
+                  "name": "Failed",
+                  "value": "Failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Count",
+              "displayName": "Video Count",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Description",
+              "displayName": "Product Description",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Auto Number",
+              "displayName": "Auto Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Code",
+              "displayName": "Brand Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Target Persona",
+              "displayName": "Target Persona",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Pain Points Solved",
+              "displayName": "Pain Points Solved",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Key Benefits",
+              "displayName": "Key Benefits",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Code",
+              "displayName": "Product Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Name",
+              "displayName": "Brand Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Videos",
+              "displayName": "Videos",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type Name",
+              "displayName": "Video Type Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Image URL",
+              "displayName": "Product Image URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Campaign Folder",
+              "displayName": "Campaign Folder",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product Name",
+              "displayName": "Product Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        240,
+        96
+      ],
+      "id": "53716aab-8325-45a6-ba69-5f67ff1647c2",
+      "name": "Update Airtable- Webpage not found1",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get old notes and new note\nconst oldNotes = $input.first().json.Notes;\nlet newNotes = $('When Executed by Another Workflow').first().json.note;\n\n// Format datetime as MM.DD.YYYY HH:mm\nconst now = new Date();\nconst timestamp =\n  String(now.getMonth() + 1).padStart(2, '0') + \".\" +\n  String(now.getDate()).padStart(2, '0') + \".\" +\n  now.getFullYear() + \" \" +\n  String(now.getHours()).padStart(2, '0') + \":\" +\n  String(now.getMinutes()).padStart(2, '0');\n\n// Prepend timestamp to the new note\nnewNotes = `${timestamp}- ${newNotes}`;\n\n// If old notes exist, append with a carriage return\nconst updatedNotes = oldNotes ? `${oldNotes}\\n${newNotes}` : newNotes;\n\n// ✅ Return as an object under \"Notes\"\nreturn [\n  {\n    json: {\n      Notes: updatedNotes\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        16,
+        96
+      ],
+      "id": "cf2461b4-c60e-41b3-bd94-28ad07a55b3f",
+      "name": "Updated Notes10"
+    },
+    {
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "id": "={{ $json.recordId }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        -192,
+        96
+      ],
+      "id": "e5e422f3-be2e-4231-bca6-c9786b699947",
+      "name": "Get a record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Update Notes Sub-Workflow \nUpdates record Notes field",
+        "height": 400,
+        "width": 1152,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -576,
+        -32
+      ],
+      "typeVersion": 1,
+      "id": "22a163a8-6cd8-40b9-8445-40c8cdf6d5a9",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.body.recordId }}",
+            "Stage": "Generating"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Campaign ID",
+              "displayName": "Campaign ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product",
+              "displayName": "Product",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type",
+              "displayName": "Video Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Stage",
+              "displayName": "Stage",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Ready",
+                  "value": "Ready"
+                },
+                {
+                  "name": "Generating",
+                  "value": "Generating"
+                },
+                {
+                  "name": "Complete",
+                  "value": "Complete"
+                },
+                {
+                  "name": "Failed",
+                  "value": "Failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video Count",
+              "displayName": "Video Count",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Output Folder ID",
+              "displayName": "Output Folder ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Description",
+              "displayName": "Product Description",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Auto Number",
+              "displayName": "Auto Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Code",
+              "displayName": "Brand Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Target Persona",
+              "displayName": "Target Persona",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Pain Points Solved",
+              "displayName": "Pain Points Solved",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Key Benefits",
+              "displayName": "Key Benefits",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Code",
+              "displayName": "Product Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Name",
+              "displayName": "Brand Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Videos",
+              "displayName": "Videos",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type Name",
+              "displayName": "Video Type Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Image URL",
+              "displayName": "Product Image URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Campaign Folder",
+              "displayName": "Campaign Folder",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product Name",
+              "displayName": "Product Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1056,
+        -1232
+      ],
+      "id": "96b78d33-f7de-478e-a5eb-1669e2a6b822",
+      "name": "Update Record Stage",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Webhook').item.json.body.recordId }}",
+            "Stage": "Failed"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Campaign ID",
+              "displayName": "Campaign ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product",
+              "displayName": "Product",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type",
+              "displayName": "Video Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Stage",
+              "displayName": "Stage",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Ready",
+                  "value": "Ready"
+                },
+                {
+                  "name": "Generating",
+                  "value": "Generating"
+                },
+                {
+                  "name": "Complete",
+                  "value": "Complete"
+                },
+                {
+                  "name": "Failed",
+                  "value": "Failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video Count",
+              "displayName": "Video Count",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Description",
+              "displayName": "Product Description",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Auto Number",
+              "displayName": "Auto Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Code",
+              "displayName": "Brand Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Target Persona",
+              "displayName": "Target Persona",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Pain Points Solved",
+              "displayName": "Pain Points Solved",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Key Benefits",
+              "displayName": "Key Benefits",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Code",
+              "displayName": "Product Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Name",
+              "displayName": "Brand Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Videos",
+              "displayName": "Videos",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type Name",
+              "displayName": "Video Type Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Image URL",
+              "displayName": "Product Image URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Campaign Folder ID",
+              "displayName": "Campaign Folder ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product Name",
+              "displayName": "Product Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2048,
+        -656
+      ],
+      "id": "4d06841f-33c5-4d72-81ac-a95e85f1b1d8",
+      "name": "Update record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "dd9f74d0-d676-4445-81c0-8fa80e7030f3",
+              "leftValue": "={{ $json.id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1264,
+        -1024
+      ],
+      "id": "c2bd3c98-ff3e-44dd-90db-d6e49c4eb733",
+      "name": "Check Campaign Folder",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e347198b-0962-4755-b652-ad413a415d78",
+              "leftValue": "={{ $json.id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1856,
+        -1232
+      ],
+      "id": "156d0290-3675-4388-b701-2f59f113857f",
+      "name": "Check Main Folder"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "TbLuB54OSTeubcum",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/TbLuB54OSTeubcum",
+          "cachedResultName": "6.1 Product Marketing- AIM UGC Content Creator"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "recordId": "={{ $('Webhook').item.json.body.recordId }}",
+            "note": "Failed to create campaign folder"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "recordId",
+              "displayName": "recordId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "note",
+              "displayName": "note",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1856,
+        -656
+      ],
+      "id": "8fb98cde-1f4f-4a1c-a8d0-ed693e84f1ce",
+      "name": "Update Notes"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "TbLuB54OSTeubcum",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/TbLuB54OSTeubcum",
+          "cachedResultName": "6.1 Product Marketing- AIM UGC Content Creator"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "recordId": "={{ $('Webhook').item.json.body.recordId }}",
+            "note": "Main folder not defined"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "recordId",
+              "displayName": "recordId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "note",
+              "displayName": "note",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        2048,
+        -1248
+      ],
+      "id": "318d542a-4844-44da-82e0-a8ad63d81c4f",
+      "name": "Update Notes1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Webhook').first().json.body.recordId }}",
+            "Stage": "Complete"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Campaign ID",
+              "displayName": "Campaign ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product",
+              "displayName": "Product",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type",
+              "displayName": "Video Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Stage",
+              "displayName": "Stage",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Ready",
+                  "value": "Ready"
+                },
+                {
+                  "name": "Generating",
+                  "value": "Generating"
+                },
+                {
+                  "name": "Complete",
+                  "value": "Complete"
+                },
+                {
+                  "name": "Failed",
+                  "value": "Failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video Count",
+              "displayName": "Video Count",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Output Folder ID",
+              "displayName": "Output Folder ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Description",
+              "displayName": "Product Description",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Auto Number",
+              "displayName": "Auto Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Code",
+              "displayName": "Brand Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Target Persona",
+              "displayName": "Target Persona",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Pain Points Solved",
+              "displayName": "Pain Points Solved",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Key Benefits",
+              "displayName": "Key Benefits",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Code",
+              "displayName": "Product Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Name",
+              "displayName": "Brand Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Videos",
+              "displayName": "Videos",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type Name",
+              "displayName": "Video Type Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Image URL",
+              "displayName": "Product Image URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Campaign Folder",
+              "displayName": "Campaign Folder",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product Name",
+              "displayName": "Product Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1456,
+        448
+      ],
+      "id": "fe0115cd-8a23-46b1-9db0-71cb81ab6e3f",
+      "name": "Update Record- Completed",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Webhook').first().json.body.recordId }}",
+            "Stage": "Failed"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Campaign ID",
+              "displayName": "Campaign ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product",
+              "displayName": "Product",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type",
+              "displayName": "Video Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Stage",
+              "displayName": "Stage",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Ready",
+                  "value": "Ready"
+                },
+                {
+                  "name": "Generating",
+                  "value": "Generating"
+                },
+                {
+                  "name": "Complete",
+                  "value": "Complete"
+                },
+                {
+                  "name": "Failed",
+                  "value": "Failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video Count",
+              "displayName": "Video Count",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Description",
+              "displayName": "Product Description",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Auto Number",
+              "displayName": "Auto Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Code",
+              "displayName": "Brand Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Target Persona",
+              "displayName": "Target Persona",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Pain Points Solved",
+              "displayName": "Pain Points Solved",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Key Benefits",
+              "displayName": "Key Benefits",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Code",
+              "displayName": "Product Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Name",
+              "displayName": "Brand Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Videos",
+              "displayName": "Videos",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type Name",
+              "displayName": "Video Type Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Image URL",
+              "displayName": "Product Image URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Campaign Folder ID",
+              "displayName": "Campaign Folder ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product Name",
+              "displayName": "Product Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2608,
+        448
+      ],
+      "id": "1d19e92b-863a-44f9-b358-121474d53d65",
+      "name": "Update Record- Loop Failed",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Webhook').item.json.body.recordId }}",
+            "Stage": "Failed"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Campaign ID",
+              "displayName": "Campaign ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product",
+              "displayName": "Product",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type",
+              "displayName": "Video Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Stage",
+              "displayName": "Stage",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Ready",
+                  "value": "Ready"
+                },
+                {
+                  "name": "Generating",
+                  "value": "Generating"
+                },
+                {
+                  "name": "Complete",
+                  "value": "Complete"
+                },
+                {
+                  "name": "Failed",
+                  "value": "Failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video Count",
+              "displayName": "Video Count",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Description",
+              "displayName": "Product Description",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Auto Number",
+              "displayName": "Auto Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Code",
+              "displayName": "Brand Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Target Persona",
+              "displayName": "Target Persona",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Pain Points Solved",
+              "displayName": "Pain Points Solved",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Key Benefits",
+              "displayName": "Key Benefits",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Code",
+              "displayName": "Product Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Name",
+              "displayName": "Brand Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Videos",
+              "displayName": "Videos",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type Name",
+              "displayName": "Video Type Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Image URL",
+              "displayName": "Product Image URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Campaign Folder",
+              "displayName": "Campaign Folder",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product Name",
+              "displayName": "Product Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2240,
+        -1248
+      ],
+      "id": "59ee71a5-8b7c-48c1-accb-5400d036af82",
+      "name": "Update record1",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "queryString": "={{ $('Get Campaign Record').item.json['Campaign ID'] }}",
+        "limit": 1,
+        "filter": {},
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1056,
+        -1024
+      ],
+      "id": "ef7010c1-3b36-4998-8d4e-5a01a6b82389",
+      "name": "Get Campaign Folder",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "PBtBKOv2ofju7FVt",
+          "name": "Google Drive- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "folder",
+        "name": "={{ $('Get Campaign Record').item.json['Campaign ID'] }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "={{ $('Webhook').item.json.body.vars.MAIN_FOLDER_ID }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1456,
+        -832
+      ],
+      "id": "b245af80-3a47-4e00-abde-3a55f5d0b7b6",
+      "name": "Create folder",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "PBtBKOv2ofju7FVt",
+          "name": "Google Drive- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3964312f-ca30-47ee-b56d-b9db9e8e0d3a",
+              "leftValue": "={{ $json.id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1648,
+        -832
+      ],
+      "id": "02a7c10d-666a-4304-b268-bc18f478dca5",
+      "name": "Verify New Folder"
+    },
+    {
+      "parameters": {
+        "content": "# Campaign Folder Management",
+        "height": 848,
+        "width": 2208
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        608,
+        -1344
+      ],
+      "typeVersion": 1,
+      "id": "ab5243ee-71c2-4f19-9e8a-71d4202a72a4",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f4c47c5c-085a-477b-8816-ae22a03e9b43",
+              "name": "campaignFolderId",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "f3b6da38-5c8b-4262-837a-110f4db17eea",
+              "name": "campaignFolderName",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1456,
+        -1024
+      ],
+      "id": "6a580baa-0caa-4109-8f25-1ced9a66f51d",
+      "name": "Get Folder ID"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f4c47c5c-085a-477b-8816-ae22a03e9b43",
+              "name": "campaignFolderId",
+              "value": "={{ $('Create folder').item.json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "f3b6da38-5c8b-4262-837a-110f4db17eea",
+              "name": "campaignFolderName",
+              "value": "={{ $('Create folder').item.json.name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2048,
+        -848
+      ],
+      "id": "185e32b3-db6c-4248-9093-f9d7bf97241d",
+      "name": "Get Folder ID1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Webhook').item.json.body.recordId }}",
+            "Campaign Folder ID": "={{ $json.id }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Campaign ID",
+              "displayName": "Campaign ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product",
+              "displayName": "Product",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type",
+              "displayName": "Video Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Stage",
+              "displayName": "Stage",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Ready",
+                  "value": "Ready"
+                },
+                {
+                  "name": "Generating",
+                  "value": "Generating"
+                },
+                {
+                  "name": "Complete",
+                  "value": "Complete"
+                },
+                {
+                  "name": "Failed",
+                  "value": "Failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Count",
+              "displayName": "Video Count",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Description",
+              "displayName": "Product Description",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Auto Number",
+              "displayName": "Auto Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Code",
+              "displayName": "Brand Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Target Persona",
+              "displayName": "Target Persona",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Pain Points Solved",
+              "displayName": "Pain Points Solved",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Key Benefits",
+              "displayName": "Key Benefits",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Code",
+              "displayName": "Product Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Name",
+              "displayName": "Brand Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Videos",
+              "displayName": "Videos",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type Name",
+              "displayName": "Video Type Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Image URL",
+              "displayName": "Product Image URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Campaign Folder ID",
+              "displayName": "Campaign Folder ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Product Name",
+              "displayName": "Product Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1856,
+        -848
+      ],
+      "id": "63971a3c-5246-42fa-bf0e-1afa170560bb",
+      "name": "Update Record- Folder ID",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "TbLuB54OSTeubcum",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/TbLuB54OSTeubcum",
+          "cachedResultName": "6.1 Product Marketing- AIM UGC Content Creator"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "recordId": "={{ $('Webhook').item.json.body.recordId }}",
+            "note": "Video generation completed."
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "recordId",
+              "displayName": "recordId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "note",
+              "displayName": "note",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1264,
+        448
+      ],
+      "id": "ca8944ab-9197-406e-9bac-27b2e3e31a29",
+      "name": "Update Notes2"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "TbLuB54OSTeubcum",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/TbLuB54OSTeubcum",
+          "cachedResultName": "6.1 Product Marketing- AIM UGC Content Creator"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "recordId": "={{ $('Webhook').item.json.body.recordId }}",
+            "note": "Loop counter failed."
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "recordId",
+              "displayName": "recordId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "note",
+              "displayName": "note",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        2448,
+        448
+      ],
+      "id": "414546ad-2072-4a6d-aea8-758d5f9aca57",
+      "name": "Update Notes3"
+    },
+    {
+      "parameters": {
+        "url": "=https://www.googleapis.com/drive/v3/files/{{ $('Webhook').item.json.body.vars.MAIN_FOLDER_ID }}?supportsAllDrives=true&fields=id,name,mimeType",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1664,
+        -1232
+      ],
+      "id": "9158e3d4-19fa-4131-b411-4d04563c97ea",
+      "name": "Verify Main Folder",
+      "retryOnFail": false,
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "PBtBKOv2ofju7FVt",
+          "name": "Google Drive- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n.kap-enterprises-llc.com",
+            "user-agent": "Mozilla/5.0 (compatible; AirtableScripting; +https://airtable.com/developers/scripting;)",
+            "content-length": "184",
+            "accept": "*/*",
+            "accept-encoding": "gzip,deflate",
+            "authorization": "QmVhcmVyIG1heWZsb3dlcg==",
+            "content-type": "application/json",
+            "via": "1.1 Caddy",
+            "x-airtable-source": "applOFYmcqxnprGRm/wflETNbRBIZ2EHIL8",
+            "x-forwarded-for": "3.221.149.238",
+            "x-forwarded-host": "n8n.kap-enterprises-llc.com",
+            "x-forwarded-proto": "https"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "recordId": "recR4f8GZ673B8pbl",
+            "actionId": 4,
+            "responseWebhookUrl": null,
+            "vars": {
+              "MAIN_FOLDER_ID": "1E7CvchbrVbsK4Q9Ts7ppcKiLLnGC2ip-"
+            }
+          },
+          "webhookUrl": "https://n8n.kap-enterprises-llc.com/webhook-test/eb38f5af-ffae-4e72-bdfd-a62c274638eb",
+          "executionMode": "test"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-20T20:18:28.316Z",
+      "updatedAt": "2025-10-20T20:18:28.316Z",
+      "role": "workflow:owner",
+      "workflowId": "TbLuB54OSTeubcum",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-10-24T22:45:04.000Z",
+  "versionId": "d5f98cd5-3252-43ca-a062-530fc4877dfd"
+}
