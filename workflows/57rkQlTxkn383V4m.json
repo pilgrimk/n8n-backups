@@ -1,0 +1,1219 @@
+{
+  "active": false,
+  "connections": {
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file2": {
+      "main": [
+        [
+          {
+            "node": "Extract from File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File2": {
+      "main": [
+        [
+          {
+            "node": "Veo3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Download file2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Veo3": {
+      "main": [
+        [
+          {
+            "node": "Wait 20 Sec",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Video": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File1": {
+      "main": [
+        [
+          {
+            "node": "Upload file1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send a video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Convert to File1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 20 Sec",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload file1": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 20 Sec": {
+      "main": [
+        [
+          {
+            "node": "Get Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Veo3 Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Veo3 Agent": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Veo3 Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a photo message": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload file": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Download file1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Download file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Product Catalog": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Model Database": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Download file1": {
+      "main": [
+        [
+          {
+            "node": "Extract from File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send a photo message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-30T20:22:07.985Z",
+  "id": "57rkQlTxkn383V4m",
+  "isArchived": false,
+  "meta": null,
+  "name": "5.0 Product Marketing- UGC Ad Factory - Original",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://us-central1-aiplatform.googleapis.com/v1/projects/YOUR-PROJECT-ID/locations/us-central1/publishers/google/models/veo-3.0-fast-generate-preview:predictLongRunning",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"instances\": [\n    {\n      \"image\": {\n        \"bytesBase64Encoded\": \"{{ $json.data }}\",\n        \"mimeType\": \"image/png\"\n      },          \n      \"prompt\": {{ JSON.stringify($('Veo3 Agent').item.json.text) }}\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"16:9\",\n    \"durationSeconds\": 8,\n    \"personGeneration\": \"allow_adult\",\n    \"generateAudio\": true,\n    \"resolution\": \"720p\"\n  }\n}\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        128,
+        656
+      ],
+      "id": "37e7b82f-f46a-4eeb-a6ae-469432544126",
+      "name": "Veo3"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "=Creative Brief: {{ $('AI Agent').item.json.output.Creative_Brief.replace(/`/g, \"'\") }}\n\nInitial Scene Prompt: {{ $('AI Agent').item.json.output.Initial_Scene_Prompt }}",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "CONFIRM",
+                    "additionalFields": {
+                      "callback_data": "confirm_execution"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false,
+          "parse_mode": "HTML"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1392,
+        0
+      ],
+      "id": "9226646e-bd48-405f-bb17-b358c96ebe28",
+      "name": "Send a text message1",
+      "webhookId": "2263d3ec-849c-4ea7-a300-6f773d106813"
+    },
+    {
+      "parameters": {
+        "content": "## Image & Video Generation\n\n1) **Google Cloud:** [Sign up for a free trial](https://cloud.google.com/free) to receive API credits.\n\n\n2) **AI Studio:** [Click here](https://aistudio.google.com/apikey) to get your Google API key.",
+        "height": 352,
+        "width": 400,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1552,
+        240
+      ],
+      "id": "60f1a3ce-380e-4d56-9876-8836798e61ef",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Brand DNA Prompt\n\nAnalyze the web presence of **[Brand Name]**, focusing on their website **[Brand URL]**. Based on this analysis, extract and define the brand's DNA.\n\nYour final output must be a well-structured JSON object using the following keys:\n\n- `\"Brand_Essence\"`: A concise phrase for the soul of the brand.\n- `\"Brand_Promise\"`: The tangible value the brand commits to delivering.\n- `\"Brand_Values\"`: An array of 3-5 core guiding principles.\n- `\"Brand_Personality\"`: An object with `\"Tone_of_Voice\"` and `\"Character\"`.\n- `\"Target_Audience\"`: An object detailing `\"Primary\"` and `\"Secondary\"` audiences.\n- `\"Brand_Positioning\"`: A statement explaining the brand's unique market space.",
+        "height": 544,
+        "width": 464,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1136,
+        48
+      ],
+      "id": "1f769528-d6d2-422e-ba46-afe558925395",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Connect Telegram to n8n\n\n1. **Create a Bot:** Use [@BotFather](https://telegram.me/BotFather) on Telegram with the `/newbot` command to get your API token.\n2. **Add Credentials:** Paste the token into the n8n Telegram Trigger node.",
+        "height": 176,
+        "width": 400,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1552,
+        48
+      ],
+      "id": "d60438ce-0e8d-4b71-9350-0acfb1a23b5e",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the parts array from the first input item\nconst parts = items[0].json.candidates[0].content.parts;\n\n// Find the part that contains the image data\nconst imagePart = parts.find(p => p.inlineData);\n\n// Check if we found an image part\nif (imagePart && imagePart.inlineData && imagePart.inlineData.data) {\n  // If we found it, return a new, clean item.\n  // The next node can now reliably find the data at the path \"data\".\n  return {\n    json: {\n      data: imagePart.inlineData.data\n    }\n  };\n}\n\n// If for some reason no image is found, return an empty item to avoid errors.\nreturn null;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        752,
+        96
+      ],
+      "id": "618377c7-57e2-4d72-b380-00135a6f6eb6",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro-preview-06-05",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -592,
+        304
+      ],
+      "id": "43827271-ffff-4af6-83dd-fabab0969bd0",
+      "name": "Google Gemini Chat Model"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "contextWindowLength": 0
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -432,
+        336
+      ],
+      "id": "ad0d8b05-bbd6-4507-b3d6-29497893f446",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.Initial_Scene_Visual }}",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -272,
+        656
+      ],
+      "id": "711ec944-6e8d-45af-9f86-0ddfb6d4b7d3",
+      "name": "Download file2"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        656
+      ],
+      "id": "0920d75f-4be2-4ef4-a2c2-b420253d0718",
+      "name": "Extract from File2"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "callback_query"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1136,
+        656
+      ],
+      "id": "dfb167d0-7b26-4875-b9e8-bf91e307ecf4",
+      "name": "Telegram Trigger1",
+      "webhookId": "867bb131-ab29-4bdd-9319-60c8e3929787"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1av7JkoT77G0xBs22gSwjv_k2WQS0NSh_4gbQW0oIH2w",
+          "mode": "list",
+          "cachedResultName": "0901 Ad Creative Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1av7JkoT77G0xBs22gSwjv_k2WQS0NSh_4gbQW0oIH2w/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1PhisBvcyw-prasrdfEbcBJZiFyCjim-7Y7IUCXJBcrI/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Inital_Scene_Prompt",
+              "lookupValue": "={{ $('Edit Fields').item.json.Initial_Scene_Prompt }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -448,
+        656
+      ],
+      "id": "50697bc1-53ec-4193-8fc9-d004f727bc52",
+      "name": "Get row(s) in sheet"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://us-central1-aiplatform.googleapis.com/v1/projects/YOUR-PROJECT-ID/locations/us-central1/publishers/google/models/veo-3.0-fast-generate-preview:fetchPredictOperation",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"operationName\": \"{{ $('Veo3').item.json.name }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        512,
+        656
+      ],
+      "id": "7e18d9c4-6428-4b6c-be0b-ac36b82fe7a4",
+      "name": "Get Video"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "binaryPropertyName": "=data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        896,
+        640
+      ],
+      "id": "f3074d56-c30d-4f72-a720-d6969d9cbc0e",
+      "name": "Convert to File1"
+    },
+    {
+      "parameters": {
+        "inputDataFieldName": "=data",
+        "name": "={{ $('Edit Fields').item.json.Initial_Scene_Prompt }}.mp4",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1oH7N_-qm1kGFQjFBFO4lTxbJCyTx9rkz",
+          "mode": "list",
+          "cachedResultName": "08 Ad Creative Videos",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1oH7N_-qm1kGFQjFBFO4lTxbJCyTx9rkz"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1152,
+        752
+      ],
+      "id": "94a567db-d6fa-4f0e-acea-d18cc8b7377d",
+      "name": "Upload file1"
+    },
+    {
+      "parameters": {
+        "operation": "sendVideo",
+        "chatId": "={{ $('Telegram Trigger1').item.json.callback_query.from.id }}",
+        "binaryData": true,
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1152,
+        560
+      ],
+      "id": "8386db57-8d9d-421d-ba1c-5ab0df6bc27b",
+      "name": "Send a video",
+      "webhookId": "bf9ee5e9-ae58-4c32-825e-59702c1993ee"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "79c22793-6816-4c18-a19f-26f2adc566ec",
+              "leftValue": "={{ $json.response.videos[0].bytesBase64Encoded }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        688,
+        656
+      ],
+      "id": "562c707d-1fe5-4a87-8aa1-8b777294ba1d",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1av7JkoT77G0xBs22gSwjv_k2WQS0NSh_4gbQW0oIH2w",
+          "mode": "list",
+          "cachedResultName": "0901 Ad Creative Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1av7JkoT77G0xBs22gSwjv_k2WQS0NSh_4gbQW0oIH2w/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1PhisBvcyw-prasrdfEbcBJZiFyCjim-7Y7IUCXJBcrI/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Inital_Scene_Prompt": "={{ $('Edit Fields').item.json.Initial_Scene_Prompt }}",
+            "Video": "={{ $json.webViewLink }}"
+          },
+          "matchingColumns": [
+            "Inital_Scene_Prompt"
+          ],
+          "schema": [
+            {
+              "id": "Creative_Brief",
+              "displayName": "Creative_Brief",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Inital_Scene_Prompt",
+              "displayName": "Inital_Scene_Prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Initial_Scene_Visual",
+              "displayName": "Initial_Scene_Visual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Video",
+              "displayName": "Video",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1392,
+        752
+      ],
+      "id": "2d928794-548a-41d1-aed5-98ef6d02b62b",
+      "name": "Append or update row in sheet"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        320,
+        656
+      ],
+      "id": "7c1927bf-3b2b-4aa2-b666-030002e33ebd",
+      "name": "Wait 20 Sec",
+      "webhookId": "f7797476-2481-4c80-862b-63eb0c4daf5f"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Creative Brief: {{ $json.Creative_Brief }}\nInitial Scene: {{ $json.Initial_Scene_Prompt }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=ROLE\n\nYou are a professional AI UGC Video Director and an Authentic Scene Interpreter. Your function is to analyze a static scene and a creative directive, then write a pure motion script that brings the authentic moment to life by focusing on a key sensory detail.\n\nCONTEXT\n\nYou receive two primary inputs:\n\n    Creative_Brief: Your primary strategic command.\n\n    Initial_Scene_Prompt: A description of your starting canvas.\n\n   The Brand DNA of Rocc Naturals (roccnaturals.com)\n\n{\n  \"Brand_Essence\": \"Oral care that's kind to your body and the planet.\",\n  \"Brand_Promise\": \"To provide a highly effective, natural, and sustainable oral care experience without compromising on style.\",\n  \"Brand_Values\": [\n    \"Sustainability\",\n    \"Natural Ingredients\",\n    \"Design-Forward\",\n    \"Vegan & Cruelty-Free\",\n    \"Health-Conscious\"\n  ],\n  \"Brand_Personality\": {\n    \"Tone_of_Voice\": \"Fresh, conscious, optimistic, and stylishly simple.\",\n    \"Character\": \"The cool, eco-aware friend who finds beautiful, sustainable alternatives to everyday products.\"\n  },\n  \"Target_Audience\": {\n    \"Primary\": \"Environmentally and health-conscious Millennials and Gen Z who are design-savvy and willing to invest in aesthetically pleasing, sustainable products.\",\n    \"Secondary\": \"Anyone seeking to reduce their plastic consumption and switch to a natural, vegan oral care routine.\"\n  },\n  \"Brand_Positioning\": \"ROCC Naturals positions itself as the premium, design-led natural toothpaste brand that offers a guilt-free, visually appealing alternative to traditional oral care, targeting the modern, eco-conscious consumer.\"\n}\n\nTASK\n\nTranslate the input into a single, dense text string describing the full 8-second sequence. Your commands must be direct, vivid, and describe an authentic, relatable experience elevated by a highly satisfying sensory moment.\n\nGUIDELINES: THE LAWS OF EXECUTION\n\nYou will adhere to these directives as absolute law.\n\n    THE MANDATE FOR UGC CINEMATIC AUTHENTICITY: The visual output must feel genuine and focused on a believable human experience. Camera movements must feel like a smooth, stabilized handheld shot.\n\n    THE MANDATE FOR THE SENSORY HERO MOMENT: The main_action from the Creative Brief is the heart of the video. Direct this \"core action\" as the video's hero moment, using slow-motion, and ASMR-style sound design to make it incredibly satisfying.\n\n    THE MANDATE FOR NATURAL PRODUCT INTERACTION: The product must be handled realistically by the model.\n\n    THE DIRECTIVE FOR AUDIO STRATEGY: The ad must be SFX-Driven. The soundscape should be clean, minimalist, and ASMR-inspired.\n\n    THE DYNAMIC INTERPRETATION MANDATE: Animate the opening scene by directing the model's performance.\n\n    THE DIRECTIVE FOR AESTHETIC AUTHENTICITY: All commands must focus on believable, satisfying moments and simple beauty.\n\n    THE DIRECTIVE FOR AUTHENTIC DIALOGUE (ABSOLUTE LAW): You must generate a short, effective script that the model speaks directly to the camera.\n\n        Performance: The model MUST speak the full line directly to the camera first, before the main visual payoff or reveal. This builds anticipation.\n\n        Tone & Accent (CRITICAL): The delivery must be conversational, warm, and sound like a genuine recommendation. The accent MUST be a standard, neutral American English accent. The tone should be specified (e.g., \"enthusiastic and friendly,\" \"calm and confident\").\n\n        Script Structure & Content (CRITICAL): The script MUST directly address the Key Feature from the Creative_Brief. It must be more than a single phrase and follow a simple, three-part persuasive structure that fits within the ad's runtime:\n\n            The Hook: Start with a relatable problem or quest.\n\n            The Solution: Present the product as the answer\n\n            The CTA: Give a clear, simple call-to-action or recommendation\n\nFINAL OUTPUT FORMAT\n\nYour final output must be a single, dense text string with no headers or line breaks. It must include the following, integrated naturally: an overall style descriptor, a chronological description of the action, SFX cues in parentheses, and the model's dialogue woven directly into the performance direction. It must NOT include On-Screen Text.\n\n(EXAMPLE OUTPUT)\nA photorealistic and authentic UGC-style video, shot with a smooth handheld feel. START on a medium shot of the model holding the product, looking directly at the camera with a friendly, knowing expression. The shot is SFX-Driven, with only calm ambient room tone. At 1s, the model SPEAKS directly to the camera in a warm, genuine, and confident **neutral American English accent**: \"I've been looking for a natural whitening toothpaste that actually works. Honestly, I think this is it. You have to try this.\" IMMEDIATELY AFTER the line, the model REVEALS a stunningly radiant, confident smile. PUSH IN slowly on the smile, catching the light as it glints across her brilliantly clean, white teeth. (SFX at 6s: a soft, satisfying crystalline *shimmer*). HOLD on the effortlessly beautiful, authentic smile."
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        -752,
+        656
+      ],
+      "id": "d551ce78-28f8-4939-97b8-dd3e83ff7df4",
+      "name": "Veo3 Agent"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d0e53f8e-c3b3-496d-8db6-270436e6b09b",
+              "name": "Creative_Brief",
+              "value": "={{ $json.callback_query.message.text.split('\\nInitial Scene Prompt:')[0].replace('Creative Brief: ', '') }}",
+              "type": "string"
+            },
+            {
+              "id": "70bb95a7-a65b-4d0f-ab06-793ba11232c0",
+              "name": "Initial_Scene_Prompt",
+              "value": "={{ $json.callback_query.message.text.split('\\nInitial Scene Prompt: ')[1] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -944,
+        656
+      ],
+      "id": "22734e52-f887-4ec2-bcec-5ead6c19406d",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "binaryData": true,
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1184,
+        0
+      ],
+      "id": "ef3eeec4-1877-4bff-bb5f-90751871f7ce",
+      "name": "Send a photo message",
+      "webhookId": "1bb87b42-0ffc-4151-9ff6-82475b294985"
+    },
+    {
+      "parameters": {
+        "name": "={{ $('AI Agent').item.json.output.Initial_Scene_Prompt }}.png",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1tbJu3KCaU3tOmCN63qMDASH4GDN9eAsY",
+          "mode": "list",
+          "cachedResultName": "08 Ad Creative Visuals",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1tbJu3KCaU3tOmCN63qMDASH4GDN9eAsY"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1168,
+        192
+      ],
+      "id": "6493700d-8bd1-44b5-92d1-4b53134a2deb",
+      "name": "Upload file"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1av7JkoT77G0xBs22gSwjv_k2WQS0NSh_4gbQW0oIH2w",
+          "mode": "list",
+          "cachedResultName": "0901 Ad Creative Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1av7JkoT77G0xBs22gSwjv_k2WQS0NSh_4gbQW0oIH2w/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1PhisBvcyw-prasrdfEbcBJZiFyCjim-7Y7IUCXJBcrI/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Creative_Brief": "={{ $('AI Agent').item.json.output.Creative_Brief }}",
+            "Inital_Scene_Prompt": "={{ $('AI Agent').item.json.output.Initial_Scene_Prompt }}",
+            "Initial_Scene_Visual": "={{ $json.webViewLink }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Creative_Brief",
+              "displayName": "Creative_Brief",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Inital_Scene_Prompt",
+              "displayName": "Inital_Scene_Prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Initial_Scene_Visual",
+              "displayName": "Initial_Scene_Visual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video",
+              "displayName": "Video",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1376,
+        192
+      ],
+      "id": "a9015fcd-dc2e-45d9-bb24-a1559d36287b",
+      "name": "Append row in sheet"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -608,
+        80
+      ],
+      "id": "027564a8-a970-437e-bd32-23c616522f76",
+      "name": "Telegram Trigger",
+      "webhookId": "63a2a145-cc5f-429b-bf16-1aff1bf5508b"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"Product_ID\": \"[The Product_ID from the database]\",\n  \"Model_ID\": \"[The Model_ID from the database]\",\n  \"Creative_Brief\": \"Product: Solara - Glow Serum. Model: Aria. Key Feature: Instant hydration and radiance. Strategy: Model & Product Interaction as Spectacle. The creative will use the transformation verb 'illuminate' to have the model's skin trace glowing, liquid-light pathways where the serum is applied, which then fade into a natural radiance.\",\n  \"Initial_Scene_Prompt\": \"A candid, authentic UGC-style medium shot of a 20s Hispanic female with long brown wavy hair, smiling genuinely as she applies a clear Solara Glow Serum to her cheek. The scene is set in a bright, sun-lit bathroom with a small, vibrant green plant out of focus in the background. Natural morning light streams from a window, creating a soft, aspirational mood. Cinematic, shot on iPhone, hyper-detailed, beautiful bokeh, shallow depth of field.\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -16,
+        432
+      ],
+      "id": "a71b3ac8-f450-44a0-ae2b-6268b49204ba",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1SBd65qiwCrYugLrNiuzfOrq4kEtXbbOMI-uFXwBgYr8",
+          "mode": "list",
+          "cachedResultName": "0901 Product Catalog",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1SBd65qiwCrYugLrNiuzfOrq4kEtXbbOMI-uFXwBgYr8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1SBd65qiwCrYugLrNiuzfOrq4kEtXbbOMI-uFXwBgYr8/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Product_Name",
+              "lookupValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values0_Value', `Available Products:\nYOUR PRODUCT NAMES FROM THE CATALOG GO HERE (case sensitive)`, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        -304,
+        368
+      ],
+      "id": "b5e84fc2-a297-4cda-803f-dfe974be99da",
+      "name": "Product Catalog"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1eZX3_wAvqjlShNI42knPjNRwGd-sGs9JJCO8yhlTv48",
+          "mode": "list",
+          "cachedResultName": "0901 Model Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1eZX3_wAvqjlShNI42knPjNRwGd-sGs9JJCO8yhlTv48/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1eZX3_wAvqjlShNI42knPjNRwGd-sGs9JJCO8yhlTv48/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Model_Name",
+              "lookupValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        -160,
+        400
+      ],
+      "id": "da03be49-3fd0-4c7f-a364-8829051bc765",
+      "name": "Model Database"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=ROLE\n\nYou are an elite AI Viral UGC Concept Strategist and a master AI Art Prompting Engineer. Your sole mission is to synthesize brand, product, model, and user inputs into a foundational creative package. Your output is a flat, clean JSON object, engineered to be the genesis of a scroll-stopping, authentic social media ad.\n\nCONTEXT\n\nYou operate with a complete contextual understanding derived from four text-based sources:\n\n    The User Message\n\n    Product Information (from your Product Catalog tool query)\n\n    Model Information (from your Model Database tool query)\n\n    The Brand DNA of [Rocc Naturals] (roccnaturals.com)\n\n{\n  \"Brand_Essence\": \"Oral care that's kind to your body and the planet.\",\n  \"Brand_Promise\": \"To provide a highly effective, natural, and sustainable oral care experience without compromising on style.\",\n  \"Brand_Values\": [\n    \"Sustainability\",\n    \"Natural Ingredients\",\n    \"Design-Forward\",\n    \"Vegan & Cruelty-Free\",\n    \"Health-Conscious\"\n  ],\n  \"Brand_Personality\": {\n    \"Tone_of_Voice\": \"Fresh, conscious, optimistic, and stylishly simple.\",\n    \"Character\": \"The cool, eco-aware friend who finds beautiful, sustainable alternatives to everyday products.\"\n  },\n  \"Target_Audience\": {\n    \"Primary\": \"Environmentally and health-conscious Millennials and Gen Z who are design-savvy and willing to invest in aesthetically pleasing, sustainable products.\",\n    \"Secondary\": \"Anyone seeking to reduce their plastic consumption and switch to a natural, vegan oral care routine.\"\n  },\n  \"Brand_Positioning\": \"ROCC Naturals positions itself as the premium, design-led natural toothpaste brand that offers a guilt-free, visually appealing alternative to traditional oral care, targeting the modern, eco-conscious consumer.\"\n}\n\nTASK\n\nFor each user request, you will query your tools for product and model data, synthesize all context, and output a single, clean JSON object containing a Creative_Brief and an Initial_Scene_Prompt.\nDIRECTIVES FOR GENERATION\n\nYou will adhere to these directives as absolute law.\n\nCreative Brief Construction: Your function is to act as a Creative Director, packaging all strategic decisions for the downstream Video Agent. You must analyze the User Message for any specific, actionable requests (a vibe, a location, a CTA, a line for the model to speak) and place them verbatim in the User_Directive field. The Creative_Brief must contain specific details, including the model's name, gender, and ethnicity.\n\nInitial Scene Prompt Engineering: Your sole function is to act as a master AI Art Prompting Engineer, creating a single, static, silent, and hyper-realistic visual scene. The aesthetic must be authentic UGC, starting with the phrase \"A raw, hyper-realistic UGC-style shot of...\" and including terms like \"shot on iPhone\" and \"natural lighting.\" The prompt must describe a silent moment, but you must include the model's facial expression.\n\nThe Mandate of Logical Interaction (MASTER LAW): You must analyze the product's description to infer its scale and primary use, then engineer a natural and authentic interaction. For small, handheld items, this will typically involve the model holding, using, or presenting the product. For larger items like furniture or vehicles, the model should be interacting with it in a believable way, such as sitting on it, standing beside it, or admiring it.\n\nThe Naming Mandate (CRITICAL LAW): In the Initial_Scene_Prompt, you are forbidden from using the model's name or specific ethnicity. You must only refer to them as \"the model.\" Similarly, you must refer to the product generically as \"the [product type] product\" (e.g., \"the toothpaste product,\" \"the chair product\"). All descriptions of the model must use active language (e.g., \"the model is holding the product..., smiling brightly..., wearing a blue top...\").\n\nThe Vivid Detail Mandate (CRITICAL LAW): You MUST create a descriptive prompt, detailing the natural lighting, a real-world environment, and brand-aligned clothing. The primary subject of the scene must always be in tack-sharp focus, with the background softly blurred.\n\nFINAL OUTPUT STRUCTURE & TEMPLATE\n\n**DO NOT SHOW ANY MIRRORS, ALWAYS SHOW THE MODEL DIRECTLY FACING THE CAMERA**\n\nYour final output must be a single, clean JSON object in this EXACT format:\n\n{\n  \"Product_ID\": \"[The Product_ID from the database]\",\n  \"Model_ID\": \"[The Model_ID from the database]\",\n  \"Creative_Brief\": \"Product: [Brand Name] - [Product Name]\\nModel: [Model Name] ([Gender], [Ethnicity], [Age_Range])\\nKey Feature: [Key Benefit/Feature]\\nUser_Directive: [Specific goal from user message]\\nStrategy: The creative will focus on the model interacting naturally with the product to highlight its [key feature].\",\n  \"Initial_Scene_Prompt\": \"A raw, hyper-realistic UGC-style shot of the model smiling warmly in a bright, sun-lit kitchen. The model is wearing a simple grey cotton t-shirt and holding the toothpaste product out towards the camera. The scene is illuminated by beautiful, soft morning light from a large window just out of frame. The kitchen background is softly blurred. Hyper-realistic, shot on iPhone, tack-sharp focus on the model and the product.\"\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -336,
+        80
+      ],
+      "id": "47cf2967-a093-4490-9f19-f74a14da7c28",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        400,
+        96
+      ],
+      "id": "59d95e77-f292-442b-8af0-52848183b118",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        176,
+        208
+      ],
+      "id": "412c9a1d-9f87-435b-8901-d5c1e0db5881",
+      "name": "Extract from File1"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.output.Model_ID }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        0,
+        208
+      ],
+      "id": "fe61ed84-4c17-4605-b36c-1ba29dfecc23",
+      "name": "Download file1"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        176,
+        0
+      ],
+      "id": "4d988691-9236-4525-b5ab-d2578ae438ed",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.output.Product_ID }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "017263cc-7a43-4c65-82f6-30e160de3db5",
+      "name": "Download file"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        944,
+        96
+      ],
+      "id": "89f636df-d668-4956-88f2-8c43cee7a5be",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=YOUR_GOOGLE_API_KEY",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"widescreen, horizontal aspect ratio, {{ $('AI Agent').item.json.output.Initial_Scene_Prompt }}, --ar 16:9\"\n        },\n        {\n          \"inline_data\": {\n            \"mime_type\": \"image/png\",\n            \"data\": \"{{ $('Merge').all()[0].json.data }}\"\n          }\n        },\n        {\n          \"inline_data\": {\n            \"mime_type\": \"image/png\",\n            \"data\": \"{{ $('Merge').all()[1].json.data }}\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        576,
+        96
+      ],
+      "id": "da2d24f1-eae7-46f0-bf4c-01260b168a61",
+      "name": "HTTP Request",
+      "executeOnce": true
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-30T20:22:08.001Z",
+      "updatedAt": "2025-09-30T20:22:08.001Z",
+      "role": "workflow:owner",
+      "workflowId": "57rkQlTxkn383V4m",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-30T20:23:02.000Z",
+  "versionId": "92f812cd-9b50-4f42-88b7-eb624717fabd"
+}
