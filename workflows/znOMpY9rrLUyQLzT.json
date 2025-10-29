@@ -1,0 +1,1441 @@
+{
+  "active": false,
+  "connections": {
+    "Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Knowledge": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Get Knowledge",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Get Labels",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Review Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ads Remove Label": {
+      "main": [
+        [
+          {
+            "node": "Ads Add Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Billing Remove Label": {
+      "main": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Billing Mark Read": {
+      "main": [
+        [
+          {
+            "node": "Billing Remove Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ads Mark Read": {
+      "main": [
+        [
+          {
+            "node": "Ads Remove Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HP Mark Read": {
+      "main": [
+        [
+          {
+            "node": "HP Remove Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HP Remove Label": {
+      "main": [
+        [
+          {
+            "node": "HP Add Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HP Add Label": {
+      "main": [
+        [
+          {
+            "node": "HP Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inquiry Mark Read": {
+      "main": [
+        [
+          {
+            "node": "Inquiry Remove Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Uncat Remove Label": {
+      "main": [
+        [
+          {
+            "node": "Uncat Review Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Uncat Review Label": {
+      "main": [
+        [
+          {
+            "node": "Telegram2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inquiry Remove Label": {
+      "main": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to Base64": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "HP Mark Read",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Billing Mark Read",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ads Mark Read",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Inquiry Mark Read",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Uncat Remove Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Label": {
+      "main": [
+        [
+          {
+            "node": "Telegram Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Review Label": {
+      "main": [
+        [
+          {
+            "node": "Telegram Fail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Agent": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Labels": {
+      "main": [
+        [
+          {
+            "node": "Get Label ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Add Label",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Add Review Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Label ID": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Review Label": {
+      "main": [
+        [
+          {
+            "node": "Telegram Success1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Markdown": {
+      "main": [
+        [
+          {
+            "node": "Build Raw Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Raw Email": {
+      "main": [
+        [
+          {
+            "node": "Convert to Base",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert from Base64": {
+      "main": [
+        [
+          {
+            "node": "If Decoded",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Decoded": {
+      "main": [
+        [
+          {
+            "node": "Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to Base": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Convert from Base64",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sub-Workflow": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-24T03:41:56.670Z",
+  "id": "znOMpY9rrLUyQLzT",
+  "isArchived": false,
+  "meta": null,
+  "name": "1.0 Email Management- Gmail",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyHour"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {
+          "readStatus": "unread"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1260,
+        600
+      ],
+      "id": "30a1e3c3-114a-46da-abf3-edf932471952",
+      "name": "Gmail Trigger"
+    },
+    {
+      "parameters": {
+        "chatId": "7788917169",
+        "text": "=Unable to categorize new email:\nFrom: {{ $('Edit Fields').item.json.senderName }}\nSubject: {{ $('Edit Fields').item.json.subject }}\nDate: {{ $now.format('yyyy-MM-dd hh:mm a') }}\n",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        760,
+        1200
+      ],
+      "id": "ab326106-1b80-4c38-99f3-e36e3f1428b6",
+      "name": "Telegram2",
+      "webhookId": "85d4360f-ab55-4054-b5b0-265a233bfa16"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.2,
+      "position": [
+        440,
+        420
+      ],
+      "id": "71a49ade-2155-4239-9c5e-91cb7b9e51bf",
+      "name": "Chat Model"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "={{ $('Edit Fields').item.json.knowledgebaseName }}",
+        "toolDescription": "KAP Enterprises knowledge base",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "kap-enterprises-llc",
+          "mode": "list",
+          "cachedResultName": "kap-enterprises-llc"
+        },
+        "topK": 5,
+        "options": {
+          "pineconeNamespace": "={{ $('Edit Fields').item.json.vectorNamespace }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1,
+      "position": [
+        680,
+        440
+      ],
+      "id": "db4026dc-5f55-48ed-bda5-12c16df006f9",
+      "name": "Get Knowledge"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"emailCategory\": \"\",\n  \"id\": \"{{ $json.id }}\",\n  \"messageId\": \"{{ $json.messageId }}\",\n  \"threadId\": \"{{ $json.threadId }}\",\n  \"senderName\": \"{{ $json.from.value[0].name }}\",\n  \"senderEmail\": \"{{ $json.from.value[0].address }}\",\n  \"subject\": \"{{ $json.subject }}\",\n  \"knowledgebaseName\": \"kap_knowledge_database\",\n  \"vectorNamespace\": \"KAP Enterprises\",\n  \"createDraftUrl\": \"https://n8n.kap-enterprises-llc.com/webhook/b260e723-948c-4a54-aad9-6c755c328205\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1040,
+        600
+      ],
+      "id": "15b3d0a4-fed1-4d9b-9dbf-32bca4c98584",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        780,
+        620
+      ],
+      "id": "f4479c08-e8cd-4a7b-8268-ce2fd73003ed",
+      "name": "Embeddings OpenAI"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "20e2567d-26ad-4ea1-8a1c-d212e208776f",
+              "leftValue": "={{ $json.output }}\n\n\n",
+              "rightValue": "=success",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1300,
+        400
+      ],
+      "id": "5bdb257b-2553-4ba6-b112-bb7a43e24434",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "Label_2421360983190961120"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        760,
+        800
+      ],
+      "id": "3c1d5918-0b79-4fc5-a24c-e0516d8d269d",
+      "name": "Ads Add Label",
+      "webhookId": "7cebc234-ea0e-4967-8ef7-c7b4a8694300"
+    },
+    {
+      "parameters": {
+        "operation": "removeLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "INBOX"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        220,
+        800
+      ],
+      "id": "fb216ddd-9fa5-4a43-bf15-25bb80cb65f4",
+      "name": "Ads Remove Label",
+      "webhookId": "64441a6c-52fe-44c3-a8ae-3410dea84f72"
+    },
+    {
+      "parameters": {
+        "operation": "removeLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "INBOX"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        220,
+        400
+      ],
+      "id": "403fdc04-fb5b-4bd6-a4fd-8093f7a20426",
+      "name": "Billing Remove Label",
+      "webhookId": "64441a6c-52fe-44c3-a8ae-3410dea84f72"
+    },
+    {
+      "parameters": {
+        "operation": "markAsRead",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        400
+      ],
+      "id": "b0187feb-1109-4ecd-8314-760d8e24674c",
+      "name": "Billing Mark Read",
+      "webhookId": "bebea912-1e38-471b-8ba3-5612ef77dc03"
+    },
+    {
+      "parameters": {
+        "operation": "markAsRead",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        800
+      ],
+      "id": "1cdd5156-88c9-4909-bce6-1f242e9f6208",
+      "name": "Ads Mark Read",
+      "webhookId": "bebea912-1e38-471b-8ba3-5612ef77dc03"
+    },
+    {
+      "parameters": {
+        "operation": "markAsRead",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "489621db-c2e4-486d-968b-39fcdc12207f",
+      "name": "HP Mark Read",
+      "webhookId": "bebea912-1e38-471b-8ba3-5612ef77dc03"
+    },
+    {
+      "parameters": {
+        "operation": "removeLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "INBOX"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        220,
+        0
+      ],
+      "id": "adcdd894-c9f7-4f67-87c8-3c50dff27a3d",
+      "name": "HP Remove Label",
+      "webhookId": "64441a6c-52fe-44c3-a8ae-3410dea84f72"
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "Label_2421360983190961120"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        760,
+        0
+      ],
+      "id": "e2241c50-9b32-457a-a6ff-5df4bb46ea5f",
+      "name": "HP Add Label",
+      "webhookId": "7cebc234-ea0e-4967-8ef7-c7b4a8694300"
+    },
+    {
+      "parameters": {
+        "chatId": "7788917169",
+        "text": "=New High Priority Email:\nFrom: {{ $('Edit Fields').item.json.senderName }}\nSubject: {{ $('Edit Fields').item.json.subject }}\nDate: {{ $now.format('yyyy-MM-dd hh:mm a') }}\n",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1300,
+        0
+      ],
+      "id": "22d93ec2-a39c-44b4-b2f7-0d8dc48c776a",
+      "name": "HP Telegram",
+      "webhookId": "85d4360f-ab55-4054-b5b0-265a233bfa16"
+    },
+    {
+      "parameters": {
+        "operation": "markAsRead",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        1000
+      ],
+      "id": "b014d548-fffd-4529-a03d-8b817f9905d4",
+      "name": "Inquiry Mark Read",
+      "webhookId": "bebea912-1e38-471b-8ba3-5612ef77dc03"
+    },
+    {
+      "parameters": {
+        "operation": "removeLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "INBOX"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        220,
+        1000
+      ],
+      "id": "871c80e1-2fa5-41e5-8d7e-86a246873880",
+      "name": "Inquiry Remove Label",
+      "webhookId": "64441a6c-52fe-44c3-a8ae-3410dea84f72"
+    },
+    {
+      "parameters": {
+        "operation": "removeLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "INBOX"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        1200
+      ],
+      "id": "a6caad92-b91e-492a-ad2e-e37d7590e75d",
+      "name": "Uncat Remove Label",
+      "webhookId": "64441a6c-52fe-44c3-a8ae-3410dea84f72"
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "Label_5617995438166182072"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        220,
+        1200
+      ],
+      "id": "b1551790-70e2-4867-b951-30ddb0fbff8a",
+      "name": "Uncat Review Label",
+      "webhookId": "66e55a9d-a703-4ce9-ba11-1933c664d46d"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Gmail Trigger').item.json.id }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        560,
+        420
+      ],
+      "id": "68667444-c832-4be2-b215-62e5c79214da",
+      "name": "Buffer Memory"
+    },
+    {
+      "parameters": {
+        "name": "convert_to_base64",
+        "jsCode": "// Convert the incoming emailResponse to base64\nconst emailResponse64 = Buffer.from(query, 'utf-8').toString('base64');\n\nreturn emailResponse64;"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.1,
+      "position": [
+        980,
+        420
+      ],
+      "id": "79295f1c-1a87-4362-a4c9-f7f98dedf79d",
+      "name": "Convert to Base64"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.emailCategory }}",
+                    "rightValue": "High Priority",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "9f8df352-290d-4623-916e-60f5d9d3484c"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "dc792816-1ecf-44dd-b2ec-125af6a63474",
+                    "leftValue": "={{ $json.emailCategory }}",
+                    "rightValue": "Billing",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "15031aac-1f3b-423f-bc5a-e5df5396f79c",
+                    "leftValue": "={{ $json.emailCategory }}",
+                    "rightValue": "Advertisements",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0c6f05aa-c608-4e6b-bbc9-4828d706e80a",
+                    "leftValue": "={{ $json.emailCategory }}",
+                    "rightValue": "Inquiry",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -220,
+        560
+      ],
+      "id": "3501606d-764e-4dd4-87a4-556b154ef30b",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=subject: {{ $json.subject }}\nemail:  {{ $('Gmail Trigger').item.json.text }}"
+            },
+            {
+              "content": "You are a helpful, email categorization assistant. Your job is to review the email subject and body, and classify it into one of the following categories: [\"Billing\", \"Inquiry\", \"Advertising\", \"High Priority\", \"Uncategorized\"]. \n\nReturn a JSON object with the key 'emailCategory' and its corresponding value.\n\nCategory: High Priority\nDescription: Emails that require immediate attention, often involving urgent isssues, escalations, system failures, or critical business matters.\nCommon Words/ Phrases:  Urgent, ASAP, Immediate action required, Critical issue, Escalation, Emergency, System outage, High priority, Downtime, Affected customers, Please respond quickly, Need resolution, Time-sensitive.\n\nCategory: Billing\nDescription: Emails related to payments, invoices, subscriptions, financial transactions, or account balances.  These emails often contain due dates, payment instructions, or financial statements.\nCommon Words/ Phrases: Invoice, Billing statement, Payment due, Past due, Outstanding balance, Subscription renewal, Payment confirmation, Charge notice, Overdue notice, Auto-renewal, Finance department, ACH transfer, Bank details.\n\nCategory: Advertisements\nDescription: Emails related to marketing campaigns, sales offers, discounts, partnership opportunities, or advertisements.  These emails are often sent in bulk and contain promotional language.\nCommon Words/ Phrases: Special offer, Limited-time deal, Exclusive discount, Save big, Flash sale, Promo code, Get 20% off, Earn rewards, Best deals, new product launch, Marketing campaign, Subscription offer, Early access, Upgrade now, Act fast.\n\nCategory: Customer Inquiry\nDescription: Emails related to inquiry about KAP Enterprises' products, services, automations, capabilities, prices, or quotes.  These emails will come from individuals and not from non-identifiable email sources.\nCommon Words/ Phrases: Can you tell me about your products, How much to perform this task, Can you give me an estimate to provide this service, Can your product to this, I'd like to find out about, I'd like to learn about, What services do you provide.\n\nCategory: Uncategorized\nDescription: Emails that you can not categorize into any of the other defined categories.",
+              "role": "system"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -820,
+        600
+      ],
+      "id": "ba2adcfe-047a-4818-96a4-d14bd9ed5ca6",
+      "name": "OpenAI"
+    },
+    {
+      "parameters": {
+        "jsCode": "const content = $json.message.content; \n\n// Remove Markdown formatting (```json ... ```)\nconst cleanedContent = content.replace(/```json\\n/, '').replace(/\\n```/, '');\n\n// Parse the cleaned JSON string\nlet parsedData;\ntry {\n  parsedData = JSON.parse(cleanedContent);\n} catch (error) {\n  throw new Error(\"Failed to parse AI response: \" + error.message);\n}\n\n// Return the cleaned emailCategory\nreturn [{ emailCategory: parsedData.emailCategory }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -440,
+        600
+      ],
+      "id": "c45fccbe-5b48-4c76-b8c8-e35bbc167ae6",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.messageId }}",
+        "labelIds": "={{ $json.label_id }}"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2180,
+        300
+      ],
+      "id": "743640c7-4a04-45ea-adef-4f5fa1a392ae",
+      "name": "Add Label",
+      "webhookId": "66e55a9d-a703-4ce9-ba11-1933c664d46d"
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $('Gmail Trigger').item.json.id }}",
+        "labelIds": [
+          "Label_5617995438166182072"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1520,
+        600
+      ],
+      "id": "405fe7c5-9ecc-40fc-8ef1-b5e91513c340",
+      "name": "Review Label",
+      "webhookId": "66e55a9d-a703-4ce9-ba11-1933c664d46d"
+    },
+    {
+      "parameters": {
+        "chatId": "7788917169",
+        "text": "=Failed to create {{ $('Code').item.json.emailCategory }} Draft, email moved to Review folder:\nFrom: {{ $('Edit Fields').item.json.senderName }}\nSubject: {{ $('Edit Fields').item.json.subject }}\nDate: {{ $now.format('yyyy-MM-dd hh:mm a') }}\nStatus: {{ JSON.parse($('If').item.json.output).status }}\n",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1740,
+        600
+      ],
+      "id": "4b068285-b315-4fba-b558-f71768a814bd",
+      "name": "Telegram Fail",
+      "webhookId": "85d4360f-ab55-4054-b5b0-265a233bfa16"
+    },
+    {
+      "parameters": {
+        "chatId": "7788917169",
+        "text": "=New {{ $('Get Label ID').item.json.emailCategory }} Draft created:\nFrom: {{ $('Get Label ID').item.json.from }}\nSubject: {{ $('Get Label ID').item.json.subject }}\nDate: {{ $now.format('yyyy-MM-dd hh:mm a') }}\n",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2400,
+        300
+      ],
+      "id": "1e3581a0-ef3a-431e-b7ad-b6050e82f76a",
+      "name": "Telegram Success",
+      "webhookId": "85d4360f-ab55-4054-b5b0-265a233bfa16"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=here's the original email message information I'd like you to use\nemailCategory: {{ $('Code').item.json.emailCategory }}\nmessageId: {{ $('Edit Fields').item.json.messageId }}\nthreadId: {{ $('Edit Fields').item.json.threadId }}\nsenderName: {{ $('Edit Fields').item.json.senderName }}\nsenderEmailAddress: {{ $('Edit Fields').item.json.senderEmail }}\nsubject: {{ $('Edit Fields').item.json.subject }}\nsenderEmail: {{ $('Gmail Trigger').item.json.text }}\ncreateDraftUrl: {{ $('Edit Fields').item.json.createDraftUrl }}\n",
+        "options": {
+          "systemMessage": "---\n\n# **Overview**  \nYou are an email assistant responsible for reviewing incoming emails and generating professional responses based on the `emailCategory`. You will return a response message using the **JSON Response Structure** format defined below`.  \n\nYour responses must be:  \n- **Concise and professional** – Limited to **200 words or less**  \n- **Accurate** – Based on available tools and provided information  \n- **Properly formatted** – Ensure responses meet API integration requirements  \n\n## **Required Variables**  \nYou will receive and use the following variables:  \n- **emailCategory** – The category of the email  \n- **messageId** – The unique ID of the email message  \n- **threadId** – The email thread ID  \n- **senderName** – The sender’s name  \n- **senderEmailAddress** – The sender’s email address  \n- **subject** – Ensure the subject starts with `\"Re: \"`, removing any redundant prefixes  \n- **senderEmail** – The email body content received  \n- **createDraftUrl** – The API endpoint for creating a draft email  \n- **emailResponse** – The generated email response  \n- **emailResponse64** – The base64-encoded version of `emailResponse`  \n\n---\n\n## **Instructions**  \n\n### **Handling \"Billing\" Emails**  \n1. Store all provided variables.  \n2. Generate a **concise, professional** response based on `subject` and `senderEmail`, and save it as `emailResponse`.  \n3. Convert `emailResponse` to a base64 string using **Convert to Base64**, and store it as `emailResponse64`.  \n4. Use the **Create Draft** tool to generate a draft email, passing:  \n   - `messageId`, `threadId`, `to`, `subject`, `emailResponse64`, `createDraftUrl`  \n   - If `emailResponse64` is missing or improperly formatted, log an error and retry **Convert to Base64** before proceeding.  \n5. Return a JSON response with `\"status\": \"success\"` or `\"fail\"`, along with a relevant message.  \n\n### **Handling \"Inquiry\" Emails**  \n1. Store all provided variables.  \n2. Analyze `senderEmail` and use **Get Knowledge** to retrieve relevant company information.  \n3. Craft a **concise, professional** response based on the retrieved information.  \n   - If no relevant knowledge is found, inform the sender that a customer service representative will respond within 24 hours.  \n   - Save this response as `emailResponse`.  \n4. Convert `emailResponse` to a base64 string using **Convert to Base64**, and store it as `emailResponse64`.  \n5. Use **Create Draft** to generate a draft email, passing:  \n   - `messageId`, `threadId`, `to`, `subject`, `emailResponse64`, `createDraftUrl`  \n   - If `emailResponse64` is missing or improperly formatted, log an error and retry **Convert to Base64** before proceeding.  \n6. Return a JSON response with `\"status\": \"success\"` or `\"fail\"`, along with a relevant message.\n\n### **Handling Other Email Categories**  \n- Immediately return a JSON response with `\"status\": \"fail\"` and a message indicating that the `emailCategory` is unrecognized.  \n\n---\n\n## **Tool Descriptions**  \n\n### **Convert to Base64**  \n**Purpose:** Convert the email response into a base64-encoded string.  \n\n**Input:**  \n- **senderEmail** – The received email body content  \n\n**Usage:**  \n- Convert `emailResponse` to base64 and store it as `emailResponse64`.  \n\n---\n\n### **Create Draft**  \n**Purpose:** Create a draft email using an API request.  \n- **Only call this tool when `emailResponse64` is valid**  \n\n**Required Fields:**  \n- **messageId** – Email message ID  \n- **threadId** – Email thread ID  \n- **to** – Sender’s email address  \n- **subject** – Processed subject line  \n- **emailResponse64** – Base64-encoded email response  \n- **createDraftUrl** – API endpoint for draft creation  \n\n---\n\n## **JSON Response Structure**  \n{\n    \"status\": \"success|fail\",\n    \"message\": \"Applicable status message.\"\n}\n\n---"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        680,
+        200
+      ],
+      "id": "80b09fc3-54c7-4ead-a396-b89edac476e9",
+      "name": "Email Agent"
+    },
+    {
+      "parameters": {
+        "resource": "label"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1520,
+        400
+      ],
+      "id": "3030994c-2f2a-4453-952c-2c5b1b17d75f",
+      "name": "Get Labels",
+      "webhookId": "0e1844eb-e72a-4a71-b0e5-a5d9807e304e"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c47ea1a5-00f2-4f90-a8cf-5df144481165",
+              "leftValue": "={{ $json.label_id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1960,
+        400
+      ],
+      "id": "abf472ff-2b47-4a97-b1ba-9ec9a2687d11",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "chatId": "7788917169",
+        "text": "=New {{ $('Get Label ID').item.json.emailCategory }} Draft created:\nFolder not available, moved to Review folder\nFrom: {{ $('Get Label ID').item.json.from }}\nSubject: {{ $('Get Label ID').item.json.subject }}\nDate: {{ $now.format('yyyy-MM-dd hh:mm a') }}\n",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2400,
+        500
+      ],
+      "id": "87a54d5b-ba20-49c7-8c1a-87c1538191da",
+      "name": "Telegram Success1",
+      "webhookId": "85d4360f-ab55-4054-b5b0-265a233bfa16"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Capture data for downstream processing\nconst target = $('Code').first().json.emailCategory; \nconst messageId = $('Edit Fields').first().json.id; \nconst emailCategory = $('Code').first().json.emailCategory;\nconst from = $('Edit Fields').first().json.senderEmail;\nconst subject = $('Edit Fields').first().json.subject;\n\n// Map through each item and find a match\nfor (const item of items) {\n    if (item.json.name === target) {\n        return [{\n            json: {\n                label_id: item.json.id,\n                messageId: messageId,\n                emailCategory: emailCategory,\n                from: from,\n                subject: subject\n            }\n        }];\n    }\n}\n\n// If label is not found, return a default message with messageId\nreturn [{\n    json: {\n        label_id: null,\n        message: `${target} label not found`, // Fixed template literal syntax\n        messageId: messageId\n    }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1740,
+        400
+      ],
+      "id": "99a5a298-b15c-4c6c-9ce1-dcc54bfa5d7e",
+      "name": "Get Label ID"
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $json.messageId }}",
+        "labelIds": [
+          "Label_5617995438166182072"
+        ]
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2180,
+        500
+      ],
+      "id": "0285b3b4-54b2-481b-bb29-cbe5f369cad8",
+      "name": "Add Review Label",
+      "webhookId": "66e55a9d-a703-4ce9-ba11-1933c664d46d"
+    },
+    {
+      "parameters": {
+        "mode": "markdownToHtml",
+        "markdown": "={{ $json.decoded }}",
+        "destinationKey": "html_response",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.markdown",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        1520
+      ],
+      "id": "35216181-c2cc-41c9-836d-603431d46257",
+      "name": "Markdown"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "52896db6-34f1-4638-8c9a-b122c0659792",
+              "name": "raw",
+              "value": "=To: {{ $('When Executed by Another Workflow').item.json.to }}\nSubject: {{ $('When Executed by Another Workflow').item.json.subject }}\nIn-Reply-To: {{ $('When Executed by Another Workflow').item.json.to }}\nReferences: {{ $('When Executed by Another Workflow').item.json.messageId }}\nContent-Type: text/html; charset=\"utf-8\"\n\n{{ $json.html_response }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -340,
+        1520
+      ],
+      "id": "03d91bea-c4f1-4161-b29d-60b503836512",
+      "name": "Build Raw Email"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/gmail/v1/users/me/drafts",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "gmailOAuth2",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"message\":{\"raw\":\"{{ $json.encoded }}\", \"threadId\":\"{{ $('When Executed by Another Workflow').item.json.threadId }}\"}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        120,
+        1520
+      ],
+      "id": "92fe6476-2d37-4522-8e7f-0aede3812c00",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "jsCode": "const decoded = Buffer.from($input.first().json.body, 'base64').toString('utf-8');\n\nreturn { decoded };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1000,
+        1520
+      ],
+      "id": "729c0e1e-f572-42f0-862d-f52cf8b659fc",
+      "name": "Convert from Base64"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1b1b5377-44cc-4bff-a254-648c081e379d",
+              "leftValue": "={{ $json.decoded }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -780,
+        1520
+      ],
+      "id": "4a0ce668-8639-4a2c-b07f-bdd5efc176f5",
+      "name": "If Decoded"
+    },
+    {
+      "parameters": {
+        "jsCode": "const encoded = Buffer.from($json.raw).toString('base64');\n\nreturn { encoded };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -120,
+        1520
+      ],
+      "id": "593bcec4-93e1-4a04-8e18-3a106324adcf",
+      "name": "Convert to Base"
+    },
+    {
+      "parameters": {
+        "content": "## Sub-Workflow\n- Send draft email",
+        "height": 340,
+        "width": 1660,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1320,
+        1400
+      ],
+      "typeVersion": 1,
+      "id": "55f515ef-fc90-4076-ac49-fda16cc1c13a",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "messageId"
+            },
+            {
+              "name": "threadId"
+            },
+            {
+              "name": "to"
+            },
+            {
+              "name": "subject"
+            },
+            {
+              "name": "body"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1220,
+        1520
+      ],
+      "id": "01a32cff-66f8-45e5-a5ab-a3657c7b8711",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "a9gmpPwvzJ2nYVOK",
+          "mode": "list",
+          "cachedResultName": "Email Management - Gmail"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "messageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('messageId', ``, 'string') }}",
+            "threadId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('threadId', ``, 'string') }}",
+            "to": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('to', ``, 'string') }}",
+            "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('subject', ``, 'string') }}",
+            "body": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('body', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "messageId",
+              "displayName": "messageId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "threadId",
+              "displayName": "threadId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "to",
+              "displayName": "to",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "subject",
+              "displayName": "subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "body",
+              "displayName": "body",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1140,
+        420
+      ],
+      "id": "dd692e5f-07d1-45aa-a064-a24a687bc4b0",
+      "name": "Sub-Workflow"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-06-24T03:41:56.677Z",
+      "updatedAt": "2025-06-24T03:41:56.677Z",
+      "role": "workflow:owner",
+      "workflowId": "znOMpY9rrLUyQLzT",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-24T03:41:56.000Z",
+  "versionId": "2660678c-143d-4631-8535-41d108ac9b55"
+}
