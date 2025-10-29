@@ -1,0 +1,1731 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Check Typeform Signature",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Variables": {
+      "main": [
+        [
+          {
+            "node": "Parse Answers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search records": {
+      "main": [
+        [
+          {
+            "node": "Record Exists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record Exists": {
+      "main": [
+        [
+          {
+            "node": "Updated Notes",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Updated Notes1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Updated Notes": {
+      "main": [
+        [
+          {
+            "node": "Update Airtable Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Updated Notes1": {
+      "main": [
+        [
+          {
+            "node": "Create a record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Answers": {
+      "main": [
+        [
+          {
+            "node": "Evaluate Responses",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evaluate Responses": {
+      "main": [
+        [
+          {
+            "node": "Search records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Typeform Signature": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-23T22:15:34.522Z",
+  "id": "SIeqvgAlCcWcLxcb",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "1.0 Product Questionnaire - Capture Response",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "9252ccba-9b96-4981-8b8d-3f55cb8d54f6",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -256,
+        -64
+      ],
+      "id": "3a253aa7-9e90-4096-8fe5-6e7822fd396f",
+      "name": "Webhook",
+      "webhookId": "9252ccba-9b96-4981-8b8d-3f55cb8d54f6"
+    },
+    {
+      "parameters": {
+        "jsCode": "const variables = {\n  \"apolloScrapingActorId\" : \"jljBwyyQakqrL1wae\", // ID of Apollo scraper\n  \"waitTimeSeconds_long\" : 120, // Wait time in seconds\n  \"waitTimeSeconds_short\" : 15, // Wait time in seconds \n  \"maxRetryCount\" : 10\n}\n\nreturn [{json : variables}]"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        192,
+        -64
+      ],
+      "id": "d1bd88f6-7059-4731-9f04-2cef66e30f5b",
+      "name": "Set Variables"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app7BA8vwgohGqIE0",
+          "mode": "list",
+          "cachedResultName": "KAP Enterprises",
+          "cachedResultUrl": "https://airtable.com/app7BA8vwgohGqIE0"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblxTjxBcOdPN2osz",
+          "mode": "list",
+          "cachedResultName": "Prospects",
+          "cachedResultUrl": "https://airtable.com/app7BA8vwgohGqIE0/tblxTjxBcOdPN2osz"
+        },
+        "filterByFormula": "=AND(\n  {Email} = '{{ $json.message.content.email }}',\n  {Stage} = \"New Prospect\"\n)",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        992,
+        -64
+      ],
+      "id": "dadda8f0-244f-4edb-b0a3-88d4b7c6e4bd",
+      "name": "Search records",
+      "alwaysOutputData": true,
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "18a55141-430f-469c-82e4-8d440a886a5e",
+              "leftValue": "={{ $json.id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1216,
+        -64
+      ],
+      "id": "1933577f-c51e-4cb5-b151-1de5328c1e39",
+      "name": "Record Exists",
+      "alwaysOutputData": false,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "app7BA8vwgohGqIE0",
+          "mode": "list",
+          "cachedResultName": "KAP Enterprises",
+          "cachedResultUrl": "https://airtable.com/app7BA8vwgohGqIE0"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblxTjxBcOdPN2osz",
+          "mode": "list",
+          "cachedResultName": "Prospects",
+          "cachedResultUrl": "https://airtable.com/app7BA8vwgohGqIE0/tblxTjxBcOdPN2osz"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Search records').first().json.id }}",
+            "Notes": "={{ $json.Notes }}",
+            "Survey Responses": "={{ $('Parse Answers').first().json['survey questions'].toJsonString() }}",
+            "Survey Evaluation": "={{ $('Evaluate Responses').first().json.message.content.toJsonString() }}",
+            "Challenge": "={{ $('Evaluate Responses').first().json.message.content.challenge }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Prospect Name",
+              "displayName": "Prospect Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Prospect Actions",
+              "displayName": "Prospect Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Company",
+              "displayName": "Company",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Phone",
+              "displayName": "Phone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Prospect Email Template",
+              "displayName": "Prospect Email Template",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Challenge",
+              "displayName": "Challenge",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Solution",
+              "displayName": "Solution",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Additional Terms",
+              "displayName": "Additional Terms",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Assignee",
+              "displayName": "Assignee",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Cost",
+              "displayName": "Cost",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Days",
+              "displayName": "Days",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Stage",
+              "displayName": "Stage",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "New Prospect",
+                  "value": "New Prospect"
+                },
+                {
+                  "name": "Meeting Scheduled",
+                  "value": "Meeting Scheduled"
+                },
+                {
+                  "name": "Proposal Sent",
+                  "value": "Proposal Sent"
+                },
+                {
+                  "name": "Proposal Signed",
+                  "value": "Proposal Signed"
+                },
+                {
+                  "name": "Discovery",
+                  "value": "Discovery"
+                },
+                {
+                  "name": "Development",
+                  "value": "Development"
+                },
+                {
+                  "name": "Testing",
+                  "value": "Testing"
+                },
+                {
+                  "name": "Deployment",
+                  "value": "Deployment"
+                },
+                {
+                  "name": "Invoice Not Sent",
+                  "value": "Invoice Not Sent"
+                },
+                {
+                  "name": "Invoice Sent",
+                  "value": "Invoice Sent"
+                },
+                {
+                  "name": "Closed",
+                  "value": "Closed"
+                },
+                {
+                  "name": "Terminated",
+                  "value": "Terminated"
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Webhook URL",
+              "displayName": "Webhook URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Action ID",
+              "displayName": "Action ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "PM Actions",
+              "displayName": "PM Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "isPM",
+              "displayName": "isPM",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Webhook URL-  PM Actions",
+              "displayName": "Webhook URL-  PM Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Action ID- PM Actions",
+              "displayName": "Action ID- PM Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "isActive",
+              "displayName": "isActive",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Action Name",
+              "displayName": "Action Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Action Name- PM",
+              "displayName": "Action Name- PM",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "recordId",
+              "displayName": "recordId",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "isAR",
+              "displayName": "isAR",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Invoice Sent Date",
+              "displayName": "Invoice Sent Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "AR Actions",
+              "displayName": "AR Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Action Name- AR",
+              "displayName": "Action Name- AR",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Action ID- AR Actions",
+              "displayName": "Action ID- AR Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Webhook URL- AR Actions",
+              "displayName": "Webhook URL- AR Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Invoice Days",
+              "displayName": "Invoice Days",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Invoice Paid Date",
+              "displayName": "Invoice Paid Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Created Date",
+              "displayName": "Created Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "isProspect",
+              "displayName": "isProspect",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Inv #",
+              "displayName": "Inv #",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Inv Line Item",
+              "displayName": "Inv Line Item",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Invoice Document ID",
+              "displayName": "Invoice Document ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Response Webhook URL",
+              "displayName": "Response Webhook URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Response Webhook URL- PM Actions",
+              "displayName": "Response Webhook URL- PM Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Response Webhook URL- AR Actions",
+              "displayName": "Response Webhook URL- AR Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Proposal Document ID",
+              "displayName": "Proposal Document ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "EmailId",
+              "displayName": "EmailId",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Email Subject",
+              "displayName": "Email Subject",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Email Body",
+              "displayName": "Email Body",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Last Email Subject",
+              "displayName": "Last Email Subject",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Email Body",
+              "displayName": "Last Email Body",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Email Ready",
+              "displayName": "Email Ready",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Email Name",
+              "displayName": "Last Email Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "PM Email Template",
+              "displayName": "PM Email Template",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "AR Email Template",
+              "displayName": "AR Email Template",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Survey Responses",
+              "displayName": "Survey Responses",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Survey Evaluation",
+              "displayName": "Survey Evaluation",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1664,
+        -160
+      ],
+      "id": "2011e641-6b18-4204-93c5-5a718571fd8e",
+      "name": "Update Airtable Record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get old notes from a previous node\nconst oldNotes = $json.Notes;\n\n// Define your new note manually\nlet newNotes = \"Updating survery responses.\";\n\n// Format datetime as MM.DD.YYYY HH:mm\nconst now = new Date();\nconst timestamp =\n  String(now.getMonth() + 1).padStart(2, '0') + \".\" +\n  String(now.getDate()).padStart(2, '0') + \".\" +\n  now.getFullYear() + \" \" +\n  String(now.getHours()).padStart(2, '0') + \":\" +\n  String(now.getMinutes()).padStart(2, '0');\n\n// Prepend timestamp to the new note\nnewNotes = `${timestamp}- ${newNotes}`;\n\n// If old notes exist, append with a carriage return\nconst updatedNotes = oldNotes ? `${oldNotes}\\n${newNotes}` : newNotes;\n\n// ✅ Return as an object under \"Notes\"\nreturn [\n  {\n    json: {\n      Notes: updatedNotes\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        -160
+      ],
+      "id": "e7310d6d-2f14-4979-b837-53c3bcc8c6b6",
+      "name": "Updated Notes"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get old notes from a previous node\nconst oldNotes = $json.Notes;\n\n// Define your new note manually\nlet newNotes = \"New prospect record created using survery responses.\";\n\n// Format datetime as MM.DD.YYYY HH:mm\nconst now = new Date();\nconst timestamp =\n  String(now.getMonth() + 1).padStart(2, '0') + \".\" +\n  String(now.getDate()).padStart(2, '0') + \".\" +\n  now.getFullYear() + \" \" +\n  String(now.getHours()).padStart(2, '0') + \":\" +\n  String(now.getMinutes()).padStart(2, '0');\n\n// Prepend timestamp to the new note\nnewNotes = `${timestamp}- ${newNotes}`;\n\n// If old notes exist, append with a carriage return\nconst updatedNotes = oldNotes ? `${oldNotes}\\n${newNotes}` : newNotes;\n\n// ✅ Return as an object under \"Notes\"\nreturn [\n  {\n    json: {\n      Notes: updatedNotes\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        32
+      ],
+      "id": "6fa86a12-9c3d-478d-8f7d-afcdb7540ea8",
+      "name": "Updated Notes1"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "app7BA8vwgohGqIE0",
+          "mode": "list",
+          "cachedResultName": "KAP Enterprises",
+          "cachedResultUrl": "https://airtable.com/app7BA8vwgohGqIE0"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblxTjxBcOdPN2osz",
+          "mode": "list",
+          "cachedResultName": "Prospects",
+          "cachedResultUrl": "https://airtable.com/app7BA8vwgohGqIE0/tblxTjxBcOdPN2osz"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "isActive": true,
+            "isProspect": true,
+            "Prospect Name": "={{ $('Evaluate Responses').item.json.message.content.name }}",
+            "Company": "={{ $('Evaluate Responses').item.json.message.content.company }}",
+            "Email": "={{ $('Evaluate Responses').item.json.message.content.email }}",
+            "Phone": "={{ $('Evaluate Responses').item.json.message.content.phone }}",
+            "Notes": "={{ $json.Notes }}",
+            "Stage": "New Prospect",
+            "Survey Responses": "={{ $('Parse Answers').first().json['survey questions'].toJsonString() }}",
+            "Survey Evaluation": "={{ $('Evaluate Responses').first().json.message.content.toJsonString() }}",
+            "Challenge": "={{ $('Evaluate Responses').first().json.message.content.challenge }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Prospect Name",
+              "displayName": "Prospect Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Prospect Actions",
+              "displayName": "Prospect Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Company",
+              "displayName": "Company",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Phone",
+              "displayName": "Phone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Prospect Email Template",
+              "displayName": "Prospect Email Template",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Challenge",
+              "displayName": "Challenge",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Solution",
+              "displayName": "Solution",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Additional Terms",
+              "displayName": "Additional Terms",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Assignee",
+              "displayName": "Assignee",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Cost",
+              "displayName": "Cost",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Days",
+              "displayName": "Days",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Stage",
+              "displayName": "Stage",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "New Prospect",
+                  "value": "New Prospect"
+                },
+                {
+                  "name": "Meeting Scheduled",
+                  "value": "Meeting Scheduled"
+                },
+                {
+                  "name": "Proposal Sent",
+                  "value": "Proposal Sent"
+                },
+                {
+                  "name": "Proposal Signed",
+                  "value": "Proposal Signed"
+                },
+                {
+                  "name": "Discovery",
+                  "value": "Discovery"
+                },
+                {
+                  "name": "Development",
+                  "value": "Development"
+                },
+                {
+                  "name": "Testing",
+                  "value": "Testing"
+                },
+                {
+                  "name": "Deployment",
+                  "value": "Deployment"
+                },
+                {
+                  "name": "Invoice Not Sent",
+                  "value": "Invoice Not Sent"
+                },
+                {
+                  "name": "Invoice Sent",
+                  "value": "Invoice Sent"
+                },
+                {
+                  "name": "Closed",
+                  "value": "Closed"
+                },
+                {
+                  "name": "Terminated",
+                  "value": "Terminated"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Webhook URL",
+              "displayName": "Webhook URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Action ID",
+              "displayName": "Action ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "PM Actions",
+              "displayName": "PM Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "isPM",
+              "displayName": "isPM",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Webhook URL-  PM Actions",
+              "displayName": "Webhook URL-  PM Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Action ID- PM Actions",
+              "displayName": "Action ID- PM Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "isActive",
+              "displayName": "isActive",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Action Name",
+              "displayName": "Action Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Action Name- PM",
+              "displayName": "Action Name- PM",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "recordId",
+              "displayName": "recordId",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "isAR",
+              "displayName": "isAR",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Invoice Sent Date",
+              "displayName": "Invoice Sent Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "AR Actions",
+              "displayName": "AR Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Action Name- AR",
+              "displayName": "Action Name- AR",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Action ID- AR Actions",
+              "displayName": "Action ID- AR Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Webhook URL- AR Actions",
+              "displayName": "Webhook URL- AR Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Invoice Days",
+              "displayName": "Invoice Days",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Invoice Paid Date",
+              "displayName": "Invoice Paid Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Created Date",
+              "displayName": "Created Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "isProspect",
+              "displayName": "isProspect",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Inv #",
+              "displayName": "Inv #",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Inv Line Item",
+              "displayName": "Inv Line Item",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Invoice Document ID",
+              "displayName": "Invoice Document ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Response Webhook URL",
+              "displayName": "Response Webhook URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Response Webhook URL- PM Actions",
+              "displayName": "Response Webhook URL- PM Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Response Webhook URL- AR Actions",
+              "displayName": "Response Webhook URL- AR Actions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Proposal Document ID",
+              "displayName": "Proposal Document ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "EmailId",
+              "displayName": "EmailId",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Email Subject",
+              "displayName": "Email Subject",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Email Body",
+              "displayName": "Email Body",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Last Email Subject",
+              "displayName": "Last Email Subject",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Email Body",
+              "displayName": "Last Email Body",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Email Ready",
+              "displayName": "Email Ready",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Email Name",
+              "displayName": "Last Email Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "PM Email Template",
+              "displayName": "PM Email Template",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "AR Email Template",
+              "displayName": "AR Email Template",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Survey Responses",
+              "displayName": "Survey Responses",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Survey Evaluation",
+              "displayName": "Survey Evaluation",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1664,
+        32
+      ],
+      "id": "43586414-d66f-4e20-8ca3-6cef83ff486b",
+      "name": "Create a record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the Typeform webhook payload\nconst payload = $('Webhook').first().json.body.form_response;\n\n// Helper to clean and optionally truncate\nconst cleanString = (str) => {\n  return str.replace(/[\\r\\n]+/g, ' ').replace(/\\s+/g, ' ').trim();\n};\n\n// Map field IDs to cleaned titles\nconst fieldMap = {};\nconst surveyFieldTypes = new Set(['multiple_choice', 'short_text', 'long_text', 'number']); // can expand\n\nfor (const field of payload.definition.fields) {\n  const title = cleanString(field.title);\n  fieldMap[field.id] = {\n    title,\n    type: field.type\n  };\n}\n\nconst output = {};\nconst surveyQuestions = {};\n\nfor (const answer of payload.answers) {\n  const questionId = answer.field.id;\n  const questionMeta = fieldMap[questionId] || { title: `Unknown (${questionId})`, type: 'unknown' };\n  const title = questionMeta.title;\n  const type = questionMeta.type;\n\n  let rawValue = '';\n\n  switch (answer.type) {\n    case 'text':\n      rawValue = answer.text;\n      break;\n    case 'phone_number':\n      rawValue = answer.phone_number;\n      break;\n    case 'number':\n      rawValue = answer.number;\n      break;\n    case 'choice':\n      rawValue = answer.choice.label;\n      break;\n    case 'boolean':\n      rawValue = answer.boolean ? 'Yes' : 'No';\n      break;\n    case 'email':\n      rawValue = answer.email;\n      break;\n    default:\n      rawValue = `[Unsupported type: ${answer.type}]`;\n  }\n\n  // Determine if it's a survey question or top-level\n  if (\n    surveyFieldTypes.has(type) &&\n    cleanString(title).length > 40 // long enough to be a survey Q\n  ) {\n    surveyQuestions[title] = rawValue;\n  } else {\n    output[title] = rawValue;\n  }\n}\n\n// Add hidden fields\nif (payload.hidden) {\n  for (const [key, value] of Object.entries(payload.hidden)) {\n    output[`(Hidden) ${key}`] = value;\n  }\n}\n\n// Add survey questions under nested object\noutput['survey questions'] = surveyQuestions;\n\nreturn [{ json: output }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        -64
+      ],
+      "id": "c219ea8b-27d1-4661-890b-b704fb03d9d7",
+      "name": "Parse Answers"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "You are an internal business analyst at KAP Enterprises. Your job is to evaluate automation survey responses submitted by prospective clients.\n\nYour company builds AI automation systems using Make.com and n8n. You offer a catalog of automation products (see below). Your task is to analyze the prospect’s answers and provide an internal-use JSON summary that includes:\n\n1. Name- first name and last name\n2. Email- given email address\n3. Phone- given phone number\n4. Company- given company name\n5. Key pain points (in plain language)\n6. 1 or 2 sentence \"challenge\" summarizing the pain points that the client is experiencing and keeping them from their goals\n7. Business processes or workflows that may benefit from automation\n8. Recommended products from the KAP Catalog (1–3)\n9. A short internal summary of the opportunity\n10. Source- source of the survey\n\nThis JSON will be used internally to assess fit and generate a separate client-facing plan.\n\nOnly recommend products that are relevant to the responses. If a product isn’t mentioned, omit it from the list.\n\nRespond ONLY with valid, well-structured JSON using the format shown below.\n\n---\n\nJSON Format (example):\n\n{\n  \"name\": \"Kevin Pilgrim\",\n  \"email\": \"kilgrim@kap-enterprises-llc.com\",\n  \"phone\": \"801-759-9947\",\n  \"company\": \"KAP Enterprises\",\n  \"pain_points\": [\n    \"The prospect spends too much time manually following up with leads.\",\n    \"They are overwhelmed by email communication.\",\n    \"They want to free up time to focus on marketing and client outreach.\"\n  ],\n  \"challenge\": \"The prospect is struggling to keep up with manual follow-ups and an overwhelming volume of email, leaving little time to focus on strategic priorities like marketing and client outreach.\",\n  \"automation_opportunities\": [\n    \"Automate lead follow-up and reminders.\",\n    \"Use AI to triage and respond to inbound emails.\",\n    \"Build a CRM flow to manage client communications more efficiently.\"\n  ],\n  \"recommended_products\": [\n    \"CRM System\",\n    \"Email Management System\"\n  ],\n  \"internal_summary\": \"This lead is a strong fit for automation. They are spending time on follow-ups and manual outreach. The CRM and Email Management systems would save them 5–10 hours/week. Potential for high impact with quick ROI.\",\n  \"source\": \"LinkedIn\"\n}\n\n---\n\nKAP Product Catalog (reference only):\n\n1. Email Management System – Automates triage and response to email threads using AI.\n2. CRM System – Automates lead tracking, client workflows, and project follow-ups.\n3. Social Media Content System – AI-driven content generation and posting.\n4. Cold Email Campaign System – Automates outbound cold email with lead enrichment.\n5. Travel Blog Content System – AI-written SEO travel content.\n6. AI-Driven Video Generation System – Full video creation automation.\n7. Customer Service Automation System – Ticketing + response automation.\n8. IG Reels Trending System – Tracks and analyzes trending IG Reels.\n9. Deep Research Automation System – Research generator with citations and visuals.\n\n---",
+              "role": "system"
+            },
+            {
+              "content": "=survey responses:  {{ $json.toJsonString() }}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        640,
+        -64
+      ],
+      "id": "503092b3-9dc0-4a55-92e8-0aeb5b0ace80",
+      "name": "Evaluate Responses",
+      "credentials": {
+        "openAiApi": {
+          "id": "q3gPWSga9sOawaqA",
+          "name": "OpenAi API Key- KAP Enterprises"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "680a47c7-1d68-4abf-9f45-6a5598ec1f3c",
+              "leftValue": "={{ $json.headers['typeform-signature'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -32,
+        -64
+      ],
+      "id": "d6b7f22b-8535-4f08-ac5b-e0e5c280d888",
+      "name": "Check Typeform Signature"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-23T22:15:34.528Z",
+      "updatedAt": "2025-09-23T22:15:34.528Z",
+      "role": "workflow:owner",
+      "workflowId": "SIeqvgAlCcWcLxcb",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-10-02T18:05:32.000Z",
+  "versionId": "ee91c7ac-39a2-49de-ba60-de1150cb3268"
+}
