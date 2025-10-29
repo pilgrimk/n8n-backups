@@ -1,0 +1,336 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Variables": {
+      "main": [
+        [
+          {
+            "node": "Create Array",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Outter Loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Array": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Loop Counter": {
+      "main": [
+        [
+          {
+            "node": "Inner Loop",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Outter Loop": {
+      "main": [
+        [
+          {
+            "node": "Check Loop Counter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inner Loop": {
+      "main": [
+        [
+          {
+            "node": "Check Inner Loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Inner Loop": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-28T07:16:04.511Z",
+  "id": "yDL6q8AviEx9HMuZ",
+  "isArchived": false,
+  "meta": null,
+  "name": "Loop Counters",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        288
+      ],
+      "id": "bae275fd-0f18-490f-ae12-431e80f5045a",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "const variables = {\n  waitTimeSeconds_long: 20,  // Wait time in seconds\n  waitTimeSeconds_short: 1,  // Wait time in seconds\n  maxRetryCount: 10,\n  arrayItemCount: 15,\n\n  // Counter-related\n  innerLoopCounter: 3,   // cap on new leads (adjust as needed)\n  outterLoopCounter: 5,    // initialize counter\n  reachedLimit: false // flag to track when cap is hit\n};\n\nreturn [{ json: variables }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        288
+      ],
+      "id": "3558fcfc-ea55-41a0-ad1f-de57658cd134",
+      "name": "Set Variables"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        672,
+        288
+      ],
+      "id": "757e00d3-ab32-44e3-a1b1-daeec846f73c",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 🔧 Configuration change this to however many dummy items you want\nconst numItems = $input.first().json.arrayItemCount;  \n\n// Generate dummy array\nconst itemsOut = [];\nfor (let i = 1; i <= numItems; i++) {\n  itemsOut.push({\n    json: {\n      id: i,\n      name: `Dummy Lead ${i}`,\n      company: `Company ${i}`,\n      source: \"Test\"\n    }\n  });\n}\n\nreturn itemsOut;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        288
+      ],
+      "id": "cfdef926-828d-4cc1-9597-3cab68bfece8",
+      "name": "Create Array"
+    },
+    {
+      "parameters": {
+        "amount": "={{ $('Set Variables').item.json.waitTimeSeconds_short }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1792,
+        456
+      ],
+      "id": "28774b31-7118-4d6e-a968-bc9f889a90be",
+      "name": "Wait",
+      "webhookId": "1d32fbed-3e97-4d3d-8a33-9f9b48c9259d"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d8a92313-0886-42d4-b666-9b7985b977eb",
+              "leftValue": "={{ $json.retryCount }}",
+              "rightValue": "={{ $('Set Variables').item.json.outterLoopCounter - 1 }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        288
+      ],
+      "id": "bd00df08-a56d-4230-8312-a61d3dbe1d9f",
+      "name": "Check Loop Counter"
+    },
+    {
+      "parameters": {
+        "jsCode": "const retryCount = $runIndex || 1;\n\nreturn [{\n  status: \"TESTING\",\n  retryCount\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        896,
+        288
+      ],
+      "id": "df48f6aa-371a-4d2e-acce-da37d62911ce",
+      "name": "Outter Loop"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = $runIndex || 1;\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1344,
+        216
+      ],
+      "id": "7b6c3794-93eb-4407-9784-978c745b02ff",
+      "name": "Inner Loop"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2fe1f815-2874-43bf-9ad7-b38bacc01186",
+              "leftValue": "={{ $json.myNewField }}",
+              "rightValue": "={{ $('Set Variables').item.json.innerLoopCounter - 1 }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1568,
+        216
+      ],
+      "id": "1b01bd73-3f75-4f9a-b6a3-8a349992bfba",
+      "name": "Check Inner Loop"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"my_field_1\": \"Done!\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        896,
+        96
+      ],
+      "id": "5b7331f3-bc2c-456f-9a2a-e161496e43cd",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"my_field_1\": \"Exited.\",\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1792,
+        168
+      ],
+      "id": "28d24aa0-cfdc-4a4d-96d7-2ea5268743fa",
+      "name": "Edit Fields1"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-28T07:16:04.519Z",
+      "updatedAt": "2025-09-28T07:16:04.519Z",
+      "role": "workflow:owner",
+      "workflowId": "yDL6q8AviEx9HMuZ",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-28T07:47:40.000Z",
+  "versionId": "86f65104-452e-45c1-86fd-9f92c8d8fea5"
+}
