@@ -1,0 +1,928 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Revision Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Set Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          },
+          {
+            "node": "AI Revision Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier": {
+      "main": [
+        [
+          {
+            "node": "Campaign Drafts",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Revision Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campaign Drafts": {
+      "main": [
+        [
+          {
+            "node": "Final Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Google Drive Download",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Set Fields": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Revision Message": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive Download": {
+      "main": [
+        [
+          {
+            "node": "Image Gen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Image": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "AI Revision Agent": {
+      "main": [
+        [
+          {
+            "node": "Set Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Upload Image",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Flash": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini 2.5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Revision Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Product Catalog": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Top Ads": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          },
+          {
+            "node": "AI Revision Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image Gen": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Image": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-24T23:20:35.903Z",
+  "id": "UNjtPOBsicxNMBZd",
+  "isArchived": false,
+  "meta": null,
+  "name": "2.0 Product Marketing- Marketing Image",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -240,
+        120
+      ],
+      "id": "567c9614-c71e-42ca-a79c-f5aebc71fcd2",
+      "name": "Telegram Trigger",
+      "webhookId": "16b3c7f6-a3e6-45b7-a93c-9627a035b53a"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 3,
+        "options": {
+          "includeUnpaired": true
+        }
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        2400,
+        340
+      ],
+      "id": "9ea94777-0dad-48c0-b1c0-1a4a120b81b8",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are an AI marketing agent specializing in generating initial draft social media campaign assets for the Coca-Cola brand. Coca-Cola is a globally recognized beverage company known for its iconic red branding, refreshing drinks, and focus on moments of happiness and connection. Your primary function is to:\nRetrieve specific product information, including full product names and reference image File IDs, from the Product Catalog tool.\nAnalyze Coca-Cola's successful social media posts for visual style guidelines and brand voice/caption style from the Top Ads tool.\nDetermine the appropriate aspect ratio for the campaign visuals based on the initial user request.\nGenerate, for each requested Coca-Cola product:\nA highly descriptive and decisive AI image generator prompt, starting with the full product name (e.g., \"Coca Cola Can (330ml) - Zero Sugar Lemon\"), vividly detailing a scene optimized for creating a medium-quality product photograph, guided by the visual style and target aspect ratio.\nA corresponding draft social media caption, mimicking the learned Coca-Cola brand voice and style. \n\nAvailable Tools:\nProduct_Catalog_tool: Use this tool to retrieve the list of Coca-Cola products relevant to the user's request (e.g., \"summer poolside campaign\"). For each product, it provides necessary information, critically including the specific Full Product Name (expected format like \"Coca Cola Can (330ml) - Zero Sugar Lemon\") and the Google Drive fileId from the 'product image column' which references the specific product image. Assume this tool returns all relevant products you need to process in one go.\nTop_Ads_tool: Use this tool to analyze Coca-Cola's most successful past social media posts. It provides:\nA JSON object representing the derived \"brand visual style profile\" (containing specific guidelines like lighting_style, composition_rules, background_preferences, color_palette, overall_mood, human_interaction_preference).\nAnalysis/examples of effective \"campaign copy\" (captions) to learn the brand's voice, style, tone, length, structure, and common keywords/benefits (e.g., refreshing, iconic, taste the feeling, real magic, uplift). \n\nYour Process:\nRetrieve Products, Full Names, and File IDs: Call the Product_Catalog_tool once to get the complete list of relevant Coca-Cola products based on the user's request. For each product in the list, you MUST extract and store its specific Full Product Name and its associated fileId.\nDetermine Target Aspect Ratio: Based on the initial user request that initiated this process, determine the desired orientation for the visuals.\nIf the user requested \"vertical\" orientation, set the target aspect ratio to \"1024x1536\".\nIf the user requested \"horizontal\" or \"landscape\" orientation, set the target aspect ratio to \"1536x1024\".\nIf no specific orientation was requested, default the target aspect ratio to \"1024x1024\". Store this target_aspect_ratio.\nAnalyze Style & Voice: Call the Top_Ads_tool once to obtain the JSON visual style profile and to analyze the successful campaign copy for brand voice and caption style guidance.\nGenerate Draft Assets for Each Product: Iterate through the list of products (along with their stored Full Product Names and fileIds) obtained in Step 1. For each individual product:\na. Generate Decisive Image Prompt: Create a highly detailed and prescriptive text prompt for an AI image generator, suitable for generating a medium-quality image. This prompt MUST begin with the specific Full Product Name retrieved in Step 1 (e.g., \"Coca Cola Can (330ml) - Classic (short can)\", \"Fanta Orange Bottle (500ml)\", \"Sprite Zero Sugar Can (330ml) (short can)\"). Following the product name, vividly command the scene composition, lighting, background, and mood, strictly adhering to the elements defined in the JSON visual style profile obtained in Step 3. Mandate specific details like glistening condensation, vibrant fizz (if appropriate), dynamic angles, or serene placement. Insist on photographic qualities: 'hyper-realistic product photography', 'sharp focus on product', 'rich, brand-accurate colors'. Include 'subtle cinematic bokeh' or 'crisp ambient lighting' as dictated by the style guide.\nb. Generate Draft Caption: Write a concise and engaging social media caption draft for this specific product, reflecting the authentic Coca-Cola brand voice, style (e.g., uplifting, celebratory), and key benefits learned from the Top_Ads_tool analysis in Step 3.\nc. Prepare Output Object: Structure the output for this single product, ensuring you include the correct Full Product Name, fileId, and the target_aspect_ratio determined in Step 2. \n\nOutput Format:\nYour final response MUST be a single JSON array (a list). Each object within the array represents one Coca-Cola product draft asset set and MUST contain exactly FIVE keys:\npromptText: (string) The fully generated, descriptive, and decisive text prompt for the AI image generator, starting with the full product name, but do not mention the aspect ratio in the prompt.\ncaptionText: (string) The fully generated draft social media caption reflecting the learned Coca-Cola brand voice.\nfileId: (string) The specific Google Drive File ID associated with this Coca-Cola product, as retrieved from the Product_Catalog_tool in Step 1.\nquality: (string) MUST always be set to \"medium\".\naspect_ratio: (string) The target aspect ratio determined in Step 2 (e.g., \"1024x1024\", \"1024x1536\", or \"1536x1024\"). \n\nDo not include any other text, greetings, or explanations outside this JSON array structure. Ensure every product requested and retrieved in Step 1 has a corresponding object in the output array, each containing the correct fileId, quality set to medium, and the determined aspect_ratio. "
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        440,
+        200
+      ],
+      "id": "5ad4d79b-55c4-4b3a-ac47-1ee9097ad407",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "[\n  {\n    \"promptText\": \"Coca Cola Can (330ml) (short can) - Classic, perfectly chilled with glistening condensation, sits prominently on a rustic wooden picnic table. Bright, direct summer sunlight casts sharp shadows ('bright_daylight' lighting). Background shows a blurred, vibrant summer park scene with laughing friends ('social_gathering' background). Capture using a slightly low-angle medium shot ('dynamic_angle' composition). Ensure iconic Coca-Cola red is vibrant and accurate ('brand_palette_classic'). Mood is 'joyful and refreshing'. Hyper-realistic product photography, sharp focus on can, rich brand-accurate colors. Subtle cinematic bokeh in background.\",\n    \"captionText\": \"Taste the feeling of summer! Grab an ice-cold Coke and make some memories. #RealMagic #CocaColaSummer\",\n    \"fileId\": \"DRIVE_FILE_ID_FOR_COKE_CLASSIC_CAN\",\n    \"quality\": \"medium\",\n    \"aspect_ratio\": \"1024x1024\"\n  }\n]\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        760,
+        440
+      ],
+      "id": "5538aef5-cfc8-4cef-a6f6-22724f90a7c7",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "inputText": "={{ $json.data.text }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "Approved",
+              "description": "= Assign this classification ONLY if the user's message clearly and unambiguously indicates acceptance of the provided assets exactly as they are, with no indication of desired changes, dissatisfaction, or rejection. The approval can be explicit or implicit, but must be unconditional.\n\n    Keywords/Phrases Indicating \"Approve As-Is\": \"Looks good\", \"Approved\", \"Perfect\", \"Go ahead\", \"Send it\", \"This works\", \"No changes needed\", \"LGTM\" (Looks Good To Me), \"Yes\", \"OK\", \"Ship it\", \"All good\", simple positive affirmations without any qualifiers."
+            },
+            {
+              "category": "Declined",
+              "description": "=Assign this classification if the user's message indicates any of the following:\n\n    Explicit rejection or disapproval.\n\n    Any request for modifications, adjustments, or edits (even minor ones).\n\n    Expression of dissatisfaction or that the asset is unsuitable.\n\n    Ambiguity that does not clearly signal unconditional approval. If it's not a clear \"yes\", it's a \"no\" for the purpose of this classification.\n\n    Keywords/Phrases Indicating \"Decline/Needs Changes\": \"Decline\", \"Reject\", \"Needs changes\", \"Change the...\", \"Make it...\", \"Can we tweak...\", \"Not right\", \"Not suitable\", \"Use a different...\", \"Almost, but...\", \"I don't like...\", any negative sentiment, any instruction for modification."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1,
+      "position": [
+        2720,
+        140
+      ],
+      "id": "5eab3d87-1651-4e90-b67d-fc06ef903878",
+      "name": "Text Classifier"
+    },
+    {
+      "parameters": {
+        "content": "# output",
+        "height": 600,
+        "width": 400,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3440,
+        0
+      ],
+      "id": "7078b003-22ab-4157-b249-757133d231a0",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# revision",
+        "height": 600,
+        "width": 1120,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2300,
+        0
+      ],
+      "id": "477cc838-ae12-4d50-baff-4f4425bc3040",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "# input",
+        "height": 600,
+        "width": 520,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        0
+      ],
+      "id": "77239461-78ea-45a3-8d16-c96dd32f3b62",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1zLftlNjxS08bOI9nAqJfDg40HB3LKWrZy_OaR5h2hsQ",
+          "mode": "list",
+          "cachedResultName": "Marketing Agent Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zLftlNjxS08bOI9nAqJfDg40HB3LKWrZy_OaR5h2hsQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 381071982,
+          "mode": "list",
+          "cachedResultName": "Campaign Drafts",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zLftlNjxS08bOI9nAqJfDg40HB3LKWrZy_OaR5h2hsQ/edit#gid=381071982"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Campaign Copy": "={{ $('Set Fields').item.json.output[0].captionText }}",
+            "Image Prompt": "={{ $('Set Fields').item.json.output[0].promptText }}",
+            "ID": "={{ $('Switch').item.json.output[0].fileId }}",
+            "Campaign Visual": "={{ $('Merge').item.json.webViewLink }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Image Prompt",
+              "displayName": "Image Prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Campaign Visual",
+              "displayName": "Campaign Visual",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Campaign Copy",
+              "displayName": "Campaign Copy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        3480,
+        100
+      ],
+      "id": "b12a2e94-fcee-4fc9-a739-7e2649ac033f",
+      "name": "Campaign Drafts"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.imageId }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    },
+                    "id": "fe627dc5-49bd-400c-90cb-67279597ae18"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "154340dd-17db-4fb5-b8e1-9cd7ceb31325",
+                    "leftValue": "={{ $json.imageId }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "empty",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1200,
+        280
+      ],
+      "id": "c97b9c2d-ef33-43d7-84fa-7e7ca0e633c9",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9aec5996-e9d9-45a1-9d10-bf595f83e4eb",
+              "name": "promptText",
+              "value": "={{ $json.output[0].promptText }}",
+              "type": "string"
+            },
+            {
+              "id": "bdd97b51-6773-49ed-a6e2-2b7cfa838553",
+              "name": "imageId",
+              "value": "={{ $json.output[0].fileId }}",
+              "type": "string"
+            },
+            {
+              "id": "103091ea-ae3d-4217-819d-d89e82b52ad8",
+              "name": "quality",
+              "value": "={{ $json.output[0].quality }}",
+              "type": "string"
+            },
+            {
+              "id": "4ca42807-bc1c-414f-ac4b-9a81b27a22bf",
+              "name": "size",
+              "value": "={{ $json.output[0].aspect_ratio }}",
+              "type": "string"
+            },
+            {
+              "id": "0dd7dbf5-9d64-4f3f-a83d-a06c3242a496",
+              "name": "captionText",
+              "value": "={{ $json.output[0].captionText }}",
+              "type": "string"
+            },
+            {
+              "id": "170318f9-e06d-4c12-b86f-963297bf9ecb",
+              "name": "chatId",
+              "value": "={{ $('Telegram Trigger').item.json.message.message_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        960,
+        200
+      ],
+      "id": "03939d7f-52c6-47ff-baf6-c140ab03de07",
+      "name": "Set Fields"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "Great! Your ad creative is now saved in your campaign drafts.",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3640,
+        100
+      ],
+      "id": "188a9f58-8591-400e-b350-bf189181a8b4",
+      "name": "Final Message",
+      "webhookId": "1866bbb9-7c99-422c-a45c-513fabac6fd0"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "message": "={{ $('Set Fields').item.json.output[0].captionText }}",
+        "responseType": "freeText",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2560,
+        140
+      ],
+      "id": "1665783c-b187-4214-9a95-d376918aba17",
+      "name": "Revision Message",
+      "webhookId": "74cc4572-7352-454a-aabc-7c485bec5a36"
+    },
+    {
+      "parameters": {
+        "content": "# production\n\n",
+        "height": 600,
+        "width": 2040,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        240,
+        0
+      ],
+      "id": "d2ec4672-7f02-43fc-89d0-294f7f32288f",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Set Fields').item.json.output[0].fileId }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1420,
+        60
+      ],
+      "id": "dbf0ecd4-b845-4bcb-91de-678c2e0b503d",
+      "name": "Google Drive Download"
+    },
+    {
+      "parameters": {
+        "inputDataFieldName": "binaryImageData",
+        "name": "={{ $now }}.png",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1Buw3-YfRoiq13HjFcDbEXdBR44Jk90js",
+          "mode": "list",
+          "cachedResultName": "Campaign Visuals",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1Buw3-YfRoiq13HjFcDbEXdBR44Jk90js"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        2120,
+        160
+      ],
+      "id": "3b06f6ae-9c82-4462-889a-ae2b9116606b",
+      "name": "Upload Image"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=User Feedback: {{ $json.data.text }}\n\npromptText: {{ $('Set Fields').item.json.output[0].promptText }}\n\nfileID: {{ $('Set Fields').item.json.output[0].fileId }}\n\ncaptionText: {{ $('Set Fields').item.json.output[0].captionText }}\n\nsize: {{ $('Set Fields').item.json.output[0].aspect_ratio }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are an AI marketing assistant responsible for processing user feedback on Coca-Cola social media assets (image and caption). Coca-Cola is a globally recognized beverage company known for its iconic red branding, refreshing drinks, and focus on moments of happiness and connection. You will receive details for one specific asset set at a time via structured input. Your primary goals are:\nDetermine the final prompt text (original, revised for changes, or enhanced for upscale), ensuring it is highly descriptive, decisive, and always starts with the full product name (e.g., \"Coca Cola Can (330ml) - Zero Sugar Lemon\").\nDetermine the final caption text (original or revised based on feedback).\nDetermine the appropriate fileId and quality values to signal whether a new image generation (revision or explicitly requested upscale) is required.\nMaintain the original aspect_ratio throughout the process.\nAlways output a JSON array containing a single object with the fixed keys: promptText, captionText, fileId, quality, and aspect_ratio. \n\nYour Input:\nYou will receive the following information for a single asset:\nUser Feedback: (string) Text feedback provided by the user. May relate to the image, the caption, both, or neither.\npromptText: (string) The original, descriptive text prompt used to generate the preview image. This prompt must already start with the full product name.\nfileID: (string) The Google Drive File ID for the reference/preview product image. Crucially, if this fileID is initially empty, no new image generation is possible.\ncaptionText: (string) The original draft caption generated for the asset.\naspect_ratio: (string) The aspect ratio used for the initial image generation (e.g., \"1024x1024\", \"1024x1536\", \"1536x1024\"). \n\nAvailable Tools:\nbest_performers_database_tool: (Use only if revising based on feedback) Allows re-analyzing the Coca-Cola brand visual style profile JSON and caption characteristics to inform revisions to the prompt or caption. \n\nYour Process:\nAnalyze Input: Carefully review User Feedback, original promptText, input fileID, original captionText, and input aspect_ratio. Confirm the original promptText starts with the correct full product name.\nDetermine Final Caption Text:\nAnalyze User Feedback for caption instructions.\nIf revision is needed, revise captionText, reflecting Coca-Cola's brand voice. Set this as finalCaption.\nIf no revision is needed, set finalCaption = original captionText.\nDetermine Image Action & Final Parameters:\nInitialize finalPrompt = original promptText (which starts with the full product name and is already descriptive).\nInitialize finalFileID = \"\".\nInitialize finalQuality = \"\".\nInitialize finalAspectRatio = input aspect_ratio (this does not change).\ngenerateNewImage = false (flag to track if action is needed).\nCheck Conditions for Image Action (only if input fileID is NOT empty):\nCondition 1: Revision Request: Does the User Feedback clearly request specific changes to the IMAGE itself (e.g., \"change angle\", \"add more condensation\", \"make background a beach sunset\")?\nIf YES:\ngenerateNewImage = true.\nSet finalPrompt = Revise the original prompt based decisively on feedback. Start the revised prompt with the exact same full product name. Then, vividly rewrite the scene description to incorporate the requested changes, maintaining the descriptive and prescriptive style (e.g., \"mandate a dramatic low angle\", \"insist on heavy condensation glistening under golden hour light\", \"command a background transition to a vibrant beach sunset\").\nSet finalFileID = original input fileID.\nSet finalQuality = \"medium\".\nCondition 2: Explicit Upscale Request: Does the User Feedback explicitly ask for an upscale or high-quality version (e.g., \"upscale this\", \"generate high quality\", \"make high-res version\", \"finalize the image\")? General positive feedback like \"Looks great\" or \"Approved\" does NOT count unless accompanied by an explicit upscale keyword.\nIf YES (and Condition 1 was NO):\ngenerateNewImage = true.\nSet finalPrompt = Enhance the original prompt for high quality. Start this prompt with the exact same full product name. Append strong high-quality enhancers to the existing descriptive prompt (e.g., adding terms like 'ultra high definition', 'maximum crisp detail', 'cinematic photorealistic lighting', '4K resolution', 'flawless focus').\nSet finalFileID = original input fileID.\nSet finalQuality = \"high\".\nIf generateNewImage remains false (because input fileID was empty, OR feedback only mentioned the caption, OR feedback was generally positive/neutral about the image without requesting specific changes or an explicit upscale):\nKeep finalPrompt = original promptText (which already starts with the full product name and is descriptive).\nKeep finalFileID = \"\". // Ensure FileID stays empty\n\nPrepare Output JSON: Construct the JSON array containing a single object with the determined values (finalPrompt, finalCaption, finalFileID, finalQuality, finalAspectRatio). \n\nOutput Format:\nYour final response MUST be a single JSON array containing a single JSON object. This object MUST always contain exactly these FIVE keys:\npromptText: (string) The final prompt text (original, revised, or enhanced), always descriptive, decisive, and starting with the full product name.\ncaptionText: (string) The final caption text (original or revised).\nfileId: (string) The original fileID ONLY if a revision or an explicitly requested upscale is needed, otherwise an empty string (\"\").\nquality: (string) \"medium\" for revision, \"high\" for explicitly requested upscale, otherwise an empty string (\"\").\naspect_ratio: (string) The aspect ratio received in the input (e.g., \"1024x1024\", \"1024x1536\", \"1536x1024\"). This value must be passed through unchanged from the input. "
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        3100,
+        420
+      ],
+      "id": "b387ab74-731a-4fdf-bf3d-f6f9c68de698",
+      "name": "AI Revision Agent"
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.item;\n\nconst base64String = item.json.data[0].b64_json;\n\nif (!base64String) {\n  console.error(\"Base64 string not found at the expected path.\");\n  return [{ json: { error: \"Base64 string not found\" } }];\n}\n\ntry {\n  const outputItem = {\n    json: {},\n\n    binary: {\n      binaryImageData: {\n        data: base64String,\n        fileName: 'generated_image.png',\n        mimeType: 'image/png'\n      }\n    }\n  };\n\n  return [outputItem];\n\n} catch (error) {\n  console.error(\"Error preparing binary output structure:\", error);\n  return [{ json: { error: \"Failed to prepare binary output\", details: error.message } }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1840,
+        60
+      ],
+      "id": "3b09a587-66cc-41ad-b70d-2c8a4b38b201",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2820,
+        360
+      ],
+      "id": "cbb18629-cd9a-4e8a-accc-addf590dc77b",
+      "name": "Google Gemini Flash"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro-exp-03-25",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        280,
+        440
+      ],
+      "id": "3544bcf0-1324-42a9-8324-5312173ef49c",
+      "name": "Google Gemini 2.5"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zLftlNjxS08bOI9nAqJfDg40HB3LKWrZy_OaR5h2hsQ",
+          "mode": "list",
+          "cachedResultName": "Marketing Agent Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zLftlNjxS08bOI9nAqJfDg40HB3LKWrZy_OaR5h2hsQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Product Catalog",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zLftlNjxS08bOI9nAqJfDg40HB3LKWrZy_OaR5h2hsQ/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        520,
+        440
+      ],
+      "id": "7be60d37-bf80-46ec-a324-20d87b9b5c3e",
+      "name": "Product Catalog"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1zLftlNjxS08bOI9nAqJfDg40HB3LKWrZy_OaR5h2hsQ",
+          "mode": "list",
+          "cachedResultName": "Marketing Agent Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zLftlNjxS08bOI9nAqJfDg40HB3LKWrZy_OaR5h2hsQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 799023643,
+          "mode": "list",
+          "cachedResultName": "Top Ads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zLftlNjxS08bOI9nAqJfDg40HB3LKWrZy_OaR5h2hsQ/edit#gid=799023643"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.5,
+      "position": [
+        640,
+        440
+      ],
+      "id": "35156e5f-a1f1-4f8a-9e44-16de78081340",
+      "name": "Top Ads"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.message.message_id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        400,
+        440
+      ],
+      "id": "aa08551e-c905-4a76-9dd0-9c785e82576c",
+      "name": "Memory"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/images/edits",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "gpt-image-1"
+            },
+            {
+              "name": "prompt",
+              "value": "={{ $json.output[0].promptText }}"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "image",
+              "inputDataFieldName": "data"
+            },
+            {
+              "name": "n",
+              "value": "1"
+            },
+            {
+              "name": "size",
+              "value": "={{ $('Set Fields').item.json.output[0].aspect_ratio }}"
+            },
+            {
+              "name": "quality",
+              "value": "={{ $json.output[0].quality }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1620,
+        60
+      ],
+      "id": "58ea95bf-df87-40af-a42e-bf3ae8105c9e",
+      "name": "Image Gen"
+    },
+    {
+      "parameters": {
+        "content": "#### image pipeline\n",
+        "height": 320,
+        "width": 940,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        0
+      ],
+      "id": "bc87fe4f-5fe0-45e5-ac4d-9ec9f0f5ca3e",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "binaryData": true,
+        "binaryPropertyName": "binaryImageData",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2120,
+        0
+      ],
+      "id": "a64d345f-45da-4176-8d85-734ea15504ee",
+      "name": "Send Image",
+      "webhookId": "5055179d-edb1-4c0b-a070-817b3c4ee21d"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-06-24T23:20:35.913Z",
+      "updatedAt": "2025-06-24T23:20:35.913Z",
+      "role": "workflow:owner",
+      "workflowId": "UNjtPOBsicxNMBZd",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-09T01:14:57.000Z",
+  "versionId": "e9f5ed82-a593-4e34-8fb2-5c8bdaffa477"
+}
