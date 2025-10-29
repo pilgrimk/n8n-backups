@@ -1,0 +1,191 @@
+{
+  "active": false,
+  "connections": {
+    "Get dataset items (Apify)": {
+      "main": [
+        [
+          {
+            "node": "Initialize Loop Counter (wrap leads)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Initialize Loop Counter (wrap leads)": {
+      "main": [
+        [
+          {
+            "node": "Merge Leads + Counter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Counter Init": {
+      "main": [
+        [
+          {
+            "node": "Merge Leads + Counter",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Leads + Counter": {
+      "main": [
+        [
+          {
+            "node": "Increment Loop Counter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Increment Loop Counter": {
+      "main": [
+        [
+          {
+            "node": "Check Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Limit": {
+      "main": [
+        [
+          {
+            "node": "Terminate Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-26T23:57:20.947Z",
+  "id": "5mLtCQ29tMK5QYD3",
+  "isArchived": false,
+  "meta": null,
+  "name": "Merge Example",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "0f1597e9-d690-44e9-a84b-51322cab7488",
+      "name": "Get dataset items (Apify)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        352,
+        -208
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "e7c3a27f-898c-4324-ae7b-4e66f90d4061",
+      "name": "Initialize Loop Counter (wrap leads)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        -208
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b40557ea-fc98-4ac1-91cb-42b47e6012d3",
+      "name": "Counter Init",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        560,
+        -16
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "multiplex",
+        "options": {}
+      },
+      "id": "5a8e56e0-609d-4e2e-addc-2f808e51a6d0",
+      "name": "Merge Leads + Counter",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        816,
+        -112
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "id": "a742a0ea-df30-44e6-a110-dc1206b9004a",
+      "name": "Increment Loop Counter",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1008,
+        -112
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.counter.reachedLimit }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6d2e5f8d-b1a9-4b1e-a35f-3996878c0f55",
+      "name": "Check Limit",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1216,
+        -112
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "6768e1e8-c5a2-4c0b-b279-6c1d6d42c606",
+      "name": "Terminate Workflow",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1408,
+        -208
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-26T23:57:20.955Z",
+      "updatedAt": "2025-09-26T23:57:20.955Z",
+      "role": "workflow:owner",
+      "workflowId": "5mLtCQ29tMK5QYD3",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-28T07:10:57.000Z",
+  "versionId": "d35c6ede-3160-4aa4-90ac-1e893eb41a80"
+}
