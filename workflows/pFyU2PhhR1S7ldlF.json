@@ -1,0 +1,467 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Variables": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Set Times",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Book Appointment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Times": {
+      "main": [
+        [
+          {
+            "node": "Get Open Slots",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Open Slots": {
+      "main": [
+        [
+          {
+            "node": "Are Slots Available",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Are Slots Available": {
+      "main": [
+        [
+          {
+            "node": "Slots Available",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Slots Not Available",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Book Appointment": {
+      "main": [
+        [
+          {
+            "node": "Booking Success",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Booking Failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-24T03:28:35.079Z",
+  "id": "pFyU2PhhR1S7ldlF",
+  "isArchived": false,
+  "meta": null,
+  "name": "1.0 Voice Automation - Vapi and Cal.com",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "5e905c44-002a-4a3c-b02f-5da28c5532cb",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1320,
+        300
+      ],
+      "id": "9c9856e2-238b-4439-a7c7-cb8bb86368b5",
+      "name": "Webhook",
+      "webhookId": "5e905c44-002a-4a3c-b02f-5da28c5532cb"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "84791b70-a8b9-4483-aa64-1accb016fe02",
+              "name": "apiKey",
+              "value": "cal_live_208faa266175534c4c7836356ba5fcb8",
+              "type": "string"
+            },
+            {
+              "id": "555a2c8a-e5f7-41a3-95e5-5ee723852d49",
+              "name": "apiVersion",
+              "value": "2024-09-04",
+              "type": "string"
+            },
+            {
+              "id": "1c970c5c-3d38-4fe7-9eea-190cfa6156f1",
+              "name": "username",
+              "value": "pilgrimka1",
+              "type": "string"
+            },
+            {
+              "id": "dd968f3b-fb41-4a26-8d8e-903bbeda335a",
+              "name": "eventTypeSlug",
+              "value": "30min",
+              "type": "string"
+            },
+            {
+              "id": "057d988b-6fbd-4ed5-bdd1-9f92fa3737a0",
+              "name": "eventTypeId",
+              "value": "1064317",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1100,
+        300
+      ],
+      "id": "9faa1cd8-4ad9-4f51-944a-df50ed0891a3",
+      "name": "Set Variables"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Webhook').item.json.body.message.toolCalls[0].function.name }}",
+                    "rightValue": "getOpenSlots",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "5398f8c9-e43e-4ad1-8469-bef03a996973"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Get Open Slots"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "331e46c6-473d-4baa-8f2f-39c8d58e6939",
+                    "leftValue": "={{ $('Webhook').item.json.body.message.toolCalls[0].function.name }}",
+                    "rightValue": "bookAppointment",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Book Appointment"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -880,
+        300
+      ],
+      "id": "f05b2605-3947-4f0a-874b-89db682dff6d",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "19037716-8792-4941-bac6-01f73ec57a45",
+              "name": "startTime",
+              "value": "={{ $('Webhook').item.json.body.message.toolCalls[0].function.arguments.requestedAppointment }}",
+              "type": "string"
+            },
+            {
+              "id": "b8db48e5-4368-4904-bb59-883d58d7d132",
+              "name": "endTime",
+              "value": "={{ $('Webhook').item.json.body.message.toolCalls[0].function.arguments.requestedAppointment.toDateTime().plus(1, 'days') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -660,
+        100
+      ],
+      "id": "769e925a-a8ef-4db9-b4c0-19b45598e926",
+      "name": "Set Times"
+    },
+    {
+      "parameters": {
+        "url": "https://api.cal.com/v1/slots",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "=usernameList",
+              "value": "={{ $('Set Variables').item.json.username }}"
+            },
+            {
+              "name": "eventTypeSlug",
+              "value": "={{ $('Set Variables').item.json.eventTypeSlug }}"
+            },
+            {
+              "name": "startTime",
+              "value": "={{ $json.startTime }}"
+            },
+            {
+              "name": "endTime",
+              "value": "={{ $json.endTime }}"
+            },
+            {
+              "name": "cal-api-version",
+              "value": "={{ $('Set Variables').item.json.apiVersion }}"
+            },
+            {
+              "name": "apiKey",
+              "value": "={{ $('Set Variables').item.json.apiKey }}"
+            },
+            {
+              "name": "timeZone",
+              "value": "={{ $('Webhook').item.json.body.message.toolCalls[0].function.arguments.callerTimezone }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -440,
+        100
+      ],
+      "id": "f6020832-7d14-4a0a-9b16-6f38a2c674bc",
+      "name": "Get Open Slots"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "08f9e2b3-00b3-454a-bc0b-65c753786422",
+              "leftValue": "={{ $json.slots }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -220,
+        100
+      ],
+      "id": "060ad191-e623-4486-852f-2b7698038e1a",
+      "name": "Are Slots Available"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n    \"results\": [{\n            \"toolCallId\": \"{{ $('Webhook').item.json.body.message.toolCalls[0].id }}\",\n            \"result\": {{ $('Get Open Slots').item.json.slots.toJsonString() }}\n        }\n    ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "6747a4b7-7192-421b-8c3d-8cd418b10aa7",
+      "name": "Slots Available"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n    \"results\": [{\n            \"toolCallId\": \"{{ $('Webhook').item.json.body.message.toolCalls[0].id }}\",\n            \"result\": \"There were no open slots.  Try selecting another day/time.\"\n        }\n    ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        200
+      ],
+      "id": "56720503-9488-4aae-9e94-646e0fed786d",
+      "name": "Slots Not Available"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.cal.com/v1/bookings",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "apiKey",
+              "value": "={{ $json.apiKey }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"start\": \"{{ $('Webhook').item.json.body.message.toolCalls[0].function.arguments.requestedAppointment }}\",\n  \"responses\": {\n    \"name\": \"{{ $('Webhook').item.json.body.message.toolCalls[0].function.arguments.name }}\",\n    \"email\": \"{{ $('Webhook').item.json.body.message.toolCalls[0].function.arguments.email }}\",\n    \"location\": {\n      \"value\": \"\",\n      \"optionValue\": \"\"\n    }\n  },\n  \"timeZone\": \"{{ $('Webhook').item.json.body.message.toolCalls[0].function.arguments.callerTimezone }}\",\n  \"language\": \"en\",\n  \"eventTypeId\": {{ $json.eventTypeId }},\n  \"metadata\": {\n    \"purpose\": \"Gather info\"\n  }\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -660,
+        400
+      ],
+      "id": "78c80368-5a68-4598-bb18-49a34d6d490e",
+      "name": "Book Appointment",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n    \"results\": [{\n            \"toolCallId\": \"{{ $('Webhook').item.json.body.message.toolCalls[0].id }}\",\n            \"result\": \"Booking successful.\"\n        }\n    ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [
+        -440,
+        300
+      ],
+      "id": "73d5ccee-3acc-43a4-94f3-6d418c80993c",
+      "name": "Booking Success"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n    \"results\": [{\n            \"toolCallId\": \"{{ $('Webhook').item.json.body.message.toolCalls[0].id }}\",\n            \"result\": \"Booking not successful. Try booking another day/time\"\n        }\n    ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [
+        -440,
+        500
+      ],
+      "id": "7bf70ca2-4686-40b2-899c-26c385dd1b48",
+      "name": "Booking Failed"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-06-24T03:28:35.090Z",
+      "updatedAt": "2025-06-24T03:28:35.090Z",
+      "role": "workflow:owner",
+      "workflowId": "pFyU2PhhR1S7ldlF",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-24T03:29:46.000Z",
+  "versionId": "d2351f1a-d789-4163-8d8e-1f3f3147e112"
+}
