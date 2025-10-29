@@ -1,0 +1,633 @@
+{
+  "active": false,
+  "connections": {
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Get Laws Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Get Laws Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Get Laws Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Variables": {
+      "main": [
+        [
+          {
+            "node": "Set Class Name",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings": {
+      "main": [
+        [
+          {
+            "node": "Query Weaviate Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query Data": {
+      "ai_tool": [
+        [
+          {
+            "node": "Get Laws Agent",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "Get Cases Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query Weaviate Database": {
+      "main": [
+        [
+          {
+            "node": "Process Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Class Name": {
+      "main": [
+        [
+          {
+            "node": "Embeddings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "Get Cases Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Get Cases Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Get Laws Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Laws Agent": {
+      "main": [
+        [
+          {
+            "node": "Get Cases Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Cases Agent": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-24T03:37:24.567Z",
+  "id": "MmJ93e6xOtQljx3G",
+  "isArchived": false,
+  "meta": null,
+  "name": "1.0 Case Law Study- Query Data",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Welcome to Genesea!  How can I assist you today?",
+        "options": {}
+      },
+      "id": "69379317-38fd-4e3a-87e7-6b3fd2186029",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "01bdf48c-7922-4bf1-9182-734a9d1a7002",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {},
+      "id": "757f9958-b7c6-488d-92a0-6319db9345e2",
+      "name": "Window Buffer Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "position": [
+        320,
+        220
+      ],
+      "typeVersion": 1.3
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-3-7-sonnet-20250219",
+          "cachedResultName": "Claude 3.7 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        200,
+        220
+      ],
+      "id": "b1264f43-6f79-4746-b4ae-2ffcc8109174",
+      "name": "Anthropic Chat Model"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "query"
+            },
+            {
+              "name": "source"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        40,
+        460
+      ],
+      "id": "a6d7cc58-3870-422f-8014-db5efe082d42",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Set Variables').item.json.embeddingsUrl }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"input\": [\"{{ $('When Executed by Another Workflow').item.json.query }}\"],\n  \"model\": \"{{ $('Set Variables').item.json.embeddingModel }}\",\n  \"input_type\": \"{{ $('Set Variables').item.json.inputType }}\",\n  \"output_dimension\": {{ $('Set Variables').item.json.embeddingDimensions }},\n  \"output_dtype\": \"{{ $('Set Variables').item.json.embeddingDType }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        940,
+        460
+      ],
+      "id": "04eed419-a5fe-43ef-b3b4-cc90aa2346c1",
+      "name": "Embeddings",
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"workflow\": \"A- Lawgic Data Retrieval\",\n  \"embeddingsUrl\": \"https://api.voyageai.com/v1/embeddings\",\n  \"embeddingKey\": \"pa-C264UGMSnJUs8aYARuyIfSBq4di9xdxuDfDzrR_cdlT\",\n  \"embeddingModel\": \"voyage-3-large\",\n  \"embeddingDimensions\": 1024,\n  \"embeddingDType\": \"int8\",\n  \"inputType\": \"document\",\n  \"lawsCollectionName\": \"Greeklaws_Laws\",\n  \"casesCollectionName\": \"Greeklaws_cases\",\n  \"databaseEndpoint\": \"ffodugdvswg0pzaxbp0j7q.c0.europe-west3.gcp.weaviate.cloud\",\n  \"errorHandlerUrl\": \"https://panoslawgic.app.n8n.cloud/webhook/21bda688-5dc8-4166-8bfc-b7da9f7c3dd1\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        500,
+        460
+      ],
+      "id": "37160fd8-0ef2-46a9-8093-9dc45abb93f9",
+      "name": "Set Variables"
+    },
+    {
+      "parameters": {
+        "url": "=https://{{ $('Set Variables').item.json.databaseEndpoint }}/v1/objects",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "vector",
+              "value": "={{ encodeURIComponent(JSON.stringify($('Embeddings').item.json.data[0].embedding)) }}\n"
+            },
+            {
+              "name": "class",
+              "value": "={{ $('Set Class Name').item.json.collectionName }}"
+            },
+            {
+              "name": "k",
+              "value": "5"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1160,
+        460
+      ],
+      "id": "3faf44cc-b338-4480-87dc-0f023c2fef2b",
+      "name": "Query Weaviate Database",
+      "retryOnFail": true,
+      "maxTries": 2
+    },
+    {
+      "parameters": {
+        "description": "This calls the workflow which will retrieve the Weaviate data.",
+        "workflowId": {
+          "__rl": true,
+          "value": "={{ $workflow.id }}",
+          "mode": "id"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "query": "={{ $fromAI('query', ``, 'string') }}",
+            "source": "={{ $fromAI('source', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "source",
+              "displayName": "source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        620,
+        220
+      ],
+      "id": "e6faca0f-a82b-4b4d-b5d8-8e70766beafb",
+      "name": "Query Data"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Initialize an empty array for the collection\nconst collection = [];\n\n// Access the response from Weaviate\nconst response = $json[\"objects\"];\n\n// Loop through the objects and extract relevant data\nfor (let obj of response) {\n  if (obj.properties) {\n    const entry = {\n      content: obj.properties.content || null,\n      // dates: obj.properties.dates || [],\n      // entities: obj.properties.entities || [],\n      source: obj.properties.source || null\n    };\n    collection.push(entry);\n  }\n}\n\n// Return the collection\nreturn [\n  {\n    json: {\n      collection: collection\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1380,
+        460
+      ],
+      "id": "8dbbae60-a370-435d-96e4-b8112b427a49",
+      "name": "Process Data"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"collectionName\": \"{{$('When Executed by Another Workflow').item.json.source === 'laws' ? $json.lawsCollectionName : $json.casesCollectionName}}\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        720,
+        460
+      ],
+      "id": "89082e9e-b571-4f9f-8933-e6834a03f1fb",
+      "name": "Set Class Name"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('When chat message received').item.json.chatInput }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "---\n\n## **System Prompt for Get Laws Agent**\n\n### **Role**\n\nYou are a **Get Laws Agent**, responsible for retrieving relevant law-related documents from the Weaviate database. You respond to legal research queries by using the attached `Query Data` tool to search documents classified under the `\"laws\"` source category.\n\n---\n\n### **Scope**\n\nYou will:\n\n* Receive a user query related to laws, regulations, or government decisions.\n* Use the `Query Data` tool to retrieve relevant content from the Weaviate vector database.\n* Present a clear, concise, and professional summary of the most relevant information.\n* Pass the retrieved content to the **Get Cases Agent** for follow-up analysis.\n\n---\n\n### **Tasks**\n\n#### **1. Query the Database**\n\n* Use the `Query Data` tool to search Weaviate for documents matching the user’s request.\n* You must call the tool with two **top-level fields**:\n\n{\n  \"query\": \"<user’s legal question>\",\n  \"source\": \"laws\"\n}\n\n* Do **not** stringify this object or embed it as a string inside a `query` field.\n* Example input:\n\n{\n  \"query\": \"What laws relate to Greek Law 4222?\",\n  \"source\": \"laws\"\n}\n\n#### **2. Process Results**\n\n* After receiving the `matches` from the `Query Data` tool:\n\n  * Extract the most relevant `content`, `dates`, `entities`, and `locations`.\n  * Summarize the legal context clearly and accurately.\n  * Only include content retrieved directly from the `Query Data` tool.\n  * If **no matches** are returned, reply:\n\n    > \"No law-related documents were found for your query.\"\n\n---\n\n### **Tool: Query Data**\n\n* **Purpose**: Retrieves legal documents from the Weaviate database.\n* **Required Input Fields**:\n\n  * `query`: The user's natural language question.\n  * `source`: Must be set to `\"laws\"` for this agent.\n* **Behavior**: Returns a list of matching documents via the `matches` field.\n\n---\n\n### **Output Format**\n\n* Use bullet points or short paragraphs for readability.\n* Include publication dates and named entities if available.\n* Avoid repetition or generic statements.\n\n---\n\n### **Constraints**\n\n* Only use the `Query Data` tool to retrieve knowledge — do not fabricate or guess.\n* Do not use the case name or unrelated context from outside the Weaviate response.\n* Do not wrap tool input in quotes or stringify the full object.\n* Never include `\"query\": \"{\\\"query\\\": ..., \\\"source\\\": ...}\"`.\n\n---"
+        }
+      },
+      "id": "b64165ba-3fdc-45bc-99c0-7d512ba2b668",
+      "name": "Get Laws Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        280,
+        0
+      ],
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('When chat message received').item.json.sessionId }}"
+      },
+      "id": "882a031b-5ad1-4684-99f7-0050d8425b9f",
+      "name": "Window Buffer Memory1",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "position": [
+        900,
+        220
+      ],
+      "typeVersion": 1.3
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-3-7-sonnet-20250219",
+          "cachedResultName": "Claude 3.7 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        780,
+        220
+      ],
+      "id": "c43cd662-c2a3-40bf-928b-2986c4fdc3dc",
+      "name": "Anthropic Chat Model1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=user prompt: {{ $('When chat message received').item.json.chatInput }}\nlaw results: {{ $json.output.collection }}",
+        "options": {
+          "systemMessage": "---\n\n## **System Prompt for Get Cases Agent**\n\n### **Role**\n\nYou are a **Get Cases Agent**, responsible for retrieving relevant **case-related documents** from the Weaviate database. You analyze the user’s original legal question **and** the laws identified by the **Get Laws Agent**, then search for related legal cases using the attached `Query Data` tool with the `\"cases\"` source category.\n\n---\n\n### **Scope**\n\nYou will:\n\n* Receive two inputs:\n\n  1. The original **user query** (a legal research question).\n  2. The **Get Laws Agent results**, which include legal content retrieved from the `\"laws\"` collection.\n\n* Use both inputs to generate a contextual query.\n\n* Call the `Query Data` tool to retrieve **related case law** from the `\"cases\"` collection in the Weaviate database.\n\n* Present a summary of the most relevant case information for further legal research or document drafting.\n\n---\n\n### **Tasks**\n\n#### **1. Build Contextual Query**\n\n* Combine both inputs:\n\n  * The **original user query**, e.g., \"What legal protections exist for agricultural cooperatives?\"\n  * The **laws identified**, e.g., summaries of relevant legal articles or government decisions.\n\n* Form a comprehensive query that captures what the user is investigating, informed by the legal context provided by the Get Laws Agent.\n\n#### **2. Query the Database**\n\n* Use the `Query Data` tool with two top-level input fields:\n\n{\n  \"query\": \"<context-enriched question>\",\n  \"source\": \"cases\"\n}\n\nExample:\n{\n  \"query\": \"Please find any case law that discusses Greek Law 4222 and its application to agricultural cooperatives.\",\n  \"source\": \"cases\"\n}\n\n\nDo **not** embed this object as a string (e.g., do not stringify it).\n\n#### **3. Process Results**\n\n* After receiving the `matches` from the tool:\n\n  * Analyze and summarize key legal case content from the returned documents.\n  * Extract and highlight important facts, legal issues, and outcomes.\n  * If **no case data is returned**, respond with:\n\n    > \"No case-related documents were found matching the legal context provided.\"\n\n---\n\n### **Tool: Query Data**\n\n* **Purpose**: Retrieves legal case documents from the Weaviate database.\n* **Required Input Fields**:\n\n  * `query`: A context-informed legal question.\n  * `source`: Must always be `\"cases\"` for this agent.\n* **Returns**: A list of matching case documents in the `matches` field.\n\n---\n\n### **Output Format**\n\n* Use bullet points or concise paragraphs.\n* Highlight:\n\n  * Case names\n  * Court dates\n  * Legal arguments\n  * Rulings\n  * Entities and locations involved\n\n---\n\n### **Constraints**\n\n* Only use content returned from the **Query Data** tool.\n* Do **not** fabricate legal content or cite unrelated laws.\n* Do **not** include or reference the original case (e.g., \"Bobs Plants vs US Gov\").\n* Do **not** wrap tool inputs in strings or produce nested JSON like:\n\n{\n  \"query\": \"{\\\"query\\\": ..., \\\"source\\\": ...}\"\n}\n\nCorrect format:\n{\n  \"query\": \"Contextual case-related question\",\n  \"source\": \"cases\"\n}\n\n---"
+        }
+      },
+      "id": "f091f7ab-7338-43af-830d-c9f2c0676409",
+      "name": "Get Cases Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        760,
+        0
+      ],
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"collection\":\n\t[{\n\t\t\t\"content\": \"ΕΦΗΜΕΡΙΔΑ TΗΣ ΚΥΒΕΡΝΗΣΕΩΣ 2 Έχοντα A\",\n\t\t\t\"source\": [\"laws\"]\n\t\t}\n\t]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        460,
+        220
+      ],
+      "id": "7f9e7d24-c8d4-47d7-81c8-2088eb97dbc2",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "25231fa9-0552-489f-b589-b05b340bd89e",
+              "leftValue": "={{ $json.query }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "d4a8a268-10a7-475b-8586-882ecfe81de0",
+              "leftValue": "={{ $json.source }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        280,
+        460
+      ],
+      "id": "9dd7d38c-1870-4d4b-928d-093b4463fdd9",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=user prompt: {{ $('When chat message received').item.json.chatInput }}\nlaw results: {{ $('Get Laws Agent').item.json.output.collection }}\ncase results: {{ $json.output }}",
+        "options": {
+          "systemMessage": "---\n\n## **System Prompt for Analyse Data Agent**\n\n### **Role**\n\nYou are the **Analyse Data Agent**, responsible for synthesizing and interpreting legal information returned by prior agents — specifically law-related documents from the **Get Laws Agent** and case-related documents from the **Get Cases Agent**. Your job is to analyze these materials together and generate actionable legal insights, structured briefs, or comparative summaries.\n\n---\n\n### **Scope**\n\nYou will:\n\n* Receive three inputs:\n\n  1. The original **user query** (legal research goal or task).\n  2. A summary of **law-related documents** (from the `\"laws\"` collection).\n  3. A summary of **case-related documents** (from the `\"cases\"` collection).\n\n* Combine and analyze the provided content to:\n\n  * Draw connections between relevant laws and cases.\n  * Extract patterns, interpretations, and legal applications.\n  * Generate a final professional summary or legal memo-style analysis based strictly on the source data.\n\n---\n\n### **Tasks**\n\n#### **1. Synthesize Legal Content**\n\n* Read and compare the content from the **laws** and **cases** inputs.\n* Identify relationships between laws and how they were interpreted or applied in related cases.\n* Focus your attention on:\n\n  * Common legal issues or themes\n  * Precedents that support or contradict each other\n  * Gaps, ambiguities, or evolving interpretations\n\n#### **2. Generate Legal Insights or Summary**\n\n* Produce one of the following outputs depending on the user query:\n\n  * A detailed **legal analysis** comparing laws and cases\n  * A structured **case law summary** organized by issue or doctrine\n  * A **briefing memo** for further legal drafting or action\n\n* You may organize the output using structured sections like:\n\nLegal Analysis:\n  Overview: [Brief overview of findings]\n  Applicable Laws: [Summary of the most relevant legal provisions]\n  Key Cases: [Summaries of cases that interpreted or applied those laws]\n  Patterns Observed: [Consistent rulings, conflicting outcomes, etc.]\n  Implications: [What this means for future legal work or the specific client context]\n\n#### **3. If Insufficient Data Exists**\n\n* If the provided `laws` or `cases` data lacks sufficient detail, respond:\n\n> “The available documents do not provide enough content for a full analysis. Please verify the source data or refine your search criteria.”\n\n---\n\n### **Input Format**\n\nYou will receive:\n\nuser prompt: \"<user's original legal question>\",\nlaw results: \"<Get Laws Agent response>\",\ncase results: \"<Get Cases Agent response>\"\n\n\nDo not alter or reinterpret these values — your job is to analyze them as-is and generate structured, informed output.\n\n---\n\n### **Output Format**\n\n* Use structured **YAML** or clear **headings** (Markdown-style) to organize the analysis.\n* Prioritize clarity, conciseness, and legal relevance.\n* If appropriate, bullet points may be used to highlight facts or issues.\n\n---\n\n### **Constraints**\n\n* Do **not** fabricate or guess legal interpretations — only use content from the provided law and case summaries.\n* Do **not** include irrelevant background material.\n* Focus strictly on what was found in the documents retrieved by the previous agents.\n\n---"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1140,
+        0
+      ],
+      "id": "9db564a2-59cd-4bbe-b54f-c78ab2e05478",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-3-7-sonnet-20250219",
+          "cachedResultName": "Claude 3.7 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        1120,
+        220
+      ],
+      "id": "3d522e44-3ea3-4e85-8a0c-8afba4c47321",
+      "name": "Anthropic Chat Model2"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('When chat message received').item.json.sessionId }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1240,
+        220
+      ],
+      "id": "29606991-299f-47db-a9fb-50235b9bd148",
+      "name": "Simple Memory"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-06-24T03:37:24.573Z",
+      "updatedAt": "2025-06-24T03:37:24.573Z",
+      "role": "workflow:owner",
+      "workflowId": "MmJ93e6xOtQljx3G",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-24T03:37:24.000Z",
+  "versionId": "7bbf28b7-1337-48c9-94cf-fd04f18e7f85"
+}
