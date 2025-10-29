@@ -1,0 +1,1286 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Get Video Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Router": {
+      "main": [
+        [
+          {
+            "node": "Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Transcribe URL",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Generate Segments",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Generate Music",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Compose URL",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Compose URL2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Caption URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Video Data": {
+      "main": [
+        [
+          {
+            "node": "Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Create Segment Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Segments": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Music": {
+      "main": [
+        [
+          {
+            "node": "Update Music Task ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribe URL": {
+      "main": [
+        [
+          {
+            "node": "Generate SRT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compose URL": {
+      "main": [
+        [
+          {
+            "node": "Combine Video + B-Roll",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compose URL2": {
+      "main": [
+        [
+          {
+            "node": "Combine Video + Music",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Caption URL": {
+      "main": [
+        [
+          {
+            "node": "Add Captions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-24T03:31:45.727Z",
+  "id": "xkMjAKEpW0J1IlSH",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "1.0 AI Video + B-Roll- Video Actions",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "b7774650-a050-421b-bb73-fa302946f8c6",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -660,
+        600
+      ],
+      "id": "f3adcc72-46aa-41e4-8186-bd92882907f0",
+      "name": "Webhook",
+      "webhookId": "b7774650-a050-421b-bb73-fa302946f8c6"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Webhook').item.json.body.action }}",
+                    "rightValue": "generateVideo",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "be9cf534-1101-4fc4-a4b3-0bde7a85eed3"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Generate Video"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c594b416-2926-407a-8f5a-bd9e46c3462c",
+                    "leftValue": "={{ $('Webhook').item.json.body.action }}",
+                    "rightValue": "generateSRT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Generete SRT"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e8cbfeec-126e-4e23-a58e-bb6c37625254",
+                    "leftValue": "={{ $('Webhook').item.json.body.action }}",
+                    "rightValue": "generateSegments",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Generete Segments"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4573bead-3a43-4d32-888e-67e2f76287b6",
+                    "leftValue": "={{ $('Webhook').item.json.body.action }}",
+                    "rightValue": "generateAudio",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Generate Audio"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "20cf0dad-2071-426b-aea5-80108b6f3757",
+                    "leftValue": "={{ $('Webhook').item.json.body.action }}",
+                    "rightValue": "combineVideo",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Combine Video"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b6899238-4cec-4362-bf21-cc1efab227f9",
+                    "leftValue": "={{ $('Webhook').item.json.body.action }}",
+                    "rightValue": "combineAV",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Combine V + A"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "7a50c20e-1321-4192-bc0e-8972bbecec09",
+                    "leftValue": "={{ $('Webhook').item.json.body.action }}",
+                    "rightValue": "captionVideo",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Caption Video"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -220,
+        520
+      ],
+      "id": "9bc8ce5c-6e5d-4459-af1d-378ebe3ff59c",
+      "name": "Router"
+    },
+    {
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "value": "appTnrQSE4H5eYZYT",
+          "mode": "list",
+          "cachedResultName": "AI Video + B-Roll Magic [v1.0]- KAP ",
+          "cachedResultUrl": "https://airtable.com/appTnrQSE4H5eYZYT"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblQP6jkQ5od8aeUi",
+          "mode": "list",
+          "cachedResultName": "Videos",
+          "cachedResultUrl": "https://airtable.com/appTnrQSE4H5eYZYT/tblQP6jkQ5od8aeUi"
+        },
+        "id": "={{ $json.body.recordId }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        -440,
+        600
+      ],
+      "id": "341fe2f2-438b-47c1-a016-e088b978d699",
+      "name": "Get Video Data",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $input.all().map((item) => item.json);\nconst regex =\n  /(\\d+)\\n(\\d{2}:\\d{2}:\\d{2}\\.\\d{3} --> \\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\n((?:.+\\n?)+)/g;\n\nconst result = input.map((item) => {\n  const segments = item.data.replace(/,/g, \".\").match(regex);\n  return segments.map((segment, index) => {\n    const [id, time, text] = segment.split(\"\\n\");\n    let [startTime, endTime] = time.split(\" --> \");\n    startTime = startTime.replace(\",\", \".\");\n    endTime = endTime.replace(\",\", \".\");\n    return { id, startTime, endTime, text };\n  });\n});\n\nreturn result.flat().map((segment) => ({ json: segment }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        400
+      ],
+      "id": "44274788-5a74-4da0-b794-3e40c2d29372",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Webhook').item.json.body.vars.HEYGEN_URL }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"video_inputs\": [\n    {\n      \"character\": {\n        \"type\": \"avatar\",\n        \"avatar_id\": \"{{ $('Webhook').item.json.body.vars.HEYGEN_AVATAR_ID }}\",\n        \"avatar_style\": \"normal\"\n      },\n      \"voice\": {\n        \"type\": \"text\",\n        \"input_text\": \"{{ $json['Video Script'].replace(/\\n/g, \"\").replace(/\\r/g, \"\") }}\",\n        \"voice_id\": \"{{ $('Webhook').item.json.body.vars.HEYGEN_VOICE_ID }}\"\n      }\n    }\n  ],\n  \"dimension\": {\n    \"width\": {{ $json.Width }},\n    \"height\": {{ $json.Height }}\n  },\n  \"aspect_ratio\": null,\n\"trial\":false,\n\"callback_id\": \"{{ $('Get Video Data').item.json.id }}\",\n  \"callback_url\": \"{{ $('Webhook').item.json.body.vars.GEN_VIDEO_WEBHOOK }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "04341891-1fa3-4dce-a511-6e3cf68a8df6",
+      "name": "Generate Video",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "fhzLZ4ebPD02uA9s",
+          "name": "HeyGen Header Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.transcribeUrl }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"media_url\": \"{{ $('Get Video Data').item.json['AI Video'][0].url }}\",\n    \"task\": \"transcribe\",\n    \"include_srt\": true,\n    \"include_text\": true,\n    \"response_type\": \"cloud\",\n    \"language\": \"en\",\n    \"webhook_url\": \"{{ $('Webhook').item.json.body.vars.GEN_SRT_WEBHOOK }}\",\n    \"id\": \"{{ $('Get Video Data').item.json.id }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        200
+      ],
+      "id": "2d384e1f-7a2b-46f4-b058-1cd7e56cb643",
+      "name": "Generate SRT",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "djaAZUnYK5rEXJH3",
+          "name": "NCA Toolkit Header Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Get Video Data').item.json[\"Video SRT\"] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        400
+      ],
+      "id": "3deccb24-b1c2-479d-b742-7894be5f9985",
+      "name": "Generate Segments"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.piapi.ai/api/v1/task",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"Qubico/diffrhythm\",\n  \"task_type\": \"txt2audio-base\",\n  \"input\": {\n    \"lyrics\": \"NoLyrics\",\n    \"style_prompt\": \"{{ $('Webhook').item.json.body.vars.MUSIC_STYLE_PROMPT }}\",\n    \"style_audio\": \"\"\n  },\n  \"config\": {\n    \"webhook_config\": {\n      \"endpoint\": \"{{ $('Webhook').item.json.body.vars.GEN_MUSIC_WEBHOOK }}\",\n      \"secret\": \"\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        600
+      ],
+      "id": "5ac7eaa0-a802-49b8-bad4-fbf7eccbd550",
+      "name": "Generate Music",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "cYGS5w9sb4nkq5XN",
+          "name": "PiAPI Header Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appTnrQSE4H5eYZYT",
+          "mode": "list",
+          "cachedResultName": "AI Video + B-Roll Magic [v1.0]- KAP ",
+          "cachedResultUrl": "https://airtable.com/appTnrQSE4H5eYZYT"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblQP6jkQ5od8aeUi",
+          "mode": "list",
+          "cachedResultName": "Videos",
+          "cachedResultUrl": "https://airtable.com/appTnrQSE4H5eYZYT/tblQP6jkQ5od8aeUi"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Webhook').item.json.body.recordId }}",
+            "AI Music Task ID": "={{ $json.data.task_id }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Video ID",
+              "displayName": "Video ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Active Video",
+              "displayName": "Active Video",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Description",
+              "displayName": "Description",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Script",
+              "displayName": "Video Script",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Width",
+              "displayName": "Width",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Height",
+              "displayName": "Height",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video GO",
+              "displayName": "Video GO",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "AI Video",
+              "displayName": "AI Video",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video + B-Roll Go",
+              "displayName": "Video + B-Roll Go",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video + B-Roll",
+              "displayName": "Video + B-Roll",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Music",
+              "displayName": "Music",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video + Music",
+              "displayName": "Video + Music",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video + Captions",
+              "displayName": "Video + Captions",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Archive",
+              "displayName": "Archive",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "AI Music Task ID",
+              "displayName": "AI Music Task ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video SRT",
+              "displayName": "Video SRT",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Segments",
+              "displayName": "Segments",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Transcript URL",
+              "displayName": "Transcript URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "# Segments",
+              "displayName": "# Segments",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Segments 2",
+              "displayName": "Segments 2",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        220,
+        600
+      ],
+      "id": "4a49673c-2437-4df1-8f8c-8c1facdfd785",
+      "name": "Update Music Task ID",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.composeUrl }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($('Webhook').item.json.body.output) }}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        800
+      ],
+      "id": "dcbe9689-2d1b-471f-9540-139e74270f63",
+      "name": "Combine Video + B-Roll",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "djaAZUnYK5rEXJH3",
+          "name": "NCA Toolkit Header Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.composeUrl }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"webhook_url\": \"{{ $('Webhook').item.json.body.vars['COMBINE_V+M_WEBHOOK'] }}\",\n  \"id\": \"{{ $('Get Video Data').item.json.id }}\",\n  \"inputs\": [\n    {\n      \"file_url\": \"{{ $('Get Video Data').item.json['Video + B-Roll'][0].url }}\"\n    },\n    {\n      \"file_url\": \"{{ $('Get Video Data').item.json.Music[0].url }}\"\n    }\n  ],\n  \"filters\": [\n    {\n      \"filter\": \"[0:a]volume=1.0[a0]\"\n    },\n    {\n      \"filter\": \"[1:a]aloop=loop=-1:size=2e+09,volume=0.15[a1]\"\n    },\n    {\n      \"filter\": \"[a0][a1]amix=inputs=2:duration=first:dropout_transition=2[aout]\"\n    }\n  ],\n  \"outputs\": [\n    {\n      \"options\": [\n        {\n          \"option\": \"-map\",\n          \"argument\": \"0:v\"\n        },\n        {\n          \"option\": \"-map\",\n          \"argument\": \"[aout]\"\n        },\n        {\n          \"option\": \"-c:v\",\n          \"argument\": \"copy\"\n        },\n        {\n          \"option\": \"-shortest\"\n        }\n      ]\n    }\n  ]\n}\n",
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        1000
+      ],
+      "id": "e80e17bc-00fe-450a-982e-bcc7d41e3494",
+      "name": "Combine Video + Music",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "djaAZUnYK5rEXJH3",
+          "name": "NCA Toolkit Header Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.captionUrl }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"video_url\": \"{{ $('Get Video Data').item.json['Video + Music'][0].url }}\",\n    \"replace\": [\n        {\n            \"find\": \"Steven's\",\n            \"replace\": \"Stephen's\"\n        }\n    ],\n    \"settings\": {\n        \"line_color\": \"#FFFFFF\",\n        \"word_color\": \"#FFFF00\",\n        \"all_caps\": false,\n        \"max_words_per_line\": 3,\n        \"font_size\": 40,\n        \"bold\": false,\n        \"italic\": false,\n        \"underline\": false,\n        \"strikeout\": false,\n        \"outline_width\": 3,\n        \"shadow_offset\": 4,\n        \"style\": \"highlight\",\n        \"font_family\": \"The Bold Font\",\n        \"position\": \"bottom_center\"\n    },\n    \"webhook_url\": \"{{ $('Webhook').item.json.body.vars.ADD_CAPTIONS_WEBHOOK }}\",\n    \"id\": \"{{ $('Get Video Data').item.json.id }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        1200
+      ],
+      "id": "d0c6258d-a63f-4efa-93d5-1218dcdfa28e",
+      "name": "Add Captions",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "djaAZUnYK5rEXJH3",
+          "name": "NCA Toolkit Header Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appTnrQSE4H5eYZYT",
+          "mode": "list",
+          "cachedResultName": "AI Video + B-Roll Magic [v1.0]- KAP ",
+          "cachedResultUrl": "https://airtable.com/appTnrQSE4H5eYZYT"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblc86DDGKFh0adHu",
+          "mode": "list",
+          "cachedResultName": "Segments",
+          "cachedResultUrl": "https://airtable.com/appTnrQSE4H5eYZYT/tblc86DDGKFh0adHu"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "B-Roll": false,
+            "Start Time": "={{ new Date('1970-01-01T' + $json.startTime + 'Z').getTime() / 1000 }}",
+            "End Time": "={{ new Date('1970-01-01T' + $json.endTime + 'Z').getTime() / 1000 }}",
+            "SRT Text": "={{ $json.text }}",
+            "SRT Segment ID": "={{ $json.id }}",
+            "SRT Segment": "={{ $json.id }} {{ $json.startTime }}  -->  {{ $json.endTime }} {{ $json.text }}",
+            "Timestamps": "={{ $json.startTime }}  -->  {{ $json.endTime }}",
+            "Videos": "=[\"{{ $('Webhook').item.json.body.recordId }}\"]"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Segment ID",
+              "displayName": "Segment ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "SRT Text",
+              "displayName": "SRT Text",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Start Time",
+              "displayName": "Start Time",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "End Time",
+              "displayName": "End Time",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Duration",
+              "displayName": "Duration",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "B-Roll",
+              "displayName": "B-Roll",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "boolean",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "AI Image Prompt",
+              "displayName": "AI Image Prompt",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Image",
+              "displayName": "Image",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Select Image",
+              "displayName": "Select Image",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "1",
+                  "value": "1"
+                },
+                {
+                  "name": "2",
+                  "value": "2"
+                },
+                {
+                  "name": "3",
+                  "value": "3"
+                },
+                {
+                  "name": "4",
+                  "value": "4"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Upscale Image",
+              "displayName": "Upscale Image",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video",
+              "displayName": "Video",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "SRT Segment ID",
+              "displayName": "SRT Segment ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "SRT Segment",
+              "displayName": "SRT Segment",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Timestamps",
+              "displayName": "Timestamps",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Videos",
+              "displayName": "Videos",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video Script (from Videos)",
+              "displayName": "Video Script (from Videos)",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Active Video (from Videos)",
+              "displayName": "Active Video (from Videos)",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Width",
+              "displayName": "Width",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Height",
+              "displayName": "Height",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Image ID",
+              "displayName": "Image ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Upscale ID",
+              "displayName": "Upscale ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video ID",
+              "displayName": "Video ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "typecast": true
+        }
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        440,
+        400
+      ],
+      "id": "54d34259-3843-459f-b8f6-624e442f3294",
+      "name": "Create Segment Row",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"transcribeUrl\": \"{{ $('Webhook').item.json.body.vars['NCA_TOOLKIT_URL'].replace(/\\/+$/, '') + '/v1/media/transcribe' }}\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        200
+      ],
+      "id": "d3b2aa92-0b21-47ac-a882-1ab7ad7fc6bb",
+      "name": "Transcribe URL"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"composeUrl\": \"{{ $('Webhook').item.json.body.vars['NCA_TOOLKIT_URL'].replace(/\\/+$/, '') + '/v1/ffmpeg/compose' }}\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        800
+      ],
+      "id": "0dcdf860-eaf6-4a55-8e3f-b7b5c52d51c1",
+      "name": "Compose URL"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"composeUrl\": \"{{ $('Webhook').item.json.body.vars['NCA_TOOLKIT_URL'].replace(/\\/+$/, '') + '/v1/ffmpeg/compose' }}\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        1000
+      ],
+      "id": "bd278d42-8e23-48f6-a850-3e0406676666",
+      "name": "Compose URL2"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"captionUrl\": \"{{ $('Webhook').item.json.body.vars['NCA_TOOLKIT_URL'].replace(/\\/+$/, '') + '/v1/video/caption' }}\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        1200
+      ],
+      "id": "ee9f47b0-97a8-4612-a3a6-60ab7f0b14dd",
+      "name": "Caption URL"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-06-24T03:31:45.735Z",
+      "updatedAt": "2025-06-24T03:31:45.735Z",
+      "role": "workflow:owner",
+      "workflowId": "xkMjAKEpW0J1IlSH",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-06-24T20:47:25.000Z",
+  "versionId": "a2912437-baa5-4c2d-9480-31044e37ca67"
+}
