@@ -1,0 +1,1213 @@
+{
+  "active": false,
+  "connections": {
+    "Send Email": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Emails": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Draft": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Reply": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Labels": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Label Emails": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Unread": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Event with Attendee": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Event": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Events": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Event": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Event": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calendar Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contact Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 4.1-mini": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 4.1-mini1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Email Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 4.1-mini2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Calendar Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT 4.1-mini3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Contact Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Clean Up",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean Up": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a Contact": {
+      "ai_tool": [
+        [
+          {
+            "node": "Contact Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Contact": {
+      "ai_tool": [
+        [
+          {
+            "node": "Contact Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Contact": {
+      "ai_tool": [
+        [
+          {
+            "node": "Contact Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Contacts": {
+      "ai_tool": [
+        [
+          {
+            "node": "Contact Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-12T21:45:44.427Z",
+  "id": "Yc1LDAAGEvJxc73t",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Personal Assistant - Debbie Krill",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.blocks[0].elements[0].elements[0].text }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are the ultimate personal assistant. Your job is to send the user's query to the correct tool. You should never be writing emails or creating summaries — your sole responsibility is to call the correct tool.\n\n## Tools\n- **Think**: Use this to think deeply or if you get stuck\n- **Email Agent**: Use this tool to take action in email\n- **Calendar Agent**: Use this tool to take action in calendar\n- **Contact Agent**: Use this tool to get, update, or add contacts\n\n## Rules\n- Some actions require you to look up contact information first. For the following actions, you must get contact information and send that to the agent who needs it:\n  - sending emails\n  - drafting emails\n  - creating calendar event with attendees\n\n## Instructions\n1) Call the necessary tools based on the user's request\n2) Use the **Think** tool to verify you took the right steps. This tool should be called every time.\n\n## Examples\n1) \n- Input: send an email to Kevin Pilgrim asking him what time he wants to leave  \n  - Action: Use **Contact Agent** to get Kevin Pilgrim's email  \n  - Action: Use **Email Agent** to send the email. You will pass the tool a query like:  \n    \"send Kevin Pilgrim an email to ask what time he wants to leave. here is his email: [email address]\"\n- Output: The email has been sent to Kevin Pilgrim. Anything else I can help you with?\n\n## Final Reminders\nHere is the current date/time: {{ $now }}\nMy timezone is America/Phoenix\n",
+          "returnIntermediateSteps": true
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        1456,
+        192
+      ],
+      "id": "20f4d343-98fd-4ce5-a191-e4b64cf58178",
+      "name": "AI Agent",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $fromAI(\"emailAddress\") }}",
+        "subject": "={{ $fromAI(\"subject\") }}",
+        "message": "={{ $fromAI(\"emailBody\") }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1712,
+        752
+      ],
+      "id": "f4cf2ab1-1fe6-4ca2-bc53-918e3e4be155",
+      "name": "Send Email",
+      "webhookId": "bd0d78be-9ea0-432e-8a9f-2c2d3e761924",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5Y9wNFS6LeDTwIMn",
+          "name": "Gmail OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": "={{ $fromAI(\"limit\",\"how many emails the user wants\") }}",
+        "simple": false,
+        "filters": {
+          "sender": "={{ $fromAI(\"sender\",\"who the emails are from\") }}"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1328,
+        752
+      ],
+      "id": "cd551b46-1bab-44d4-92f5-232be804ca51",
+      "name": "Get Emails",
+      "webhookId": "a1980878-60ed-44e9-9749-b9e1a8bf50cb",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5Y9wNFS6LeDTwIMn",
+          "name": "Gmail OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "={{ $fromAI(\"subject\") }}",
+        "emailType": "html",
+        "message": "={{ $fromAI(\"emailBody\") }}",
+        "options": {
+          "threadId": "={{ $fromAI(\"threadID\") }}",
+          "sendTo": "={{ $fromAI(\"emailAddress\") }}"
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1712,
+        608
+      ],
+      "id": "d4bb8234-2636-4fdf-a614-b2f827da608e",
+      "name": "Create Draft",
+      "webhookId": "473170bb-d0d1-438b-aa2b-bb15d4806de2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5Y9wNFS6LeDTwIMn",
+          "name": "Gmail OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ $fromAI(\"ID\",\"the message ID\") }}",
+        "message": "={{ $fromAI(\"emailBody\") }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1456,
+        608
+      ],
+      "id": "1c68cb3c-00de-4a6a-b105-fec5d9689fcb",
+      "name": "Email Reply",
+      "webhookId": "48944f17-c6ba-4194-93b0-0b4ab55a823d",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5Y9wNFS6LeDTwIMn",
+          "name": "Gmail OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "label",
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1456,
+        752
+      ],
+      "id": "bc79672b-ad5c-41d1-8342-6960c08326db",
+      "name": "Get Labels",
+      "webhookId": "64f90181-a815-4765-a873-5c5f559bdb54",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5Y9wNFS6LeDTwIMn",
+          "name": "Gmail OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addLabels",
+        "messageId": "={{ $fromAI(\"ID\",\"the ID of the message\") }}",
+        "labelIds": "={{ $fromAI(\"labelID\") }}"
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1584,
+        608
+      ],
+      "id": "67292daa-5d40-40f0-af4f-6ec436d3d1ee",
+      "name": "Label Emails",
+      "webhookId": "41ef0ea4-ef9f-453b-a409-763cb22b5ba3",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5Y9wNFS6LeDTwIMn",
+          "name": "Gmail OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "markAsUnread",
+        "messageId": "={{ $fromAI(\"messageID\") }}"
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1584,
+        752
+      ],
+      "id": "dcee0021-da49-4ff4-ac1f-f7ec8d49bef4",
+      "name": "Mark Unread",
+      "webhookId": "3f512621-bd35-4c79-a7e1-d35c5bacfc0e",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5Y9wNFS6LeDTwIMn",
+          "name": "Gmail OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "An email agent for all email actions",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are an email management assistant. All emails must be formatted professionally in HTML and signed off as \"Nate.\" \n\n**Email Management Tools**   \n   - Use \"Send Email\" to send emails.  \n   - Use \"Create Draft\" if the user asks for a draft.  \n   - Use \"Get Emails\" to retrieve emails when requested.\n   - Use \"Get Labels\" to retrieve labels.\n   - Use \"Mark Unread\" to mark an email as unread. You must use \"Get Emails\" first so you have the message ID of the email to flag.\n   - Use \"Label Email\" to flag an email. You must use \"Get Emails\" first so you have the message ID of the email to flag. Then you must use \"Get Labels\" so you have the label ID.\n   - Use \"Email Reply\" to reply to an email. You must use \"Get Emails\" first so you have the message ID of the email to reply to.\n\n## Final Notes\n- Here is the current date/time: {{ $now }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        1520,
+        432
+      ],
+      "id": "8c4f2670-aba2-49b3-9480-3072685817b6",
+      "name": "Email Agent"
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "pilgrimka1@gmail.com",
+          "mode": "list",
+          "cachedResultName": "pilgrimka1@gmail.com"
+        },
+        "start": "={{ $fromAI(\"eventStart\") }}",
+        "end": "={{ $fromAI(\"eventEnd\") }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ $fromAI(\"eventAttendeeEmail\") }}"
+          ],
+          "summary": "={{ $fromAI(\"eventTitle\") }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        2112,
+        752
+      ],
+      "id": "16436133-f524-40f7-9cda-3cefa7a58639",
+      "name": "Create Event with Attendee",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "lEmb5Z9SRXAqUgwe",
+          "name": "Google Calendar- OAuth2 pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "pilgrimka1@gmail.com",
+          "mode": "list",
+          "cachedResultName": "pilgrimka1@gmail.com"
+        },
+        "start": "={{ $fromAI(\"eventStart\") }}",
+        "end": "={{ $fromAI(\"eventEnd\") }}",
+        "additionalFields": {
+          "attendees": [],
+          "summary": "={{ $fromAI(\"eventTitle\") }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        1856,
+        752
+      ],
+      "id": "2d8c6dc2-2d1f-4cc1-89f7-3134924ae74f",
+      "name": "Create Event",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "lEmb5Z9SRXAqUgwe",
+          "name": "Google Calendar- OAuth2 pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "pilgrimka1@gmail.com",
+          "mode": "list",
+          "cachedResultName": "pilgrimka1@gmail.com"
+        },
+        "timeMin": "={{ $fromAI(\"dayBefore\",\"the day before the date the user requested\") }}",
+        "timeMax": "={{ $fromAI(\"dayAfter\",\"the day after the date the user requested\") }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        2112,
+        608
+      ],
+      "id": "b07ce270-8ade-4e08-a08c-40110eb4521e",
+      "name": "Get Events",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "lEmb5Z9SRXAqUgwe",
+          "name": "Google Calendar- OAuth2 pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "calendar": {
+          "__rl": true,
+          "value": "pilgrimka1@gmail.com",
+          "mode": "list",
+          "cachedResultName": "pilgrimka1@gmail.com"
+        },
+        "eventId": "={{ $fromAI(\"eventID\") }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        1984,
+        608
+      ],
+      "id": "6683c446-6a0c-4423-913d-d78893030286",
+      "name": "Delete Event",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "lEmb5Z9SRXAqUgwe",
+          "name": "Google Calendar- OAuth2 pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "calendar": {
+          "__rl": true,
+          "value": "pilgrimka1@gmail.com",
+          "mode": "list",
+          "cachedResultName": "pilgrimka1@gmail.com"
+        },
+        "eventId": "={{ $fromAI(\"eventID\") }}",
+        "updateFields": {
+          "end": "={{ $fromAI(\"endTime\") }}",
+          "start": "={{ $fromAI(\"startTime\") }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        1984,
+        752
+      ],
+      "id": "5d9bdd3c-865f-47b4-bd3c-c0081d84b6b4",
+      "name": "Update Event",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "lEmb5Z9SRXAqUgwe",
+          "name": "Google Calendar- OAuth2 pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "A calendar agent for all calendar actions",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are a calendar assistant. Your responsibilities include creating, getting, and deleting events in the user's calendar.\n\n**Calendar Management Tools**  \n   - Use \"Create Event with Attendee\" when an event includes a participant.  \n   - Use \"Create Event\" for solo events.   \n   - Use \"Get Events\" to fetch calendar schedules when requested.\n   - Use \"Delete Event\" to delete an event. You must use \"Get Events\" first to get the ID of the event to delete.\n   - Use \"Update Event\" to update an event. You must use \"Get Events\" first to get the ID of the event to update.\n\n## Final Notes\nHere is the current date/time: {{ $now }}\nIf a duration for an event isn't specified, assume it will be one hour."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        1872,
+        432
+      ],
+      "id": "94537381-98a6-420f-86ab-e1f5dcbec76d",
+      "name": "Calendar Agent"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Contact agent for all contact actions, like getting contacts",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are a contact management assistant. Your responsibilities include looking up one or many contacts, adding new contacts, or updating a contact's information.\n\n**Contact Management**  \n   - Use \"Get a Contact\" to retrieve a specified contact's information. \n   - Use \"Get All Contacts\" to search for one or more matching contact's information. \n   - Use \"Create Contact\" to store new contact information. \n   - Use \"Update Contact\" to modify existing entries."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        2224,
+        432
+      ],
+      "id": "b8f75498-2593-4fc6-b0c6-9e76208ff972",
+      "name": "Contact Agent"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-5-mini",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1136,
+        432
+      ],
+      "id": "152c780c-e0d7-4a52-bae2-0e5c9b5ffe65",
+      "name": "GPT 4.1-mini",
+      "credentials": {
+        "openRouterApi": {
+          "id": "hsn72KnexVfvB6f5",
+          "name": "OpenRouter API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1328,
+        608
+      ],
+      "id": "b0a2d873-d29a-437c-bee8-7d2c31711725",
+      "name": "GPT 4.1-mini1",
+      "credentials": {
+        "openRouterApi": {
+          "id": "hsn72KnexVfvB6f5",
+          "name": "OpenRouter API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1856,
+        608
+      ],
+      "id": "70cd5eaf-a9d9-444a-81b9-1bc84667f449",
+      "name": "GPT 4.1-mini2",
+      "credentials": {
+        "openRouterApi": {
+          "id": "hsn72KnexVfvB6f5",
+          "name": "OpenRouter API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        2224,
+        608
+      ],
+      "id": "77c2c232-09cb-40fa-99bf-5ac680b893cf",
+      "name": "GPT 4.1-mini3",
+      "credentials": {
+        "openRouterApi": {
+          "id": "hsn72KnexVfvB6f5",
+          "name": "OpenRouter API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// ---- Collectors\nconst steps = [];\nconst tokens = [];\nlet totalTokens = 0;\nlet agentMessage = \"\";\n\n// Try to get `output` from a step.observation JSON string\nconst extractOutputFromObservation = (obs) => {\n  if (typeof obs !== 'string') return null;\n  try {\n    const parsed = JSON.parse(obs);\n    if (Array.isArray(parsed) && parsed.length && typeof parsed[0]?.output === 'string') {\n      return parsed[0].output;\n    }\n    if (parsed && typeof parsed.output === 'string') {\n      return parsed.output;\n    }\n  } catch (_) {}\n  return null;\n};\n\n// Iterate inputs once\nfor (const { json: data } of $input.all()) {\n  // Prefer direct output when present\n  if (data && typeof data.output === 'string' && !agentMessage) {\n    agentMessage = data.output;\n  }\n\n  const stepsArr = data?.intermediateSteps;\n  if (Array.isArray(stepsArr)) {\n    for (const step of stepsArr) {\n      if (step?.action) {\n        steps.push({\n          tool: step.action.tool,\n          toolInput: step.action.toolInput,\n          observation: step.observation,\n        });\n      }\n\n      // Token usage\n      const msgLog = step?.action?.messageLog;\n      if (Array.isArray(msgLog)) {\n        for (const message of msgLog) {\n          const usage = message?.kwargs?.response_metadata?.usage;\n          if (usage) {\n            tokens.push({\n              prompt_tokens: usage.prompt_tokens,\n              completion_tokens: usage.completion_tokens,\n              total_tokens: usage.total_tokens,\n              model_name: message.kwargs.response_metadata.model_name,\n            });\n            if (typeof usage.total_tokens === 'number') totalTokens += usage.total_tokens;\n          }\n        }\n      }\n\n      // If we still don't have the readable text, try to extract it from observation\n      if (!agentMessage) {\n        const fromObs = extractOutputFromObservation(step?.observation);\n        if (fromObs) agentMessage = fromObs;\n      }\n    }\n  }\n}\n\n// Build outputs for Telegram\nconst plainText = agentMessage || \"\";\n\n// MarkdownV2 code block wrapper (nothing inside needs escaping)\nconst toMdV2CodeBlock = (s) => {\n  // Neutralize any accidental ``` inside the content to keep the fence intact\n  const safe = String(s).replace(/```/g, '\\\\`\\\\`\\\\`');\n  return '```\\n' + safe + '\\n```';\n};\nconst mdv2CodeBlock = agentMessage ? toMdV2CodeBlock(agentMessage) : '';\n\nreturn [{\n  json: {\n    steps,\n    tokens,\n    total_tokens: totalTokens,\n    plainText,     // Use when Parse Mode is removed/blank (no markdown)\n    mdv2CodeBlock, // Use when Parse Mode = MarkdownV2\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1840,
+        48
+      ],
+      "id": "40b7656d-cd4c-48b9-b404-706cc8462d78",
+      "name": "Clean Up"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1EpjX8H8_X7Z40mXzmcw9zRc4lK1eAMmduBUr4KH1Clg",
+          "mode": "list",
+          "cachedResultName": "Agent Logging",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EpjX8H8_X7Z40mXzmcw9zRc4lK1eAMmduBUr4KH1Clg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 18245879,
+          "mode": "list",
+          "cachedResultName": "AgentSwarm",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EpjX8H8_X7Z40mXzmcw9zRc4lK1eAMmduBUr4KH1Clg/edit#gid=18245879"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Timestamp": "={{ $now.format('yyyy-MM-dd hh:m a') }}",
+            "Workflow": "={{ $workflow.name }}",
+            "Input": "={{ $('Slack Trigger').item.json.blocks[0].elements[0].elements[0].text }}",
+            "Output": "={{ $('AI Agent').item.json.output }}",
+            "Actions": "={{ JSON.stringify($json.steps, null, 2) }}",
+            "Tokens": "={{ JSON.stringify($json.tokens, null, 2) }}",
+            "Total Tokens": "={{ $json.total_tokens }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Timestamp",
+              "displayName": "Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Workflow",
+              "displayName": "Workflow",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Input",
+              "displayName": "Input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Output",
+              "displayName": "Output",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Actions",
+              "displayName": "Actions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Tokens",
+              "displayName": "Tokens",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Total Tokens",
+              "displayName": "Total Tokens",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        2000,
+        48
+      ],
+      "id": "c736dd9b-ca2b-496d-b0c8-e61f6e50aa62",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "8s3KYjA1a6mtPebt",
+          "name": "Google Sheets- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        1248,
+        432
+      ],
+      "id": "08576e85-2e36-42e1-ba61-9be867b114c7",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Slack Trigger').item.json.user }}.{{ $('Slack Trigger').item.json.channel }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1360,
+        432
+      ],
+      "id": "ae74c562-04ce-482e-bd7d-d58b310f0564",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "contactId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Contact_ID', ``, 'string') }}",
+        "fields": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fields', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.googleContactsTool",
+      "typeVersion": 1,
+      "position": [
+        2352,
+        752
+      ],
+      "id": "b7178886-3e4b-4073-8e08-8e4a09656363",
+      "name": "Get a Contact",
+      "credentials": {
+        "googleContactsOAuth2Api": {
+          "id": "CfPfmph8RJKms1Hl",
+          "name": "Google Contacts- OAuth pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "familyName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Family_Name', ``, 'string') }}",
+        "givenName": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Given_Name', ``, 'string') }}",
+        "additionalFields": {
+          "birthday": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Birthday', ``, 'string') }}",
+          "emailsUi": {
+            "emailsValues": [
+              {
+                "type": "work",
+                "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('emailsValues0_Value', ``, 'string') }}"
+              },
+              {
+                "type": "home",
+                "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('emailsValues1_Value', ``, 'string') }}"
+              }
+            ]
+          },
+          "phoneUi": {
+            "phoneValues": [
+              {
+                "type": "mobile",
+                "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('phoneValues0_Value', ``, 'string') }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleContactsTool",
+      "typeVersion": 1,
+      "position": [
+        2352,
+        608
+      ],
+      "id": "0c369727-8d39-4b3b-a0cd-a64fbc754f9d",
+      "name": "Create Contact",
+      "credentials": {
+        "googleContactsOAuth2Api": {
+          "id": "CfPfmph8RJKms1Hl",
+          "name": "Google Contacts- OAuth pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Contact_ID', ``, 'string') }}",
+        "fields": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fields', ``, 'string') }}",
+        "updateFields": {
+          "birthday": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Birthday', ``, 'string') }}",
+          "emailsUi": {
+            "emailsValues": [
+              {
+                "type": "home",
+                "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('emailsValues0_Value', ``, 'string') }}"
+              },
+              {
+                "type": "work",
+                "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('emailsValues1_Value', ``, 'string') }}"
+              }
+            ]
+          },
+          "biographies": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Notes', ``, 'string') }}",
+          "phoneUi": {
+            "phoneValues": [
+              {
+                "type": "home",
+                "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('phoneValues0_Value', ``, 'string') }}"
+              },
+              {
+                "type": "mobile",
+                "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('phoneValues1_Value', ``, 'string') }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleContactsTool",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        608
+      ],
+      "id": "3fbc3d51-57e4-4dbf-8d39-925b05c6996a",
+      "name": "Update Contact",
+      "credentials": {
+        "googleContactsOAuth2Api": {
+          "id": "CfPfmph8RJKms1Hl",
+          "name": "Google Contacts- OAuth pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "returnAll": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Return_All', ``, 'boolean') }}",
+        "fields": [
+          "names",
+          "emailAddresses",
+          "phoneNumbers",
+          "addresses",
+          "organizations"
+        ],
+        "useQuery": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Use_Query', ``, 'boolean') }}",
+        "query": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Query', ``, 'string') }}",
+        "rawData": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('RAW_Data', ``, 'boolean') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleContactsTool",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        752
+      ],
+      "id": "8c7f22af-28c1-4ae2-87ad-aa0fb8731c40",
+      "name": "Get All Contacts",
+      "credentials": {
+        "googleContactsOAuth2Api": {
+          "id": "CfPfmph8RJKms1Hl",
+          "name": "Google Contacts- OAuth pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "trigger": [
+          "message"
+        ],
+        "channelId": {
+          "__rl": true,
+          "value": "C09A5Q8HSR4",
+          "mode": "list",
+          "cachedResultName": "contact-agent"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slackTrigger",
+      "typeVersion": 1,
+      "position": [
+        1152,
+        192
+      ],
+      "id": "0dac3ec3-193b-4186-8a29-37f07e8b4acd",
+      "name": "Slack Trigger",
+      "webhookId": "25710292-6485-404c-83cf-011a42eaef3b",
+      "credentials": {
+        "slackApi": {
+          "id": "sr382J9JbWBqeTMn",
+          "name": "Slack Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C09A5Q8HSR4",
+          "mode": "list",
+          "cachedResultName": "contact-agent"
+        },
+        "text": "={{ $('Clean Up').item.json.plainText }}",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        2160,
+        48
+      ],
+      "id": "d3171d67-7c83-4ec1-b8ba-ef9ca5c7dadd",
+      "name": "Send a message",
+      "webhookId": "7f27563c-cc0e-4c32-a6ae-2696b30a6c4a",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "AQqlEf70sumWP2g8",
+          "name": "Slack OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C09A5Q8HSR4",
+          "mode": "list",
+          "cachedResultName": "contact-agent"
+        },
+        "text": "={{ $json.error }}",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        1840,
+        208
+      ],
+      "id": "b892b3b6-abe8-4edd-b14e-5b6804a1387e",
+      "name": "Send a message1",
+      "webhookId": "7f27563c-cc0e-4c32-a6ae-2696b30a6c4a",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "AQqlEf70sumWP2g8",
+          "name": "Slack OAuth2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-12T21:45:44.436Z",
+      "updatedAt": "2025-08-12T21:45:44.436Z",
+      "role": "workflow:owner",
+      "workflowId": "Yc1LDAAGEvJxc73t",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-18T01:44:40.000Z",
+  "versionId": "e8c153ab-8957-4630-8bee-b5e2bcecaf6f"
+}
