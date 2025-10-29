@@ -588,8 +588,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1376,
-        1088
+        1392,
+        320
       ],
       "id": "4d9bbc9c-5268-4f20-b02e-d0a7599d6676",
       "name": "Check Status"
@@ -681,8 +681,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        1584,
-        1072
+        1600,
+        304
       ],
       "id": "0479d21d-ab09-4bca-814b-8b66e9bda5ff",
       "name": "Switch"
@@ -696,8 +696,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4192,
-        2064
+        2480,
+        928
       ],
       "id": "1e19c600-76e0-4d89-b6f0-f41ff90a4527",
       "name": "Max Retries Exceeded"
@@ -709,8 +709,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1808,
-        1216
+        1824,
+        448
       ],
       "id": "e57c1b6e-4424-4f79-a509-cf048e676f2b",
       "name": "Wait8",
@@ -754,27 +754,11 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2976,
-        1024
+        592,
+        1008
       ],
       "id": "e08d0fca-1c33-49bc-be48-34b43a0a88f9",
       "name": "If Not Found"
-    },
-    {
-      "parameters": {
-        "content": "# Get Leads from AmpleLeads",
-        "height": 736,
-        "width": 2320,
-        "color": 2
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        16,
-        784
-      ],
-      "typeVersion": 1,
-      "id": "1fa896cb-375b-47f4-bc12-9767fd673ee0",
-      "name": "Sticky Note9"
     },
     {
       "parameters": {
@@ -783,8 +767,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        4512,
-        1344
+        2128,
+        1296
       ],
       "id": "8c9408fa-c878-4b90-8652-62a37ee380b7",
       "name": "Wait1",
@@ -833,8 +817,8 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        2736,
-        1120
+        352,
+        1104
       ],
       "id": "94772ce3-12f5-4a95-8335-5b5c3226fb8e",
       "name": "Search Past Leads",
@@ -1424,8 +1408,8 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        3248,
-        896
+        864,
+        880
       ],
       "id": "b6fffed9-13ab-4e11-bda6-29bd0dca1b58",
       "name": "Add Record to Leads",
@@ -1526,8 +1510,8 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        3472,
-        896
+        1088,
+        880
       ],
       "id": "aa63411e-d1fa-4d82-930b-152e75882f10",
       "name": "Add Record to Past Leads",
@@ -1566,8 +1550,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4000,
-        1136
+        1616,
+        1120
       ],
       "id": "70daf4f5-e0d2-46cf-a24d-3c75eaa6b2ad",
       "name": "Check Limit"
@@ -1581,8 +1565,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4192,
-        1728
+        2480,
+        1264
       ],
       "id": "36fbe0a9-4913-4afa-a5e7-a66b600a4af8",
       "name": "Limit Reached"
@@ -1596,8 +1580,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4192,
-        1888
+        2480,
+        1088
       ],
       "id": "6c518323-51d4-4ccb-a4f5-c5c9330d713b",
       "name": "Done Processing"
@@ -1609,8 +1593,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        2496,
-        1104
+        112,
+        1088
       ],
       "id": "5467d630-640e-4689-a4be-52dc6c730ad7",
       "name": "Loop Over Items"
@@ -1620,8 +1604,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4512,
-        1888
+        2800,
+        1088
       ],
       "id": "61ecb3af-e2aa-4306-8cb7-2b735a8cef82",
       "name": "End Processing"
@@ -1633,8 +1617,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3680,
-        896
+        1296,
+        880
       ],
       "id": "5a60d8df-4823-47cf-9694-14077e68c360",
       "name": "Get Loop Counter"
@@ -1662,8 +1646,8 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        336,
-        1088
+        352,
+        320
       ],
       "id": "e2508df4-6d82-4b6a-9c12-3e95e288ca89",
       "name": "Get Link to Bulk Processing",
@@ -1694,8 +1678,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        544,
-        1088
+        560,
+        320
       ],
       "id": "4db5108f-83a5-4e9c-ae66-6369549533e7",
       "name": "Apollo Search URL"
@@ -1723,8 +1707,8 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        128,
-        1088
+        144,
+        320
       ],
       "id": "45a9b510-dac2-4a49-ad30-c10930c84078",
       "name": "Get Record Count",
@@ -1755,8 +1739,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        752,
-        1088
+        768,
+        320
       ],
       "id": "e4c6b780-ecfe-4bc6-8160-845f93748be2",
       "name": "AmpleLeads Payload"
@@ -1795,8 +1779,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        960,
-        1088
+        976,
+        320
       ],
       "id": "8e093d97-0ad7-42fd-a1c3-1c91af09f042",
       "name": "Start Scrape"
@@ -1827,8 +1811,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1168,
-        1088
+        1184,
+        320
       ],
       "id": "2b3cf232-7168-4c09-8780-58cafd893349",
       "name": "Get Status"
@@ -1859,8 +1843,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1808,
-        960
+        1824,
+        192
       ],
       "id": "06af8047-d714-4c19-8c22-1f613225d358",
       "name": "Get Run Results"
@@ -1979,8 +1963,8 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        544,
-        1856
+        560,
+        544
       ],
       "id": "26c573dc-2c2b-4490-b155-76a804d70f28",
       "name": "Get Link to Bulk Processing1",
@@ -1993,22 +1977,6 @@
     },
     {
       "parameters": {
-        "content": "# Get Leads from CSV File",
-        "height": 736,
-        "width": 2320,
-        "color": 2
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        16,
-        1568
-      ],
-      "typeVersion": 1,
-      "id": "009704fa-0369-4d57-b0f4-67274ffa27b1",
-      "name": "Sticky Note10"
-    },
-    {
-      "parameters": {
         "content": "# Process Leads",
         "height": 736,
         "width": 2320,
@@ -2016,8 +1984,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2384,
-        800
+        16,
+        784
       ],
       "typeVersion": 1,
       "id": "95fbfe39-3171-4467-8a94-18ff0c823df6",
@@ -2030,8 +1998,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1984,
-        960
+        2048,
+        288
       ],
       "id": "59d49aec-8b16-4a15-b1f0-64571b965abc",
       "name": "Normalize Data"
@@ -2043,8 +2011,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        128,
-        1856
+        144,
+        544
       ],
       "id": "b33c6f51-7d8c-471c-be69-9dce4361fafb",
       "name": "Set Variables1"
@@ -2073,8 +2041,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        752,
-        1856
+        768,
+        544
       ],
       "id": "2498d771-c295-49b6-bd01-48136ad95f71",
       "name": "Get row(s) in sheet",
@@ -2092,8 +2060,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        960,
-        1856
+        976,
+        544
       ],
       "id": "926a8852-687d-4537-b6e9-7bcf076587a7",
       "name": "Normalize Data1"
@@ -2107,8 +2075,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        4096,
-        1584
+        2384,
+        784
       ],
       "typeVersion": 1,
       "id": "d3aec35b-7061-4fec-b2c4-3e98fd25b741",
@@ -2317,8 +2285,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        3680,
-        1136
+        1296,
+        1120
       ],
       "id": "e55220ed-59bc-4ba6-a5ee-73fd0aada528",
       "name": "Update row in sheet",
@@ -2336,8 +2304,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3472,
-        1136
+        1088,
+        1120
       ],
       "id": "3cea9382-e746-4043-9bfe-e1f6ddae9b13",
       "name": "Write JSON"
@@ -2365,8 +2333,8 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        336,
-        1856
+        352,
+        544
       ],
       "id": "8f19a998-d44d-404a-8b23-8583831866c3",
       "name": "Get Record Count1",
@@ -2379,7 +2347,7 @@
     },
     {
       "parameters": {
-        "content": "# Get Leads from Apify Actor",
+        "content": "# Get Leads from Lead Source",
         "height": 736,
         "width": 2320,
         "color": 2
@@ -2416,8 +2384,8 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        336,
-        288
+        352,
+        112
       ],
       "id": "107beb68-c234-4df9-9607-39a7e0ba0d1c",
       "name": "Get Link to Bulk Processing2",
@@ -2435,8 +2403,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        544,
-        288
+        560,
+        112
       ],
       "id": "251811fe-bd28-4a94-97b3-a2ce5b08b371",
       "name": "Apollo Search URL1"
@@ -2464,8 +2432,8 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        128,
-        288
+        144,
+        112
       ],
       "id": "ccc33067-0f6c-4027-9c12-35996df549e9",
       "name": "Get Record Count2",
@@ -2483,8 +2451,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        752,
-        288
+        768,
+        112
       ],
       "id": "0a4aa8f8-e8f9-4da9-b86d-58aae52f9d8c",
       "name": "AmpleLeads Payload1"
@@ -2517,8 +2485,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3872,
-        896
+        1488,
+        880
       ],
       "id": "90ba7042-f6a2-4aeb-9f76-26d489929e19",
       "name": "If1"
@@ -2726,8 +2694,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        4304,
-        896
+        1920,
+        880
       ],
       "id": "8df28e05-a6ae-4db9-94ac-4bc142c808dc",
       "name": "Update row in sheet1",
@@ -2745,8 +2713,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        4096,
-        896
+        1712,
+        880
       ],
       "id": "24ba6ad6-3cba-43bd-9d27-98827bc26982",
       "name": "Write JSON1"
@@ -2779,8 +2747,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3248,
-        1136
+        864,
+        1120
       ],
       "id": "dde4e687-24fd-41b3-acd8-5c136c0cbc1c",
       "name": "Check Source"
@@ -3043,6 +3011,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-10-23T17:13:41.000Z",
-  "versionId": "659524cc-af3d-4412-ba8a-f3a176a43597"
+  "updatedAt": "2025-10-29T19:04:35.000Z",
+  "versionId": "ca9d7d49-0668-4822-8792-1df2b9ac5ef7"
 }
