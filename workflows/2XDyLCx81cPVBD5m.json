@@ -471,7 +471,8 @@
           "id": "dqQQODy2uBPIqEK4",
           "name": "GitHub account"
         }
-      }
+      },
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -525,8 +526,8 @@
         "rule": {
           "interval": [
             {
-              "field": "hours",
-              "hoursInterval": 2
+              "daysInterval": 0,
+              "triggerAtHour": 2
             }
           ]
         }
@@ -742,9 +743,13 @@
       "projectId": "ANrIPEPOHOX0fwPW"
     }
   ],
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-10-29T17:41:30.000Z",
-  "versionId": "4d080b45-4c7d-4e83-a260-f9b6ffa94d0d"
+  "triggerCount": 1,
+  "updatedAt": "2025-10-29T18:09:31.000Z",
+  "versionId": "2f6c0fac-f0cf-4d59-9959-c124b84a5b24"
 }
