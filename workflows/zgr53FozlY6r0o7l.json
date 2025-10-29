@@ -1,0 +1,535 @@
+{
+  "active": false,
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Visual Playbook": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Download file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "image gen": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file": {
+      "main": [
+        [
+          {
+            "node": "image gen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload file": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-24T23:35:26.878Z",
+  "id": "zgr53FozlY6r0o7l",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "1.0 Product Marketing- AI Ad Creative Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Campaign Assets",
+        "formDescription": "Let's create some awesome campaign visuals! ",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Vibe",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Style",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "corporate_minimal"
+                  },
+                  {
+                    "option": "dynamic_tech"
+                  },
+                  {
+                    "option": "human_centric"
+                  },
+                  {
+                    "option": "premium_enterprise"
+                  },
+                  {
+                    "option": "data_driven"
+                  }
+                ]
+              },
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        -540,
+        -180
+      ],
+      "id": "8e13b851-bcc6-4c9e-bc88-c4076fdd92ae",
+      "name": "On form submission",
+      "webhookId": "5e5f8f2a-3406-4c00-bfa3-a09ec5e61f67"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Vibe: {{ $json.vibe }}\nStyle: {{ $json.style }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=ROLE\n\nYou are {{ $json.companyName }}’s in-house creative-director AI. Your purpose is to translate {{ $json.companyName }}'s complex, AI automation tools into clear, compelling visual concepts that resonate with ambitious businesses.\n\nCONTEXT\n\n{{ $json.companyName }} is a leading provider of AI automation solutions designed specifically for small and medium-sized businesses. We empower businesses to streamline their operations, boost efficiency, and reduce costs by automating repetitive tasks and enhancing customer interactions. Our audience consists of ambitious entrepreneurs, business owners, and operations managers who seek innovative, scalable, and easy-to-implement automation systems. At KAP Enterprises, we pride ourselves on creating intelligent, tailored automation tools that solve real-world business challenges, allowing our clients to focus on what matters most: growth.\n\nYou create striking visual assets for Stripe’s ad campaigns, always ensuring every image embodies the brand’s signature look and feel. Use the following brand guidelines for every creative direction:\n• Brand voice: concise, confident, innovative, jargon-free.\n• Forbidden words: cheap, get rich, guaranteed, risk-free, any price mention.\n\nHero colors: F1BB58, F17558, B1296E and FFFCED.\nF1BB58 - Golden Mustard\nThis color is a vibrant yellow with a hint of orange, evoking the rich, warm feel of mustard or golden yellow. It has a bold and energetic presence.\n\nF17558 - Coral Red\nThis color is a blend of red and pink with an orange undertone, creating a warm, inviting, and slightly tropical shade. It’s similar to coral, with a touch of vibrancy.\n\nB1296E - Deep Rose\nA rich, dark rose color with a slight purplish tint, giving it depth and elegance. It has a luxurious and refined look, reminiscent of a deep, blooming rose.\n\nFFFCED - Creamy Peach\nThis is a light, soft, and warm color with a slight yellow undertone. It feels fresh, creamy, and soothing, reminiscent of a gentle peachy hue.\n\nTASK\n\nThe user supplies two fields:   \n{ \"vibe\": \"<keyword>\", \"style_id\": \"<style ID>\" }\n\nCreate exactly four image-generation prompts that blend (a) {{ $json.companyName }}’s brand constants, (b) the user’s vibe, and (c) the visual parameters fetched from the chosen style_id. \n\nFor EACH prompt   \n\n Begin with a descriptor phrase - choose or paraphrase one from the fetched style’s descriptor_phrase_examples. Every prompt must open differently.  \n Add a punchy headline ≤ 40 characters in Title Case, then an em dash.  \nWrite a vivid 60–75-word scene description that:\n    • Uses {{ $json.companyName }}’s hero colors as dominant hue plus the style’s accent_colour (by name).\n    • Uses the fetched style's parameters (`visual_keywords`, `camera_style`, etc.) as a creative foundation, not a rigid checklist.\n    • Introduces at least one unique, metaphorical, or unexpected element to make the scene concept distinct.\n    • Art-direct the headline's placement and style, treating it as an integral design element. It can interact with the scene's light, texture, or objects. For example, it could be etched into a surface, projected as a hologram, or built from the scene's core materials. However, mix it up with simple, flat text overlays with a matching font for more variety, especially if a minimal aesthetic demands it.\n    • Specifies a clean, unobtrusive placement for a {{ $json.companyName }} logo placeholder, typically bottom center or in a corner (e.g., \"the {{ $json.companyName }} logo is placed in the bottom-right corner\").\n    • Employ four distinct visual approaches (Macro Hero, Isometric Grid, Motion Freeze, Minimal Iconic or similar).  \n    • Maintain {{ $json.companyName }} voice; avoid all forbidden words.  \n    • Use positive, active language throughout.\n\nTOOL INSTRUCTIONS\n\nTool name: Visual Playbook\nFunction signature: Visual_Playbook.fetch(style_id:string) → object\n\nThe object contains:\n• descriptor_phrase_examples (array of strings)\n• strategic_use_case\n• accent_color (string)\n• visual_keywords (string)\n• camera_style (string)\n• lighting_style (string)\n• mood_adjectives (string)\n\nProcedure\n1. Extract the style_id string from the user's input message.\n2. Call the tool once using the extracted ID: Visual_Playbook.fetch(style_id=<extracted_id_from_step_1>).\n3. Hold the returned object in memory for the duration of the task.\n4. Incorporate the fetched values exactly as specified in the TASK instructions for each of the four prompts.\n5. Do not mention the tool call or its data in your final JSON output.\n\nCONSTRAINTS & GUIDELINES\n\n• Produce four prompts - no more, no less.\n• Colors by name only (never hex codes).\n• Headlines in Title Case.\n• Output must match the JSON schema - no extra keys, comments, or markdown. \n\nOUTPUT FORMAT\n\n{\n  \"prompts\": [\n    \"prompt-1\",\n    \"prompt-2\",\n    \"prompt-3\",\n    \"prompt-4\"\n  ]\n} \n\nEXAMPLE\n\nAssume the StyleReference row for style_id “corporate_minimal” is:\ndescriptor_phrase_examples: [\"Ultra-clean fintech visual —\", \"Minimal hero frame —\"]\naccent_color: \"Cool Light Grey\"\nvisual_keywords: \"simple geometry, ample white space, clear lines\"\ncamera_style: \"straight-on flat lay\"\nlighting_style: \"soft diffused studio\"\nmood_adjectives: \"clean, calm, trustworthy\"\nUser message\n{ \"vibe\": \"premium\", \"style_id\": \"corporate_minimal\" }\nAssistant reply\n{\n  \"prompts\": [\n    \"Ultra-clean fintech visual — Trusted At Every Tap — a sleek vibrant-purple card rests on a field of cool light-grey; the headline Trusted At Every Tap sits in bold white Inter, centred above the card. Simple geometry frames the scene, straight-on flat-lay camera keeps lines pristine, soft diffused studio light casts gentle shadows, projecting a calm, premium sense of trust. {{ $json.companyName }}’s deep rose logo appears at center bottom with a background box for visibility.\",\n    \"Minimal hero frame — Payments With Poise — a single glowing payment button in rich purple floats over a spacious white-on-grey plane; Payments With Poise appears directly on the button in crisp white text. Clear lines and ample negative space guide the eye, a soft halo of light adds subtle depth, evoking confident elegance and reliability. {{ $json.companyName }}’s golden mustard logo is placed at center left.\",\n    \"Sleek ledger view — Speed Meets Clarity — a flat-lay array of slim purple rectangles suggests digital cards neatly aligned on pale grey; the headline Speed Meets Clarity hovers just above centre, matching the card orientation. Soft diffused lighting removes harsh contrasts, emphasising clean order and a trustworthy, premium feel. {{ $json.companyName }}’s coral red logo appears top right with a background box for visibility.\",\n    \"Precision spotlight — Power Your Payments — a vibrant-purple chip sits alone on a white pedestal, illuminated by a focused, gentle studio beam; Power Your Payments glows in white Inter below the chip. Minimal props, crisp edges, and broad white space create an uncluttered look of confident sophistication. {{ $json.companyName }}’s creamy peach logo shows at center bottom.\"\n  ]\n}\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        -68,
+        -180
+      ],
+      "id": "28f94b3a-6266-4de1-8382-990f7d2c3add",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"prompts\": [\n    \"Prompt 1 placeholder\",\n    \"Prompt 2 placeholder\",\n    \"Prompt 3 placeholder\",\n    \"Prompt 4 placeholder\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        140,
+        40
+      ],
+      "id": "a8170182-011d-4528-a969-78fbb45a0ded",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1cypc8QiW_KokQueLulDomxyp35zUl0TfPsGdJ5C6rRk",
+          "mode": "list",
+          "cachedResultName": "AI Marketing",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1cypc8QiW_KokQueLulDomxyp35zUl0TfPsGdJ5C6rRk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Visual Playbook",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1cypc8QiW_KokQueLulDomxyp35zUl0TfPsGdJ5C6rRk/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        20,
+        40
+      ],
+      "id": "49c70e88-947e-4449-8f57-7fe1a8d9fdbb",
+      "name": "Visual Playbook",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "8s3KYjA1a6mtPebt",
+          "name": "Google Sheets- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -100,
+        40
+      ],
+      "id": "0c9eb325-841c-474f-be05-4da7ec7940f2",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "q3gPWSga9sOawaqA",
+          "name": "OpenAi API Key- KAP Enterprises"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output.prompts",
+        "options": {
+          "includeBinary": true
+        }
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        340,
+        -180
+      ],
+      "id": "d77d971d-192c-4411-b2ed-76903d70d987",
+      "name": "Split Out",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/images/edits",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "gpt-image-1"
+            },
+            {
+              "name": "prompt",
+              "value": "={{ $('Split Out').item.json['output.prompts'] }}"
+            },
+            {
+              "name": "n",
+              "value": "1"
+            },
+            {
+              "name": "size",
+              "value": "1024x1536"
+            },
+            {
+              "name": "quality",
+              "value": "high"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "image",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        780,
+        -180
+      ],
+      "id": "ac4da35b-8fa6-4238-82ec-060e414a9dad",
+      "name": "image gen",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ZisTRjvIRDWESuAy",
+          "name": "OpenAI Header Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const item = $input.item;\n\nconst base64String = item.json.data[0].b64_json;\n\nif (!base64String) {\n  console.error(\"Base64 string not found at the expected path.\");\n  return [{ json: { error: \"Base64 string not found\" } }];\n}\n\ntry {\n  const outputItem = {\n    json: {},\n    binary: {\n      data: {\n        data: base64String,\n        fileName: 'generated_image.png',\n        mimeType: 'image/png'\n      }\n    }\n  };\n\n  return outputItem;\n\n} catch (error) {\n  console.error(\"Error preparing binary output structure:\", error);\n  return [{ json: { error: \"Failed to prepare binary output\", details: error.message } }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1000,
+        -180
+      ],
+      "id": "0d0b3e08-a805-4208-8d1a-3b6168fa312c",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Edit Fields').item.json.logoImageId }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        560,
+        -180
+      ],
+      "id": "4cdf0b6e-6802-4a78-8832-e4852da2f7d7",
+      "name": "Download file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "PBtBKOv2ofju7FVt",
+          "name": "Google Drive- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "={{ $now }}.png",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1snz_WxbBL0cS9I7fm41-8yVmsG2likEU",
+          "mode": "list",
+          "cachedResultName": "MarketingImages",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1snz_WxbBL0cS9I7fm41-8yVmsG2likEU"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1220,
+        -180
+      ],
+      "id": "baf6a38f-a8e0-4788-8813-5fd8517f7c5d",
+      "name": "Upload file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "PBtBKOv2ofju7FVt",
+          "name": "Google Drive- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1cypc8QiW_KokQueLulDomxyp35zUl0TfPsGdJ5C6rRk",
+          "mode": "list",
+          "cachedResultName": "AI Marketing",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1cypc8QiW_KokQueLulDomxyp35zUl0TfPsGdJ5C6rRk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1891405877,
+          "mode": "list",
+          "cachedResultName": "Ad Creatives",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1cypc8QiW_KokQueLulDomxyp35zUl0TfPsGdJ5C6rRk/edit#gid=1891405877"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "vibe": "={{ $('On form submission').item.json.Vibe }}",
+            "style_id": "={{ $('On form submission').item.json.Style }}",
+            "image_prompt": "={{ $('Split Out').item.json['output.prompts'] }}",
+            "visual_url": "={{ $json.webViewLink }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "vibe",
+              "displayName": "vibe",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "style_id",
+              "displayName": "style_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "image_prompt",
+              "displayName": "image_prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "visual_url",
+              "displayName": "visual_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1440,
+        -180
+      ],
+      "id": "e78ee0ec-9d4c-4c5f-8d35-f49426962fd7",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "8s3KYjA1a6mtPebt",
+          "name": "Google Sheets- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"companyName\": \"KAP Enterprises\",\n  \"vibe\": \"{{ $json.Vibe }}\",\n  \"style\": \"{{ $json.Style }}\",\n  \"logoImageId\": \"10NCZBMOW2R5QOTxHVE4jGo-FDMq-C6zR\"\n}\n ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -320,
+        -180
+      ],
+      "id": "38ae8913-45dd-4905-a0d0-4c559b1527fa",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-06-24T23:35:26.885Z",
+      "updatedAt": "2025-06-24T23:35:26.885Z",
+      "role": "workflow:owner",
+      "workflowId": "zgr53FozlY6r0o7l",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-30T20:23:40.000Z",
+  "versionId": "4589b8d6-e3dc-4733-b4cd-77f3b98717fa"
+}
