@@ -1,0 +1,1004 @@
+{
+  "active": false,
+  "connections": {
+    "Split Document Text Into Sections": {
+      "main": [
+        [
+          {
+            "node": "Output to Base64",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Text Data From Google Document": {
+      "main": [
+        [
+          {
+            "node": "Merge Image Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Test Source",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "handle image-based text": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "OCR.space API",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge Text Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OCR.space API": {
+      "main": [
+        [
+          {
+            "node": "Process OCR Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process OCR Results": {
+      "main": [
+        [
+          {
+            "node": "Merge Text Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Standard Text-NonOCR": {
+      "main": [
+        [
+          {
+            "node": "Merge Text Results",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Text Results": {
+      "main": [
+        [
+          {
+            "node": "Text Cleaning from Credits",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Text Data": {
+      "main": [
+        [
+          {
+            "node": "Split Document Text Into Sections",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Cleaning from Credits": {
+      "main": [
+        [
+          {
+            "node": "Normalize Text Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Get Folder IDs",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fetch Each File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Each File": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Extract Text Data From Google Document",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge Image Files",
+            "type": "main",
+            "index": 1
+          }
+        ],
+        [
+          {
+            "node": "Merge Text Files",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Image Files": {
+      "main": [
+        [
+          {
+            "node": "handle image-based text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Text Files": {
+      "main": [
+        [
+          {
+            "node": "Prepare Standard Text-NonOCR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Variables": {
+      "main": [
+        [
+          {
+            "node": "Get files from specified folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Output to Base64": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get files from specified folder": {
+      "main": [
+        [
+          {
+            "node": "Capture folderId",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Watch Laws": {
+      "main": [
+        [
+          {
+            "node": "Laws Source",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Watch Cases": {
+      "main": [
+        [
+          {
+            "node": "Laws Source1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Laws Source1": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Laws Source": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test Source": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Capture folderId": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Folder IDs": {
+      "main": [
+        [
+          {
+            "node": "Move Process Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-24T03:37:51.667Z",
+  "id": "bz8I8i8M7B1Ma624",
+  "isArchived": false,
+  "meta": null,
+  "name": "2.0 Case Law Study- Process Files",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Prepare Document. \nThis section is responsible for downloading \nthe file from Google Drive, splitting the text \ninto sections by detecting separators, \nand preparing them for looping.",
+        "height": 1140,
+        "width": 2680
+      },
+      "id": "9868c1b7-77fa-4027-8def-e8c07be14728",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  // Using a character count approach (approximately 30KB to leave room for other metadata)\n  const maxChunkSize = $('Set Variables').first().json.maxChunkSize; // Characters, safely under the 40KB limit\n  \n  // Determine the source text - check multiple possible fields\n  let sourceText = item.json.text;\n  \n  // If text field is empty/missing, try data field (original workflow)\n  if (!sourceText || sourceText.length === 0) {\n    sourceText = item.json.data;\n  }\n  \n  // Safety check - if still no text, log and continue\n  if (!sourceText || typeof sourceText !== 'string') {\n    console.log(`Warning: No valid text to split for document: ${item.json.documentPath || 'unknown'}`);\n    continue; // Skip this item\n  }\n  \n  // Further chunk the text to ensure they're under the 40KB limit\n  let allChunks = [];\n  \n  // Process the entire text (no split_text delimiter needed anymore)\n  let pos = 0;\n  while (pos < sourceText.length) {\n    // Find a good breaking point, preferably at a paragraph or sentence\n    let endPos = Math.min(pos + maxChunkSize, sourceText.length);\n    \n    // Look for paragraph or sentence breaks to split more naturally\n    if (endPos < sourceText.length) {\n      // Look for paragraph break first\n      let paragraphBreak = sourceText.lastIndexOf('\\n\\n', endPos);\n      if (paragraphBreak > pos && paragraphBreak > pos + maxChunkSize * 0.75) {\n        endPos = paragraphBreak + 2;\n      } else {\n        // Or look for sentence break\n        let sentenceBreak = Math.max(\n          sourceText.lastIndexOf('. ', endPos),\n          sourceText.lastIndexOf('! ', endPos),\n          sourceText.lastIndexOf('? ', endPos)\n        );\n        if (sentenceBreak > pos && sentenceBreak > pos + maxChunkSize * 0.75) {\n          endPos = sentenceBreak + 2;\n        }\n      }\n    }\n    \n    // Add the chunk to the list\n    allChunks.push(sourceText.substring(pos, endPos));\n    pos = endPos;\n  }\n  \n  // Add citation info to metadata if available\n  const citationInfo = item.json.citation || {};\n  \n  // Create array to store sections with sectionId and section content\n  const sectionsArray = [];\n  \n  // Now process each chunk as a separate section within the sections array\n  for (let i = 0; i < allChunks.length; i++) {\n    // Create a unique identifier for each chunk\n    let sectionId = `section_${i+1}_of_${allChunks.length}`;\n    \n    // Create the section object with section content and sectionId\n    const sectionObj = {\n      section: allChunks[i],\n      sectionId: sectionId\n    };\n    \n    // Add section object to sectionsArray\n    sectionsArray.push(sectionObj);\n  }\n  \n  // Add the sections array to the item and store the extracted metadata\n  item.json.sections = sectionsArray;\n  item.json.extractedMetadata = citationInfo;\n  \n  // If the document exists, update it with extracted metadata\n  if (item.json.document) {\n    let docObj = typeof item.json.document === 'string' \n      ? JSON.parse(item.json.document) \n      : item.json.document;\n    \n    if (!docObj.metadata) docObj.metadata = {};\n    \n    // Add extracted metadata to document\n    docObj.metadata.extractedEntities = citationInfo.entities || [];\n    docObj.metadata.extractedPeople = citationInfo.people || [];\n    docObj.metadata.extractedDates = citationInfo.dates || [];\n    docObj.metadata.extractedLocations = citationInfo.locations || [];\n    docObj.metadata.extractedTerms = citationInfo.technical_terms || [];\n    docObj.metadata.extractedMetrics = citationInfo.metrics || [];\n    \n    // Update the document\n    item.json.document = JSON.stringify(docObj);\n  }\n\n  // Return the updated items with the new \"sections\" field\n  return [item];\n}\n\n// Add this code at the end to ensure something is output even if no sections were created\nif ($input.all().length === 0) {\n  // If no items are being output, at least output the original item with an empty section\n  const item = $input.first();\n  item.json.sections = [{\n    section: \"No text content found in document.\",\n    sectionId: \"section_1_of_1\"\n  }];\n  item.json.document = JSON.stringify({\n    content: item.json.sections[0].section,\n    id: item.json.sections[0].sectionId,\n    total_sections: 1,\n    citation: item.json.citation || {}\n  });\n  \n  return [item];\n}\n\nreturn $input.all();\n"
+      },
+      "id": "63c84d72-ebdf-4e7e-b221-f24517760d3b",
+      "name": "Split Document Text Into Sections",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        920,
+        1260
+      ],
+      "typeVersion": 2,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "id": "ab443bbd-279e-4351-93d3-7267a3b75320",
+      "name": "Extract Text Data From Google Document",
+      "type": "n8n-nodes-base.extractFromFile",
+      "position": [
+        1200,
+        720
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "fe740bb4-1298-4afc-9985-33971d7438f3",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        500,
+        60
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "jsCode": "// Debug-focused detection logic\nfor (const item of $input.all()) {\n  // Store original extraction result\n  const rawExtractedText = item.json.data || '';\n  \n  // Log raw data for debugging\n  console.log(\"=== DEBUG INFO ===\");\n  console.log(`Raw text length: ${rawExtractedText.length}`);\n  console.log(`Text sample: ${rawExtractedText.substring(0, 100)}...`);\n  console.log(`Data type: ${typeof rawExtractedText}`);\n  \n  // Force to non-OCR path for testing\n  item.json.needsOCR = false;\n  \n  // Keep original text\n  item.json.originalText = rawExtractedText;\n  item.json.documentPath = item.json.filename || 'Unknown Document';\n  \n  console.log(`Setting needsOCR to: ${item.json.needsOCR} (should be false)`);\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1700,
+        720
+      ],
+      "id": "359534cd-1799-4058-a6f2-8fcb06de046e",
+      "name": "handle image-based text"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "60a14c42-2ff3-4ccf-b5a1-3dd463feac9c",
+              "leftValue": "={{$json[\"needsOCR\"] === true}}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1880,
+        720
+      ],
+      "id": "c866573f-1da3-44bb-a577-d8ecaaa1230e",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.ocr.space/parse/image",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "file",
+              "value": "={{$binary.data.data}}"
+            },
+            {
+              "name": "language",
+              "value": "eng"
+            },
+            {
+              "name": "filetype ",
+              "value": "pdf"
+            },
+            {
+              "name": "OCREngine",
+              "value": "2"
+            },
+            {
+              "name": "scale",
+              "value": "true"
+            },
+            {
+              "name": "detectOrientation ",
+              "value": "true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2080,
+        720
+      ],
+      "id": "27aeecd5-959d-4ade-b184-ccf0914163ff",
+      "name": "OCR.space API"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Process OCR.space results\nfor (const item of $input.all()) {\n  try {\n    // Get OCR results from the API response\n    const ocrResponse = item.json;\n    let extractedText = '';\n    \n    // Parse the OCR.space response\n    if (ocrResponse.ParsedResults && ocrResponse.ParsedResults.length > 0) {\n      // Combine text from all parsed results\n      extractedText = ocrResponse.ParsedResults\n        .map(result => result.ParsedText)\n        .join('\\n\\n');\n    }\n    \n    // Add the OCR text to the item\n    item.json.text = extractedText;\n    item.json.ocrProcessed = true;\n    \n    // If there was an error in the OCR process\n    if (ocrResponse.IsErroredOnProcessing) {\n      item.json.ocrError = ocrResponse.ErrorMessage || \"Unknown OCR error\";\n      console.log(\"OCR Error:\", item.json.ocrError);\n    }\n\n    // Add source and folder information\n    item.json.source = $('Set Variables').first().json.source;\n    \n  } catch (error) {\n    console.log('Error processing OCR results:', error);\n    // Create a placeholder if OCR fails completely\n    item.json.text = \"OCR PROCESSING FAILED\";\n    item.json.ocrError = error.message;\n  }\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2240,
+        720
+      ],
+      "id": "b4077f1f-96b9-4fe7-b419-6e5b0311286e",
+      "name": "Process OCR Results"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Improved Prepare text from standard extraction\nfor (const item of $input.all()) {\n  // Debug what fields are available\n  console.log(\"Fields in Prepare Standard Text:\");\n  console.log(`text exists: ${item.json.hasOwnProperty('text')}, length: ${(item.json.text || '').length}`);\n  console.log(`originalText exists: ${item.json.hasOwnProperty('originalText')}, length: ${(item.json.originalText || '').length}`);\n  console.log(`data exists: ${item.json.hasOwnProperty('data')}, length: ${(item.json.data || '').length}`);\n  \n  // Take text from all possible sources, with priority\n  // First try the existing text field (if it has content)\n  if (item.json.text && item.json.text.length > 0) {\n    // Keep existing text\n    console.log(\"Using existing text field\");\n  }\n  // Then try originalText\n  else if (item.json.originalText && item.json.originalText.length > 0) {\n    item.json.text = item.json.originalText;\n    console.log(\"Using originalText field\");\n  }\n  // Then try data field\n  else if (item.json.data && item.json.data.length > 0) {\n    item.json.text = item.json.data;\n    console.log(\"Using data field\");\n  }\n  // If all else fails, set a placeholder\n  else {\n    item.json.text = \"No text content found in document\";\n    console.log(\"No text found in any field\");\n  }\n\n  // Add source and folder information\n  item.json.source = $('Set Variables').first().json.source;\n  \n  // Mark as not processed by OCR\n  item.json.ocrProcessed = false;\n  \n  // Additional log to confirm text was set\n  console.log(`Final text length: ${item.json.text.length}`);\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2240,
+        940
+      ],
+      "id": "4a214a2a-17f0-4862-aca4-555769e00695",
+      "name": "Prepare Standard Text-NonOCR"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "fieldsToMatchString": "documentPath",
+        "joinMode": "keepEverything",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        2440,
+        940
+      ],
+      "id": "cdad2b8d-2c77-4baf-8fb0-6cdcda34348d",
+      "name": "Merge Text Results"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Normalize data structure from both branches with debugging\nfor (const item of $input.all()) {\n  // Debug logging\n  console.log(\"Input to Normalize Text Data:\");\n  console.log(`Text field exists: ${item.json.hasOwnProperty('text')}`);\n  console.log(`Text length: ${(item.json.text || '').length}`);\n  console.log(`Original text exists: ${item.json.hasOwnProperty('originalText')}`);\n  console.log(`Original text length: ${(item.json.originalText || '').length}`);\n  console.log(`Data field exists: ${item.json.hasOwnProperty('data')}`);\n  console.log(`Data field length: ${(item.json.data || '').length}`);\n  \n  // Make sure text field exists and has content\n  if (!item.json.text || item.json.text.length === 0) {\n    // Try to get text from other possible fields\n    item.json.text = item.json.originalText || item.json.data || '';\n    console.log(`Updated text length: ${item.json.text.length}`);\n  }\n  \n  // Create citation information\n  item.json.citation = {\n    documentName: $('Loop Over Items1').first().json.name,\n    documentType: $('Loop Over Items1').first().json.mimeType,\n    extractionDate: new Date().toISOString(),\n    documentId: item.json.filename?.replace(/\\.\\w+$/, '') || 'document-' + Date.now(),\n    wasOCRed: !!item.json.ocrProcessed\n  };\n  \n  // Clean up temporary fields to reduce metadata size\n  delete item.json.needsOCR;\n  delete item.json.hasScannedContent;\n  delete item.json.originalText;\n  delete item.json.ocrProcessed;\n  delete item.json.ocrError;\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        740,
+        1260
+      ],
+      "id": "4e446e62-58b7-41d5-be91-d01b83176f07",
+      "name": "Normalize Text Data"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Safer text cleaning with validation\nfor (const item of $input.all()) {\n  let text = item.json.text || item.json.data || '';\n  \n  if (text) {\n    // Store original length\n    const originalLength = text.length;\n    \n    // Create a copy of original text\n    const originalText = text;\n    \n    // Apply cleaning patterns\n    text = text\n      // Copyright notices\n      .replace(/Copyright \\d{4}.*?reserved\\./gs, '')\n      \n      // Lloyd's Register references\n      .replace(/Lloyd's Register Rulefinder \\d{4}.*?Version \\d+\\.\\d+/gs, '')\n      \n      // Clean up whitespace\n      .replace(/\\n{3,}/g, '\\n\\n')\n      .trim();\n    \n    // Validate the cleaning didn't remove too much content\n    const removedPercentage = (originalLength - text.length) / originalLength * 100;\n    \n    // If more than 30% of content was removed, it might be unsafe\n    if (removedPercentage > 30) {\n      console.log(`Warning: Cleaning removed ${removedPercentage.toFixed(2)}% of content`);\n      \n      // More conservative approach - just remove the most common noise patterns\n      text = originalText\n        .replace(/Copyright \\d{4}.*?Limited\\./gs, '')\n        .replace(/Lloyd's Register Rulefinder \\d{4}/g, '')\n        .trim();\n    }\n    \n    // Update text\n    item.json.text = text;\n    if (item.json.data) {\n      item.json.data = text;\n    }\n\n    // Update original text\n    item.json.originalText = originalText;\n    \n    console.log(`Cleaned ${originalLength - text.length} characters (${removedPercentage.toFixed(2)}%)`);\n  }\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        1260
+      ],
+      "id": "eab78f2b-a87b-4b8e-8819-0ea9444b5ed0",
+      "name": "Text Cleaning from Credits"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        520,
+        740
+      ],
+      "id": "3ced95f7-baf9-4f68-9d7e-5bc39afdc6fc",
+      "name": "Loop Over Items1",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.id }}"
+        },
+        "options": {}
+      },
+      "id": "1b9e7c7f-bd50-4d24-a7d8-1c65a44f3411",
+      "name": "Fetch Each File",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        800,
+        940
+      ],
+      "executeOnce": false,
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "content": "## Process Metadata\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 660,
+        "width": 2680
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        1160
+      ],
+      "typeVersion": 1,
+      "id": "c4e30527-615a-4319-a713-6d8558e2bb7c",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.mimeType }}",
+                    "rightValue": "application/pdf",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "6d8759b5-c566-4051-9a75-78ee6f1351a6"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b6f7f557-edd7-4ccc-973e-05d709935d1c",
+                    "leftValue": "={{ $json.mimeType }}",
+                    "rightValue": "=application/doc|application/docx",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "09927041-22d9-42e4-a2b8-f16c53ef0cbf",
+                    "leftValue": "={{ $json.mimeType }}",
+                    "rightValue": "application/txt",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        980,
+        940
+      ],
+      "id": "0afa9195-95b0-49b6-988d-33dcc115b8d4",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        1500,
+        720
+      ],
+      "id": "faa7fb3c-1f2c-4d89-8215-80d5cc991942",
+      "name": "Merge Image Files"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        2080,
+        940
+      ],
+      "id": "d9ff53cd-d63e-4c77-8113-a2bf2ff3e4cc",
+      "name": "Merge Text Files"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"source\": \"{{ $json.source }}\",\n  \"sourceFolderId\": \"{{ $json.sourceFolderId }}\",\n  \"processedFolderId\": \"{{ $json.processedFolderId }}\",\n  \"maxChunkSize\": 5000,\n  \"upsertUrl\": \"https://panoslawgic.app.n8n.cloud/webhook/f87a4dfe-743f-4b7a-8e69-8d565374f055\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        940,
+        240
+      ],
+      "id": "60d34fe6-eb35-4f4b-90e5-7fbd3acb63c3",
+      "name": "Set Variables"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $items('Set Variables')[0].json.upsertUrl }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "data",
+              "value": "={{ $json.base64 }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        560,
+        1600
+      ],
+      "id": "c13854e2-bb02-4b85-8057-1ab539666f15",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the entire JSON output from the \"Split Document Text\" node\nconst inputJson = $json;  // Access the whole JSON object from the previous node\n\n// Stringify the entire JSON output\nconst stringifiedJson = JSON.stringify(inputJson);\n\n// Convert the stringified JSON to Base64\nconst base64String = Buffer.from(stringifiedJson).toString('base64');\n\n// Return the Base64 encoded string in the proper format for n8n\nreturn [\n  {\n    json: {\n      base64: base64String // Return the Base64 encoded string\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        1260
+      ],
+      "id": "f62f6412-380b-4874-9c53-1453a39bd708",
+      "name": "Output to Base64"
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        740,
+        1600
+      ],
+      "id": "573bacea-cb8c-405b-abf9-519e932de3b7",
+      "name": "Wait",
+      "webhookId": "d93fdabf-428b-47c3-9bfc-a17d33a7b755"
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "queryString": "\"*\"",
+        "returnAll": true,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "={{ $json.sourceFolderId }}",
+            "mode": "id"
+          },
+          "whatToSearch": "files"
+        },
+        "options": {
+          "fields": [
+            "kind",
+            "id",
+            "name",
+            "mimeType"
+          ]
+        }
+      },
+      "id": "d8410098-2d8b-4a28-b523-28e1194853f7",
+      "name": "Get files from specified folder",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        1180,
+        400
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "1Dh6G9sVpBVfurr1UQSmHOolG-8xpwZtz",
+          "mode": "id"
+        },
+        "event": "fileCreated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        500,
+        240
+      ],
+      "id": "6a1bb522-af7c-4e62-90d6-8553e3cceeeb",
+      "name": "Watch Laws"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "triggerOn": "specificFolder",
+        "folderToWatch": {
+          "__rl": true,
+          "value": "10vmclkMn5nlQfkgteR7iTmvxenSahnAp",
+          "mode": "id"
+        },
+        "event": "fileCreated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [
+        500,
+        400
+      ],
+      "id": "af489a11-3ff8-475d-84f0-2e0f46c8040c",
+      "name": "Watch Cases"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"source\": \"laws\",\n  \"sourceFolderId\": \"{{ $json.parents[0] }}\",\n  \"processedFolderId\": \"1gBzstcvSt3MmsBpqPtElHhyGD4kHzIqx\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        720,
+        240
+      ],
+      "id": "4e35bb05-f911-4719-9893-4067830dcfa2",
+      "name": "Laws Source"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"source\": \"cases\",\n  \"folderId\": \"{{ $json.parents[0] }}\",\n  \"processedFolderId\": \"1hAcGiUcMFGusqctTjbmERnRZPnHZYiMP\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        720,
+        400
+      ],
+      "id": "38534dbf-51af-465a-a3fb-90cf2b220ee0",
+      "name": "Laws Source1"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"source\": \"laws\",\n  \"sourceFolderId\": \"1Dh6G9sVpBVfurr1UQSmHOolG-8xpwZtz\",\n  \"processedFolderId\": \"1gBzstcvSt3MmsBpqPtElHhyGD4kHzIqx\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        720,
+        60
+      ],
+      "id": "0bd98a0b-39a7-4a6b-9b58-b0bdfe5cc72e",
+      "name": "Test Source"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the folderId from a previous node (e.g., \"Set Folder ID\")\nconst sourceFolderId = $('Set Variables').first().json.sourceFolderId;\nconst processedFolderId = $('Set Variables').first().json.processedFolderId;\n\n// Attach folderId to each file item\nreturn items.map(item => {\n  return {\n    json: {\n      ...item.json,\n      sourceFolderId: sourceFolderId,\n      processedFolderId: processedFolderId\n    }\n  };\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1400,
+        400
+      ],
+      "id": "1771bd16-b652-4f65-bbb2-b4742b0174f9",
+      "name": "Capture folderId"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"fileId\": \"{{ $items('Capture folderId')[0].json.id }}\",\n  \"sourceFolderId\": \"{{ $items('Capture folderId')[0].json.sourceFolderId }}\",\n  \"processedFolderId\": \"{{ $items('Capture folderId')[0].json.processedFolderId }}\",\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        800,
+        620
+      ],
+      "id": "cb05080b-1bc6-48a8-b4ac-ca75d3f104bf",
+      "name": "Get Folder IDs"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "move",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.fileId }}",
+          "mode": "id"
+        },
+        "driveId": {
+          "__rl": true,
+          "value": "={{ $json.sourceFolderId }}",
+          "mode": "id"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "={{ $json.processedFolderId }}",
+          "mode": "id"
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        980,
+        620
+      ],
+      "id": "925bae87-f373-48eb-9d60-85cd0a3a4d04",
+      "name": "Move Process Files",
+      "disabled": true
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-06-24T03:37:51.675Z",
+      "updatedAt": "2025-06-24T03:37:51.675Z",
+      "role": "workflow:owner",
+      "workflowId": "bz8I8i8M7B1Ma624",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-24T03:37:51.000Z",
+  "versionId": "f406caf1-dc3d-47f6-bd00-21c70a1fb354"
+}
