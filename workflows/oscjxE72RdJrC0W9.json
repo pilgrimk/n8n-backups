@@ -1,0 +1,91 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Apollo Search URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-04T19:11:42.357Z",
+  "id": "oscjxE72RdJrC0W9",
+  "isArchived": false,
+  "meta": null,
+  "name": "Apollo Search URL",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "75987484-524d-4a7b-8f5b-49d6e79a7734",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"Job Title\": \"owner, founder, ceo, director\",\n  \"Company Size\": \"1-50\",\n  \"Keywords\": \"\",\n  \"Location\": \"Greater Salt Lake City Area, Greater Phoenix Area, Greater Atlanta Area\",\n  \"Industry\": \"construction, real estate, online media, photography, health, wellness & fitness\",\n  \"Seniority\": \"\",\n  \"Has Email\": \"true\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "adb5e34d-4aed-4fc8-b563-c784d334df61",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Apollo Search URL generator (Function Item)\n\nfunction buildApolloUrl(data) {\n  const baseUrl = \"https://app.apollo.io/#/people\";\n\n  const params = [];\n\n  // Helper: split on commas, trim, drop empties\n  const splitList = (str) =>\n    (str || \"\")\n      .split(\",\")\n      .map(s => s.trim())\n      .filter(Boolean);\n\n  // --- Job Titles ---\n  for (const title of splitList(data[\"Job Title\"])) {\n    params.push(`personTitles[]=${encodeURIComponent(title)}`);\n  }\n\n  // --- Company Size ---\n  if (data[\"Company Size\"]) {\n    params.push(`organizationNumEmployeesRanges[]=${encodeURIComponent(data[\"Company Size\"].trim())}`);\n  }\n\n  // --- Keywords ---\n  for (const kw of splitList(data[\"Keywords\"])) {\n    params.push(`qOrganizationKeywordTags[]=${encodeURIComponent(kw)}`);\n  }\n\n  // --- Locations ---\n  for (const loc of splitList(data[\"Location\"])) {\n    params.push(`personLocations[]=${encodeURIComponent(loc)}`);\n  }\n\n  // --- Industries ---\n  for (const ind of splitList(data[\"Industry\"])) {\n    params.push(`organizationIndustries[]=${encodeURIComponent(ind)}`);\n  }\n\n  // --- Seniorities ---\n  for (const seniority of splitList(data[\"Seniority\"])) {\n    params.push(`personSeniorities[]=${encodeURIComponent(seniority)}`);\n  }\n\n  // --- Has Email (boolean flag) ---\n  if (data[\"Has Email\"] && String(data[\"Has Email\"]).toLowerCase() === \"true\") {\n    params.push(\"contactEmailStatus[]=verified\");\n  }\n\n  return `${baseUrl}?${params.join(\"&\")}`;\n}\n\n// Build the URL from this item’s JSON\nconst url = buildApolloUrl($json);\n\nreturn {\n  json: {\n    apolloUrl: url\n  }\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "6a2f358a-0e30-4e4c-9202-eab064708dd4",
+      "name": "Apollo Search URL"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-04T19:11:42.367Z",
+      "updatedAt": "2025-10-04T19:11:42.367Z",
+      "role": "workflow:owner",
+      "workflowId": "oscjxE72RdJrC0W9",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-04T19:28:37.000Z",
+  "versionId": "6a70ad55-aecc-44f4-8b0e-6b0f701e53c4"
+}
