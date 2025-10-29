@@ -1,0 +1,168 @@
+{
+  "active": false,
+  "connections": {
+    "Merge Run + Retry Count": {
+      "main": [
+        [
+          {
+            "node": "Check Run Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Run Status": {
+      "main": [
+        [
+          {
+            "node": "Switch Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch Status": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Wait 10 Seconds",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-01T01:57:06.256Z",
+  "id": "0BA5pcJEUlpanQaA",
+  "isArchived": true,
+  "meta": null,
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "retryCount",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Set Retry Count",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        368
+      ],
+      "id": "6495b0d7-a504-43e5-9ecf-6251897f5303"
+    },
+    {
+      "parameters": {},
+      "name": "Run an Actor",
+      "type": "n8n-nodes-base.apify",
+      "typeVersion": 1,
+      "position": [
+        -272,
+        368
+      ],
+      "id": "fb8cc02a-05c2-4b6e-ae47-ef5b3cef29de",
+      "credentials": {
+        "apifyApi": {
+          "id": null,
+          "name": "Apify API"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "name": "Get Status",
+      "type": "n8n-nodes-base.apifyTrigger",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        368
+      ],
+      "id": "9f3eaca0-9664-41d7-b633-7d94a03e493d",
+      "credentials": {
+        "apifyApi": {
+          "id": null,
+          "name": "Apify API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "mergeByIndex"
+      },
+      "name": "Merge Run + Retry Count",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 1,
+      "position": [
+        128,
+        368
+      ],
+      "id": "f2428728-001c-4186-af42-5c732da3c1bb"
+    },
+    {
+      "parameters": {},
+      "name": "Check Run Status",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        336,
+        368
+      ],
+      "id": "e9c11bb9-c29e-4460-86d0-5710173883d9"
+    },
+    {
+      "parameters": {},
+      "name": "Switch Status",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        528,
+        368
+      ],
+      "id": "127ea29b-2b9d-42a5-8a90-723396d67506"
+    },
+    {
+      "parameters": {
+        "unit": "seconds"
+      },
+      "name": "Wait 10 Seconds",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        736,
+        368
+      ],
+      "id": "4f2694e4-96e7-4d3a-8353-6f7f3c082f3c",
+      "webhookId": "c994793e-bc2b-4c81-bd02-fd504bc2c9fc"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-01T01:57:06.263Z",
+      "updatedAt": "2025-08-01T01:57:06.263Z",
+      "role": "workflow:owner",
+      "workflowId": "0BA5pcJEUlpanQaA",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-08T01:47:15.000Z",
+  "versionId": "463bf588-adc9-4f50-8510-d7fa4095f823"
+}
