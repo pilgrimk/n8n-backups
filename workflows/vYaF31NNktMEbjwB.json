@@ -1,0 +1,792 @@
+{
+  "active": false,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Case Files": {
+      "main": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Case Files": {
+      "main": [
+        [
+          {
+            "node": "Load Case Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Case Record- 2": {
+      "main": [
+        [
+          {
+            "node": "Get Case Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Case Record- 1": {
+      "main": [
+        [
+          {
+            "node": "Delete Namespace",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Get 'Case Law Records'",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get Case Record- 2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get Case Record- 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Download File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Create Document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Folder": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download File": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get 'Case Law Records'": {
+      "main": [
+        [
+          {
+            "node": "Search Folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Delete File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Document": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete File": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-24T03:36:04.658Z",
+  "id": "vYaF31NNktMEbjwB",
+  "isArchived": false,
+  "meta": null,
+  "name": "2.0 Case Law Study- Manage Database",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1240,
+        500
+      ],
+      "id": "356c2385-d6e6-4a50-9948-12ede8360af9",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('When Executed by Another Workflow').item.json.pineconeHost }}/vectors/delete",
+        "sendHeaders": true,
+        "specifyHeaders": "json",
+        "jsonHeaders": "={\n  \"content-type\": \"application/json\",\n  \"x-pinecone-api-version\": \"2025-01\",\n  \"api-key\": \"{{ $('When Executed by Another Workflow').item.json.pineconeApiKey }}\"\n}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"deleteAll\": true,\n  \"namespace\": \"{{ $json['Case Name'] }}\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -580,
+        700
+      ],
+      "id": "19d76b99-6b95-4cb3-b5c3-dc60f881513e",
+      "name": "Delete Namespace",
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -360,
+        500
+      ],
+      "id": "e58677c7-312f-42f0-82d6-b068c9735063",
+      "name": "Load Case Files"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the Case Files\nreturn items.flatMap(item => $input.first().json['Case Records']);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -580,
+        500
+      ],
+      "id": "c9b17156-f649-43bc-8bc0-69506a15d089",
+      "name": "Get Case Files"
+    },
+    {
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "value": "app6dYc1bLxU04YPf",
+          "mode": "list",
+          "cachedResultName": "Case Law Study",
+          "cachedResultUrl": "https://airtable.com/app6dYc1bLxU04YPf"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblR3IVoPUrihVwmn",
+          "mode": "list",
+          "cachedResultName": "Cases",
+          "cachedResultUrl": "https://airtable.com/app6dYc1bLxU04YPf/tblR3IVoPUrihVwmn"
+        },
+        "id": "={{ $('When Executed by Another Workflow').item.json.recordId }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        -800,
+        500
+      ],
+      "id": "558b7c30-242b-47be-94e6-ed6dd0858002",
+      "name": "Get Case Record- 2"
+    },
+    {
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "value": "app6dYc1bLxU04YPf",
+          "mode": "list",
+          "cachedResultName": "Case Law Study",
+          "cachedResultUrl": "https://airtable.com/app6dYc1bLxU04YPf"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblR3IVoPUrihVwmn",
+          "mode": "list",
+          "cachedResultName": "Cases",
+          "cachedResultUrl": "https://airtable.com/app6dYc1bLxU04YPf/tblR3IVoPUrihVwmn"
+        },
+        "id": "={{ $('When Executed by Another Workflow').item.json.recordId }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        -800,
+        700
+      ],
+      "id": "04cd2e2f-e0e5-48ed-ae80-1fdad5593a2c",
+      "name": "Get Case Record- 1"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('When Executed by Another Workflow').item.json.actionId }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "493078d5-6032-4f80-b2b2-01f55418071d"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0d8f33e0-24f5-4006-b6e1-652c9864900f",
+                    "leftValue": "={{ $('When Executed by Another Workflow').item.json.actionId }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a6a766e6-0119-4864-a498-e7ee0740858b",
+                    "leftValue": "={{ $('When Executed by Another Workflow').item.json.actionId }}",
+                    "rightValue": "13",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1020,
+        500
+      ],
+      "id": "6dc2679e-4c9e-4b02-b619-3650586327e5",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -360,
+        80
+      ],
+      "id": "2f1e44b4-2dbd-45b3-a8d1-0126fa7ef643",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n    \"attachment\": [{\n            \"filename\": \"{{ $json.name }}\",\n            \"url\": \"https://drive.google.com/uc?export=download&id={{ $json.id }}\"\n        }\n    ],\n    \"caseLawRecordsId\": \"{{ $('Get \\'Case Law Records\\'').item.json.id }}\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        360,
+        0
+      ],
+      "id": "d64fb26e-e97a-4d55-b66b-e9ca292bb8e5",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "returnAll": true,
+        "filter": {
+          "driveId": {
+            "__rl": true,
+            "value": "My Drive",
+            "mode": "list",
+            "cachedResultName": "My Drive",
+            "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+          },
+          "folderId": {
+            "__rl": true,
+            "value": "1IM4HybDR2jQ_Q1-hyxGh8lFoEkYdVg8Y",
+            "mode": "list",
+            "cachedResultName": "UploadFiles",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1IM4HybDR2jQ_Q1-hyxGh8lFoEkYdVg8Y"
+          },
+          "whatToSearch": "files"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -580,
+        80
+      ],
+      "id": "326e0dc2-f083-4d85-97e2-aded8a46fa0c",
+      "name": "Search Folder"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "aab43201-0cf5-444a-8961-84705654caf6",
+      "name": "Download File"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "app6dYc1bLxU04YPf",
+          "mode": "list",
+          "cachedResultName": "Case Law Study",
+          "cachedResultUrl": "https://airtable.com/app6dYc1bLxU04YPf"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblVHbFvS4tw9sssq",
+          "mode": "list",
+          "cachedResultName": "Variables",
+          "cachedResultUrl": "https://airtable.com/app6dYc1bLxU04YPf/tblVHbFvS4tw9sssq"
+        },
+        "filterByFormula": "{Name}='Case Law Records'",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        -800,
+        80
+      ],
+      "id": "f93f8d04-d198-4670-8022-d6e39a7de9f2",
+      "name": "Get 'Case Law Records'"
+    },
+    {
+      "parameters": {
+        "amount": 0.5
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        0
+      ],
+      "id": "c12045fd-1ca2-4b79-b9e4-3a58d054e5b4",
+      "name": "Wait",
+      "webhookId": "a94f2bf9-bfbf-45ae-a84a-f133b4574834"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "app6dYc1bLxU04YPf",
+          "mode": "list",
+          "cachedResultName": "Case Law Study",
+          "cachedResultUrl": "https://airtable.com/app6dYc1bLxU04YPf"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblDR8FUb7PQa5U8l",
+          "mode": "list",
+          "cachedResultName": "Documents",
+          "cachedResultUrl": "https://airtable.com/app6dYc1bLxU04YPf/tblDR8FUb7PQa5U8l"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Document Name": "={{ $json.attachment[0].filename }}",
+            "Document": "={{ $json.attachment }}",
+            "Type": "=['{{ $json.caseLawRecordsId }}']",
+            "Cases": "=['{{ $('When Executed by Another Workflow').item.json.recordId }}'] "
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "FID",
+              "displayName": "FID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Type",
+              "displayName": "Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Document Name",
+              "displayName": "Document Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Document",
+              "displayName": "Document",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name (from Type)",
+              "displayName": "Name (from Type)",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Cases",
+              "displayName": "Cases",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Cases 2",
+              "displayName": "Cases 2",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        580,
+        0
+      ],
+      "id": "1141a6b2-1521-4a34-a961-18c56994496d",
+      "name": "Create Document"
+    },
+    {
+      "parameters": {
+        "operation": "deleteFile",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $('Search Folder').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1020,
+        80
+      ],
+      "id": "0de08e5b-1016-4049-84d9-c3545b3a6fa3",
+      "name": "Delete File"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "kap-enterprises-llc",
+          "mode": "list",
+          "cachedResultName": "kap-enterprises-llc"
+        },
+        "options": {
+          "pineconeNamespace": "={{ $('Get Case Record- 2').item.json['Case Name'] }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.1,
+      "position": [
+        -120,
+        300
+      ],
+      "id": "b59b1f65-15ea-4810-ac56-1548996ee05f",
+      "name": "Pinecone Vector Store"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -140,
+        520
+      ],
+      "id": "b1fdfa0b-ce1e-4e73-838d-46a1afe4505f",
+      "name": "Embeddings OpenAI"
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        540
+      ],
+      "id": "57573510-2006-4c28-8d54-8cfcf2778aea",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "chunkSize": 3000,
+        "chunkOverlap": 200,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        80,
+        720
+      ],
+      "id": "67115adc-4f57-4a6b-ac3e-5af5076b26ed",
+      "name": "Recursive Character Text Splitter"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-06-24T03:36:04.665Z",
+      "updatedAt": "2025-06-24T03:36:04.665Z",
+      "role": "workflow:owner",
+      "workflowId": "vYaF31NNktMEbjwB",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-24T03:36:04.000Z",
+  "versionId": "4554a99d-90d7-418d-95e8-2046f978f079"
+}
