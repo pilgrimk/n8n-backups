@@ -1550,8 +1550,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1616,
-        1120
+        1840,
+        1104
       ],
       "id": "70daf4f5-e0d2-46cf-a24d-3c75eaa6b2ad",
       "name": "Check Limit"
@@ -1593,7 +1593,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        112,
+        144,
         1088
       ],
       "id": "5467d630-640e-4689-a4be-52dc6c730ad7",
@@ -2754,242 +2754,7 @@
       "name": "Check Source"
     }
   ],
-  "pinData": {
-    "Start Scrape": [
-      {
-        "json": {
-          "success": true,
-          "data": {
-            "run_id": "uzI7CsDBX27MZl4t4",
-            "status": "processing",
-            "message": "Scraping request started successfully."
-          }
-        }
-      }
-    ],
-    "Get Status": [
-      {
-        "json": {
-          "success": true,
-          "data": {
-            "run_id": "uzI7CsDBX27MZl4t4",
-            "status": "completed",
-            "created_at": "2025-08-17T15:51:06.803631+00:00",
-            "leads_extracted": 200,
-            "credits_used": 200,
-            "output_csv_url": "https://account.ampleleads.io/storage/v1/object/public/files/test-scrape_2025-08-17T15-52-00-527Z.csv",
-            "input_data": {
-              "apollo_url": "https://app.apollo.io/#/people?contactEmailStatusV2[]=verified",
-              "fetch_count": 200,
-              "file_name": "Test Scrape"
-            }
-          }
-        }
-      }
-    ],
-    "Get Run Results": [
-      {
-        "json": {
-          "first_name": "Mike",
-          "last_name": "Braham",
-          "company_name": "Intempo Health",
-          "company_website": "http://www.intempohealth.com",
-          "email": "****@intempohealth.com",
-          "personal_email": null,
-          "full_name": "Mike Braham",
-          "linkedin": "http://www.linkedin.com/in/mikebraham",
-          "title": "Chief Growth Officer and Board of Directors",
-          "industry": "information technology & services",
-          "headline": "Chief Growth Officer at Intempo Health driving AI solutions for Patient Engagement",
-          "seniority": "c_suite",
-          "department": "master_marketing",
-          "city": "Leesburg",
-          "state": "Virginia",
-          "country": "United States",
-          "employees_count": "2",
-          "keywords": "technology, information & internet, information technology & services",
-          "company_annual_revenue_clean": null,
-          "company_annual_revenue": null,
-          "company_seo_description": "Intempo Health: Consumer Digital Twin in action thru trust, safety and advocacy.",
-          "company_short_description": "We provide meaning, advocacy and new opportunities for consumers in the health data space.",
-          "company_linkedin": "http://www.linkedin.com/company/intempo-health",
-          "company_linkedin_uid": "104885290",
-          "company_total_funding_clean": null,
-          "company_total_funding": null,
-          "company_technologies": "Gmail, Google Apps, Google Cloud Hosting, Mobile Friendly, Varnish, Wix",
-          "email_domain_catchall": null,
-          "person_photo": "https://media.licdn.com/dms/image/v2/D4E03AQFf-bV1moaGdg/profile-displayphoto-scale_200_200/B4EZfdv0H_HcBQ-/0/1751771989053?e=2147483647&v=beta&t=8TGWpIvuax7ioK_JOXYtcPo_4GCw_a4I__ZGq1mVjAk",
-          "twitter_url": null,
-          "facebook_url": null,
-          "person_id": "59fe56a7a6da9861955e1ec1",
-          "company_id": "66d9abb17ad31f01b4851ca5",
-          "company_phone_number": null,
-          "company_logo": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/689b2073fc2e440001907251/picture",
-          "company_twitter": null,
-          "company_facebook": null,
-          "company_market_cap": null,
-          "company_founded_year": 2024,
-          "company_domain": "intempohealth.com",
-          "company_raw_address": "1349 W Lane Ave, Suite #1010, Columbus, Ohio 43221, US",
-          "company_street_address": "1349 W Lane Ave",
-          "company_city": "Columbus",
-          "company_state": "Ohio",
-          "company_country": "United States",
-          "company_postal_code": "43221-3503"
-        }
-      },
-      {
-        "json": {
-          "first_name": "Lina",
-          "last_name": "Yavuz",
-          "company_name": "Severin",
-          "company_website": "http://www.severin.com",
-          "email": "****@severin.de",
-          "personal_email": null,
-          "full_name": "Lina Yavuz",
-          "linkedin": "http://www.linkedin.com/in/lina-yavuz-751965244",
-          "title": "Key-Account-Manager",
-          "industry": "electrical/electronic manufacturing",
-          "headline": "Key Account Managerin",
-          "seniority": "manager",
-          "department": "master_sales",
-          "city": null,
-          "state": null,
-          "country": "Germany",
-          "employees_count": "170",
-          "keywords": "breakfast, kitchen, barbecue, household, coffee & hot drinks, cooling & freezing, ebbq, personal care, appliances, electrical, & electronics manufacturing, electric appliances, grills, raclette, coffee machines, espresso machines, wireless vacuum cleaners, kitchen appliances, air fryers, blenders, food processors, toasters, microwaves, juicers, citrus presses, cleaning robots, cordless stick vacuum, home appliances, sous vide cookers, fondue pots, barbecue grills, milk frothers, ice cream makers, yogurt makers, sandwich makers, tumble dryers, water kettles, kitchen machines, food steamers, egg cookers, pressure cookers, retro refrigerators, innovative design, high quality, german engineering, affordable prices, online store, coupons, bundles, customer service, compact kitchen appliances, induction milk frothers, sustainable products, durable technology, easy to use, barista quality coffee, recipes for home cooking, healthy cooking solutions, efficient cleaning solutions, german tradition, cooking innovations, electrical/electronic manufacturing, mechanical or industrial engineering",
-          "company_annual_revenue_clean": "3.4M",
-          "company_annual_revenue": "3400000",
-          "company_seo_description": "Kaffeemaschinen, Grills, Küchen- & Haushaltsgeräte direkt im SEVERIN Onlineshop entdecken. Deutsche Qualität seit 1892.",
-          "company_short_description": "SEVERIN is a leading international manufacturer of innovative, high-quality and sustainable electric household appliances. As a German family business since 1892, the brand combines an increasing degree of product innovation with the highest standards of German quality, sustainability and customer service.\n\nThe successful market launch of SEVERIN FILKA, the world's first fully automatic filter coffee machine for five different cup and pot sizes, and the strong feedback from the market on the latest product launch - SEVERIN SEVENTO, the first \"Smokeless Raclette\" with the innovative \"Downdraft\" technology, which extracts odors and smoke in three stages - are just two recent proof points.\n\nSEVERIN has been setting new standards in sustainability for over 30 years: the first repairable filter coffee machine, SEVERIN CAPRICE, was launched in 1992, and last year alone, products with a sales value of more than 2.5 million euros were repaired and rescued. \n\nThe new and award-winning SEVERIN design, which was presented last year, will be rolled out from this year onwards.\n\nWhat the company is particularly proud of: SEVERIN has been a trusted partner of end consumers and retail partners for more than 130 years. The next step towards an even closer cooperation with specialist retailers will be taken in 2024, with a dedicated specialist retail product range. \n\nWith its headquarters in Sundern in Germany, six own sales companies in Europe and a long-standing presence in Asia, SEVERIN is globally active and supplies customers all over the world.\n\nImprint: \nSEVERIN Elektrogeräte GmbH\nRöhre 27\nD-59846 Sundern, Germany\n\nTel.: +49 (0)2933 – 98 20\nFax: +49 (0)2933 – 98 23 33\nEmail: information@severin.de\n\nManaging directors: Gerhard Sturm, Can Yildirim\nComm. Reg. Arnsberg,\nCR No. 232\nVAT ID No.: DE 123 88 05 15",
-          "company_linkedin": "http://www.linkedin.com/company/severin-elektroger-te-gmbh",
-          "company_linkedin_uid": "6081391",
-          "company_total_funding_clean": null,
-          "company_total_funding": null,
-          "company_technologies": "AI, Adobe Media Optimizer, Apache, Bing Ads, Cedexis Radar, DoubleClick, DoubleClick Conversion, Facebook Custom Audiences, Facebook Login (Connect), Facebook Widget, Google Analytics, Google Dynamic Remarketing, Google Font API, Google Maps, Google Maps (Non Paid Users), Google Tag Manager, Klarna, Microsoft Office 365, Mobile Friendly, Remote, Render, Stripe, TrustedShops, Ubuntu, Vimeo, Woo Commerce, WordPress.org, reCAPTCHA",
-          "email_domain_catchall": null,
-          "person_photo": "https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2",
-          "twitter_url": null,
-          "facebook_url": null,
-          "person_id": "630ed82a329508000113c2f3",
-          "company_id": "5569cf05736964257d1f9c00",
-          "company_phone_number": "+49 2933 9820",
-          "company_logo": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/686da2d3ead431000156dfb0/picture",
-          "company_twitter": null,
-          "company_facebook": "https://facebook.com/my.severin",
-          "company_market_cap": null,
-          "company_founded_year": 1892,
-          "company_domain": "severin.com",
-          "company_raw_address": "Röhre 27, Sundern, NRW 59846, DE",
-          "company_street_address": "27 Roehre",
-          "company_city": "Sundern (Sauerland)",
-          "company_state": "Nordrhein-Westfalen",
-          "company_country": "Germany",
-          "company_postal_code": "59846"
-        }
-      },
-      {
-        "json": {
-          "first_name": "Christian",
-          "last_name": "Luedders",
-          "company_name": "NovaTaste",
-          "company_website": "http://www.novataste.com",
-          "email": "****@novataste.com",
-          "personal_email": null,
-          "full_name": "Christian Luedders",
-          "linkedin": "http://www.linkedin.com/in/christian-l%c3%bcdders-580481178",
-          "title": "Product Designer",
-          "industry": "food & beverages",
-          "headline": "Senior Designer | Creation & Design",
-          "seniority": "entry",
-          "department": "design",
-          "city": "Hamburg",
-          "state": "Hamburg",
-          "country": "Germany",
-          "employees_count": "580",
-          "keywords": "food & beverage services, food & beverages, consumer goods, consumers",
-          "company_annual_revenue_clean": null,
-          "company_annual_revenue": null,
-          "company_seo_description": "FRUTAROM Savory Solutions Switzerland AG Homepage",
-          "company_short_description": "NovaTaste is an independent and autonomous group of companies headquartered in Salzburg, Austria. It also includes locations in Germany, Switzerland, Italy, Ireland, Great Britain, Poland, Canada, Mexico and Thailand. With around 1,800 employees, it serves more than 11,000 customers worldwide. A diverse portfolio of renowned brands is united under the NovaTaste umbrella: \n\n- WIBERG \n- Gewürzmüller \n- Gewürzmühle Nesse \n- Mühlehof-Gewürze \n- AMCO\n- Redbrook \n- BSA WIBERG \n- PIASA \n- THE MIGHTY \n\nAs a global leader in taste innovation, NovaTaste is committed to providing customised and sustainable solutions for food manufacturers, butchers and foodservice players. Our vision is to revolutionise the way the world experiences food.",
-          "company_linkedin": "http://www.linkedin.com/company/nova-taste",
-          "company_linkedin_uid": "1304366",
-          "company_total_funding_clean": null,
-          "company_total_funding": null,
-          "company_technologies": "Amazon AWS, Amazon CloudFront, Apache, Bootstrap Framework, Drupal, Fonts.com, Google Analytics, Google Maps, Microsoft Azure Hosting, Microsoft Office 365, Mobile Friendly, Nginx, Outlook, Route 53, SuccessFactors (SAP), Zendesk",
-          "email_domain_catchall": null,
-          "person_photo": "https://media.licdn.com/dms/image/v2/D4E03AQF56JFVP5-JUw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1679320356298?e=2147483647&v=beta&t=YihpyL5rt1LgwsbiUzDT4hatMf8B_ojZI5uDSugbAr0",
-          "twitter_url": null,
-          "facebook_url": null,
-          "person_id": "655f2d21dc8b5c0001866810",
-          "company_id": "60f2870af43c840001ee25ff",
-          "company_phone_number": null,
-          "company_logo": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/686f287b48921e00017a7a8c/picture",
-          "company_twitter": null,
-          "company_facebook": "https://facebook.com/gewuerzreporter",
-          "company_market_cap": null,
-          "company_founded_year": 1947,
-          "company_domain": "novataste.com",
-          "company_raw_address": "Adolf-Schemel-Straße 9, Salzburg, Salzburg Stadt 5020, AT",
-          "company_street_address": "9 Adolf-Schemel-Strasse",
-          "company_city": "Salzburg",
-          "company_state": "Salzburg",
-          "company_country": "Austria",
-          "company_postal_code": "5020"
-        }
-      },
-      {
-        "json": {
-          "first_name": "Larry",
-          "last_name": "Fink",
-          "company_name": "BlackRock",
-          "company_website": "http://www.blackrock.com",
-          "email": "****@blackrock.com",
-          "personal_email": null,
-          "full_name": "Larry Fink",
-          "linkedin": "http://www.linkedin.com/in/laurencefink",
-          "title": "Chairman and CEO at BlackRock",
-          "industry": "financial services",
-          "headline": "Chairman and CEO at BlackRock",
-          "seniority": "c_suite",
-          "department": "c_suite",
-          "city": "New York",
-          "state": "New York",
-          "country": "United States",
-          "employees_count": "28000",
-          "keywords": "financial services, software, investment management, finance, information technology, mutual funds, etfs, portfolio management, risk management, wealth management, fixed income, asset management, cash management, global liquidity, financial technology, retirement planning, index funds, active investment strategies, fund distribution, investment advisory, client service, tax-exempt funds, government funds, digital assets, financial markets, investment opportunities, financial education, sustainable investing, financial well-being, 529 college savings plans, liquid assets, alternative investments, institutional investors, multi-asset strategies, market insights, investing for retirement, investment governance, investment stewardship, financial performance, corporate governance, risk assessment, global investments, investment solutions, sustainability, liquid fund management, short-term investments, asset allocation, investment strategy, capital preservation, financial planning, ishares etfs, separate accounts, collective investment trusts, private investment funds, aladdin platform, esg criteria, digital wealth management, financial advisors, institutional clients, individual investors, global presence, fiduciary duty, innovation, client-centric approach, diverse investment strategies, operational efficiency, cost savings, client satisfaction, market access, analytics tools, infrastructure investments, public projects, community development, competitive analysis, exchange-traded funds, digital distribution tools, securities lending, portfolio construction, customer demographics, market segmentation, emerging markets, long-term financial goals, risk tolerance, diversification needs, information technology & services, finance technology, environmental services, renewables & environment",
-          "company_annual_revenue_clean": "17.9B",
-          "company_annual_revenue": "17859000000",
-          "company_seo_description": "BlackRock is one of the world’s preeminent asset management firms and a premier provider of investment management. Find out more information here.",
-          "company_short_description": "BlackRock is a New York-based investment management firm that provides services such as investment, advisory and risk management for government and non-profit organizations.",
-          "company_linkedin": "http://www.linkedin.com/company/blackrock",
-          "company_linkedin_uid": "4764",
-          "company_total_funding_clean": null,
-          "company_total_funding": null,
-          "company_technologies": "AI, Adobe Media Optimizer, Advertising.com, Akamai, Amazon SES, AppDynamics, Atlassian Cloud, Bing Ads, Bootstrap Framework, Braintree, BugHerd, Cedexis Radar, DemandBase, Disqus, DoubleClick, DoubleClick Conversion, DoubleClick Floodlight, Drift, Eloqua, Facebook Custom Audiences, Facebook Widget, Flowplayer, FullStory, Gigya, Google Analytics, Google Cloud Hosting, Google Dynamic Remarketing, Google Font API, Google Maps, Google Maps (Non Paid Users), Google Play, Google Plus, Google Tag Manager, Hotjar, Linkedin Marketing Solutions, Microsoft Office 365, Mobile Friendly, MongoDB, New Relic, Nginx, ON24, OneTrust, Open AdStream (Appnexus), Qualtrics, React Redux, Salesforce, SharePoint, Sizmek (MediaMind), Stripe, Tealium, The Trade Desk, Typekit, Vimeo, VueJS, Walkme, Webex, WordPress.org, Workday Recruit, YouTube, Zencoder, iPerceptions, iTunes, reCAPTCHA",
-          "email_domain_catchall": true,
-          "person_photo": "https://media.licdn.com/dms/image/v2/D4D03AQExq_f6lVhuxg/profile-displayphoto-shrink_200_200/B4DZYXCzSyGwAc-/0/1744143334488?e=2147483647&v=beta&t=Dn2UJQ1QL8dcJ77QVLhM6R3UpMOOOlfCAf5qoqe_iss",
-          "twitter_url": null,
-          "facebook_url": null,
-          "person_id": "652eedddc702330001b94cfc",
-          "company_id": "5d09bc27f651253df07e0386",
-          "company_phone_number": "+1 212-810-5800",
-          "company_logo": "https://zenprospect-production.s3.amazonaws.com/uploads/pictures/689ab2b11a75d3000154fe60/picture",
-          "company_twitter": "https://twitter.com/blackrock",
-          "company_facebook": "https://www.facebook.com/BlackRock",
-          "company_market_cap": "68.8B",
-          "company_founded_year": 1988,
-          "company_domain": "blackrock.com",
-          "company_raw_address": "50 Hudson Yards, New York, NY 10001, US",
-          "company_street_address": "50 Hudson Yards",
-          "company_city": "New York",
-          "company_state": "New York",
-          "company_country": "United States",
-          "company_postal_code": "10001-2180"
-        }
-      }
-    ]
-  },
+  "pinData": {},
   "settings": {
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner",
@@ -2997,8 +2762,8 @@
   },
   "shared": [
     {
-      "createdAt": "2025-09-15T23:30:37.829Z",
       "updatedAt": "2025-09-15T23:30:37.829Z",
+      "createdAt": "2025-09-15T23:30:37.829Z",
       "role": "workflow:owner",
       "workflowId": "pzfQqXx9rJArgZUz",
       "projectId": "ANrIPEPOHOX0fwPW"
@@ -3011,6 +2776,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-10-29T19:04:35.000Z",
-  "versionId": "ca9d7d49-0668-4822-8792-1df2b9ac5ef7"
+  "updatedAt": "2025-10-30T15:02:07.000Z",
+  "versionId": "6a558a2a-3104-48d1-9957-a2ee5690c202"
 }
