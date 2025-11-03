@@ -226,18 +226,7 @@
       "main": [
         [
           {
-            "node": "Update Record Stage",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Campaign Record": {
-      "main": [
-        [
-          {
-            "node": "Get Video Type Record",
+            "node": "Update Notes",
             "type": "main",
             "index": 0
           }
@@ -249,17 +238,6 @@
         [
           {
             "node": "convert_product_to_base64",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Video Type Record": {
-      "main": [
-        [
-          {
-            "node": "Verify Main Folder",
             "type": "main",
             "index": 0
           }
@@ -303,7 +281,7 @@
       "main": [
         [
           {
-            "node": "Download file",
+            "node": "Update Stage to Generating",
             "type": "main",
             "index": 0
           }
@@ -434,142 +412,11 @@
         ]
       ]
     },
-    "Update Record Stage": {
-      "main": [
-        [
-          {
-            "node": "Get Campaign Record",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Check Campaign Folder": {
-      "main": [
-        [
-          {
-            "node": "Get Folder ID",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Create folder",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Update Notes": {
-      "main": [
-        [
-          {
-            "node": "Update record",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Check Main Folder": {
-      "main": [
-        [
-          {
-            "node": "Update Notes1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Get Campaign Folder",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Update Notes1": {
       "main": [
         [
           {
             "node": "Update record1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Campaign Folder": {
-      "main": [
-        [
-          {
-            "node": "Check Campaign Folder",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create folder": {
-      "main": [
-        [
-          {
-            "node": "Verify New Folder",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Verify New Folder": {
-      "main": [
-        [
-          {
-            "node": "Update Record- Folder ID",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Update Notes",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Folder ID1": {
-      "main": [
-        [
-          {
-            "node": "Set Variables",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Folder ID": {
-      "main": [
-        [
-          {
-            "node": "Set Variables",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Update Record- Folder ID": {
-      "main": [
-        [
-          {
-            "node": "Get Folder ID1",
             "type": "main",
             "index": 0
           }
@@ -591,18 +438,299 @@
       "main": [
         [
           {
-            "node": "Update Record- Loop Failed",
+            "node": "Update record3",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Verify Main Folder": {
+    "Check Product Image Url": {
       "main": [
         [
           {
-            "node": "Check Main Folder",
+            "node": "Image File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Check Orignal Image Url",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check File Exists": {
+      "main": [
+        [
+          {
+            "node": "OK to continue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Check Orignal Image Url",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Notes4": {
+      "main": [
+        [
+          {
+            "node": "Update record2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload file": {
+      "main": [
+        [
+          {
+            "node": "Update Product Image Url",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Product Image Url": {
+      "main": [
+        [
+          {
+            "node": "OK to continue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OK to continue": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Campaign Record1": {
+      "main": [
+        [
+          {
+            "node": "Update Notes5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Stage to Generating": {
+      "main": [
+        [
+          {
+            "node": "Get Campaign Record1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Agent Inputs": {
+      "main": [
+        [
+          {
+            "node": "Folder Management Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI GPT-4o": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Folder Management Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Folder Management Agent1": {
+      "main": [
+        [
+          {
+            "node": "Parse Output JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Folder Management Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "check_file_folder": {
+      "ai_tool": [
+        [
+          {
+            "node": "Folder Management Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "search_files": {
+      "ai_tool": [
+        [
+          {
+            "node": "Folder Management Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_folder": {
+      "ai_tool": [
+        [
+          {
+            "node": "Folder Management Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Output JSON": {
+      "main": [
+        [
+          {
+            "node": "Check Fail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Campaign Record": {
+      "main": [
+        [
+          {
+            "node": "Get Video Type Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Fail": {
+      "main": [
+        [
+          {
+            "node": "Update Notes1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Check Product Image Url",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Orignal Image Url": {
+      "main": [
+        [
+          {
+            "node": "Original Image File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update Notes4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image File": {
+      "main": [
+        [
+          {
+            "node": "Check File Exists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Original Image File": {
+      "main": [
+        [
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Video Type Record": {
+      "main": [
+        [
+          {
+            "node": "Prepare Agent Inputs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Notes": {
+      "main": [
+        [
+          {
+            "node": "Get Campaign Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Notes5": {
+      "main": [
+        [
+          {
+            "node": "Download file",
             "type": "main",
             "index": 0
           }
@@ -616,7 +744,7 @@
   "meta": {
     "templateCredsSetupCompleted": true
   },
-  "name": "6.1 Product Marketing- AIM UGC Content Creator",
+  "name": "6.1 Product Marketing- UGC Content Creator",
   "nodes": [
     {
       "parameters": {
@@ -635,7 +763,7 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.8,
       "position": [
-        1056,
+        912,
         16
       ],
       "id": "6a140d6d-ef0d-4809-a25f-59cb25989950",
@@ -664,7 +792,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1264,
+        1120,
         16
       ],
       "id": "5c68bf62-d73d-4693-ac62-3c58d28a7c02",
@@ -687,7 +815,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1456,
+        1312,
         16
       ],
       "id": "d7540f9a-6ad9-42e8-aacd-19e94d7267d0",
@@ -701,7 +829,7 @@
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
       "position": [
-        1264,
+        1120,
         -272
       ],
       "id": "6984313a-22c3-4989-a11b-55b09a2e1154",
@@ -716,7 +844,7 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        1456,
+        1312,
         -272
       ],
       "id": "d4eb7b56-6a82-4e40-8ab0-4529fafeb29f",
@@ -732,7 +860,7 @@
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.7,
       "position": [
-        2048,
+        1904,
         16
       ],
       "id": "f3a4878c-5599-4c58-9b64-520183d1123b",
@@ -747,7 +875,7 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        2224,
+        2080,
         176
       ],
       "id": "ec6ddf80-7af5-46c6-bd99-18f076599acd",
@@ -763,7 +891,7 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        2528,
+        2384,
         128
       ],
       "id": "55f31b40-3751-4d15-b017-f4eaa9ebfcfd",
@@ -776,7 +904,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        1056,
+        912,
         560
       ],
       "id": "402d4855-9644-4607-abde-175046b70746",
@@ -820,7 +948,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1456,
+        1312,
         672
       ],
       "id": "59e4bd74-b538-4e02-86ae-b9ae0922da25",
@@ -842,7 +970,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1856,
+        1712,
         672
       ],
       "id": "dea914a9-63b5-47ae-a9e4-70b55b0d12c3",
@@ -864,7 +992,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1456,
+        1312,
         928
       ],
       "id": "96ffa9fb-c6b7-40b1-bd87-9a912c30649d",
@@ -890,7 +1018,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2048,
+        1904,
         -272
       ],
       "id": "21479a2a-e2fa-41e9-b754-464dc7826c2e",
@@ -921,7 +1049,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2240,
+        2096,
         -272
       ],
       "id": "a303a41b-8730-4783-839f-df493cbc5aba",
@@ -936,7 +1064,7 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        2448,
+        2304,
         -272
       ],
       "id": "caec6807-7261-43c7-a814-d6b36789592d",
@@ -953,7 +1081,7 @@
       "type": "n8n-nodes-base.editImage",
       "typeVersion": 1,
       "position": [
-        2640,
+        2480,
         -272
       ],
       "id": "1a61d4b2-96ea-4b5d-adda-a8295edab375",
@@ -967,7 +1095,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        2048,
+        1904,
         192
       ],
       "id": "644b404e-dd9e-4cb5-8707-048e605ba70c",
@@ -997,7 +1125,7 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        1648,
+        1504,
         928
       ],
       "id": "667b9215-b7d1-4cfc-bbf1-b7a76d57739b",
@@ -1023,7 +1151,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1856,
+        1712,
         16
       ],
       "id": "e05851d2-0515-469d-a55e-c2e44295de9b",
@@ -1042,12 +1170,12 @@
         "content": "# Generate Image\n\n1. Uses OpenAI's vision API to analyze the image and create a profile for the ideal influencer to promote this e-commerce product.\n2. Then the system uses Gemini 2.5 Pro to take that product photo and the profile of the influencer to write multiple different UGC ad scripts.\n3. Once each script is written, it's then going to split them out and iterate over the scripts one by one to start generating the UGC ad videos with Sora 2's API. ",
         "height": 832,
         "width": 2208,
-        "color": 2
+        "color": 4
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
         608,
-        -464
+        -448
       ],
       "typeVersion": 1,
       "id": "0f8886e8-35b8-40a3-82c4-6bb0f0123cf7",
@@ -1055,14 +1183,14 @@
     },
     {
       "parameters": {
-        "content": "# Overview & Setup\n\nThis n8n template demonstrates how to automatically generate authentic User-Generated Content (UGC) style marketing videos for eCommerce products using AI. The workflow creates multiple realistic influencer-style video ads complete with scripts, personas, and video generation.\n\n## Use cases\n* Generate multiple UGC video variations for A/B testing\n* Create authentic-looking product demonstrations for social media\n* Produce influencer-style content without hiring creators\n* Quickly test different marketing angles for new products\n* Scale video content creation for eCommerce catalogs\n\n## Good to know\n* Sora 2 video generation takes approximately 2-3 minutes per 12-second video\n* Each video generation costs approximately $0.50-1.00 USD (check OpenAI pricing for current rates)\n* The workflow generates multiple video variations from a single product image\n* Videos are automatically uploaded to Google Drive upon completion\n* Generated videos are in 720x1280 (9:16) format optimized for social media\n\n## How it works\n1. **Product Analysis**: OpenAI's vision API analyzes the uploaded product image to understand its features, benefits, and target audience\n2. **Persona Creation**: The system generates a detailed profile of the ideal influencer/creator who would authentically promote this product\n3. **Script Generation**: Gemini 2.5 Pro creates multiple authentic UGC video scripts (12 seconds each) with frame-by-frame breakdowns, natural dialogue, and camera movements\n4. **Frame Generation**: For each script, Gemini generates a custom first frame that adapts the product image to match UGC aesthetic and aspect ratio\n5. **Video Production**: Sora 2 API generates the actual video using the script and custom first frame as reference\n6. **Status Monitoring**: The workflow polls the video generation status every 15 seconds until completion\n7. **Upload & Storage**: Completed videos are automatically uploaded to Google Drive with organized naming\n\n## Requirements\n* **OpenAI API** account with Sora 2 access for video generation and GPT-4 Vision\n* **Google Gemini API** account for script generation and image adaptation\n* **Google Drive** account for video storage\n* Sufficient API credits for video generation (budget accordingly)",
-        "height": 1280,
+        "content": "# Overview & Setup\n\nThis n8n template demonstrates how to automatically generate authentic User-Generated Content (UGC) style marketing videos for eCommerce products using AI. The workflow creates multiple realistic influencer-style video ads complete with scripts, personas, and video generation.\n\n## Use cases\n* Generate multiple UGC video variations for A/B testing\n* Create authentic-looking product demonstrations for social media\n* Produce influencer-style content without hiring creators\n* Quickly test different marketing angles for new products\n* Scale video content creation for eCommerce catalogs\n\n## Good to know\n* Sora 2 video generation takes approximately 2-3 minutes per 12-second video\n* Each video generation costs approximately $0.50-1.00 USD (check OpenAI pricing for current rates)\n* The workflow generates video variations from a single product image\n* Videos are automatically uploaded to Google Drive upon completion\n\n## How it works\n1. **Product Analysis**: OpenAI's vision API analyzes the uploaded product image to understand its features, benefits, and target audience\n2. **Persona Creation**: The system generates a detailed profile of the ideal influencer/creator who would authentically promote this product\n3. **Script Generation**: Gemini 2.5 Pro creates authentic UGC video scripts (12 seconds each) with frame-by-frame breakdowns, natural dialogue, and camera movements\n4. **Frame Generation**: For each script, Gemini generates a custom first frame that adapts the product image to match UGC aesthetic and aspect ratio\n5. **Video Production**: Sora 2 API generates the actual video using the script and custom first frame as reference\n6. **Status Monitoring**: The workflow polls the video generation status until completion\n7. **Upload & Storage**: Completed videos are automatically uploaded to Google Drive with organized naming\n\n## Requirements\n* **OpenAI API** account with Sora 2 access for video generation and GPT-4 Vision\n* **Google Gemini API** account for script generation and image adaptation\n* **Google Drive** account for video storage\n* Sufficient API credits for video generation (budget accordingly)",
+        "height": 1072,
         "width": 1152
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
         -576,
-        -1344
+        -1552
       ],
       "typeVersion": 1,
       "id": "3ed03880-1fd4-4de6-8510-9180bff236fe",
@@ -1073,12 +1201,12 @@
         "content": "# Generate Video ",
         "height": 736,
         "width": 2208,
-        "color": 4
+        "color": 5
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
         608,
-        400
+        416
       ],
       "typeVersion": 1,
       "id": "63f4a525-784c-4060-8c81-19283064bf8d",
@@ -1095,7 +1223,7 @@
       "typeVersion": 2.1,
       "position": [
         704,
-        -1232
+        -1360
       ],
       "id": "72043b5f-2a73-4f07-b018-e036aec411bb",
       "name": "Webhook",
@@ -1109,44 +1237,10 @@
     },
     {
       "parameters": {
-        "base": {
-          "__rl": true,
-          "value": "applOFYmcqxnprGRm",
-          "mode": "list",
-          "cachedResultName": "UGC Video Content",
-          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
-        },
-        "table": {
-          "__rl": true,
-          "value": "tblU9xfEqasJjWtZU",
-          "mode": "list",
-          "cachedResultName": "Campaigns",
-          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
-        },
-        "id": "={{ $('Webhook').item.json.body.recordId }}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.airtable",
-      "typeVersion": 2.1,
-      "position": [
-        1264,
-        -1232
-      ],
-      "id": "6cf14c57-1271-4c35-9e38-133e70867a07",
-      "name": "Get Campaign Record",
-      "credentials": {
-        "airtableTokenApi": {
-          "id": "KfRycBsXYTyRWuPv",
-          "name": "Airtable Personal Access Token"
-        }
-      }
-    },
-    {
-      "parameters": {
         "operation": "download",
         "fileId": {
           "__rl": true,
-          "value": "={{ $('Get Campaign Record').item.json['Product Image URL'][0] }}",
+          "value": "={{ $('Get Campaign Record1').item.json['Product Image URL'] }}",
           "mode": "url"
         },
         "options": {}
@@ -1154,7 +1248,7 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        1056,
+        912,
         -272
       ],
       "id": "a622106f-a917-4418-b5d8-07638a5a24b2",
@@ -1163,41 +1257,6 @@
         "googleDriveOAuth2Api": {
           "id": "PBtBKOv2ofju7FVt",
           "name": "Google Drive- OAuth2- pilgrimka1@gmail"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "search",
-        "base": {
-          "__rl": true,
-          "value": "applOFYmcqxnprGRm",
-          "mode": "list",
-          "cachedResultName": "UGC Video Content",
-          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
-        },
-        "table": {
-          "__rl": true,
-          "value": "tblX8z9ziFRWDnIRo",
-          "mode": "list",
-          "cachedResultName": "Video Types",
-          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblX8z9ziFRWDnIRo"
-        },
-        "filterByFormula": "={Name} = '{{ $('Get Campaign Record').first().json['Video Type Name'][0] }}'",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.airtable",
-      "typeVersion": 2.1,
-      "position": [
-        1456,
-        -1232
-      ],
-      "id": "c1721d60-7f4a-4d83-b69b-e9dfad020f98",
-      "name": "Get Video Type Record",
-      "credentials": {
-        "airtableTokenApi": {
-          "id": "KfRycBsXYTyRWuPv",
-          "name": "Airtable Personal Access Token"
         }
       }
     },
@@ -1218,7 +1277,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1648,
+        1504,
         16
       ],
       "id": "0a78d556-7750-45f8-94ba-a063d64e15d5",
@@ -1241,7 +1300,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1648,
+        1504,
         -272
       ],
       "id": "083be779-e8d5-4ab5-8f48-794de7f5c4a4",
@@ -1254,7 +1313,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1264,
+        1120,
         672
       ],
       "id": "e5fc202a-bc01-489c-a21f-9505ea6abc26",
@@ -1263,14 +1322,14 @@
     {
       "parameters": {
         "mode": "raw",
-        "jsonOutput": "={\n  \"campaignFolderId\": \"{{ $json.campaignFolderId }}\",\n  \"campaignFolderName\": \"{{ $json.campaignFolderName }}\",\n  \"timeout_short\": \"15\",\n  \"timeout_long\": \"120\",\n  \"maxRetryCount\": \"15\"\n}",
+        "jsonOutput": "={\n  \"campaignFolderId\": \"{{ $('Parse Output JSON').item.json.campaignFolderId }}\",\n  \"campaignFolderName\": \"{{ $('Parse Output JSON').item.json.campaignId }}\",\n  \"timeout_short\": \"15\",\n  \"timeout_long\": \"120\",\n  \"maxRetryCount\": \"15\"\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1056,
-        -656
+        912,
+        -672
       ],
       "id": "1c34ad00-11c0-448a-a8ce-f13f0212bc58",
       "name": "Set Variables"
@@ -1292,7 +1351,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1856,
+        1712,
         -272
       ],
       "id": "14d7a20d-97aa-4839-b294-bd5faca9b5fc",
@@ -1305,7 +1364,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1648,
+        1504,
         672
       ],
       "id": "e05c22a9-6875-4e7f-a0d4-f21b0cef1816",
@@ -1319,7 +1378,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2448,
+        2304,
         672
       ],
       "id": "2c5df12e-7245-4fee-9ffe-7a95221ecb46",
@@ -1438,7 +1497,7 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        1856,
+        1712,
         928
       ],
       "id": "47a6752e-514f-4c42-a99b-e1f11e18ad8f",
@@ -1457,7 +1516,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1264,
+        1120,
         928
       ],
       "id": "a557bb68-14de-4605-b2ea-f3a796955aad",
@@ -1470,7 +1529,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2048,
+        1904,
         672
       ],
       "id": "d0223358-c521-4ffe-a4db-f2be754630cb",
@@ -1561,7 +1620,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.3,
       "position": [
-        2240,
+        2096,
         656
       ],
       "id": "07f83542-9ec4-4f5b-ab9a-99ca49861ef5",
@@ -1584,7 +1643,7 @@
       "typeVersion": 1.1,
       "position": [
         -400,
-        96
+        -320
       ],
       "id": "59626b19-2605-4151-bc32-5b83c3804e07",
       "name": "When Executed by Another Workflow"
@@ -1907,7 +1966,7 @@
       "typeVersion": 2.1,
       "position": [
         240,
-        96
+        -320
       ],
       "id": "53716aab-8325-45a6-ba69-5f67ff1647c2",
       "name": "Update Airtable- Webpage not found1",
@@ -1926,7 +1985,7 @@
       "typeVersion": 2,
       "position": [
         16,
-        96
+        -320
       ],
       "id": "cf2461b4-c60e-41b3-bd94-28ad07a55b3f",
       "name": "Updated Notes10"
@@ -1954,7 +2013,7 @@
       "typeVersion": 2.1,
       "position": [
         -192,
-        96
+        -320
       ],
       "id": "e5e422f3-be2e-4231-bca6-c9786b699947",
       "name": "Get a record",
@@ -1970,12 +2029,12 @@
         "content": "# Update Notes Sub-Workflow \nUpdates record Notes field",
         "height": 400,
         "width": 1152,
-        "color": 5
+        "color": 6
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
         -576,
-        -32
+        -448
       ],
       "typeVersion": 1,
       "id": "22a163a8-6cd8-40b9-8445-40c8cdf6d5a9",
@@ -1983,745 +2042,18 @@
     },
     {
       "parameters": {
-        "operation": "update",
-        "base": {
-          "__rl": true,
-          "value": "applOFYmcqxnprGRm",
-          "mode": "list",
-          "cachedResultName": "UGC Video Content",
-          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
-        },
-        "table": {
-          "__rl": true,
-          "value": "tblU9xfEqasJjWtZU",
-          "mode": "list",
-          "cachedResultName": "Campaigns",
-          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "id": "={{ $json.body.recordId }}",
-            "Stage": "Generating"
-          },
-          "matchingColumns": [
-            "id"
-          ],
-          "schema": [
-            {
-              "id": "id",
-              "displayName": "id",
-              "required": false,
-              "defaultMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": false
-            },
-            {
-              "id": "Campaign ID",
-              "displayName": "Campaign ID",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Name",
-              "displayName": "Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Product",
-              "displayName": "Product",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "array",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Video Type",
-              "displayName": "Video Type",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "array",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Stage",
-              "displayName": "Stage",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "options",
-              "options": [
-                {
-                  "name": "Ready",
-                  "value": "Ready"
-                },
-                {
-                  "name": "Generating",
-                  "value": "Generating"
-                },
-                {
-                  "name": "Complete",
-                  "value": "Complete"
-                },
-                {
-                  "name": "Failed",
-                  "value": "Failed"
-                }
-              ],
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "Video Count",
-              "displayName": "Video Count",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Output Folder ID",
-              "displayName": "Output Folder ID",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Last Modified",
-              "displayName": "Last Modified",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Product Description",
-              "displayName": "Product Description",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Auto Number",
-              "displayName": "Auto Number",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Brand Code",
-              "displayName": "Brand Code",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Target Persona",
-              "displayName": "Target Persona",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Pain Points Solved",
-              "displayName": "Pain Points Solved",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Key Benefits",
-              "displayName": "Key Benefits",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Product Code",
-              "displayName": "Product Code",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Created",
-              "displayName": "Created",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Brand Name",
-              "displayName": "Brand Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Videos",
-              "displayName": "Videos",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "array",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Video Type Name",
-              "displayName": "Video Type Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Product Image URL",
-              "displayName": "Product Image URL",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Campaign Folder",
-              "displayName": "Campaign Folder",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Product Name",
-              "displayName": "Product Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Record ID",
-              "displayName": "Record ID",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.airtable",
-      "typeVersion": 2.1,
-      "position": [
-        1056,
-        -1232
-      ],
-      "id": "96b78d33-f7de-478e-a5eb-1669e2a6b822",
-      "name": "Update Record Stage",
-      "credentials": {
-        "airtableTokenApi": {
-          "id": "KfRycBsXYTyRWuPv",
-          "name": "Airtable Personal Access Token"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "base": {
-          "__rl": true,
-          "value": "applOFYmcqxnprGRm",
-          "mode": "list",
-          "cachedResultName": "UGC Video Content",
-          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
-        },
-        "table": {
-          "__rl": true,
-          "value": "tblU9xfEqasJjWtZU",
-          "mode": "list",
-          "cachedResultName": "Campaigns",
-          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "id": "={{ $('Webhook').item.json.body.recordId }}",
-            "Stage": "Failed"
-          },
-          "matchingColumns": [
-            "id"
-          ],
-          "schema": [
-            {
-              "id": "id",
-              "displayName": "id",
-              "required": false,
-              "defaultMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": false
-            },
-            {
-              "id": "Campaign ID",
-              "displayName": "Campaign ID",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Name",
-              "displayName": "Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Product",
-              "displayName": "Product",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "array",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Video Type",
-              "displayName": "Video Type",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "array",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Stage",
-              "displayName": "Stage",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "options",
-              "options": [
-                {
-                  "name": "Ready",
-                  "value": "Ready"
-                },
-                {
-                  "name": "Generating",
-                  "value": "Generating"
-                },
-                {
-                  "name": "Complete",
-                  "value": "Complete"
-                },
-                {
-                  "name": "Failed",
-                  "value": "Failed"
-                }
-              ],
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "Video Count",
-              "displayName": "Video Count",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Notes",
-              "displayName": "Notes",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Last Modified",
-              "displayName": "Last Modified",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Product Description",
-              "displayName": "Product Description",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Auto Number",
-              "displayName": "Auto Number",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Brand Code",
-              "displayName": "Brand Code",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Target Persona",
-              "displayName": "Target Persona",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Pain Points Solved",
-              "displayName": "Pain Points Solved",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Key Benefits",
-              "displayName": "Key Benefits",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Product Code",
-              "displayName": "Product Code",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Created",
-              "displayName": "Created",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Brand Name",
-              "displayName": "Brand Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Videos",
-              "displayName": "Videos",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "array",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Video Type Name",
-              "displayName": "Video Type Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Product Image URL",
-              "displayName": "Product Image URL",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Campaign Folder ID",
-              "displayName": "Campaign Folder ID",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Product Name",
-              "displayName": "Product Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Record ID",
-              "displayName": "Record ID",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.airtable",
-      "typeVersion": 2.1,
-      "position": [
-        2048,
-        -656
-      ],
-      "id": "4d06841f-33c5-4d72-81ac-a95e85f1b1d8",
-      "name": "Update record",
-      "credentials": {
-        "airtableTokenApi": {
-          "id": "KfRycBsXYTyRWuPv",
-          "name": "Airtable Personal Access Token"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "dd9f74d0-d676-4445-81c0-8fa80e7030f3",
-              "leftValue": "={{ $json.id }}",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "exists",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "or"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        1264,
-        -1024
-      ],
-      "id": "c2bd3c98-ff3e-44dd-90db-d6e49c4eb733",
-      "name": "Check Campaign Folder",
-      "alwaysOutputData": false
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "e347198b-0962-4755-b652-ad413a415d78",
-              "leftValue": "={{ $json.id }}",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "notExists",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "or"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        1856,
-        -1232
-      ],
-      "id": "156d0290-3675-4388-b701-2f59f113857f",
-      "name": "Check Main Folder"
-    },
-    {
-      "parameters": {
         "workflowId": {
           "__rl": true,
           "value": "TbLuB54OSTeubcum",
           "mode": "list",
           "cachedResultUrl": "/workflow/TbLuB54OSTeubcum",
-          "cachedResultName": "6.1 Product Marketing- AIM UGC Content Creator"
+          "cachedResultName": "6.1 Product Marketing- UGC Content Creator"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
           "value": {
             "recordId": "={{ $('Webhook').item.json.body.recordId }}",
-            "note": "Failed to create campaign folder"
+            "note": "={{ $json.message }}"
           },
           "matchingColumns": [],
           "schema": [
@@ -2756,62 +2088,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.3,
       "position": [
-        1856,
-        -656
-      ],
-      "id": "8fb98cde-1f4f-4a1c-a8d0-ed693e84f1ce",
-      "name": "Update Notes"
-    },
-    {
-      "parameters": {
-        "workflowId": {
-          "__rl": true,
-          "value": "TbLuB54OSTeubcum",
-          "mode": "list",
-          "cachedResultUrl": "/workflow/TbLuB54OSTeubcum",
-          "cachedResultName": "6.1 Product Marketing- AIM UGC Content Creator"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "recordId": "={{ $('Webhook').item.json.body.recordId }}",
-            "note": "Main folder not defined"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "recordId",
-              "displayName": "recordId",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            },
-            {
-              "id": "note",
-              "displayName": "note",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": true
-        },
-        "options": {
-          "waitForSubWorkflow": true
-        }
-      },
-      "type": "n8n-nodes-base.executeWorkflow",
-      "typeVersion": 1.3,
-      "position": [
-        2048,
-        -1248
+        2464,
+        -1376
       ],
       "id": "318d542a-4844-44da-82e0-a8ad63d81c4f",
       "name": "Update Notes1"
@@ -2927,6 +2205,17 @@
               "removed": false
             },
             {
+              "id": "Product Image File",
+              "displayName": "Product Image File",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
               "id": "Video Count",
               "displayName": "Video Count",
               "required": false,
@@ -2938,8 +2227,879 @@
               "removed": true
             },
             {
-              "id": "Output Folder ID",
-              "displayName": "Output Folder ID",
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Description",
+              "displayName": "Product Description",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Auto Number",
+              "displayName": "Auto Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Code",
+              "displayName": "Brand Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Target Persona",
+              "displayName": "Target Persona",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Pain Points Solved",
+              "displayName": "Pain Points Solved",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Key Benefits",
+              "displayName": "Key Benefits",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Code",
+              "displayName": "Product Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Name",
+              "displayName": "Brand Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Videos",
+              "displayName": "Videos",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type Name",
+              "displayName": "Video Type Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Image URL",
+              "displayName": "Product Image URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Campaign Folder ID",
+              "displayName": "Campaign Folder ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product Name",
+              "displayName": "Product Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1312,
+        448
+      ],
+      "id": "fe0115cd-8a23-46b1-9db0-71cb81ab6e3f",
+      "name": "Update Record- Completed",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Webhook').item.json.body.recordId }}",
+            "Stage": "Failed"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Campaign ID",
+              "displayName": "Campaign ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product",
+              "displayName": "Product",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type",
+              "displayName": "Video Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Stage",
+              "displayName": "Stage",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Ready",
+                  "value": "Ready"
+                },
+                {
+                  "name": "Generating",
+                  "value": "Generating"
+                },
+                {
+                  "name": "Complete",
+                  "value": "Complete"
+                },
+                {
+                  "name": "Failed",
+                  "value": "Failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Product Image File",
+              "displayName": "Product Image File",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Video Count",
+              "displayName": "Video Count",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product Description",
+              "displayName": "Product Description",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Auto Number",
+              "displayName": "Auto Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Code",
+              "displayName": "Brand Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Target Persona",
+              "displayName": "Target Persona",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Pain Points Solved",
+              "displayName": "Pain Points Solved",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Key Benefits",
+              "displayName": "Key Benefits",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Code",
+              "displayName": "Product Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Name",
+              "displayName": "Brand Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Videos",
+              "displayName": "Videos",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type Name",
+              "displayName": "Video Type Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Image URL",
+              "displayName": "Product Image URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Campaign Folder ID",
+              "displayName": "Campaign Folder ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product Name",
+              "displayName": "Product Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        2624,
+        -1376
+      ],
+      "id": "59ee71a5-8b7c-48c1-accb-5400d036af82",
+      "name": "Update record1",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Campaign Folders and Image Management",
+        "height": 1072,
+        "width": 2208,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        608,
+        -1552
+      ],
+      "typeVersion": 1,
+      "id": "ab5243ee-71c2-4f19-9e8a-71d4202a72a4",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "TbLuB54OSTeubcum",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/TbLuB54OSTeubcum",
+          "cachedResultName": "6.1 Product Marketing- UGC Content Creator"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "recordId": "={{ $('Webhook').item.json.body.recordId }}",
+            "note": "Video generation completed."
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "recordId",
+              "displayName": "recordId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "note",
+              "displayName": "note",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1120,
+        448
+      ],
+      "id": "ca8944ab-9197-406e-9bac-27b2e3e31a29",
+      "name": "Update Notes2"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "TbLuB54OSTeubcum",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/TbLuB54OSTeubcum",
+          "cachedResultName": "6.1 Product Marketing- UGC Content Creator"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "recordId": "={{ $('Webhook').item.json.body.recordId }}",
+            "note": "Loop counter failed."
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "recordId",
+              "displayName": "recordId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "note",
+              "displayName": "note",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        2304,
+        448
+      ],
+      "id": "414546ad-2072-4a6d-aea8-758d5f9aca57",
+      "name": "Update Notes3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "67dcef0e-0e3d-4dc0-b05b-f454d052a755",
+              "leftValue": "={{ $('Prepare Agent Inputs').item.json.productImageUrl }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "07cb7fe1-99c2-4ba5-865e-1b71e5ab29a2",
+              "leftValue": "={{ $('Prepare Agent Inputs').item.json.productImageUrl }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        912,
+        -928
+      ],
+      "id": "40ac8fe2-48aa-4a52-bd42-4fda564b429e",
+      "name": "Check Product Image Url"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "77a416a7-8e24-4872-b0ae-669f80f59583",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1296,
+        -992
+      ],
+      "id": "10f2cf40-da8a-4449-8c30-b1749a28be95",
+      "name": "Check File Exists"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Webhook').item.json.body.recordId }}",
+            "Stage": "Failed"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Campaign ID",
+              "displayName": "Campaign ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product",
+              "displayName": "Product",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type",
+              "displayName": "Video Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Stage",
+              "displayName": "Stage",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Ready",
+                  "value": "Ready"
+                },
+                {
+                  "name": "Generating",
+                  "value": "Generating"
+                },
+                {
+                  "name": "Complete",
+                  "value": "Complete"
+                },
+                {
+                  "name": "Failed",
+                  "value": "Failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Video Count",
+              "displayName": "Video Count",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
               "required": false,
               "defaultMatch": false,
               "canBeUsedToMatch": true,
@@ -3092,8 +3252,443 @@
               "removed": true
             },
             {
-              "id": "Campaign Folder",
-              "displayName": "Campaign Folder",
+              "id": "Campaign Folder ID",
+              "displayName": "Campaign Folder ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product Name",
+              "displayName": "Product Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Image File",
+              "displayName": "Product Image File",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1904,
+        -848
+      ],
+      "id": "38a2d328-eee3-43f9-bbbc-a19b7ed9e4eb",
+      "name": "Update record2",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "TbLuB54OSTeubcum",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/TbLuB54OSTeubcum",
+          "cachedResultName": "6.1 Product Marketing- UGC Content Creator"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "recordId": "={{ $('Webhook').item.json.body.recordId }}",
+            "note": "Product image file is missing."
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "recordId",
+              "displayName": "recordId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "note",
+              "displayName": "note",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1712,
+        -848
+      ],
+      "id": "5c20e54c-d197-4f97-ac39-05981b785f39",
+      "name": "Update Notes4"
+    },
+    {
+      "parameters": {
+        "name": "={{ $('Get Campaign Record').item.json['Product Image File'][0].filename }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "={{ $('Parse Output JSON').item.json.productImagesFolderId }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1904,
+        -992
+      ],
+      "id": "fd2be032-5cf0-434c-8e51-6ff73197879b",
+      "name": "Upload file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "PBtBKOv2ofju7FVt",
+          "name": "Google Drive- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $('Webhook').item.json.body.recordId }}",
+            "Product Image URL": "={{ $json.webViewLink }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Campaign ID",
+              "displayName": "Campaign ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product",
+              "displayName": "Product",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type",
+              "displayName": "Video Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Stage",
+              "displayName": "Stage",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Ready",
+                  "value": "Ready"
+                },
+                {
+                  "name": "Generating",
+                  "value": "Generating"
+                },
+                {
+                  "name": "Complete",
+                  "value": "Complete"
+                },
+                {
+                  "name": "Failed",
+                  "value": "Failed"
+                }
+              ],
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Product Image File",
+              "displayName": "Product Image File",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Video Count",
+              "displayName": "Video Count",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Description",
+              "displayName": "Product Description",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Auto Number",
+              "displayName": "Auto Number",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Code",
+              "displayName": "Brand Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Target Persona",
+              "displayName": "Target Persona",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Pain Points Solved",
+              "displayName": "Pain Points Solved",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Key Benefits",
+              "displayName": "Key Benefits",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Code",
+              "displayName": "Product Code",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Brand Name",
+              "displayName": "Brand Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Videos",
+              "displayName": "Videos",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Video Type Name",
+              "displayName": "Video Type Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Product Image URL",
+              "displayName": "Product Image URL",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Campaign Folder ID",
+              "displayName": "Campaign Folder ID",
               "required": false,
               "defaultMatch": false,
               "canBeUsedToMatch": true,
@@ -3133,17 +3728,28 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        1456,
-        448
+        2112,
+        -992
       ],
-      "id": "fe0115cd-8a23-46b1-9db0-71cb81ab6e3f",
-      "name": "Update Record- Completed",
+      "id": "41df682c-d73b-46aa-9604-64e2bb9fb046",
+      "name": "Update Product Image Url",
       "credentials": {
         "airtableTokenApi": {
           "id": "KfRycBsXYTyRWuPv",
           "name": "Airtable Personal Access Token"
         }
       }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2288,
+        -1008
+      ],
+      "id": "2c681f27-0a2d-41c6-9319-dd546d9e8aaf",
+      "name": "OK to continue"
     },
     {
       "parameters": {
@@ -3256,6 +3862,17 @@
               "removed": false
             },
             {
+              "id": "Product Image File",
+              "displayName": "Product Image File",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
               "id": "Video Count",
               "displayName": "Video Count",
               "required": false,
@@ -3417,7 +4034,7 @@
               "canBeUsedToMatch": true,
               "display": true,
               "type": "string",
-              "readOnly": true,
+              "readOnly": false,
               "removed": true
             },
             {
@@ -3462,11 +4079,45 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        2608,
+        2480,
         448
       ],
-      "id": "1d19e92b-863a-44f9-b358-121474d53d65",
-      "name": "Update Record- Loop Failed",
+      "id": "82f66e11-f94d-40f3-83ce-e894535c3b8f",
+      "name": "Update record3",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "id": "={{ $('Webhook').item.json.body.recordId }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1296,
+        -672
+      ],
+      "id": "b959c60a-6cb7-499e-824d-1112bfc842df",
+      "name": "Get Campaign Record1",
       "credentials": {
         "airtableTokenApi": {
           "id": "KfRycBsXYTyRWuPv",
@@ -3495,7 +4146,7 @@
           "mappingMode": "defineBelow",
           "value": {
             "id": "={{ $('Webhook').item.json.body.recordId }}",
-            "Stage": "Failed"
+            "Stage": "Generating"
           },
           "matchingColumns": [
             "id"
@@ -3508,8 +4159,7 @@
               "defaultMatch": true,
               "display": true,
               "type": "string",
-              "readOnly": true,
-              "removed": false
+              "readOnly": true
             },
             {
               "id": "Campaign ID",
@@ -3520,18 +4170,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Name",
-              "displayName": "Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Product",
@@ -3542,7 +4181,7 @@
               "display": true,
               "type": "array",
               "readOnly": false,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Video Type",
@@ -3553,7 +4192,7 @@
               "display": true,
               "type": "array",
               "readOnly": false,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Stage",
@@ -3585,6 +4224,17 @@
               "removed": false
             },
             {
+              "id": "Product Image File",
+              "displayName": "Product Image File",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
               "id": "Video Count",
               "displayName": "Video Count",
               "required": false,
@@ -3593,7 +4243,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Notes",
@@ -3604,7 +4254,7 @@
               "display": true,
               "type": "string",
               "readOnly": false,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Last Modified",
@@ -3615,7 +4265,18 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
             },
             {
               "id": "Product Description",
@@ -3626,7 +4287,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Auto Number",
@@ -3637,7 +4298,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Brand Code",
@@ -3648,7 +4309,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Target Persona",
@@ -3659,7 +4320,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Pain Points Solved",
@@ -3670,7 +4331,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Key Benefits",
@@ -3681,7 +4342,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Product Code",
@@ -3692,7 +4353,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Created",
@@ -3703,7 +4364,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Brand Name",
@@ -3714,7 +4375,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Videos",
@@ -3725,7 +4386,7 @@
               "display": true,
               "type": "array",
               "readOnly": false,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Video Type Name",
@@ -3736,7 +4397,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Product Image URL",
@@ -3746,19 +4407,19 @@
               "canBeUsedToMatch": true,
               "display": true,
               "type": "string",
-              "readOnly": true,
-              "removed": true
+              "readOnly": false,
+              "removed": false
             },
             {
-              "id": "Campaign Folder",
-              "displayName": "Campaign Folder",
+              "id": "Campaign Folder ID",
+              "displayName": "Campaign Folder ID",
               "required": false,
               "defaultMatch": false,
               "canBeUsedToMatch": true,
               "display": true,
               "type": "string",
               "readOnly": false,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Product Name",
@@ -3769,7 +4430,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Record ID",
@@ -3780,7 +4441,7 @@
               "display": true,
               "type": "string",
               "readOnly": true,
-              "removed": true
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -3791,11 +4452,11 @@
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        2240,
-        -1248
+        1120,
+        -672
       ],
-      "id": "59ee71a5-8b7c-48c1-accb-5400d036af82",
-      "name": "Update record1",
+      "id": "7454cbef-8bff-4ece-921a-980da6a59c9d",
+      "name": "Update Stage to Generating",
       "credentials": {
         "airtableTokenApi": {
           "id": "KfRycBsXYTyRWuPv",
@@ -3805,21 +4466,136 @@
     },
     {
       "parameters": {
-        "resource": "fileFolder",
-        "queryString": "={{ $('Get Campaign Record').item.json['Campaign ID'] }}",
-        "limit": 1,
-        "filter": {},
+        "assignments": {
+          "assignments": [
+            {
+              "id": "param1",
+              "name": "campaignRecordId",
+              "value": "={{ $('Webhook').item.json.body.recordId }}",
+              "type": "string"
+            },
+            {
+              "id": "param2",
+              "name": "mainFolderId",
+              "value": "={{ $('Webhook').item.json.body.vars.MAIN_FOLDER_ID }}",
+              "type": "string"
+            },
+            {
+              "id": "param3",
+              "name": "campaignId",
+              "value": "={{ $('Get Campaign Record').item.json['Campaign ID'] }}",
+              "type": "string"
+            },
+            {
+              "id": "param4",
+              "name": "productImagesFolderName",
+              "value": "Product Images",
+              "type": "string"
+            },
+            {
+              "id": "param5",
+              "name": "originalProductImageUrl",
+              "value": "={{ $('Get Campaign Record').first().json['Product Image File']?.[0]?.url || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "param6",
+              "name": "productImageFileName",
+              "value": "={{ $('Get Campaign Record').item.json['Product Image File']?.[0]?.filename || 'product-image.jpg' }}",
+              "type": "string"
+            },
+            {
+              "id": "param7",
+              "name": "productImageUrl",
+              "value": "={{ $('Get Campaign Record').item.json['Product Image URL'] || '' }}",
+              "type": "string"
+            }
+          ]
+        },
         "options": {}
       },
-      "type": "n8n-nodes-base.googleDrive",
-      "typeVersion": 3,
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
       "position": [
-        1056,
-        -1024
+        1504,
+        -1360
       ],
-      "id": "ef7010c1-3b36-4998-8d4e-5a01a6b82389",
-      "name": "Get Campaign Folder",
-      "alwaysOutputData": true,
+      "id": "c31f659e-2311-47dc-8de9-cbe49fbe55d2",
+      "name": "Prepare Agent Inputs"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        1536,
+        -1152
+      ],
+      "id": "eb253f00-df8c-43a2-9c57-9fe63616db31",
+      "name": "OpenAI GPT-4o",
+      "credentials": {
+        "openAiApi": {
+          "id": "q3gPWSga9sOawaqA",
+          "name": "OpenAi API Key- KAP Enterprises"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a Google Drive folder management agent for a UGC video content creation system.\n\nYour task is to ensure the proper folder structure exists and that the product image is available.\n\n### **YOUR INPUT PARAMETERS**\n\n- campaignRecordId: {{ $json.campaignRecordId }}\n- mainFolderId: {{ $json.mainFolderId }}\n- campaignId: {{ $json.campaignId }}\n- productImagesFolderName: {{ $json.productImagesFolderName }}\n\n\n### **YOUR WORKFLOW**\n\n1. First, verify the main folder exists by using check_file_folder tool with fileOrFolderId = mainFolderId. If the API returns an error or id is missing, immediately return failure JSON with message \"Main folder not defined\".\n\n2. Search for campaign folder by using search_files tool with name = campaignId and parentFolderId = mainFolderId. If files array is empty or has no results, create it using create_folder tool with name = campaignId and parentFolderId = mainFolderId. Capture the campaign folder ID, campaignFolderId.\n\n3. Search for Product Images folder using search_files tool with name = productImagesFolderName and parentFolderId = campaign folder ID from step 2. If not found, create it using create_folder tool. Capture the product images folder ID, productImagesFolderId.\n\n4. Return success JSON with all the captured IDs and URLs.\n\n\n### **TOOL USAGE**\n\nWhen calling any tool, you **must** include all parameters exactly as listed below.\nEach tool call should include a JSON payload with these key–value pairs.\n\n#### **check_file_folder**\nVerifies that a file or folder exists by its ID.\n{\n  \"fileOrFolderId\": \"<The Google Drive file or folder ID to check>\"\n}\n\n#### **search_files**\nSearches for files or folders in Google Drive by name within a parent folder.\n{\n  \"name\": \"<The exact name of the file or folder to search for>\",\n  \"parentFolderId\": \"<The ID of the parent folder to search within>\"\n}\n\n#### **create_folder**\nCreates a new folder in Google Drive under a specified parent folder.\n{\n  \"name\": \"<The folder name to create>\",\n  \"parentFolderId\": \"<The ID of the parent folder where it should be created>\"\n}\n\n---\n\n**CRITICAL: Your final response MUST be ONLY a valid JSON object (no markdown, no explanations):**\n{\n  \"campaignRecordId\": \"value\",\n  \"status\": \"SUCCESS or FAIL\",\n  \"message\": \"descriptive message\",\n  \"mainFolderId\": \"value\",\n  \"campaignId\": \"value\",\n  \"campaignFolderId\": \"value\",\n  \"productImagesFolderId\": \"value\"\n}\n",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        1712,
+        -1360
+      ],
+      "id": "f2266944-686a-493e-a77e-2a943f5f0df9",
+      "name": "Folder Management Agent1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.campaignId }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1664,
+        -1152
+      ],
+      "id": "ffe0b89e-dab4-4e83-897e-3a9e419f867a",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Check if a specific file or folder exists in Google Drive by its ID. Returns the file/folder details including id, name, mimeType, and webViewLink if it exists. Use this to verify that a folder or file ID is valid.",
+        "url": "=https://www.googleapis.com/drive/v3/files/{fileOrFolderId}?supportsAllDrives=true&fields=id,name,mimeType,webViewLink",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "{fileOrFolderId}",
+              "description": "the Google Drive folder ID to check"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        2048,
+        -1152
+      ],
+      "id": "83702eb8-c4c7-4450-a29f-935d09ea84ed",
+      "name": "check_file_folder",
       "credentials": {
         "googleDriveOAuth2Api": {
           "id": "PBtBKOv2ofju7FVt",
@@ -3829,33 +4605,120 @@
     },
     {
       "parameters": {
-        "resource": "folder",
-        "name": "={{ $('Get Campaign Record').item.json['Campaign ID'] }}",
-        "driveId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "My Drive"
-        },
-        "folderId": {
-          "__rl": true,
-          "value": "={{ $('Webhook').item.json.body.vars.MAIN_FOLDER_ID }}",
-          "mode": "id"
-        },
-        "options": {}
+        "toolDescription": "Search for files or folders in Google Drive by name within a specific parent folder. Returns an array of matching files with their id, name, mimeType, and webViewLink. Use this to find if a folder or file with a specific name exists in a parent folder.",
+        "url": "=https://www.googleapis.com/drive/v3/files?q=name='{name}' and '{parentFolderId}' in parents and trashed=false&supportsAllDrives=true&fields=files(id,name,mimeType,webViewLink)",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "{name}",
+              "description": "The exact name of the file or folder to search for"
+            },
+            {
+              "name": "{parentFolderId}",
+              "description": "The ID of the parent folder to search within"
+            }
+          ]
+        }
       },
-      "type": "n8n-nodes-base.googleDrive",
-      "typeVersion": 3,
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
       "position": [
-        1456,
-        -832
+        1920,
+        -1152
       ],
-      "id": "b245af80-3a47-4e00-abde-3a55f5d0b7b6",
-      "name": "Create folder",
-      "alwaysOutputData": true,
+      "id": "4db75925-a634-483d-b33b-a880c85a258f",
+      "name": "search_files",
       "credentials": {
         "googleDriveOAuth2Api": {
           "id": "PBtBKOv2ofju7FVt",
           "name": "Google Drive- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Create a new folder in Google Drive under a specified parent folder. Returns the newly created folder's id, name, and webViewLink. Use this when you need to create a folder that doesn't exist yet.",
+        "method": "POST",
+        "url": "https://www.googleapis.com/drive/v3/files?supportsAllDrives=true&fields=id,name,webViewLink",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": \"{name}\",\n  \"mimeType\": \"application/vnd.google-apps.folder\",\n  \"parents\": [\"{parentFolderId}\"]\n}",
+        "placeholderDefinitions": {
+          "values": [
+            {
+              "name": "{name}",
+              "description": "The folder name to create"
+            },
+            {
+              "name": "{parentFolderId}",
+              "description": "The ID of the parent folder where it should be created"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "typeVersion": 1.1,
+      "position": [
+        1792,
+        -1152
+      ],
+      "id": "978635e2-4a63-442b-a507-529e0be001ab",
+      "name": "create_folder",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "PBtBKOv2ofju7FVt",
+          "name": "Google Drive- OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the AI Agent output (string that may include markdown)\nconst rawOutput = $json.output;\n\n// Step 1: Clean up code fences and trim whitespace\nlet cleaned = rawOutput.trim()\n  // Remove ```json and ``` or ```anything``` wrappers\n  .replace(/^```(?:json)?/i, \"\")\n  .replace(/```$/i, \"\")\n  .trim();\n\n// Step 2: Attempt to extract JSON substring if agent returned nested markdown\nconst jsonMatch = cleaned.match(/\\{[\\s\\S]*\\}/);\nif (jsonMatch) {\n  cleaned = jsonMatch[0];\n}\n\n// Step 3: Parse the JSON safely\nlet parsed;\ntry {\n  parsed = JSON.parse(cleaned);\n} catch (error) {\n  throw new Error(\"Failed to parse AI Agent output. Raw value:\\n\" + rawOutput);\n}\n\n// Step 4: Return the parsed object for downstream nodes\nreturn [\n  {\n    json: parsed\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2112,
+        -1360
+      ],
+      "id": "12a7f174-e841-4e07-8eb2-7e39fb57c5c4",
+      "name": "Parse Output JSON"
+    },
+    {
+      "parameters": {
+        "base": {
+          "__rl": true,
+          "value": "applOFYmcqxnprGRm",
+          "mode": "list",
+          "cachedResultName": "UGC Video Content",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblU9xfEqasJjWtZU",
+          "mode": "list",
+          "cachedResultName": "Campaigns",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+        },
+        "id": "={{ $('Webhook').item.json.body.recordId }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        1120,
+        -1360
+      ],
+      "id": "2e656e15-2f26-4453-ac00-f579ce99a868",
+      "name": "Get Campaign Record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
         }
       }
     },
@@ -3870,12 +4733,55 @@
           },
           "conditions": [
             {
-              "id": "3964312f-ca30-47ee-b56d-b9db9e8e0d3a",
-              "leftValue": "={{ $json.id }}",
+              "id": "status-check",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "FAIL",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2288,
+        -1360
+      ],
+      "id": "23ee550a-7b53-4da5-8af2-63a3405d1bd0",
+      "name": "Check Fail"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1ac4fef9-3582-45f6-bb4e-9bf69d7bf033",
+              "leftValue": "={{ $('Prepare Agent Inputs').item.json.originalProductImageUrl }}",
               "rightValue": "",
               "operator": {
                 "type": "string",
                 "operation": "exists",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "ea63c719-ee82-45d5-992f-147c52aa0b05",
+              "leftValue": "={{ $('Prepare Agent Inputs').item.json.originalProductImageUrl }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
                 "singleValue": true
               }
             }
@@ -3887,88 +4793,61 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1648,
-        -832
+        1504,
+        -912
       ],
-      "id": "02a7c10d-666a-4304-b268-bc18f478dca5",
-      "name": "Verify New Folder"
+      "id": "fd329f5f-cdf3-4dde-bfad-01d65b72736a",
+      "name": "Check Orignal Image Url"
     },
     {
       "parameters": {
-        "content": "# Campaign Folder Management",
-        "height": 848,
-        "width": 2208
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        608,
-        -1344
-      ],
-      "typeVersion": 1,
-      "id": "ab5243ee-71c2-4f19-9e8a-71d4202a72a4",
-      "name": "Sticky Note4"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "f4c47c5c-085a-477b-8816-ae22a03e9b43",
-              "name": "campaignFolderId",
-              "value": "={{ $json.id }}",
-              "type": "string"
-            },
-            {
-              "id": "f3b6da38-5c8b-4262-837a-110f4db17eea",
-              "name": "campaignFolderName",
-              "value": "={{ $json.name }}",
-              "type": "string"
-            }
-          ]
-        },
+        "url": "={{ $('Prepare Agent Inputs').item.json.productImageUrl }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
         "options": {}
       },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
       "position": [
-        1456,
-        -1024
+        1120,
+        -992
       ],
-      "id": "6a580baa-0caa-4109-8f25-1ced9a66f51d",
-      "name": "Get Folder ID"
+      "id": "f457dab3-3c08-4581-a45f-ab6c188d0172",
+      "name": "Image File",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "PBtBKOv2ofju7FVt",
+          "name": "Google Drive- OAuth2- pilgrimka1@gmail"
+        }
+      },
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "f4c47c5c-085a-477b-8816-ae22a03e9b43",
-              "name": "campaignFolderId",
-              "value": "={{ $('Create folder').item.json.id }}",
-              "type": "string"
-            },
-            {
-              "id": "f3b6da38-5c8b-4262-837a-110f4db17eea",
-              "name": "campaignFolderName",
-              "value": "={{ $('Create folder').item.json.name }}",
-              "type": "string"
-            }
-          ]
-        },
+        "url": "={{ $('Prepare Agent Inputs').item.json.originalProductImageUrl }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDriveOAuth2Api",
         "options": {}
       },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
       "position": [
-        2048,
-        -848
+        1712,
+        -992
       ],
-      "id": "185e32b3-db6c-4248-9093-f9d7bf97241d",
-      "name": "Get Folder ID1"
+      "id": "7b46f14c-b1fb-415e-b82d-d2f7ac12b44a",
+      "name": "Original Image File",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "PBtBKOv2ofju7FVt",
+          "name": "Google Drive- OAuth2- pilgrimka1@gmail"
+        }
+      }
     },
     {
       "parameters": {
-        "operation": "update",
+        "operation": "search",
         "base": {
           "__rl": true,
           "value": "applOFYmcqxnprGRm",
@@ -3978,316 +4857,22 @@
         },
         "table": {
           "__rl": true,
-          "value": "tblU9xfEqasJjWtZU",
+          "value": "tblX8z9ziFRWDnIRo",
           "mode": "list",
-          "cachedResultName": "Campaigns",
-          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblU9xfEqasJjWtZU"
+          "cachedResultName": "Video Types",
+          "cachedResultUrl": "https://airtable.com/applOFYmcqxnprGRm/tblX8z9ziFRWDnIRo"
         },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "id": "={{ $('Webhook').item.json.body.recordId }}",
-            "Campaign Folder ID": "={{ $json.id }}"
-          },
-          "matchingColumns": [
-            "id"
-          ],
-          "schema": [
-            {
-              "id": "id",
-              "displayName": "id",
-              "required": false,
-              "defaultMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": false
-            },
-            {
-              "id": "Campaign ID",
-              "displayName": "Campaign ID",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Name",
-              "displayName": "Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Product",
-              "displayName": "Product",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "array",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Video Type",
-              "displayName": "Video Type",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "array",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Stage",
-              "displayName": "Stage",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "options",
-              "options": [
-                {
-                  "name": "Ready",
-                  "value": "Ready"
-                },
-                {
-                  "name": "Generating",
-                  "value": "Generating"
-                },
-                {
-                  "name": "Complete",
-                  "value": "Complete"
-                },
-                {
-                  "name": "Failed",
-                  "value": "Failed"
-                }
-              ],
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Video Count",
-              "displayName": "Video Count",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Notes",
-              "displayName": "Notes",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Last Modified",
-              "displayName": "Last Modified",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Product Description",
-              "displayName": "Product Description",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Auto Number",
-              "displayName": "Auto Number",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Brand Code",
-              "displayName": "Brand Code",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Target Persona",
-              "displayName": "Target Persona",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Pain Points Solved",
-              "displayName": "Pain Points Solved",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Key Benefits",
-              "displayName": "Key Benefits",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Product Code",
-              "displayName": "Product Code",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Created",
-              "displayName": "Created",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Brand Name",
-              "displayName": "Brand Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Videos",
-              "displayName": "Videos",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "array",
-              "readOnly": false,
-              "removed": true
-            },
-            {
-              "id": "Video Type Name",
-              "displayName": "Video Type Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Product Image URL",
-              "displayName": "Product Image URL",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Campaign Folder ID",
-              "displayName": "Campaign Folder ID",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": false,
-              "removed": false
-            },
-            {
-              "id": "Product Name",
-              "displayName": "Product Name",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            },
-            {
-              "id": "Record ID",
-              "displayName": "Record ID",
-              "required": false,
-              "defaultMatch": false,
-              "canBeUsedToMatch": true,
-              "display": true,
-              "type": "string",
-              "readOnly": true,
-              "removed": true
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
+        "filterByFormula": "={Name} = '{{ $('Get Campaign Record').first().json['Video Type Name'][0] }}'",
         "options": {}
       },
       "type": "n8n-nodes-base.airtable",
       "typeVersion": 2.1,
       "position": [
-        1856,
-        -848
+        1296,
+        -1360
       ],
-      "id": "63971a3c-5246-42fa-bf0e-1afa170560bb",
-      "name": "Update Record- Folder ID",
+      "id": "e622aa90-88b6-4e94-9946-af8e6768257f",
+      "name": "Get Video Type Record",
       "credentials": {
         "airtableTokenApi": {
           "id": "KfRycBsXYTyRWuPv",
@@ -4302,13 +4887,13 @@
           "value": "TbLuB54OSTeubcum",
           "mode": "list",
           "cachedResultUrl": "/workflow/TbLuB54OSTeubcum",
-          "cachedResultName": "6.1 Product Marketing- AIM UGC Content Creator"
+          "cachedResultName": "6.1 Product Marketing- UGC Content Creator"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
           "value": {
             "recordId": "={{ $('Webhook').item.json.body.recordId }}",
-            "note": "Video generation completed."
+            "note": "=UGC workflow initiated."
           },
           "matchingColumns": [],
           "schema": [
@@ -4343,11 +4928,11 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.3,
       "position": [
-        1264,
-        448
+        912,
+        -1360
       ],
-      "id": "ca8944ab-9197-406e-9bac-27b2e3e31a29",
-      "name": "Update Notes2"
+      "id": "9676bc23-71e5-43b8-b828-c3d9feed11e8",
+      "name": "Update Notes"
     },
     {
       "parameters": {
@@ -4356,13 +4941,13 @@
           "value": "TbLuB54OSTeubcum",
           "mode": "list",
           "cachedResultUrl": "/workflow/TbLuB54OSTeubcum",
-          "cachedResultName": "6.1 Product Marketing- AIM UGC Content Creator"
+          "cachedResultName": "6.1 Product Marketing- UGC Content Creator"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
           "value": {
             "recordId": "={{ $('Webhook').item.json.body.recordId }}",
-            "note": "Loop counter failed."
+            "note": "=Folder management completed."
           },
           "matchingColumns": [],
           "schema": [
@@ -4397,35 +4982,11 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.3,
       "position": [
-        2448,
-        448
+        1504,
+        -672
       ],
-      "id": "414546ad-2072-4a6d-aea8-758d5f9aca57",
-      "name": "Update Notes3"
-    },
-    {
-      "parameters": {
-        "url": "=https://www.googleapis.com/drive/v3/files/{{ $('Webhook').item.json.body.vars.MAIN_FOLDER_ID }}?supportsAllDrives=true&fields=id,name,mimeType",
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "googleDriveOAuth2Api",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1664,
-        -1232
-      ],
-      "id": "9158e3d4-19fa-4131-b411-4d04563c97ea",
-      "name": "Verify Main Folder",
-      "retryOnFail": false,
-      "alwaysOutputData": true,
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "PBtBKOv2ofju7FVt",
-          "name": "Google Drive- OAuth2- pilgrimka1@gmail"
-        }
-      }
+      "id": "450d573f-f6bf-4889-94fd-3005a5185f2c",
+      "name": "Update Notes5"
     }
   ],
   "pinData": {
@@ -4449,7 +5010,7 @@
           "params": {},
           "query": {},
           "body": {
-            "recordId": "recR4f8GZ673B8pbl",
+            "recordId": "recOcsobAgJoT6W3B",
             "actionId": 4,
             "responseWebhookUrl": null,
             "vars": {
@@ -4467,8 +5028,8 @@
   },
   "shared": [
     {
-      "createdAt": "2025-10-20T20:18:28.316Z",
       "updatedAt": "2025-10-20T20:18:28.316Z",
+      "createdAt": "2025-10-20T20:18:28.316Z",
       "role": "workflow:owner",
       "workflowId": "TbLuB54OSTeubcum",
       "projectId": "ANrIPEPOHOX0fwPW"
@@ -4477,6 +5038,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-10-24T22:45:04.000Z",
-  "versionId": "d5f98cd5-3252-43ca-a062-530fc4877dfd"
+  "updatedAt": "2025-10-31T19:02:38.000Z",
+  "versionId": "68fdae99-8376-4a27-aa47-a3748c1147c3"
 }
