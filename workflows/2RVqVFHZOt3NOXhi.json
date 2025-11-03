@@ -1,0 +1,409 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "PRD Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Build Workflow Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Evaluator Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "PRD Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate JSON": {
+      "main": [
+        [
+          {
+            "node": "Evaluator Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evaluator Agent": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Workflow Agent": {
+      "main": [
+        [
+          {
+            "node": "Validate JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "CREATE - Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Set Input Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Evaluator Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Input Variables": {
+      "main": [
+        [
+          {
+            "node": "Build Workflow Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "PRD Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PRD Agent": {
+      "main": [
+        [
+          {
+            "node": "Set Input Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-03T06:01:49.475Z",
+  "id": "2RVqVFHZOt3NOXhi",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "1.0 Workflow Generator - v1.0",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "// Try to capture the AI output\nconst raw = $json.output || $json.message || $json.text;\n\nif (!raw) {\n  throw new Error(\"Missing AI output text.\");\n}\n\n// 🧩 1. Try to extract JSON inside ```json ... ``` fences if present\nlet jsonString;\nconst fencedMatch = raw.match(/```json\\s*([\\s\\S]*?)```/i);\n\nif (fencedMatch) {\n  jsonString = fencedMatch[1].trim();\n} else {\n  // 🧩 2. Otherwise, assume the entire response *is* JSON or contains JSON\n  const firstBrace = raw.indexOf(\"{\");\n  const lastBrace = raw.lastIndexOf(\"}\");\n  \n  if (firstBrace === -1 || lastBrace === -1) {\n    throw new Error(\"No JSON object found in output.\");\n  }\n\n  jsonString = raw.slice(firstBrace, lastBrace + 1).trim();\n}\n\ntry {\n  // 🧩 3. Parse JSON safely\n  const parsed = JSON.parse(jsonString);\n\n  // ✅ Return both the parsed workflow (for immediate use)\n  //    and validated_workflow (for loopback continuity)\n  return [\n    {\n      json: {\n        ...parsed,\n        validated_workflow: parsed\n      }\n    }\n  ];\n} catch (err) {\n  throw new Error(\"Workflow JSON parse failed: \" + err.message + \"\\n\\nExtracted content:\\n\" + jsonString);\n}\n"
+      },
+      "id": "9a7b7d95-5f2a-4878-8013-e37c75b63a3d",
+      "name": "Validate JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        112
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 📌 **AI-Driven n8n Workflow Builder**\n\nThis system turns a user’s plain-language request into a complete, import-ready n8n workflow through a chain of specialized AI agents.\n\n**Process:**\n\n1. **PRD Agent** – Converts the user request into a structured requirements document (goal, triggers, logic, integrations, etc.).\n2. **Build Agent** – Generates the full n8n workflow JSON based on the PRD.\n3. **Validator** – Confirms the output is valid JSON.\n4. **Evaluator Agent** – Reviews the workflow against the PRD, scores it, and suggests updates.\n5. **Loop Logic** – If updates are needed, feeds feedback and the previous workflow back into the Build Agent until completion.\n\n**Result:**\nA self-refining automation pipeline that produces validated, production-ready n8n workflows from natural-language input.\n\n---",
+        "height": 932,
+        "width": 2396,
+        "color": 2
+      },
+      "id": "3ec47995-3691-4947-b625-0f73c6d1a68c",
+      "name": "Sticky Note - Documentation",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        -336
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        16,
+        240
+      ],
+      "id": "fdfb2b62-2ba2-4ffc-8b5b-49c9c0ee324c",
+      "name": "When chat message received",
+      "webhookId": "10a2ebbe-bed4-40b8-88fa-b3ae8c036749"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "o3-mini",
+          "mode": "list",
+          "cachedResultName": "o3-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        816,
+        336
+      ],
+      "id": "0b77908d-26cc-4005-b5bb-39dacfbdcce9",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "q3gPWSga9sOawaqA",
+          "name": "OpenAi API Key- KAP Enterprises"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "workflowObject": "={{ $('Validate JSON').item.json.toJsonString() }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        1968,
+        64
+      ],
+      "id": "33cd6c15-dfc3-4436-80d9-900a5627b090",
+      "name": "CREATE - Workflow",
+      "notesInFlow": false,
+      "credentials": {
+        "n8nApi": {
+          "id": "9FQomAe4SZDC0hBi",
+          "name": "n8n account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=### Workflow to evaluate:\n{{ JSON.stringify($json, null, 2) }}\n\n### User's initial request:\n{{ $('Set Input Variables').item.json.prd.original_user_request }}\n\n### Goal: \n{{ $('Set Input Variables').item.json.prd.goal }}\n\n### Logical Steps: \n{{ $('Set Input Variables').item.json.prd.logic_steps }}\n\n### Integrations: \n{{ $('Set Input Variables').item.json.prd.integrations }}\n\n### Completion Criteria: \n{{ $('Set Input Variables').item.json.prd.completion_criteria }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a professional Workflow Evaluator that reviews an n8n workflow JSON against a user request.\n\nYour task is to return an **evaluation result** (not a schema) that follows the predefined output format provided by the system.\n\nEvaluate the workflow based on:\n- Completeness\n- Structure\n- Logic flow\n- Accuracy of node references\n- Integration correctness\n- Error handling\n- Credential usage\n- Overall output quality\n\nDecide:\n- \"status\": \"complete\" if the workflow fully meets all requirements, or \"needs_update\" if not.\n- \"score\": a number between 0–100 showing overall quality.\n- \"findings\": short bullet-style list of issues found.\n- \"suggested_updates\": actionable next steps to fix those issues.\n- \"summary\": one-sentence overview.\n\nReturn only a **filled-out evaluation object** — do NOT return or repeat the schema.  \nDo NOT wrap your output in code fences or markdown.\n\nRules:\n- Do not rewrite or regenerate the workflow.\n- Do not speculate beyond the provided data.\n- Base your evaluation strictly on observable facts.\n- Keep explanations concise and actionable.\n\n---"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        1392,
+        112
+      ],
+      "id": "0375b2fe-24ae-4dbc-ac84-7b8f684c55ba",
+      "name": "Evaluator Agent"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=original_user_request: \n{{ $json.prd.original_user_request }}\n\ngoal: \n{{ $json.prd.goal }}\n\nlogical_steps: \n{{ $json.prd.logic_steps }}\n\nintegrations: \n{{ $json.prd.integrations }}\n\ncompletion_criteria: \n{{ $json.prd.completion_criteria }}\n\nprevious_workflow (optional): \n{{ JSON.stringify($json.previous_workflow) }}\n\nprevious_feedback (optional): \n{{ JSON.stringify($json.previous_feedback) }}\n\n\n",
+        "options": {
+          "systemMessage": "=You are a professional n8n Workflow Creator.\n\nYour task is to generate a complete, import-ready n8n workflow JSON using the structured inputs provided to you.\n\n---\n\n### Inputs Available\nYou will receive the following data:\n- **original_user_request**: The user's full text description of what they want automated.\n- **goal**: A concise summary of what the workflow must achieve.\n- **logical_steps**: A list of ordered steps that describe what actions or logic the workflow must include.\n- **integrations**: The list of systems, apps, or APIs this workflow should connect with.\n- **completion_criteria**: How success is defined for this workflow.\n- **previous_workflow** *(optional)*: A prior workflow JSON to update if improvements are required.\n- **previous_feedback** *(optional)*: Evaluator feedback describing changes or issues to address.\n\n---\n\n### Your Responsibilities\n1. If feedback is present, revise the previous workflow to fix issues while preserving its structure and logic.\n2. If no feedback exists, build a new workflow from scratch that fulfills all logic steps and meets the completion criteria.\n3. Each workflow must include:\n   - `name`, `nodes`, and `connections`\n   - Required node fields: `id`, `name`, `type`, `typeVersion`, `position`, and `parameters`\n   - Logical node connections following the described sequence\n4. Use valid n8n expressions following this pattern: `$node[\"NodeName\"].json[\"field\"]`\n5. Include basic error handling or retry logic for API calls if relevant.\n6. Ensure the overall flow matches the provided goal and completion_criteria.\n\n---\n\n### Output Format\nReturn **only the final workflow JSON object** — no code fences, markdown, or commentary.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        816,
+        112
+      ],
+      "id": "4cf12b72-58e4-4558-a4d2-4260b5299985",
+      "name": "Build Workflow Agent"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d26ccb8c-de1e-4d38-9337-6cbce155a423",
+              "leftValue": "={{ $json.output.evaluation.status }}",
+              "rightValue": "complete",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1744,
+        112
+      ],
+      "id": "cc5137aa-1924-4acb-bdec-1d6d4e1c9e89",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1968,
+        336
+      ],
+      "id": "568a5d45-3896-4bb9-8adc-6aa963ca197b",
+      "name": "Wait",
+      "webhookId": "2795a787-e729-4dbd-bff6-33b2862ed8cc"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"title\": \"EvaluatorAgentOutput\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"evaluation\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"status\": { \"type\": \"string\", \"enum\": [\"complete\", \"needs_update\"] },\n        \"score\": { \"type\": \"number\" },\n        \"findings\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } },\n        \"suggested_updates\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } },\n        \"summary\": { \"type\": \"string\" }\n      },\n      \"required\": [\"status\", \"summary\"]\n    }\n  },\n  \"required\": [\"evaluation\"]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1536,
+        336
+      ],
+      "id": "38acaf63-07a9-491b-9760-54c281204ec6",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Helper: safely return the last item.json from a given node name if it executed\nfunction lastJsonFrom(nodeName, runIndex = 0, outputIndex = 0) {\n  try {\n    const arr = $items(nodeName, runIndex, outputIndex);\n    if (Array.isArray(arr) && arr.length) {\n      return arr[arr.length - 1].json || {};\n    }\n  } catch (e) {\n    // Node may not have executed yet in this run\n  }\n  return {};\n}\n\n// Current node data\nconst item = $json;\n\n// 1️⃣ Get PRD info — prefer carried-forward data; fallback to PRD Agent output\nlet prd = item.prd || lastJsonFrom(\"PRD Agent\");\nif (prd && prd.output) prd = prd.output; // Handle structured output parser case\n\n// 2️⃣ Get previous workflow — prefer carried-forward data; fallback to Validate JSON node\nlet previousWorkflow =\n  item.validated_workflow ||\n  item.previous_workflow ||\n  lastJsonFrom(\"Validate JSON\");\n\n// 🧩 Handle the case where Validate JSON returned an array of objects\nif (Array.isArray(previousWorkflow)) {\n  previousWorkflow = previousWorkflow[0];\n}\n\nif (previousWorkflow && previousWorkflow.validated_workflow) {\n  previousWorkflow = previousWorkflow.validated_workflow;\n}\n\n// 3️⃣ Get previous feedback — prefer carried-forward data; fallback to Evaluator Agent\nlet previousFeedback =\n  item.previous_feedback ||\n  item.evaluation ||\n  lastJsonFrom(\"Evaluator Agent\");\nif (previousFeedback && previousFeedback.output)\n  previousFeedback = previousFeedback.output;\nif (previousFeedback && previousFeedback.evaluation)\n  previousFeedback = previousFeedback.evaluation;\n\n// 4️⃣ Return normalized object for Build Workflow Agent\nreturn [\n  {\n    json: {\n      prd,\n      original_user_request: prd.original_user_request || \"No request found.\",\n      goal: prd.goal || \"\",\n      logic_steps: prd.logic_steps || [],\n      integrations: prd.integrations || [],\n      completion_criteria: prd.completion_criteria || \"\",\n      previous_workflow: JSON.stringify(previousWorkflow || {}),\n      previous_feedback: JSON.stringify(previousFeedback || {}),\n    },\n  },\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        592,
+        240
+      ],
+      "id": "86506b78-0cda-49fd-acb7-f4a303edaf91",
+      "name": "Set Input Variables"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"title\": \"SimplifiedWorkflowRequirements\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"original_user_request\": {\n      \"type\": \"string\",\n      \"description\": \"The exact text the user originally entered describing the workflow.\"\n    },\n    \"goal\": {\n      \"type\": \"string\",\n      \"description\": \"A short summary of what the workflow is meant to accomplish.\"\n    },\n    \"logic_steps\": {\n      \"type\": \"array\",\n      \"items\": { \"type\": \"string\" },\n      \"description\": \"An ordered list of the major actions or steps the workflow should perform.\"\n    },\n    \"integrations\": {\n      \"type\": \"array\",\n      \"items\": { \"type\": \"string\" },\n      \"description\": \"The platforms, apps, or APIs this workflow should connect with.\"\n    },\n    \"completion_criteria\": {\n      \"type\": \"string\",\n      \"description\": \"How to determine when the workflow is successfully completed.\"\n    }\n  },\n  \"required\": [\"original_user_request\", \"goal\", \"logic_steps\", \"completion_criteria\"]\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        384,
+        464
+      ],
+      "id": "29ff73d9-f1ba-4419-83f7-4d0ef381e313",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a Workflow Requirements Analyst.\n\nYour task is to extract the key functional requirements from a user's workflow request and return them as structured JSON that matches the provided schema.\n\nAnalyze the user's text and provide:\n- **original_user_request**: The exact text from the user.\n- **goal**: A concise statement of what the workflow should achieve.\n- **logic_steps**: A short, numbered list of the main actions or steps the workflow must perform.\n- **integrations**: The key apps, APIs, or tools to be used.\n- **completion_criteria**: How to know the workflow has succeeded.\n\nIf the user’s request is incomplete, make reasonable assumptions based on common n8n workflows.\n\nReturn only valid JSON — no markdown or commentary.\n\n---\n\nUser Request:\n{{ $json.chatInput }}\n\n",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        240,
+        240
+      ],
+      "id": "42486cf3-ff2a-40e1-b2f3-8ad9c699e5be",
+      "name": "PRD Agent"
+    }
+  ],
+  "pinData": {
+    "When chat message received": [
+      {
+        "json": {
+          "sessionId": "e5c0e92521604cc5a4c35c42ce9bb1f6",
+          "action": "sendMessage",
+          "chatInput": "“Create an n8n workflow that checks my Google Calendar every hour for meetings that were scheduled to end within the last hour and had no recorded attendance in Zoom.\n\nFor each missed meeting:\n\nSend a polite follow-up email to all invitees through Gmail asking to reschedule.\n\nPost a message in the #sales-team Slack channel with the meeting title, attendees, and a link to the rescheduling form.\n\nLog the missed meeting details (title, date, attendees, and email status) in an Airtable base called Meeting Follow-Ups.\n\nInclude error handling so if the Zoom API or Airtable API fails, it retries once and records the failure in an “Errors” table in the same Airtable base.”"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-11-03T06:01:49.482Z",
+      "createdAt": "2025-11-03T06:01:49.482Z",
+      "role": "workflow:owner",
+      "workflowId": "2RVqVFHZOt3NOXhi",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-03T10:38:11.000Z",
+  "versionId": "b842a992-3927-4e6a-a581-6d334ad91e17"
+}
