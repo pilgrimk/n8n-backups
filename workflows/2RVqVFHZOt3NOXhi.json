@@ -150,7 +150,7 @@
   "nodes": [
     {
       "parameters": {
-        "jsCode": "// Try to capture the AI output\nconst raw = $json.output || $json.message || $json.text;\n\nif (!raw) {\n  throw new Error(\"Missing AI output text.\");\n}\n\n// 🧩 1. Try to extract JSON inside ```json ... ``` fences if present\nlet jsonString;\nconst fencedMatch = raw.match(/```json\\s*([\\s\\S]*?)```/i);\n\nif (fencedMatch) {\n  jsonString = fencedMatch[1].trim();\n} else {\n  // 🧩 2. Otherwise, assume the entire response *is* JSON or contains JSON\n  const firstBrace = raw.indexOf(\"{\");\n  const lastBrace = raw.lastIndexOf(\"}\");\n  \n  if (firstBrace === -1 || lastBrace === -1) {\n    throw new Error(\"No JSON object found in output.\");\n  }\n\n  jsonString = raw.slice(firstBrace, lastBrace + 1).trim();\n}\n\ntry {\n  // 🧩 3. Parse JSON safely\n  const parsed = JSON.parse(jsonString);\n\n  // ✅ Return both the parsed workflow (for immediate use)\n  //    and validated_workflow (for loopback continuity)\n  return [\n    {\n      json: {\n        ...parsed,\n        validated_workflow: parsed\n      }\n    }\n  ];\n} catch (err) {\n  throw new Error(\"Workflow JSON parse failed: \" + err.message + \"\\n\\nExtracted content:\\n\" + jsonString);\n}\n"
+        "jsCode": "// 🧩 Step 1: Capture raw AI output\nconst raw = $json.output || $json.message || $json.text;\nif (!raw) throw new Error(\"Missing AI output text.\");\n\n// 🧩 Step 2: Extract JSON inside ```json``` if present, else find braces\nlet jsonString;\nconst fenced = raw.match(/```json\\s*([\\s\\S]*?)```/i);\nif (fenced) {\n  jsonString = fenced[1].trim();\n} else {\n  const first = raw.indexOf(\"{\");\n  const last = raw.lastIndexOf(\"}\");\n  if (first === -1 || last === -1)\n    throw new Error(\"No JSON object found in output.\");\n  jsonString = raw.slice(first, last + 1).trim();\n}\n\n// 🧩 Step 3: Parse JSON safely\nlet wf;\ntry {\n  wf = JSON.parse(jsonString);\n} catch (err) {\n  throw new Error(\n    \"Workflow JSON parse failed: \" +\n      err.message +\n      \"\\n\\nExtracted content:\\n\" +\n      jsonString\n  );\n}\n\n// 🧩 Step 4: Basic schema validation\nif (\n  !wf.name ||\n  !Array.isArray(wf.nodes) ||\n  typeof wf.connections !== \"object\"\n) {\n  throw new Error(\n    \"Invalid workflow structure. Expected keys: name, nodes[], and connections{}.\"\n  );\n}\n\n// 🧩 Step 5: Sanitize for n8n import compatibility\n\n// Ensure every node has an ID and proper typeVersion\nwf.nodes = wf.nodes.map((node, idx) => ({\n  id: node.id || (idx + 1).toString(),\n  typeVersion: node.typeVersion ?? 1,\n  ...node,\n}));\n\n// Normalize connection structure\nfor (const key of Object.keys(wf.connections)) {\n  const c = wf.connections[key];\n  if (c && Array.isArray(c.main) && c.main.length === 0)\n    wf.connections[key].main = [[]];\n}\n\n// Fix Airtable node parameter mismatches\nfor (const node of wf.nodes) {\n  if (node.type?.includes(\"airtable\")) {\n    delete node.parameters.application;\n    delete node.parameters.base;\n    node.parameters.baseId =\n      node.parameters.baseId || \"={{ $env.AIRTABLE_BASE_ID }}\";\n    node.parameters.operation = node.parameters.operation || \"create\";\n\n    if (node.parameters.fieldsUi?.fieldValues) {\n      node.parameters.fields = node.parameters.fieldsUi.fieldValues;\n      delete node.parameters.fieldsUi;\n    }\n  }\n}\n\n// Remove extra metadata that breaks n8n imports\ndelete wf.validated_workflow;\ndelete wf.exportable_workflow;\n\n// Add required base fields if missing\nwf.settings = wf.settings || {};\nwf.staticData = wf.staticData ?? null;\nwf.pinData = wf.pinData ?? {};\nwf.tags = wf.tags || [];\nwf.active = wf.active ?? false;\n\n// 🧩 Step 6: Return validated structure\nreturn [\n  {\n    json: {\n      ...wf,\n      validated_workflow: wf,\n      exportable_workflow: { ...wf },\n    },\n  },\n];\n"
       },
       "id": "9a7b7d95-5f2a-4878-8013-e37c75b63a3d",
       "name": "Validate JSON",
@@ -164,8 +164,8 @@
     {
       "parameters": {
         "content": "## 📌 **AI-Driven n8n Workflow Builder**\n\nThis system turns a user’s plain-language request into a complete, import-ready n8n workflow through a chain of specialized AI agents.\n\n**Process:**\n\n1. **PRD Agent** – Converts the user request into a structured requirements document (goal, triggers, logic, integrations, etc.).\n2. **Build Agent** – Generates the full n8n workflow JSON based on the PRD.\n3. **Validator** – Confirms the output is valid JSON.\n4. **Evaluator Agent** – Reviews the workflow against the PRD, scores it, and suggests updates.\n5. **Loop Logic** – If updates are needed, feeds feedback and the previous workflow back into the Build Agent until completion.\n\n**Result:**\nA self-refining automation pipeline that produces validated, production-ready n8n workflows from natural-language input.\n\n---",
-        "height": 932,
-        "width": 2396,
+        "height": 804,
+        "width": 2332,
         "color": 2
       },
       "id": "3ec47995-3691-4947-b625-0f73c6d1a68c",
@@ -173,8 +173,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -160,
-        -336
+        -96,
+        -208
       ]
     },
     {
@@ -204,7 +204,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        816,
+        896,
         336
       ],
       "id": "0b77908d-26cc-4005-b5bb-39dacfbdcce9",
@@ -219,7 +219,7 @@
     {
       "parameters": {
         "operation": "create",
-        "workflowObject": "={{ $('Validate JSON').item.json.toJsonString() }}",
+        "workflowObject": "={{ $('Validate JSON').item.json.exportable_workflow.toJsonString() }}",
         "requestOptions": {}
       },
       "type": "n8n-nodes-base.n8n",
@@ -236,8 +236,7 @@
           "id": "9FQomAe4SZDC0hBi",
           "name": "n8n account"
         }
-      },
-      "disabled": true
+      }
     },
     {
       "parameters": {
@@ -328,7 +327,7 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        1536,
+        1472,
         336
       ],
       "id": "38acaf63-07a9-491b-9760-54c281204ec6",
@@ -355,7 +354,7 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        384,
+        320,
         464
       ],
       "id": "29ff73d9-f1ba-4419-83f7-4d0ef381e313",
@@ -378,17 +377,7 @@
       "name": "PRD Agent"
     }
   ],
-  "pinData": {
-    "When chat message received": [
-      {
-        "json": {
-          "sessionId": "e5c0e92521604cc5a4c35c42ce9bb1f6",
-          "action": "sendMessage",
-          "chatInput": "“Create an n8n workflow that checks my Google Calendar every hour for meetings that were scheduled to end within the last hour and had no recorded attendance in Zoom.\n\nFor each missed meeting:\n\nSend a polite follow-up email to all invitees through Gmail asking to reschedule.\n\nPost a message in the #sales-team Slack channel with the meeting title, attendees, and a link to the rescheduling form.\n\nLog the missed meeting details (title, date, attendees, and email status) in an Airtable base called Meeting Follow-Ups.\n\nInclude error handling so if the Zoom API or Airtable API fails, it retries once and records the failure in an “Errors” table in the same Airtable base.”"
-        }
-      }
-    ]
-  },
+  "pinData": {},
   "settings": {
     "executionOrder": "v1"
   },
@@ -404,6 +393,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-11-03T10:38:11.000Z",
-  "versionId": "b842a992-3927-4e6a-a581-6d334ad91e17"
+  "updatedAt": "2025-11-04T00:11:55.000Z",
+  "versionId": "6bce88bc-1fba-4b0b-be25-92d7d8e5e101"
 }
