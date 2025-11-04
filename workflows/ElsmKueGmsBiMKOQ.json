@@ -1,0 +1,1242 @@
+{
+  "active": true,
+  "connections": {
+    "Daily Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apify Payload1": {
+      "main": [
+        [
+          {
+            "node": "Run an Actor1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run an Actor1": {
+      "main": [
+        [
+          {
+            "node": "Get run1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Max Retries Exceeded1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait9",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get dataset items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait9": {
+      "main": [
+        [
+          {
+            "node": "Get run1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Status2": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get run1": {
+      "main": [
+        [
+          {
+            "node": "Check Status2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Variables": {
+      "main": [
+        [
+          {
+            "node": "Get VARS_JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get VARS_JSON": {
+      "main": [
+        [
+          {
+            "node": "Parse VARS_JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get dataset items1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse VARS_JSON": {
+      "main": [
+        [
+          {
+            "node": "Apify Payload1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter and Score Jobs": {
+      "main": [
+        [
+          {
+            "node": "Pass/ Fail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pass/ Fail": {
+      "main": [
+        [
+          {
+            "node": "Search Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Jobs": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Job Summary",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Filter and Score Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Jobs": {
+      "main": [
+        [
+          {
+            "node": "Pre-Process",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Jobs": {
+      "main": [
+        [
+          {
+            "node": "Check Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Job Record": {
+      "main": [
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pre-Process": {
+      "main": [
+        [
+          {
+            "node": "Create Job Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate Job Summary": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-11-04T00:11:28.809Z",
+  "id": "ElsmKueGmsBiMKOQ",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Daily Upwork Jobs Scraper and Notifier - Updated",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "hour": 6
+            }
+          ]
+        }
+      },
+      "id": "1",
+      "typeVersion": 1,
+      "name": "Daily Trigger",
+      "type": "n8n-nodes-base.cron",
+      "position": [
+        -1632,
+        1456
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1632,
+        1648
+      ],
+      "id": "bc05ad8b-8341-4fe5-b0d4-fdb142d873c9",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "const variables = {\n  \"waitTimeSeconds_long\" : 5, // Wait time in seconds\n  \"waitTimeSeconds_short\" : 15, // Wait time in seconds \n  \"maxRetryCount\" : 5,\n  \"minPassingScore\" : 25\n}\n\nreturn [{json : variables}]"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1424,
+        1584
+      ],
+      "id": "fb4aa34a-e013-4c68-aad5-59cec31df130",
+      "name": "Set Variables"
+    },
+    {
+      "parameters": {
+        "jsCode": "const queryElement = \"automation\";\nconst locationFilter = $input.first().json.LOCATION_FILTER || \"\";\nconst maxJobAgeValue = $input.first().json.MAX_JOB_AGE_HOURS || \"24\";\nconst masterAccessToken = $input.first().json.UPWORK_MASTER_ACCESS_TOKEN;\nconst oauth2GlobalToken = $input.first().json.OAUTH2_GLOBAL_TOKEN;\nconst universalSearchNuxt = $input.first().json.UNIVERSAL_SEARCH_NUXT;\n\n// Convert to integer safely\nconst maxJobAge = parseInt(maxJobAgeValue, 10);\n\nconst query = {\n    \"query\": queryElement,\n    \"location\": [ \"United States\", \"Europe\", \"Australia\"],\n    \"maxJobAge\": {\n        \"value\": maxJobAge,\n        \"unit\": \"hours\"\n    },\n    \"title\": [\"n8n\", \"Make.com\"],\n    \"cookies\": [{\n            \"name\": \"master_access_token\",\n            \"value\": masterAccessToken\n        }, {\n            \"name\": \"oauth2_global_js_token\",\n            \"value\": oauth2GlobalToken\n        }, {\n            \"name\": \"UniversalSearchNuxt_vt\",\n            \"value\": universalSearchNuxt\n        }\n    ]\n};\n\nreturn [\n  {\n    json: {\n      query\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -752,
+        1584
+      ],
+      "id": "e55690d4-eb25-4faa-82db-7de37d47ee5a",
+      "name": "Apify Payload1"
+    },
+    {
+      "parameters": {
+        "actorId": {
+          "__rl": true,
+          "value": "={{ $('Parse VARS_JSON').item.json.UPWORK_JOB_SCRAPER }}",
+          "mode": "id"
+        },
+        "customBody": "={{ $json.query.toJsonString() }}",
+        "waitForFinish": false,
+        "timeout": {}
+      },
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        -528,
+        1584
+      ],
+      "id": "215056c6-a222-4d94-a5a2-9bfff911162b",
+      "name": "Run an Actor1",
+      "credentials": {
+        "apifyApi": {
+          "id": "fuSToaFFwu6uWX9F",
+          "name": "Apify API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "FAILED",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "b9d5b87c-eb71-4d40-ac30-00b8af528996"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Failed"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "88d4cdf5-33a8-4a01-b5c3-6bf8e883981d",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "WAITING",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Running"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "83705108-83ad-42a2-917a-7dfd38ee31f2",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "SUCCESS",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Done"
+            }
+          ]
+        },
+        "options": {
+          "allMatchingOutputs": true
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        144,
+        1472
+      ],
+      "id": "5509d7bd-003d-4a75-9635-04cb3659aa4c",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"errorMsg\": \"Max retries exceeded!\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        368,
+        1360
+      ],
+      "id": "29995d42-ad06-4121-805a-a20afd69e00c",
+      "name": "Max Retries Exceeded1"
+    },
+    {
+      "parameters": {
+        "amount": "={{ $('Set Variables').item.json.waitTimeSeconds_long }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        368,
+        1520
+      ],
+      "id": "2162e8a4-c086-4d41-a540-39f82be93eee",
+      "name": "Wait9",
+      "webhookId": "a0a7a74b-e328-4384-a4a8-0ec36355e6e8"
+    },
+    {
+      "parameters": {
+        "resource": "Datasets",
+        "datasetId": "={{ $('Get run1').first().json.defaultDatasetId }}",
+        "offset": {}
+      },
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        368,
+        1664
+      ],
+      "id": "49f231b1-fb59-4858-b80f-596647ed72e7",
+      "name": "Get dataset items1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "apifyApi": {
+          "id": "fuSToaFFwu6uWX9F",
+          "name": "Apify API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const runStatus = ($input.first().json.status || '').toLowerCase();\nconst runStatusMessage = ($input.first().json.statusMessage || '').toLowerCase();\nconst maxRetries = $('Set Variables').first().json.maxRetryCount || 3;\n\n// Use local retryCount or default to 0\nconst retryCount = $runIndex || 0;\n\n// SUCCESS condition\nif (runStatus === 'succeeded' && !runStatusMessage.includes('1 failed') && !runStatusMessage.includes('cancelled')) {\n  return [{\n    status: \"SUCCESS\",\n    retryCount\n  }];\n}\n\n// FAILED condition\nif (runStatusMessage.includes('1 failed') || runStatusMessage.includes('cancelled') || retryCount >= maxRetries) {\n  return [{\n    status: \"FAILED\",\n    retryCount\n  }];\n}\n\n// Otherwise, WAITING\nreturn [{\n  status: \"WAITING\",\n  retryCount\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        1488
+      ],
+      "id": "715d08f1-c6dc-448a-9947-27c964531b82",
+      "name": "Check Status2"
+    },
+    {
+      "parameters": {
+        "resource": "Actor runs",
+        "operation": "Get run",
+        "runId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        }
+      },
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        -304,
+        1584
+      ],
+      "id": "29c1b4f8-04bc-42b9-ad91-3a67e9053e41",
+      "name": "Get run1",
+      "credentials": {
+        "apifyApi": {
+          "id": "fuSToaFFwu6uWX9F",
+          "name": "Apify API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appel94KnOTtY5N3W",
+          "mode": "list",
+          "cachedResultName": "Upwork Job Tracker",
+          "cachedResultUrl": "https://airtable.com/appel94KnOTtY5N3W"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblHIf6MrvTOdcGmz",
+          "mode": "list",
+          "cachedResultName": "Variables",
+          "cachedResultUrl": "https://airtable.com/appel94KnOTtY5N3W/tblHIf6MrvTOdcGmz"
+        },
+        "filterByFormula": "{Name} = 'VARS_JSON'",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        -1200,
+        1584
+      ],
+      "id": "437f1544-2fef-420b-a7df-40d32e7cd5e1",
+      "name": "Get VARS_JSON",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the VARS_JSON input (can come from any previous node)\nconst varsString = $input.first().json.Value || '{}';\n\n// Try to parse the JSON safely\nlet vars = {};\ntry {\n  vars = JSON.parse(varsString);\n} catch (error) {\n  throw new Error(`❌ Invalid VARS_JSON format: ${varsString}`);\n}\n\n// Ensure we’re working with an object\nif (typeof vars !== 'object' || vars === null) {\n  throw new Error('❌ VARS_JSON must be a valid JSON object');\n}\n\n// Prepare output array for n8n\nreturn [\n  {\n    json: {\n      ...vars,  // Spread all dynamic keys directly into output\n    },\n  },\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -976,
+        1584
+      ],
+      "id": "d7963def-348b-4bad-9296-187fc4a72e9f",
+      "name": "Parse VARS_JSON"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the single job JSON from input\nconst job = $input.first().json;\nlet score = 0;\n\nconst minPassingScore = $('Set Variables').first().json.minPassingScore || 25;\n\n// Combine title and description for keyword search\nconst text = ((job.title || '') + ' ' + (job.description || '')).toLowerCase();\n\n// Keyword scoring\nif (text.includes('n8n')) score += 30;\nif (text.includes('make.com')) score += 20;\nif (text.includes('ai')) score += 10;\nif (text.includes('automation')) score += 15;\nif (text.includes('airtable')) score += 15;\nif (text.includes('workflow')) score += 15;\n\n// Budget or hourly rate scoring\nconst hourlyRate = Number(job.hourlyRate || job.hourly_rate || 0);\nconst budget = Number(job.budget || 0);\nif (hourlyRate >= 50 || budget > 500) score += 30;\n\n// Recency scoring (postingDate or datePosted)\nconst dateStr = job.postingDate || job.datePosted || null;\nif (dateStr) {\n  const postingDate = new Date(dateStr);\n  if (!isNaN(postingDate)) {\n    const hoursDiff = (Date.now() - postingDate.getTime()) / (1000 * 60 * 60);\n    if (hoursDiff < 24) score += 15;\n  }\n}\n\n// Attach score, client location, and pass/fail flag\njob.score = score;\njob.clientLocation = job.clientLocation || 'Unknown';\njob.PASS = score >= minPassingScore;\n\n// Return the updated job JSON\nreturn [{ json: job }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1200,
+        2144
+      ],
+      "id": "d4943d77-343e-404e-a838-336b6accf9da",
+      "name": "Filter and Score Jobs"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1ffd6223-f886-47d3-a922-eb473372665b",
+              "leftValue": "={{ $json.PASS }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -976,
+        2144
+      ],
+      "id": "011c6f0e-9a77-4321-805f-7b261dc0ebcd",
+      "name": "Pass/ Fail"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        144,
+        2224
+      ],
+      "id": "ed18e662-db49-493f-8c7b-a0812a9abbcc"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1424,
+        2112
+      ],
+      "id": "9c640603-cbb3-4afa-9bee-833559e42e92",
+      "name": "Loop Over Jobs"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appel94KnOTtY5N3W",
+          "mode": "list",
+          "cachedResultName": "Upwork Job Tracker",
+          "cachedResultUrl": "https://airtable.com/appel94KnOTtY5N3W"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblejg1SVYfMtNfIf",
+          "mode": "list",
+          "cachedResultName": "Jobs",
+          "cachedResultUrl": "https://airtable.com/appel94KnOTtY5N3W/tblejg1SVYfMtNfIf"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Job ID": "={{ $('Pass/ Fail').item.json.id }}",
+            "Score": "={{ $('Pass/ Fail').item.json.score }}",
+            "Title": "={{ $('Pass/ Fail').item.json.title }}",
+            "Description": "={{ $('Pass/ Fail').item.json.description }}",
+            "Keywords": "={{ $json.tags }}",
+            "Job Link": "={{ $('Pass/ Fail').item.json.url }}",
+            "Date Scraped": "={{ $now }}",
+            "Client Location": "={{ $('Pass/ Fail').item.json.clientLocation }}",
+            "Posting Date": "={{ $('Pass/ Fail').item.json.absoluteDate }}",
+            "Budget- Descriptive": "={{ $('Pass/ Fail').item.json.budget }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Job ID",
+              "displayName": "Job ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Description",
+              "displayName": "Description",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Budget",
+              "displayName": "Budget",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": true
+            },
+            {
+              "id": "Keywords",
+              "displayName": "Keywords",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "options": [
+                {
+                  "name": "n8n",
+                  "value": "n8n"
+                },
+                {
+                  "name": "Make.com",
+                  "value": "Make.com"
+                },
+                {
+                  "name": "AI",
+                  "value": "AI"
+                },
+                {
+                  "name": "automation",
+                  "value": "automation"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Score",
+              "displayName": "Score",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Is Recent Posting",
+              "displayName": "Is Recent Posting",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Last Modified",
+              "displayName": "Last Modified",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Cover Letter",
+              "displayName": "Cover Letter",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Job Link",
+              "displayName": "Job Link",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Date Scraped",
+              "displayName": "Date Scraped",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Client Location",
+              "displayName": "Client Location",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Posting Date",
+              "displayName": "Posting Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Days Since Posting",
+              "displayName": "Days Since Posting",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Budget or Hourly Rate",
+              "displayName": "Budget or Hourly Rate",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Job Summary (AI)",
+              "displayName": "Job Summary (AI)",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Suggested Cover Letter (AI)",
+              "displayName": "Suggested Cover Letter (AI)",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Created",
+              "displayName": "Created",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Record ID",
+              "displayName": "Record ID",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": true
+            },
+            {
+              "id": "Budget- Descriptive",
+              "displayName": "Budget- Descriptive",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "typecast": true
+        }
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        -80,
+        2000
+      ],
+      "id": "56009d4e-35aa-4975-b966-3a185816230c",
+      "name": "Create Job Record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "eaec4118-6a35-4039-9649-8ec4cda5fc10",
+              "leftValue": "={{ $('Search Jobs').item.json.id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "2820cfe9-5d37-4f15-b9c2-5792cb1a9f68",
+              "leftValue": "={{ $('Search Jobs').item.json.id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -528,
+        2080
+      ],
+      "id": "455e74c2-50b4-4c41-8c86-034f1a396613",
+      "name": "Check Jobs",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appel94KnOTtY5N3W",
+          "mode": "list",
+          "cachedResultName": "Upwork Job Tracker",
+          "cachedResultUrl": "https://airtable.com/appel94KnOTtY5N3W"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblejg1SVYfMtNfIf",
+          "mode": "list",
+          "cachedResultName": "Jobs",
+          "cachedResultUrl": "https://airtable.com/appel94KnOTtY5N3W/tblejg1SVYfMtNfIf"
+        },
+        "filterByFormula": "={Job ID} = '{{ $json.id }}'",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        -752,
+        2080
+      ],
+      "id": "488e7ba8-cf1b-4001-ab96-9c4035fe15d2",
+      "name": "Search Jobs",
+      "alwaysOutputData": true,
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "KfRycBsXYTyRWuPv",
+          "name": "Airtable Personal Access Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the current item from input\nconst item = $('Pass/ Fail').first().json;\n\n// Check if \"Tags\" exists and is an array\nif (Array.isArray(item.tags)) {\n  // Normalize all tags to lowercase strings\n  item.tags = item.tags\n    .filter(tag => typeof tag === 'string')   // Only keep string elements\n    .map(tag => tag.toLowerCase().trim());    // Lowercase and trim whitespace\n} else {\n  // If missing or invalid, set to an empty array\n  item.Tags = [];\n}\n\n// Return the processed item\nreturn [{ json: item }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -304,
+        2000
+      ],
+      "id": "f42902d8-d103-4bf2-a332-56bfcdd0daa8",
+      "name": "Pre-Process"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all incoming items\nconst inputItems = $input.all();\n\n// Initialize HTML summary\nlet html = `\n<h2>📋 Daily Upwork Jobs Summary</h2>\n<p><em>Generated at ${new Date().toLocaleString('en-US', { timeZone: 'America/Phoenix' })}</em></p>`;\n\n// Handle empty input gracefully\nif (inputItems.length === 0) {\n  html += `<p>No relevant jobs found today.</p>`;\n} else {\n  html += `<ul style=\"font-family:Arial, sans-serif; line-height:1.5;\">`;\n\n  for (const item of inputItems) {\n    const job = item.json;\n\n    const title = job[\"Title\"] || \"Untitled\";\n    const score = job[\"Score\"] !== undefined ? job[\"Score\"] : \"N/A\";\n    const link = job[\"Job Link\"] || \"#\";\n    const location = job[\"Client Location\"] || \"Unknown\";\n    const budget = job[\"Budget- Descriptive\"] || \"N/A\";\n    const daysSincePosting = job[\"Days Since Posting\"] !== undefined ? job[\"Days Since Posting\"] : \"N/A\";\n\n    html += `\n      <li style=\"margin-bottom:20px;\">\n        <h3 style=\"margin-bottom:5px;\">${title}</h3>\n        <p>\n          <strong>Score:</strong> ${score}<br>\n          <strong>Location:</strong> ${location}<br>\n          <strong>Budget:</strong> ${budget}<br>\n          <strong>Days Since Posting:</strong> ${daysSincePosting}<br>\n          <strong>Link:</strong> <a href=\"${link}\" target=\"_blank\">View Job</a>\n        </p>\n      </li>\n    `;\n  }\n\n  html += `</ul>`;\n}\n\n// Return HTML and metadata\nreturn [\n  {\n    json: {\n      html,\n      jobCount: inputItems.length,\n      generatedAt: new Date().toLocaleString('en-US', {\n        timeZone: 'America/Phoenix',\n        hour12: false\n      }),\n    },\n  },\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1200,
+        1952
+      ],
+      "id": "bdc56082-6299-45cd-8ebc-451a8476394f",
+      "name": "Aggregate Job Summary"
+    },
+    {
+      "parameters": {
+        "sendTo": "pilgrimka1@yahoo.com",
+        "subject": "Daily Upwork Job Summary",
+        "message": "={{ $json.html }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -976,
+        1952
+      ],
+      "id": "c7acb5f6-c2b4-4850-ab20-6b62f4142aef",
+      "name": "Send a message",
+      "webhookId": "bda12c12-fbf2-4041-ad13-1723d7b2e23e",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5Y9wNFS6LeDTwIMn",
+          "name": "Gmail OAuth2- pilgrimka1@gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# 🧩 Upwork Job Scraper & Scoring\n\n**Purpose**\nDaily automation that finds relevant Upwork jobs, scores them, stores results in Airtable, and emails a readable HTML summary. Applying remains manual.\n\n**Trigger**\nRuns daily at **08:00 (America/Phoenix)**.\n\n**Main Steps**\n1️⃣ Apify Upwork scraper → collects jobs (keywords: “n8n”, “Make.com”, “Airtable”, “workflow”, “automation”, “AI”).\n2️⃣ Pre-Process → cleans fields (e.g., `Tags` → lowercase array).\n3️⃣ Score Job → adds `score` + `PASS` flag.\n4️⃣ IF `PASS == true` → save to Airtable.\n5️⃣ Aggregate + Email → builds HTML summary and sends it.\n\n**Scoring Weights**\n\n* +20: “n8n”\n* +15: “Make.com”\n* +10: “AI” / “automation”\n* +15: “Airtable” / “workflow”\n* +20: `hourlyRate ≥ 30` or `budget > 300`\n* +15: posted < 24h\n  **Threshold:** ≥60 ⇒ `PASS = true`\n\n**Airtable Fields**\n`Job ID`, `Title`, `Score`, `Job Link`, `Client Location`, `Budget`, `Posting Date`, `Suggested Cover Letter (AI)`.\n\n**Email Output**\nHTML report with title, score, location, budget, and link.\nTimestamp shown in **Phoenix time (MST)**.\n\n— *KAP Enterprises – Kevin Pilgrim*\n\n---",
+        "height": 1184,
+        "width": 672
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2400,
+        1264
+      ],
+      "typeVersion": 1,
+      "id": "4ff88d46-db55-4140-8c36-edcaa2602771",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Scrape Upwork using Apify",
+        "height": 576,
+        "width": 2304,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1696,
+        1264
+      ],
+      "typeVersion": 1,
+      "id": "0785d3b4-0e5a-4f01-b779-005073ec41a0",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Process Job Leads",
+        "height": 576,
+        "width": 2304,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1696,
+        1872
+      ],
+      "typeVersion": 1,
+      "id": "bafb5c9f-e4fe-4453-8ce2-32b1db3adc26",
+      "name": "Sticky Note2"
+    }
+  ],
+  "pinData": {
+    "Run an Actor1": [
+      {
+        "json": {
+          "id": "vW9oqaeKSmOHZUYOC",
+          "actId": "XYTgO05GT5qAoSlxy",
+          "userId": "tcmiin8LIaT2UeIiI",
+          "startedAt": "2025-11-04T17:12:05.808Z",
+          "finishedAt": null,
+          "status": "READY",
+          "meta": {
+            "origin": "API",
+            "userAgent": "axios/1.12.0"
+          },
+          "stats": {
+            "inputBodyLen": 471,
+            "migrationCount": 0,
+            "rebootCount": 0,
+            "restartCount": 0,
+            "resurrectCount": 0,
+            "computeUnits": 0
+          },
+          "options": {
+            "build": "0.0.37",
+            "timeoutSecs": 3600,
+            "memoryMbytes": 512,
+            "diskMbytes": 2048
+          },
+          "buildId": "lSb2xTZpAyRdBHXmx",
+          "defaultKeyValueStoreId": "U50coTIshQ7mef9nz",
+          "defaultDatasetId": "b6u6X16GAsig0dH40",
+          "defaultRequestQueueId": "zJJgtkqfCQKSfeeCR",
+          "pricingInfo": {
+            "pricingModel": "FLAT_PRICE_PER_MONTH",
+            "pricePerUnitUsd": 25,
+            "trialMinutes": 120,
+            "createdAt": "2025-03-23T14:10:16.365Z",
+            "startedAt": "2025-03-23T14:10:16.365Z",
+            "apifyMarginPercentage": 0.2,
+            "notifiedAboutChangeAt": "2025-03-23T14:35:20.443Z"
+          },
+          "platformUsageBillingModel": "USER",
+          "integrationTracking": {
+            "platform": "n8n",
+            "isAiTool": false
+          },
+          "generalAccess": "FOLLOW_USER_SETTING",
+          "buildNumber": "0.0.37",
+          "containerUrl": "https://3q41yyn7jafd.runs.apify.net",
+          "usage": {
+            "ACTOR_COMPUTE_UNITS": 0,
+            "DATASET_READS": 0,
+            "DATASET_WRITES": 0,
+            "KEY_VALUE_STORE_READS": 0,
+            "KEY_VALUE_STORE_WRITES": 1,
+            "KEY_VALUE_STORE_LISTS": 0,
+            "REQUEST_QUEUE_READS": 0,
+            "REQUEST_QUEUE_WRITES": 0,
+            "DATA_TRANSFER_INTERNAL_GBYTES": 0,
+            "DATA_TRANSFER_EXTERNAL_GBYTES": 0,
+            "PROXY_RESIDENTIAL_TRANSFER_GBYTES": 0,
+            "PROXY_SERPS": 0
+          },
+          "usageTotalUsd": 0.00005,
+          "usageUsd": {
+            "ACTOR_COMPUTE_UNITS": 0,
+            "DATASET_READS": 0,
+            "DATASET_WRITES": 0,
+            "KEY_VALUE_STORE_READS": 0,
+            "KEY_VALUE_STORE_WRITES": 0.00005,
+            "KEY_VALUE_STORE_LISTS": 0,
+            "REQUEST_QUEUE_READS": 0,
+            "REQUEST_QUEUE_WRITES": 0,
+            "DATA_TRANSFER_INTERNAL_GBYTES": 0,
+            "DATA_TRANSFER_EXTERNAL_GBYTES": 0,
+            "PROXY_RESIDENTIAL_TRANSFER_GBYTES": 0,
+            "PROXY_SERPS": 0
+          }
+        }
+      }
+    ]
+  },
+  "settings": {},
+  "shared": [
+    {
+      "updatedAt": "2025-11-04T00:11:28.812Z",
+      "createdAt": "2025-11-04T00:11:28.812Z",
+      "role": "workflow:owner",
+      "workflowId": "ElsmKueGmsBiMKOQ",
+      "projectId": "ANrIPEPOHOX0fwPW"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-11-04T17:12:46.000Z",
+  "versionId": "8b0d2397-95ce-404b-8dc4-a3ace903ecaf"
+}
